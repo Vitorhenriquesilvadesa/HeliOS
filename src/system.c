@@ -14,18 +14,17 @@ void createSystemInstance(SystemCreateInfo createInfo)
     systemInstance.processManager = manager;
 }
 
-PID32 createProcess(const char *name, Program *program)
+PID32 createProcess(const char *name, ProgramInstantiationFn program)
 {
     ProcessManager *manager = systemInstance.processManager;
-    return manager->createProc(manager, name, program);
+    return manager->createProc(manager, name, program());
 }
 
 ProcessManager *createProcessManager(ProcessManagerCreateInfo createInfo)
 {
     static ProcManagerCreationFn *procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_MAX];
-        procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED] = createFirstComeFirstServedProcessManager;
-        procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_ROUND_ROBIN] = createRoundRobinProcessManager;
-
+    procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED] = createFirstComeFirstServedProcessManager;
+    procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_ROUND_ROBIN] = createRoundRobinProcessManager;
 
     return procManagerCreationFunctions[createInfo.type](createInfo);
 }

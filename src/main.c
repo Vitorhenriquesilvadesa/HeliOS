@@ -71,8 +71,8 @@ int main(void)
 
     createSystemInstance(createInfo);
 
-    createProcess("Test1", exampleProgram1());
-    createProcess("Test2", exampleProgram2());
+    createProcess("Test1", exampleProgram1);
+    createProcess("Test2", exampleProgram2);
 
     runSystem();
 

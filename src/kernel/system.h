@@ -16,7 +16,7 @@ typedef struct
 } HeliOSSystem;
 
 void createSystemInstance(SystemCreateInfo createInfo);
-PID32 createProcess(const char *name, Program *program);
+PID32 createProcess(const char *name, ProgramInstantiationFn program);
 ProcessManager *createProcessManager(ProcessManagerCreateInfo createInfo);
 Program getProcessProgram(PID32 pid);
 
