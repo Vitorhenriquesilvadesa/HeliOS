@@ -5,7 +5,7 @@
 
 typedef struct CpuInfo CpuInfo;
 
-typedef PID32 (*ProcCreateFn)(void *self, const char *name, Program *program);
+typedef PID32 (*ProcCreateFn)(void *self, const char *name, Program *program, ProcessPriority priority);
 typedef Process *(*GetProcessFn)(void *self, PID32 pid);
 typedef PID32 (*ProcScheduleFn)(void *self, void *procTable);
 typedef void *(*InitProcTableFn)(void *self);
@@ -26,7 +26,8 @@ typedef enum
 typedef enum
 {
     PREEMPTION_NONE,
-    PREEMPTION_QUANTUM
+    PREEMPTION_QUANTUM,
+    PREEMPTION_PRIORITY,
 } PreemptionType;
 
 typedef struct
@@ -35,10 +36,12 @@ typedef struct
     Time quantum;
 } ProcessManagerCreateInfo;
 
+typedef unsigned int PreemptionFlag;
+
 typedef struct
 {
     ProcManagerType type;
-    PreemptionType preemptionType;
+    PreemptionFlag preemptionType;
     ProcCreateFn createProc;
     ProcScheduleFn schedule;
     InitProcTableFn initTable;

@@ -18,7 +18,7 @@ ProcessManager *createShortestJobFirstProcessManager(ProcessManagerCreateInfo cr
     return (ProcessManager *)sjf;
 }
 
-PID32 SJFCreateProcess(void *self, const char *name, Program *program)
+PID32 SJFCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority)
 {
     ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
     SJFProcTable *table = manager->procTable;

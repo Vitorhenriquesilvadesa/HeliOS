@@ -66,13 +66,13 @@ Program *exampleProgram2()
 int main(void)
 {
     SystemCreateInfo createInfo = {
-        .procManager = HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
+        .procManager = HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING,
     };
 
     createSystemInstance(createInfo);
 
-    createProcess("Test1", exampleProgram1);
-    createProcess("Test2", exampleProgram2);
+    createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
+    createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_HIGH);
 
     runSystem();
 

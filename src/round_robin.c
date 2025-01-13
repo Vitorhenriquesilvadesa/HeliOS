@@ -18,7 +18,7 @@ ProcessManager *createRoundRobinProcessManager(ProcessManagerCreateInfo createIn
     return (ProcessManager *)rr;
 }
 
-PID32 RRCreateProcess(void *self, const char *name, Program *program)
+PID32 RRCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority)
 {
     RoundRobinProcessManager *manager = (RoundRobinProcessManager *)self;
     RRProcTable *table = manager->procTable;

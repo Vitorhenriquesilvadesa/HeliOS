@@ -24,7 +24,7 @@ typedef struct
 } FirstComeFirstServedProcessManager;
 
 ProcessManager *createFirstComeFirstServedProcessManager(ProcessManagerCreateInfo createInfo);
-PID32 FCFSCreateProcess(void *self, const char *name, Program *program);
+PID32 FCFSCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority);
 PID32 FCFSScheduleProcess(void *self, void *procTable);
 void *FCFSInitProcTable(void *self);
 Process *FCFSGetProcess(void *self, PID32 pid);

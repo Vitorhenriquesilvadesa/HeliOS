@@ -2,6 +2,8 @@
 #include <first_come_first_served.h>
 #include <round_robin.h>
 #include <shortest_job_first.h>
+#include <priority_scheduling.h>
+#include <lottery_scheduling.h>
 
 static HeliOSSystem systemInstance;
 
@@ -18,7 +20,13 @@ void createSystemInstance(SystemCreateInfo createInfo)
 PID32 createProcess(const char *name, ProgramInstantiationFn program)
 {
     ProcessManager *manager = systemInstance.processManager;
-    return manager->createProc(manager, name, program());
+    return manager->createProc(manager, name, program(), HL_PROC_PRIORITY_DEFAULT);
+}
+
+PID32 createProcessWithPriority(const char *name, ProgramInstantiationFn program, ProcessPriority priority)
+{
+    ProcessManager *manager = systemInstance.processManager;
+    return manager->createProc(manager, name, program(), priority);
 }
 
 ProcessManager *createProcessManager(ProcessManagerCreateInfo createInfo)
@@ -27,6 +35,8 @@ ProcessManager *createProcessManager(ProcessManagerCreateInfo createInfo)
     procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED] = createFirstComeFirstServedProcessManager;
     procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_ROUND_ROBIN] = createRoundRobinProcessManager;
     procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST] = createShortestJobFirstProcessManager;
+    procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE] = createPrioritySchedulingSingleQueueProcessManager;
+    procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING] = createLotterySchedulingProcessManager;
 
     return procManagerCreationFunctions[createInfo.type](createInfo);
 }
@@ -52,10 +62,9 @@ void runSystem()
 
         int cycles = 0;
 
-        if (manager->preemptionType == PREEMPTION_QUANTUM)
+        if (manager->preemptionType & PREEMPTION_QUANTUM)
         {
-            int cycles = 0;
-            while (cpu.state != CPU_HALTED && cycles != manager->quantum)
+            while (cpu.state != CPU_HALTED && cycles < manager->quantum)
             {
                 decodeAndExecute(&cpu);
                 cycles++;

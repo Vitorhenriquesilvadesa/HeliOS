@@ -27,7 +27,7 @@ typedef struct
 } RoundRobinProcessManager;
 
 ProcessManager *createRoundRobinProcessManager(ProcessManagerCreateInfo createInfo);
-PID32 RRCreateProcess(void *self, const char *name, Program *program);
+PID32 RRCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority);
 PID32 RRScheduleProcess(void *self, void *procTable);
 void *RRInitProcTable(void *self);
 Process *RRGetProcess(void *self, PID32 pid);
