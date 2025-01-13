@@ -8,8 +8,8 @@ Process *newProcess(ProcessCreateInfo info, Program *program)
 
     process->name = info.name;
     process->program = program;
-    process->arrivalTime = 0;
-    process->burstTime = 0;
+    process->arrivalTime = info.arrivalTime;
+    process->burstTime = info.burstTime;
     process->priority = info.priority;
 
     process->accumulator = 0;
@@ -71,4 +71,9 @@ Process *getFromProcessArray(ProcessArray *array, PID32 pid)
 bool hasProcess(ProcessArray *array)
 {
     return array->length > 0;
+}
+
+Time getProcessBurstTime(Process *process)
+{
+    return process->burstTime;
 }

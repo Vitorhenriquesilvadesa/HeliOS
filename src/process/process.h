@@ -46,7 +46,7 @@ typedef struct Process
 typedef struct
 {
     const char *name;
-    int arrivalTime;
+    Time arrivalTime;
     int burstTime;
     ProcessPriority priority;
 } ProcessCreateInfo;
@@ -64,5 +64,6 @@ void appendProcessReferenceArray(ProcessArray *array, Process *process);
 void removeFromProcessArray(ProcessArray *array, PID32 pid);
 Process *getFromProcessArray(ProcessArray *array, PID32 pid);
 bool hasProcess(ProcessArray *array);
+Time getProcessBurstTime(Process *process);
 
 #endif

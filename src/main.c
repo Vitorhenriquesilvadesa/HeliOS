@@ -66,7 +66,7 @@ Program *exampleProgram2()
 int main(void)
 {
     SystemCreateInfo createInfo = {
-        .procManager = HL_PROC_MANAGER_TYPE_ROUND_ROBIN,
+        .procManager = HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
     };
 
     createSystemInstance(createInfo);

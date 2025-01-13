@@ -1,6 +1,7 @@
 #include <system.h>
 #include <first_come_first_served.h>
 #include <round_robin.h>
+#include <shortest_job_first.h>
 
 static HeliOSSystem systemInstance;
 
@@ -25,6 +26,7 @@ ProcessManager *createProcessManager(ProcessManagerCreateInfo createInfo)
     static ProcManagerCreationFn *procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_MAX];
     procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED] = createFirstComeFirstServedProcessManager;
     procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_ROUND_ROBIN] = createRoundRobinProcessManager;
+    procManagerCreationFunctions[HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST] = createShortestJobFirstProcessManager;
 
     return procManagerCreationFunctions[createInfo.type](createInfo);
 }

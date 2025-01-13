@@ -77,20 +77,19 @@ void *FCFSInitProcTable(void *self)
 Process *FCFSGetProcess(void *self, PID32 pid)
 {
     FirstComeFirstServedProcessManager *manager = (FirstComeFirstServedProcessManager *)self;
-
     return getFromProcessArray(&manager->manager.processes, pid);
 }
 
 bool FCFSHasProcess(void *self)
 {
     FirstComeFirstServedProcessManager *manager = (FirstComeFirstServedProcessManager *)self;
-
     return manager->procTable->size > 0;
 }
 
 void FCFSOnProcessDetach(void *self, CpuInfo info)
 {
     FirstComeFirstServedProcessManager *manager = (FirstComeFirstServedProcessManager *)self;
+    removeFromProcessArray(&manager->manager.processes, info.currentProcessId);
 }
 
 void FCFSEnqueueProcess(void *self, FCFSProcTable *table, PID32 pid)
