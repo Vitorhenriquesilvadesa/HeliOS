@@ -24,7 +24,7 @@ typedef struct
 } ShortestJobFirstProcessManager;
 
 ProcessManager *createShortestJobFirstProcessManager(ProcessManagerCreateInfo createInfo);
-PID32 SJFCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority);
+PID32 SJFCreateProcess(void *self, ProcessCreateInfo info);
 PID32 SJFScheduleProcess(void *self, void *procTable);
 void *SJFInitProcTable(void *self);
 Process *SJFGetProcess(void *self, PID32 pid);

@@ -98,21 +98,14 @@ void LSOnProcessDetach(void *self, CpuInfo info)
     }
 }
 
-PID32 LSCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority)
+PID32 LSCreateProcess(void *self, ProcessCreateInfo info)
 {
     LotterySchedulingProcessManager *manager = (LotterySchedulingProcessManager *)self;
 
     static PID32 nextPid = 1;
     PID32 pid = nextPid++;
 
-    ProcessCreateInfo createInfo = {
-        .arrivalTime = 0,
-        .burstTime = program->count,
-        .name = name,
-        .priority = priority,
-    };
-
-    Process *process = newProcess(createInfo, program);
+    Process *process = newProcess(info);
 
     if (!process)
     {
@@ -144,7 +137,7 @@ PID32 LSCreateProcess(void *self, const char *name, Program *program, ProcessPri
         ticketsPerPriority[HL_PROC_PRIORITY_VERY_HIGH] = 20;
     }
 
-    int tickets = ticketsPerPriority[priority];
+    int tickets = ticketsPerPriority[info.priority];
     LSEnqueueProcess(self, manager->procTable, process->pid, tickets);
 
     return pid;

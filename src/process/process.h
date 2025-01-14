@@ -17,7 +17,7 @@ typedef enum
     HL_PROC_TERMINATED,
 } ProcessState;
 
-typedef enum
+typedef enum ProcessPriority
 {
     HL_PROC_PRIORITY_DEFAULT = 0,
     HL_PROC_PRIORITY_VERY_LOW,
@@ -49,6 +49,7 @@ typedef struct
     Time arrivalTime;
     int burstTime;
     ProcessPriority priority;
+    Program *program;
 } ProcessCreateInfo;
 
 typedef struct
@@ -58,7 +59,7 @@ typedef struct
     size_t capacity;
 } ProcessArray;
 
-Process *newProcess(ProcessCreateInfo info, Program *program);
+Process *newProcess(ProcessCreateInfo info);
 void initProcessArray(ProcessArray *array);
 void appendProcessReferenceArray(ProcessArray *array, Process *process);
 void removeFromProcessArray(ProcessArray *array, PID32 pid);

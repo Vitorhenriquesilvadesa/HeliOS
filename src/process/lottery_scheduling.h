@@ -3,7 +3,7 @@
 
 #include <process_manager.h>
 
-#define LOTTERY_QUANTUM 2
+#define LOTTERY_QUANTUM 1
 
 typedef struct LotteryNode
 {
@@ -26,7 +26,7 @@ typedef struct
 } LotterySchedulingProcessManager;
 
 ProcessManager *createLotterySchedulingProcessManager(ProcessManagerCreateInfo createInfo);
-PID32 LSCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority);
+PID32 LSCreateProcess(void *self, ProcessCreateInfo info);
 PID32 LSScheduleProcess(void *self, void *procTable);
 void *LSInitProcTable(void *self);
 Process *LSGetProcess(void *self, PID32 pid);

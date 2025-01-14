@@ -2,12 +2,12 @@
 #include <kernel.h>
 #include <string.h>
 
-Process *newProcess(ProcessCreateInfo info, Program *program)
+Process *newProcess(ProcessCreateInfo info)
 {
     Process *process = ALLOCATE(Process, 1);
 
     process->name = info.name;
-    process->program = program;
+    process->program = info.program;
     process->arrivalTime = info.arrivalTime;
     process->burstTime = info.burstTime;
     process->priority = info.priority;

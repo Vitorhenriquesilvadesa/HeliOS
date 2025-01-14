@@ -11,10 +11,15 @@ typedef enum
     HL_OP_MUL,
     HL_OP_DIV,
     HL_OP_MOV,
+    HL_OP_MOV_CONST,
+    HL_OP_MOV_ACC,
     HL_OP_PUSH,
     HL_OP_POP,
     HL_OP_GOTO,
+    HL_OP_JEQ,
+    HL_OP_JNQ,
     HL_OP_PRINT,
+    HL_OP_CREATE_PROCESS,
 } Instruction;
 
 typedef enum

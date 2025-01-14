@@ -1,4 +1,4 @@
-#include <priority_scheduling.h>
+#include <priority_scheduling_single_queue.h>
 #include <kernel.h>
 
 ProcessManager *createPrioritySchedulingSingleQueueProcessManager(ProcessManagerCreateInfo createInfo)
@@ -18,21 +18,14 @@ ProcessManager *createPrioritySchedulingSingleQueueProcessManager(ProcessManager
     return (ProcessManager *)manager;
 }
 
-PID32 PSSQCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority)
+PID32 PSSQCreateProcess(void *self, ProcessCreateInfo info)
 {
     static PID32 nextPid = 1;
     PID32 pid = nextPid++;
 
     PrioritySchedulingSingleQueueProcessManager *manager = (PrioritySchedulingSingleQueueProcessManager *)self;
 
-    ProcessCreateInfo createInfo = {
-        .arrivalTime = 0,
-        .burstTime = program->count,
-        .name = name,
-        .priority = priority,
-    };
-
-    Process *process = newProcess(createInfo, program);
+    Process *process = newProcess(info);
 
     if (!process)
     {

@@ -4,7 +4,7 @@
 #include <process_manager.h>
 #include <stdint.h>
 
-#define ROUND_ROBIN_QUANTUM 1
+#define ROUND_ROBIN_QUANTUM 10
 
 typedef struct RRNode
 {
@@ -27,7 +27,7 @@ typedef struct
 } RoundRobinProcessManager;
 
 ProcessManager *createRoundRobinProcessManager(ProcessManagerCreateInfo createInfo);
-PID32 RRCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority);
+PID32 RRCreateProcess(void *self, ProcessCreateInfo info);
 PID32 RRScheduleProcess(void *self, void *procTable);
 void *RRInitProcTable(void *self);
 Process *RRGetProcess(void *self, PID32 pid);

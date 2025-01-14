@@ -5,7 +5,7 @@
 
 typedef struct CpuInfo CpuInfo;
 
-typedef PID32 (*ProcCreateFn)(void *self, const char *name, Program *program, ProcessPriority priority);
+typedef PID32 (*ProcCreateFn)(void *self, ProcessCreateInfo info);
 typedef Process *(*GetProcessFn)(void *self, PID32 pid);
 typedef PID32 (*ProcScheduleFn)(void *self, void *procTable);
 typedef void *(*InitProcTableFn)(void *self);

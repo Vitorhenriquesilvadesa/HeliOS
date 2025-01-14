@@ -18,7 +18,7 @@ ProcessManager *createShortestJobFirstProcessManager(ProcessManagerCreateInfo cr
     return (ProcessManager *)sjf;
 }
 
-PID32 SJFCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority)
+PID32 SJFCreateProcess(void *self, ProcessCreateInfo info)
 {
     ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
     SJFProcTable *table = manager->procTable;
@@ -27,14 +27,7 @@ PID32 SJFCreateProcess(void *self, const char *name, Program *program, ProcessPr
 
     PID32 pid = nextPid++;
 
-    ProcessCreateInfo createInfo = {
-        .arrivalTime = 0,
-        .burstTime = program->count,
-        .name = name,
-        .priority = HL_PROC_PRIORITY_DEFAULT,
-    };
-
-    Process *process = newProcess(createInfo, program);
+    Process *process = newProcess(info);
     process->pid = pid;
 
     appendProcessReferenceArray(&manager->manager.processes, process);

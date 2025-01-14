@@ -24,7 +24,7 @@ typedef struct
 } PrioritySchedulingSingleQueueProcessManager;
 
 ProcessManager *createPrioritySchedulingSingleQueueProcessManager(ProcessManagerCreateInfo createInfo);
-PID32 PSSQCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority);
+PID32 PSSQCreateProcess(void *self, ProcessCreateInfo info);
 PID32 PSSQScheduleProcess(void *self, void *procTable);
 void *PSSQInitProcTable(void *self);
 Process *PSSQGetProcess(void *self, PID32 pid);

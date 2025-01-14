@@ -19,7 +19,7 @@ ProcessManager *createFirstComeFirstServedProcessManager(ProcessManagerCreateInf
     return (ProcessManager *)fcfs;
 }
 
-PID32 FCFSCreateProcess(void *self, const char *name, Program *program, ProcessPriority priority)
+PID32 FCFSCreateProcess(void *self, ProcessCreateInfo info)
 {
     FirstComeFirstServedProcessManager *manager = (FirstComeFirstServedProcessManager *)self;
     FCFSProcTable *table = manager->procTable;
@@ -28,14 +28,7 @@ PID32 FCFSCreateProcess(void *self, const char *name, Program *program, ProcessP
 
     PID32 pid = nextPid++;
 
-    ProcessCreateInfo createInfo = {
-        .arrivalTime = 0,
-        .burstTime = 0,
-        .name = name,
-        .priority = HL_PROC_PRIORITY_DEFAULT,
-    };
-
-    Process *process = newProcess(createInfo, program);
+    Process *process = newProcess(info);
     process->pid = pid;
 
     appendProcessReferenceArray(&manager->manager.processes, process);
