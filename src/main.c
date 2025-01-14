@@ -121,9 +121,11 @@ int main(void)
 
     createSystemInstance(createInfo);
 
-    // createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
-    createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
-    // createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
+    createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
+
+    // Nao rodar, é recursivo
+    // createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
+    createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
 
     runSystem();
 
