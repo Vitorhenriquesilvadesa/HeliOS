@@ -107,6 +107,27 @@ Program *exampleProgram3()
     return createProgram(createInfo);
 }
 
+/*
+ *
+*   HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED,
+    HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
+    HL_PROC_MANAGER_TYPE_ROUND_ROBIN,
+    HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE,
+    HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES,
+    HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING,
+ *
+ *
+ */
+
+const char* enumToString[HL_PROC_MANAGER_TYPE_MAX] ={
+"First come first served",
+    "Shortest Job First",
+    "Round Robin",
+    "Priority scheduling single queue",
+    "Priority scheduling multiple queues",
+    "Lotery scheduling"
+};
+
 int main(void)
 {
     ProgramInstantiationFn *programs = ALLOCATE(ProgramInstantiationFn, 3);
@@ -125,9 +146,10 @@ int main(void)
 
     // Nao rodar, é recursivo
     // createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
+
     createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
 
-    runSystem();
-
+    // runSystem();
+    runSystemWithLog(enumToString[createInfo.procManager.type],"../logs/test123.txt");
     return 0;
 }

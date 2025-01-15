@@ -5,6 +5,9 @@
 #include <priority_scheduling_single_queue.h>
 #include <priority_scheduling_multiple_queues.h>
 #include <lottery_scheduling.h>
+#include <process_log.h>
+#include <process_info.h>
+#include <string.h>
 
 static HeliOSSystem systemInstance;
 
@@ -72,6 +75,75 @@ ProgramInstantiationFn getProgramByIndex(Byte index)
 {
     return systemInstance.programs[index];
 }
+
+void runSystemWithLog(const char* algorithName,const char *logFile) {
+    ProcessManager *manager = systemInstance.processManager;
+    Cpu cpu = systemInstance.cpu;
+    ProcessLog logs[100];
+    size_t logCount = 0;
+
+    char executionOrder[500] = "";
+
+    while (manager->hasProcess(manager)) {
+        PID32 pid = manager->schedule(manager, systemInstance.processTable);
+        Process *process = manager->getProcess(manager, pid);
+
+        if (logCount > 0) {
+            strcat(executionOrder, " → ");
+        }
+        strcat(executionOrder, process->name);
+
+        attachProcess(&cpu, process);
+        uint32_t startTime = cpu.cycles;
+        int cycles = 0;
+
+        if (manager->preemptionType & PREEMPTION_QUANTUM)
+        {
+            while (cpu.state != CPU_HALTED && cycles < manager->quantum)
+            {
+                if (cpu.pc == cpu.currentProgram.count)
+                {
+                    break;
+                }
+                decodeAndExecute(&cpu);
+                cycles++;
+            }
+        }
+        else
+        {
+            while (cpu.state != CPU_HALTED)
+            {
+                if (cpu.pc == cpu.currentProgram.count)
+                {
+                    break;
+                }
+                decodeAndExecute(&cpu);
+            }
+        }
+
+        if (cpu.pc == process->program->count)
+        {
+            process->state = HL_PROC_TERMINATED;
+        }
+
+        uint32_t endTime = systemInstance.cpu.cycles;
+        logs[logCount++] = (ProcessLog){
+            .pid = process->pid,
+            .name = process->name,
+            .arrivalTime = process->arrivalTime,
+            .startTime = startTime,
+            .endTime = endTime,
+            .waitingTime = startTime - process->arrivalTime,
+            .turnaroundTime = endTime - process->arrivalTime,
+        };
+
+        detachProcess(&cpu);
+        manager->onDetach(manager, detachProcess(&cpu));
+    }
+
+    writeLog(algorithName,logFile, logs, logCount, executionOrder);
+}
+
 
 void runSystem()
 {

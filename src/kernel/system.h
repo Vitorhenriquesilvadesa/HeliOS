@@ -29,4 +29,6 @@ ProgramInstantiationFn getProgramByIndex(Byte index);
 
 void runSystem();
 
+void runSystemWithLog(const char* algorithName,const char *logFile);
+
 #endif
