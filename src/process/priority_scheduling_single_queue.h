@@ -2,6 +2,7 @@
 #define HL_PRIORITY_SCHEDULING_H
 
 #include <process_manager.h>
+#include <stddef.h>
 #include <stdint.h>
 
 typedef struct PriorityNode

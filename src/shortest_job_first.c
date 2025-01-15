@@ -1,8 +1,7 @@
 #include <shortest_job_first.h>
 #include <kernel.h>
 
-ProcessManager *createShortestJobFirstProcessManager(ProcessManagerCreateInfo createInfo)
-{
+ProcessManager *createShortestJobFirstProcessManager(ProcessManagerCreateInfo createInfo) {
     ShortestJobFirstProcessManager *sjf = ALLOCATE(ShortestJobFirstProcessManager, 1);
     sjf->manager.type = HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST;
     sjf->manager.createProc = SJFCreateProcess;
@@ -15,12 +14,11 @@ ProcessManager *createShortestJobFirstProcessManager(ProcessManagerCreateInfo cr
     sjf->manager.quantum = QUANTUM_NONE;
     sjf->manager.preemptionType = PREEMPTION_NONE;
 
-    return (ProcessManager *)sjf;
+    return (ProcessManager *) sjf;
 }
 
-PID32 SJFCreateProcess(void *self, ProcessCreateInfo info)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
+PID32 SJFCreateProcess(void *self, ProcessCreateInfo info) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
     SJFProcTable *table = manager->procTable;
 
     static PID32 nextPid = 1;
@@ -34,15 +32,13 @@ PID32 SJFCreateProcess(void *self, ProcessCreateInfo info)
     SJFEnqueueProcess(self, manager->procTable, pid);
 }
 
-PID32 SJFScheduleProcess(void *self, void *procTable)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
-    SJFProcTable *table = (SJFProcTable *)procTable;
+PID32 SJFScheduleProcess(void *self, void *procTable) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
+    SJFProcTable *table = (SJFProcTable *) procTable;
 
     const PID32 pid = SJFDequeueProcess(self, table);
 
-    if (pid != ERROR_PID)
-    {
+    if (pid != ERROR_PID) {
         Process *process = getFromProcessArray(&manager->manager.processes, pid);
         return pid;
     }
@@ -50,9 +46,8 @@ PID32 SJFScheduleProcess(void *self, void *procTable)
     return ERROR_PID;
 }
 
-void *SJFInitProcTable(void *self)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
+void *SJFInitProcTable(void *self) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
     SJFProcTable *table = ALLOCATE(SJFProcTable, 1);
 
     table->head = NULL;
@@ -61,64 +56,56 @@ void *SJFInitProcTable(void *self)
     initProcessArray(&manager->manager.processes);
 
     manager->procTable = table;
-    return (void *)table;
+    return (void *) table;
 }
 
-Process *SJFGetProcess(void *self, PID32 pid)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
+Process *SJFGetProcess(void *self, PID32 pid) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
     return getFromProcessArray(&manager->manager.processes, pid);
 }
 
-bool SJFHasProcess(void *self)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
+bool SJFHasProcess(void *self) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
     return manager->procTable->size > 0;
 }
 
-void SJFOnProcessDetach(void *self, CpuInfo info)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
-    removeFromProcessArray(&manager->manager.processes, info.currentProcessId);
+void SJFOnProcessDetach(void *self, CpuInfo info) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
+
+    if (getFromProcessArray(&manager->manager.processes, info.currentProcessId)->state == HL_PROC_TERMINATED) {
+        removeFromProcessArray(&manager->manager.processes, info.currentProcessId);
+    }
 }
 
-void SJFEnqueueProcess(void *self, SJFProcTable *table, PID32 pid)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
+void SJFEnqueueProcess(void *self, SJFProcTable *table, PID32 pid) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
     Process *process = getFromProcessArray(&manager->manager.processes, pid);
 
     SJFNode *node = ALLOCATE(SJFNode, 1);
     node->pid = pid;
     node->next = NULL;
 
-    if (table->head == NULL)
-    {
+    if (table->head == NULL) {
         table->head = node;
         table->tail = node;
-    }
-    else
-    {
+    } else {
         SJFNode *current = table->head;
         SJFNode *previous = NULL;
 
-        while (current != NULL && getProcessBurstTime(process) >= getProcessBurstTime(getFromProcessArray(&manager->manager.processes, current->pid)))
-        {
+        while (current != NULL && getProcessBurstTime(process) >= getProcessBurstTime(
+                   getFromProcessArray(&manager->manager.processes, current->pid))) {
             previous = current;
             current = current->next;
         }
 
-        if (previous == NULL)
-        {
+        if (previous == NULL) {
             node->next = table->head;
             table->head = node;
-        }
-        else
-        {
+        } else {
             previous->next = node;
             node->next = current;
 
-            if (current == NULL)
-            {
+            if (current == NULL) {
                 table->tail = node;
             }
         }
@@ -127,12 +114,10 @@ void SJFEnqueueProcess(void *self, SJFProcTable *table, PID32 pid)
     table->size++;
 }
 
-PID32 SJFDequeueProcess(void *self, SJFProcTable *table)
-{
-    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *)self;
+PID32 SJFDequeueProcess(void *self, SJFProcTable *table) {
+    ShortestJobFirstProcessManager *manager = (ShortestJobFirstProcessManager *) self;
 
-    if (!table->head)
-    {
+    if (!table->head) {
         fprintf(stderr, "Erro: Nenhum processo na fila FCFS.\n");
         return ERROR_PID;
     }
@@ -141,8 +126,7 @@ PID32 SJFDequeueProcess(void *self, SJFProcTable *table)
     PID32 pid = nodeToRemove->pid;
 
     table->head = nodeToRemove->next;
-    if (!table->head)
-    {
+    if (!table->head) {
         table->tail = NULL;
     }
 

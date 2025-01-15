@@ -33,6 +33,8 @@ Program *exampleProgram2()
     size_t count = 15;
     Byte *instructions = ALLOCATE(Byte, count);
 
+    static char currentProcID = '0';
+
     instructions[0] = HL_OP_PUSH;
     instructions[1] = 'P';
     instructions[2] = HL_OP_PUSH;
@@ -42,12 +44,14 @@ Program *exampleProgram2()
     instructions[6] = HL_OP_PUSH;
     instructions[7] = 'c';
     instructions[8] = HL_OP_PUSH;
-    instructions[9] = '1';
+    instructions[9] = currentProcID;
     instructions[10] = HL_OP_CREATE_PROCESS;
     instructions[11] = 1;
     instructions[12] = 0;
     instructions[13] = HL_PROC_PRIORITY_LOW;
     instructions[14] = HL_OP_HALT;
+
+    currentProcID = (currentProcID + 1) == ('9' + 1) ? '0' : (currentProcID + 1);
 
     ProgramCreateInfo createInfo = {
         .instructions = instructions,
@@ -104,6 +108,26 @@ Program *exampleProgram3()
     return createProgram(createInfo);
 }
 
+/*
+ *
+*   HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED,
+    HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
+    HL_PROC_MANAGER_TYPE_ROUND_ROBIN,
+    HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE,
+    HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES,
+    HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING,
+ *
+ *
+ */
+
+const char *enumToString[HL_PROC_MANAGER_TYPE_MAX] = {
+    "First come first served",
+    "Shortest Job First",
+    "Round Robin",
+    "Priority scheduling single queue",
+    "Priority scheduling multiple queues",
+    "Lotery scheduling"};
+
 int main(void)
 {
     ProgramInstantiationFn *programs = ALLOCATE(ProgramInstantiationFn, 3);
@@ -111,20 +135,19 @@ int main(void)
     programs[1] = exampleProgram2;
     programs[2] = exampleProgram3;
 
-    SystemCreateInfo createInfo = {
-        .procManager = HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
-        .programs = programs,
-    };
+    for (int i = HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED; i < 2; i++)
+    {
+        SystemCreateInfo createInfo = {
+            .procManager = i,
+            .programs = programs,
+        };
 
-    createSystemInstance(createInfo);
-
-    // createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
-
-    // Nao rodar, é recursivo
-    createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
-    // createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
-
-    runSystem();
+        createSystemInstance(createInfo);
+        createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
+        createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
+        runSystemWithLog(enumToString[createInfo.procManager.type], "../logs/test123.txt");
+        freeSystemInstance();
+    }
 
     return 0;
 }

@@ -16,4 +16,6 @@ file(GLOB SOURCE_FILES
     "${SOURCE_DIR}/*.c"
 )
 
-add_executable(HeliOS ${SOURCE_FILES})
+add_executable(HeliOS ${SOURCE_FILES}
+        src/process/process_info.h
+        src/process/process_log.h)

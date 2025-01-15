@@ -7,3 +7,4 @@
 #include <stdio.h>
 
 #define QUANTUM_NONE 0
+#define MAX_PROCESS_COUNT 32
