@@ -49,9 +49,6 @@ Program *exampleProgram2()
     instructions[13] = HL_PROC_PRIORITY_LOW;
     instructions[14] = HL_OP_HALT;
 
-    static int i = 0;
-    printf("%d\n", i++);
-
     ProgramCreateInfo createInfo = {
         .instructions = instructions,
         .count = count,
@@ -115,17 +112,17 @@ int main(void)
     programs[2] = exampleProgram3;
 
     SystemCreateInfo createInfo = {
-        .procManager = HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES,
+        .procManager = HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
         .programs = programs,
     };
 
     createSystemInstance(createInfo);
 
-    createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
+    // createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
 
     // Nao rodar, é recursivo
-    // createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
-    createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
+    createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
+    // createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
 
     runSystem();
 

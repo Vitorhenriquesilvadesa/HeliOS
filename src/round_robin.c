@@ -32,6 +32,7 @@ PID32 RRCreateProcess(void *self, ProcessCreateInfo info)
     appendProcessReferenceArray(&manager->manager.processes, process);
 
     RRNode *node = ALLOCATE(RRNode, 1);
+
     node->pid = pid;
     node->next = NULL;
 
@@ -50,6 +51,8 @@ PID32 RRCreateProcess(void *self, ProcessCreateInfo info)
     }
 
     table->size++;
+
+    RRNode *current = table->head;
 
     return pid;
 }
@@ -105,6 +108,7 @@ bool RRHasProcess(void *self)
 {
     RoundRobinProcessManager *manager = (RoundRobinProcessManager *)self;
     RRProcTable *table = manager->procTable;
+
     return table->size > 0;
 }
 
@@ -128,20 +132,20 @@ void RROnProcessDetach(void *self, CpuInfo info)
         process->stack[i] = info.stack[i];
     }
 
-    if (process->pc >= process->program->count)
+    if (process->state == HL_PROC_TERMINATED)
     {
         RRNode *current = manager->procTable->head;
         RRNode *prev = NULL;
-
         RRProcTable *rrtable = manager->procTable;
 
         do
         {
             if (current->pid == info.currentProcessId)
             {
-                if (current == rrtable->head && rrtable->size == 1)
+                if (rrtable->size == 1)
                 {
                     rrtable->head = NULL;
+                    rrtable->tail = NULL;
                     rrtable->current = NULL;
                 }
                 else
@@ -149,26 +153,34 @@ void RROnProcessDetach(void *self, CpuInfo info)
                     if (current == rrtable->head)
                     {
                         rrtable->head = current->next;
+                        rrtable->tail->next = rrtable->head;
+                    }
+                    if (current == rrtable->tail)
+                    {
+                        rrtable->tail = prev;
+                        rrtable->tail->next = rrtable->head;
+                    }
+                    if (rrtable->current == current)
+                    {
+                        rrtable->current = current->next;
                     }
 
                     if (prev)
                     {
                         prev->next = current->next;
                     }
-
-                    if (rrtable->current == current)
-                    {
-                        rrtable->current = current->next;
-                    }
                 }
 
-                free(current);
+                FREE(current);
                 rrtable->size--;
-                break;
+
+                removeFromProcessArray(&manager->manager.processes, info.currentProcessId);
+
+                return;
             }
 
             prev = current;
             current = current->next;
-        } while (current != rrtable->head);
+        } while (current != manager->procTable->head);
     }
 }

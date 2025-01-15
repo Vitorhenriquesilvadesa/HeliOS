@@ -129,6 +129,7 @@ void PSMQOnProcessDetach(void *self, CpuInfo info)
     if (process->state == HL_PROC_TERMINATED)
     {
         PSMQDequeueProcess(self, manager->table, process->priority, info.currentProcessId);
+        removeFromProcessArray(&manager->manager.processes, info.currentProcessId);
     }
 }
 

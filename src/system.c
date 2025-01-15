@@ -98,7 +98,6 @@ void runSystem()
                 }
                 decodeAndExecute(&cpu);
                 cycles++;
-                cpu.cycles++;
             }
         }
         else
