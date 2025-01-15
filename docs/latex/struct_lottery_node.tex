@@ -1,0 +1,53 @@
+\doxysection{Referência à estrutura Lottery\+Node}
+\hypertarget{struct_lottery_node}{}\label{struct_lottery_node}\index{LotteryNode@{LotteryNode}}
+
+
+{\ttfamily \#include $<$lottery\+\_\+scheduling.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{struct_lottery_node_a9152d3f7c6a0ba02d9c8367b8f01f5e1}{pid}}
+\begin{DoxyCompactList}\small\item\em Identificador do processo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_lottery_node_a4d95623eacbec80046464b319b347dbc}{tickets}}
+\begin{DoxyCompactList}\small\item\em Número de tickets do processo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lottery_node}{Lottery\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_lottery_node_add1a6f7cd5d1c5e0222fccb1c37098e6}{next}}
+\begin{DoxyCompactList}\small\item\em Próximo nó na lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_lottery_node_add1a6f7cd5d1c5e0222fccb1c37098e6}\index{LotteryNode@{LotteryNode}!next@{next}}
+\index{next@{next}!LotteryNode@{LotteryNode}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{struct_lottery_node_add1a6f7cd5d1c5e0222fccb1c37098e6} 
+struct \mbox{\hyperlink{struct_lottery_node}{Lottery\+Node}}\texorpdfstring{$\ast$}{*} Lottery\+Node\+::next}
+
+
+
+Próximo nó na lista. 
+
+\Hypertarget{struct_lottery_node_a9152d3f7c6a0ba02d9c8367b8f01f5e1}\index{LotteryNode@{LotteryNode}!pid@{pid}}
+\index{pid@{pid}!LotteryNode@{LotteryNode}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily \label{struct_lottery_node_a9152d3f7c6a0ba02d9c8367b8f01f5e1} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} Lottery\+Node\+::pid}
+
+
+
+Identificador do processo. 
+
+\Hypertarget{struct_lottery_node_a4d95623eacbec80046464b319b347dbc}\index{LotteryNode@{LotteryNode}!tickets@{tickets}}
+\index{tickets@{tickets}!LotteryNode@{LotteryNode}}
+\doxysubsubsection{\texorpdfstring{tickets}{tickets}}
+{\footnotesize\ttfamily \label{struct_lottery_node_a4d95623eacbec80046464b319b347dbc} 
+int Lottery\+Node\+::tickets}
+
+
+
+Número de tickets do processo. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{lottery__scheduling_8h}{lottery\+\_\+scheduling.\+h}}\end{DoxyCompactItemize}

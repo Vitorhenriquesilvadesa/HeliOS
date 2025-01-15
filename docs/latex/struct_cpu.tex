@@ -1,0 +1,89 @@
+\doxysection{Referência à estrutura Cpu}
+\hypertarget{struct_cpu}{}\label{struct_cpu}\index{Cpu@{Cpu}}
+
+
+{\ttfamily \#include $<$cpu.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_a3749a771d5668b5d80e81d84d738aef5}{accumulator}}
+\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_a8c70543bdd763147d339d0486e405967}{pc}}
+\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_a9b8081db6eeea68ab5dacaeb34eab58d}{sp}}
+\item 
+\mbox{\hyperlink{struct_program}{Program}} \mbox{\hyperlink{struct_cpu_ae212285d7d9e0d9a5479762ba1315570}{current\+Program}}
+\item 
+\mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{Cpu\+State}} \mbox{\hyperlink{struct_cpu_a8c43cae84f4939f9d8d460a3055fdb69}{state}}
+\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{struct_cpu_a43a4c176136f0c7b0dc171e866995509}{current\+Process\+Id}}
+\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_a66b318aff74ad92d71bffcc2303e7730}{registers}} \mbox{[}\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\+\_\+\+MAX}}\mbox{]}
+\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_a8dc3e57884eefad234ceeac0d7ccd845}{stack}} \mbox{[}\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\+\_\+\+MAX\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_cpu_ad2615cded69a320f7563f74fce09371d}{cycles}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_cpu_a3749a771d5668b5d80e81d84d738aef5}\index{Cpu@{Cpu}!accumulator@{accumulator}}
+\index{accumulator@{accumulator}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{accumulator}{accumulator}}
+{\footnotesize\ttfamily \label{struct_cpu_a3749a771d5668b5d80e81d84d738aef5} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+::accumulator}
+
+\Hypertarget{struct_cpu_a43a4c176136f0c7b0dc171e866995509}\index{Cpu@{Cpu}!currentProcessId@{currentProcessId}}
+\index{currentProcessId@{currentProcessId}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{currentProcessId}{currentProcessId}}
+{\footnotesize\ttfamily \label{struct_cpu_a43a4c176136f0c7b0dc171e866995509} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} Cpu\+::current\+Process\+Id}
+
+\Hypertarget{struct_cpu_ae212285d7d9e0d9a5479762ba1315570}\index{Cpu@{Cpu}!currentProgram@{currentProgram}}
+\index{currentProgram@{currentProgram}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{currentProgram}{currentProgram}}
+{\footnotesize\ttfamily \label{struct_cpu_ae212285d7d9e0d9a5479762ba1315570} 
+\mbox{\hyperlink{struct_program}{Program}} Cpu\+::current\+Program}
+
+\Hypertarget{struct_cpu_ad2615cded69a320f7563f74fce09371d}\index{Cpu@{Cpu}!cycles@{cycles}}
+\index{cycles@{cycles}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{cycles}{cycles}}
+{\footnotesize\ttfamily \label{struct_cpu_ad2615cded69a320f7563f74fce09371d} 
+uint32\+\_\+t Cpu\+::cycles}
+
+\Hypertarget{struct_cpu_a8c70543bdd763147d339d0486e405967}\index{Cpu@{Cpu}!pc@{pc}}
+\index{pc@{pc}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily \label{struct_cpu_a8c70543bdd763147d339d0486e405967} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+::pc}
+
+\Hypertarget{struct_cpu_a66b318aff74ad92d71bffcc2303e7730}\index{Cpu@{Cpu}!registers@{registers}}
+\index{registers@{registers}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{registers}{registers}}
+{\footnotesize\ttfamily \label{struct_cpu_a66b318aff74ad92d71bffcc2303e7730} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+::registers\mbox{[}\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\+\_\+\+MAX}}\mbox{]}}
+
+\Hypertarget{struct_cpu_a9b8081db6eeea68ab5dacaeb34eab58d}\index{Cpu@{Cpu}!sp@{sp}}
+\index{sp@{sp}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{sp}{sp}}
+{\footnotesize\ttfamily \label{struct_cpu_a9b8081db6eeea68ab5dacaeb34eab58d} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+::sp}
+
+\Hypertarget{struct_cpu_a8dc3e57884eefad234ceeac0d7ccd845}\index{Cpu@{Cpu}!stack@{stack}}
+\index{stack@{stack}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily \label{struct_cpu_a8dc3e57884eefad234ceeac0d7ccd845} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+::stack\mbox{[}\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\+\_\+\+MAX\+\_\+\+SIZE}}\mbox{]}}
+
+\Hypertarget{struct_cpu_a8c43cae84f4939f9d8d460a3055fdb69}\index{Cpu@{Cpu}!state@{state}}
+\index{state@{state}!Cpu@{Cpu}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{struct_cpu_a8c43cae84f4939f9d8d460a3055fdb69} 
+\mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{Cpu\+State}} Cpu\+::state}
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/cpu/\mbox{\hyperlink{cpu_8h}{cpu.\+h}}\end{DoxyCompactItemize}

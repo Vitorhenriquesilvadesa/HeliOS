@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Código-Fonte de src/process/lottery_scheduling.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('lottery__scheduling_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lottery_scheduling.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lottery__scheduling_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef HL_LOTTERY_SCHEDULING_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define HL_LOTTERY_SCHEDULING_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="process__manager_8h.html">process_manager.h</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="lottery__scheduling_8h.html#afcf9434573e0f785ba7db8a24655f059">   18</a></span><span class="preprocessor">#define LOTTERY_QUANTUM 1</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_lottery_node.html">   27</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_lottery_node.html">LotteryNode</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_lottery_node.html#a9152d3f7c6a0ba02d9c8367b8f01f5e1">   29</a></span>    <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_lottery_node.html#a9152d3f7c6a0ba02d9c8367b8f01f5e1">pid</a>;                </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_lottery_node.html#a4d95623eacbec80046464b319b347dbc">   30</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_lottery_node.html#a4d95623eacbec80046464b319b347dbc">tickets</a>;              </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_lottery_node.html#add1a6f7cd5d1c5e0222fccb1c37098e6">   31</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_lottery_node.html">LotteryNode</a> *<a class="code hl_variable" href="struct_lottery_node.html#add1a6f7cd5d1c5e0222fccb1c37098e6">next</a>; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="lottery__scheduling_8h.html#ab07f79dd3d8365bba4a37be380cf2847">   32</a></span>} <a class="code hl_struct" href="struct_lottery_node.html">LotteryNode</a>;</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_lottery_proc_table.html">   41</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_lottery_proc_table.html#abc3880bd546f2cc39ca604710c8cbd7a">   43</a></span>    <a class="code hl_struct" href="struct_lottery_node.html">LotteryNode</a> *<a class="code hl_variable" href="struct_lottery_proc_table.html#abc3880bd546f2cc39ca604710c8cbd7a">head</a>; </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_lottery_proc_table.html#abd6271244ed71dda62c7e85fd17cd02e">   44</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_lottery_proc_table.html#abd6271244ed71dda62c7e85fd17cd02e">size</a>;       </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_lottery_proc_table.html#aae2b7e8d5f0644e9d614ca64d846bcab">   45</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_lottery_proc_table.html#aae2b7e8d5f0644e9d614ca64d846bcab">totalTickets</a>;  </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <a class="code hl_struct" href="struct_lottery_proc_table.html">LotteryProcTable</a>;</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="};">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_lottery_scheduling_process_manager.html">   54</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_lottery_scheduling_process_manager.html#aebe4b431fd888e9d39bc0155489897ac">   56</a></span>    <a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a> <a class="code hl_variable" href="struct_lottery_scheduling_process_manager.html#aebe4b431fd888e9d39bc0155489897ac">manager</a>;      </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_lottery_scheduling_process_manager.html#af98da88e6b18f9a625c10e00e9f4a418">   57</a></span>    <a class="code hl_struct" href="struct_lottery_proc_table.html">LotteryProcTable</a> *<a class="code hl_variable" href="struct_lottery_scheduling_process_manager.html#af98da88e6b18f9a625c10e00e9f4a418">procTable</a>; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>} <a class="code hl_struct" href="struct_lottery_scheduling_process_manager.html">LotterySchedulingProcessManager</a>;</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a> *<a class="code hl_function" href="lottery__scheduling_8h.html#a82a3a8be9e80fb2d924e95e713322638">createLotterySchedulingProcessManager</a>(<a class="code hl_struct" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="lottery__scheduling_8h.html#aa238f9230e4838e72f559ca53b52f705">LSCreateProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_process_create_info.html">ProcessCreateInfo</a> info);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="lottery__scheduling_8h.html#a0042cbd8f5c119d0dae88062b998695d">LSScheduleProcess</a>(<span class="keywordtype">void</span> *self, <span class="keywordtype">void</span> *procTable);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keywordtype">void</span> *<a class="code hl_function" href="lottery__scheduling_8h.html#aa58999064d3f067ea76368e02c5fe527">LSInitProcTable</a>(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><a class="code hl_struct" href="struct_process.html">Process</a> *<a class="code hl_function" href="lottery__scheduling_8h.html#a5818a70957d170f6aa7ced2582025267">LSGetProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_lottery_node.html#a9152d3f7c6a0ba02d9c8367b8f01f5e1">pid</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">bool</span> <a class="code hl_function" href="lottery__scheduling_8h.html#ab2883b820b5c0882cd94972507fad1e7">LSHasProcess</a>(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> <a class="code hl_function" href="lottery__scheduling_8h.html#a2b44da10828ab9f746a9213f6bbdb0ce">LSOnProcessDetach</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_cpu_info.html">CpuInfo</a> info);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keywordtype">void</span> <a class="code hl_function" href="lottery__scheduling_8h.html#a34e229ec16734c39862d46ea68f2f2c8">LSEnqueueProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_lottery_proc_table.html">LotteryProcTable</a> *table, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_lottery_node.html#a9152d3f7c6a0ba02d9c8367b8f01f5e1">pid</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_lottery_node.html#a4d95623eacbec80046464b319b347dbc">tickets</a>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="lottery__scheduling_8h.html#a89f276443314474363cddec4d543d2fb">LSDequeueProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_lottery_proc_table.html">LotteryProcTable</a> *table);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="alottery__scheduling_8h_html_a0042cbd8f5c119d0dae88062b998695d"><div class="ttname"><a href="lottery__scheduling_8h.html#a0042cbd8f5c119d0dae88062b998695d">LSScheduleProcess</a></div><div class="ttdeci">PID32 LSScheduleProcess(void *self, void *procTable)</div><div class="ttdoc">Agenda o próximo processo para execução com base nos tickets de loteria.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:146</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_a2b44da10828ab9f746a9213f6bbdb0ce"><div class="ttname"><a href="lottery__scheduling_8h.html#a2b44da10828ab9f746a9213f6bbdb0ce">LSOnProcessDetach</a></div><div class="ttdeci">void LSOnProcessDetach(void *self, CpuInfo info)</div><div class="ttdoc">Lida com a remoção de um processo da CPU e atualiza o gerenciador Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:50</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_a34e229ec16734c39862d46ea68f2f2c8"><div class="ttname"><a href="lottery__scheduling_8h.html#a34e229ec16734c39862d46ea68f2f2c8">LSEnqueueProcess</a></div><div class="ttdeci">void LSEnqueueProcess(void *self, LotteryProcTable *table, PID32 pid, int tickets)</div><div class="ttdoc">Adiciona um processo à tabela de processos do Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:173</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_a5818a70957d170f6aa7ced2582025267"><div class="ttname"><a href="lottery__scheduling_8h.html#a5818a70957d170f6aa7ced2582025267">LSGetProcess</a></div><div class="ttdeci">Process * LSGetProcess(void *self, PID32 pid)</div><div class="ttdoc">Obtém um processo na tabela de processos pelo PID.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:38</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_a82a3a8be9e80fb2d924e95e713322638"><div class="ttname"><a href="lottery__scheduling_8h.html#a82a3a8be9e80fb2d924e95e713322638">createLotterySchedulingProcessManager</a></div><div class="ttdeci">ProcessManager * createLotterySchedulingProcessManager(ProcessManagerCreateInfo createInfo)</div><div class="ttdoc">Cria um gerenciador de processos Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:5</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_a89f276443314474363cddec4d543d2fb"><div class="ttname"><a href="lottery__scheduling_8h.html#a89f276443314474363cddec4d543d2fb">LSDequeueProcess</a></div><div class="ttdeci">PID32 LSDequeueProcess(void *self, LotteryProcTable *table)</div><div class="ttdoc">Remove o próximo processo da tabela de processos do Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:185</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_aa238f9230e4838e72f559ca53b52f705"><div class="ttname"><a href="lottery__scheduling_8h.html#aa238f9230e4838e72f559ca53b52f705">LSCreateProcess</a></div><div class="ttdeci">PID32 LSCreateProcess(void *self, ProcessCreateInfo info)</div><div class="ttdoc">Cria um novo processo e o adiciona ao gerenciador Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:101</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_aa58999064d3f067ea76368e02c5fe527"><div class="ttname"><a href="lottery__scheduling_8h.html#aa58999064d3f067ea76368e02c5fe527">LSInitProcTable</a></div><div class="ttdeci">void * LSInitProcTable(void *self)</div><div class="ttdoc">Inicializa a tabela de processos do Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:24</div></div>
+<div class="ttc" id="alottery__scheduling_8h_html_ab2883b820b5c0882cd94972507fad1e7"><div class="ttname"><a href="lottery__scheduling_8h.html#ab2883b820b5c0882cd94972507fad1e7">LSHasProcess</a></div><div class="ttdeci">bool LSHasProcess(void *self)</div><div class="ttdoc">Verifica se há processos na tabela de processos do Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.c:44</div></div>
+<div class="ttc" id="aprocess__manager_8h_html"><div class="ttname"><a href="process__manager_8h.html">process_manager.h</a></div></div>
+<div class="ttc" id="astruct_cpu_info_html"><div class="ttname"><a href="struct_cpu_info.html">CpuInfo</a></div><div class="ttdoc">Estrutura que contém informações resumidas sobre a CPU.</div><div class="ttdef"><b>Definição</b> cpu.h:59</div></div>
+<div class="ttc" id="astruct_lottery_node_html"><div class="ttname"><a href="struct_lottery_node.html">LotteryNode</a></div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:28</div></div>
+<div class="ttc" id="astruct_lottery_node_html_a4d95623eacbec80046464b319b347dbc"><div class="ttname"><a href="struct_lottery_node.html#a4d95623eacbec80046464b319b347dbc">LotteryNode::tickets</a></div><div class="ttdeci">int tickets</div><div class="ttdoc">Número de tickets do processo.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:30</div></div>
+<div class="ttc" id="astruct_lottery_node_html_a9152d3f7c6a0ba02d9c8367b8f01f5e1"><div class="ttname"><a href="struct_lottery_node.html#a9152d3f7c6a0ba02d9c8367b8f01f5e1">LotteryNode::pid</a></div><div class="ttdeci">PID32 pid</div><div class="ttdoc">Identificador do processo.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:29</div></div>
+<div class="ttc" id="astruct_lottery_node_html_add1a6f7cd5d1c5e0222fccb1c37098e6"><div class="ttname"><a href="struct_lottery_node.html#add1a6f7cd5d1c5e0222fccb1c37098e6">LotteryNode::next</a></div><div class="ttdeci">struct LotteryNode * next</div><div class="ttdoc">Próximo nó na lista.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:31</div></div>
+<div class="ttc" id="astruct_lottery_proc_table_html"><div class="ttname"><a href="struct_lottery_proc_table.html">LotteryProcTable</a></div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:42</div></div>
+<div class="ttc" id="astruct_lottery_proc_table_html_aae2b7e8d5f0644e9d614ca64d846bcab"><div class="ttname"><a href="struct_lottery_proc_table.html#aae2b7e8d5f0644e9d614ca64d846bcab">LotteryProcTable::totalTickets</a></div><div class="ttdeci">int totalTickets</div><div class="ttdoc">Soma total de tickets na tabela.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:45</div></div>
+<div class="ttc" id="astruct_lottery_proc_table_html_abc3880bd546f2cc39ca604710c8cbd7a"><div class="ttname"><a href="struct_lottery_proc_table.html#abc3880bd546f2cc39ca604710c8cbd7a">LotteryProcTable::head</a></div><div class="ttdeci">LotteryNode * head</div><div class="ttdoc">Início da lista de processos.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:43</div></div>
+<div class="ttc" id="astruct_lottery_proc_table_html_abd6271244ed71dda62c7e85fd17cd02e"><div class="ttname"><a href="struct_lottery_proc_table.html#abd6271244ed71dda62c7e85fd17cd02e">LotteryProcTable::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Número de processos na tabela.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:44</div></div>
+<div class="ttc" id="astruct_lottery_scheduling_process_manager_html"><div class="ttname"><a href="struct_lottery_scheduling_process_manager.html">LotterySchedulingProcessManager</a></div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:55</div></div>
+<div class="ttc" id="astruct_lottery_scheduling_process_manager_html_aebe4b431fd888e9d39bc0155489897ac"><div class="ttname"><a href="struct_lottery_scheduling_process_manager.html#aebe4b431fd888e9d39bc0155489897ac">LotterySchedulingProcessManager::manager</a></div><div class="ttdeci">ProcessManager manager</div><div class="ttdoc">Gerenciador de processos base.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:56</div></div>
+<div class="ttc" id="astruct_lottery_scheduling_process_manager_html_af98da88e6b18f9a625c10e00e9f4a418"><div class="ttname"><a href="struct_lottery_scheduling_process_manager.html#af98da88e6b18f9a625c10e00e9f4a418">LotterySchedulingProcessManager::procTable</a></div><div class="ttdeci">LotteryProcTable * procTable</div><div class="ttdoc">Tabela de processos do Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> lottery_scheduling.h:57</div></div>
+<div class="ttc" id="astruct_process_create_info_html"><div class="ttname"><a href="struct_process_create_info.html">ProcessCreateInfo</a></div><div class="ttdoc">Estrutura de informações para criação de um novo processo.</div><div class="ttdef"><b>Definição</b> process.h:77</div></div>
+<div class="ttc" id="astruct_process_html"><div class="ttname"><a href="struct_process.html">Process</a></div><div class="ttdoc">Estrutura que representa um processo no sistema.</div><div class="ttdef"><b>Definição</b> process.h:56</div></div>
+<div class="ttc" id="astruct_process_manager_create_info_html"><div class="ttname"><a href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></div><div class="ttdoc">Estrutura com informações para criar um gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:123</div></div>
+<div class="ttc" id="astruct_process_manager_html"><div class="ttname"><a href="struct_process_manager.html">ProcessManager</a></div><div class="ttdoc">Estrutura do gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:140</div></div>
+<div class="ttc" id="asystem__types_8h_html_aade98a87136cf030add759c3cbf7e385"><div class="ttname"><a href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></div><div class="ttdeci">int PID32</div><div class="ttdoc">Representa um identificador único para processos no sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="lottery__scheduling_8h.html">lottery_scheduling.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+\doxysection{cpu.\+h}
+\hypertarget{cpu_8h_source}{}\label{cpu_8h_source}\index{src/cpu/cpu.h@{src/cpu/cpu.h}}
+\mbox{\hyperlink{cpu_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ CPU\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ CPU\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{instruction_8h}{instruction.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{program_8h}{program.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{system__types_8h}{system\_types.h}}>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62}{CPU\_RUNNING}},\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8}{CPU\_IDLE}},\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684}{CPU\_HALTED}},\ \ }
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{CpuState}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_a3749a771d5668b5d80e81d84d738aef5}{accumulator}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_a8c70543bdd763147d339d0486e405967}{pc}};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_a9b8081db6eeea68ab5dacaeb34eab58d}{sp}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_program}{Program}}\ \mbox{\hyperlink{struct_cpu_ae212285d7d9e0d9a5479762ba1315570}{currentProgram}};}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{CpuState}}\ \mbox{\hyperlink{struct_cpu_a8c43cae84f4939f9d8d460a3055fdb69}{state}};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_cpu_a43a4c176136f0c7b0dc171e866995509}{currentProcessId}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_a66b318aff74ad92d71bffcc2303e7730}{registers}}[\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\_MAX}}];}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_a8dc3e57884eefad234ceeac0d7ccd845}{stack}}[\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\_MAX\_SIZE}}];}
+\DoxyCodeLine{00050\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_cpu_ad2615cded69a320f7563f74fce09371d}{cycles}};}
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{struct_cpu}{Cpu}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cpu_info}{CpuInfo}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_info_adc873b5ca7a094c701403b3706bb0adf}{accumulator}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_info_a9a77246a208cb6f7c20fd03d3e0255d7}{pc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_info_a1da078f888c1b2c1cf5c1a119069466b}{sp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_program}{Program}}\ \mbox{\hyperlink{struct_cpu_info_a3c95c6344f41d923393e7a67a83c4041}{currentProgram}};\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{CpuState}}\ \mbox{\hyperlink{struct_cpu_info_aaae736127485331ebfbe4a5661a54ec2}{state}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_cpu_info_a97a3f5a52499615deb043f0151b4496e}{currentProcessId}};\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_info_a4d7f689b64369f115c51363c1d1fcd6e}{registers}}[\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\_MAX}}];\ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_cpu_info_aa52b152253773d6e492866470ab85120}{stack}}[\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\_MAX\_SIZE}}];\ }
+\DoxyCodeLine{00068\ \}\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_ab16eb50538eb67baacf22f84f3ae9b54}{initCpu}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_af2962dd52c472540bb7ff458c24d7f71}{attachProcess}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{struct_process}{Process}}\ *process);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ \mbox{\hyperlink{cpu_8h_a17c923bd699264dee85f780038f8256f}{detachProcess}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_ac80c4196956a8969ae561488e85141ec}{decodeAndExecute}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{cpu_8h_adae019a5e72f76aa04eeb3011e3e0d6b}{readByte}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a2b0f3d709f9e2812185ed3bd545ce69d}{cpuPush}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \textcolor{keywordtype}{int}\ constant);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a4535eb7ed4659ce884fbb0db4ed04d26}{cpuPop}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_afd18d932f4becc5106ed37ddb038711a}{cpuAdd}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg1,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg2);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00140\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a0398d31a8d39f03f3e04d1252ffd44f0}{cpuSub}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg1,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg2);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_adae4f773a48ad29c50fe023f21fa7a4b}{cpuMul}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg1,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg2);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00158\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_af04d2e382910249ae9e25c987e98448f}{cpuDiv}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg1,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg2);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00167\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_af9898acf0facf8ab33ac6dc420a1c4c0}{cpuMovConst}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ value,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg1);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00175\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a073d4b91dcf76b81f9a8ef0644739d2c}{cpuMovAcc}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg1);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00182\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_aad9472d00b7cf1f86ce5259d2bbb5666}{cpuJump}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00192\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_afbf772384507f4049127958ec70e48aa}{cpuJumpIfEqual}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ value,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ index);}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a77a4e7c0617a41fa786abe2f3b600f8a}{cpuJumpIfNotEqual}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ reg,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ value,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ index);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00209\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_ac8b145dfabbe03de1a93e72f9ebd78c9}{cpuPrint}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a633e070ade1dd5b98e7add42b14cc22e}{cpuHalt}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{cpu_8h_a92b2940cee2645fdd0cee13317209ad4}{cpuCreateProcess}}(\mbox{\hyperlink{struct_cpu}{Cpu}}\ *cpu,\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ priority,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ nameIndex,\ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ programIndex);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

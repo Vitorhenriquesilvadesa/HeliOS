@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Código-Fonte de src/process/process.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('process_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">process.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="process_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef HELIOS_PROCESS_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define HELIOS_PROCESS_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="instruction_8h.html">instruction.h</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="system__types_8h.html">system_types.h</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="program_8h.html">program.h</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="process_8h.html#a02196e5b6c5efa67986daed4fb1c6968">   19</a></span><span class="preprocessor">#define ERROR_PID -1 </span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="process_8h.html#a373a58178f69d5e3e1de7516d105675e">   26</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874">   28</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874">HL_PROC_READY</a>,      </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf">   29</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf">HL_PROC_EXECUTING</a>,  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc">   30</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc">HL_PROC_WAITING</a>,    </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842">   31</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842">HL_PROC_TERMINATED</a>, </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <a class="code hl_enumeration" href="process_8h.html#a373a58178f69d5e3e1de7516d105675e">ProcessState</a>;</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">   39</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e">   41</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e">HL_PROC_PRIORITY_DEFAULT</a> = 0, </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b">   42</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b">HL_PROC_PRIORITY_VERY_LOW</a>,    </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866">   43</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866">HL_PROC_PRIORITY_LOW</a>,         </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98">   44</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98">HL_PROC_PRIORITY_MEDIUM</a>,      </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba">   45</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba">HL_PROC_PRIORITY_HIGH</a>,        </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7">   46</a></span>    <a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7">HL_PROC_PRIORITY_VERY_HIGH</a>,   </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="process_8h.html#a0deaeadfd222b25583c294a4060e3d15">   47</a></span>} <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a>;</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="};">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="struct_process.html">   55</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_process.html">Process</a></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_process.html#a8292a7a2862fd36eea9c9a6fb1713702">   57</a></span>    <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_process.html#a8292a7a2862fd36eea9c9a6fb1713702">pid</a>;                  </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_process.html#a2c5d676de5fbae15ca838c4056195912">   58</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_process.html#a2c5d676de5fbae15ca838c4056195912">name</a>;           </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_process.html#a91bdc8681da6eececcd3f54225a57331">   59</a></span>    uint32_t <a class="code hl_variable" href="struct_process.html#a91bdc8681da6eececcd3f54225a57331">arrivalTime</a>;       </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_process.html#ac4d0f1edd605210431212c041a5c7c1e">   60</a></span>    uint32_t <a class="code hl_variable" href="struct_process.html#ac4d0f1edd605210431212c041a5c7c1e">burstTime</a>;         </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_process.html#af87104e4190cb92aa510abc8647b318f">   61</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_process.html#af87104e4190cb92aa510abc8647b318f">priority</a>;               </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_process.html#ad2afbc8fc6390f95e5bb17773ccc1e14">   62</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_process.html#ad2afbc8fc6390f95e5bb17773ccc1e14">pc</a>;                     </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_process.html#a39569681eea62f778f0b085834b12d37">   63</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_process.html#a39569681eea62f778f0b085834b12d37">sp</a>;                     </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_process.html#acfc1e85f59c265607558118efe0be185">   64</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_process.html#acfc1e85f59c265607558118efe0be185">accumulator</a>;            </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_process.html#a70fd11270da0393a2f895affec660647">   65</a></span>    <a class="code hl_struct" href="struct_program.html">Program</a> *<a class="code hl_variable" href="struct_process.html#a70fd11270da0393a2f895affec660647">program</a>;           </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="struct_process.html#a51874bc28aba2bd6f273df2955152472">   66</a></span>    <a class="code hl_enumeration" href="process_8h.html#a373a58178f69d5e3e1de7516d105675e">ProcessState</a> <a class="code hl_variable" href="struct_process.html#a51874bc28aba2bd6f273df2955152472">state</a>;         </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="struct_process.html#ad5201bc2f06e61c61f18094aa05ebc0e">   67</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> <a class="code hl_variable" href="struct_process.html#ad5201bc2f06e61c61f18094aa05ebc0e">stack</a>[<a class="code hl_define" href="instruction_8h.html#a453f07a53194584fd2e0bb720c814c25">STACK_MAX_SIZE</a>]; </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="struct_process.html#aed5ec596d7f8a2880e5fc180382c5b20">   68</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> <a class="code hl_variable" href="struct_process.html#aed5ec596d7f8a2880e5fc180382c5b20">registers</a>[<a class="code hl_enumvalue" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33">REG_MAX</a>];    </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="process_8h.html#a3b5b0413545e0d4ff600b0a7203e3086">   69</a></span>} <a class="code hl_struct" href="struct_process.html">Process</a>;</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_process_create_info.html">   76</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_process_create_info.html#a1dd09a9bb26c69dd2d0cb311360a2ce7">   78</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_process_create_info.html#a1dd09a9bb26c69dd2d0cb311360a2ce7">name</a>;         </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_process_create_info.html#a078dbdedf26cbef6c9639e90866dd047">   79</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> <a class="code hl_variable" href="struct_process_create_info.html#a078dbdedf26cbef6c9639e90866dd047">arrivalTime</a>;         </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="struct_process_create_info.html#a86a3e21511863b8623f51bf68c21793d">   80</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_process_create_info.html#a86a3e21511863b8623f51bf68c21793d">burstTime</a>;            </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_process_create_info.html#a5742285ef9f00ac382941be0e082bf52">   81</a></span>    <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> <a class="code hl_variable" href="struct_process_create_info.html#a5742285ef9f00ac382941be0e082bf52">priority</a>; </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_process_create_info.html#a3c3a4c1801eed8f52787a5e1f12a20ad">   82</a></span>    <a class="code hl_struct" href="struct_program.html">Program</a> *<a class="code hl_variable" href="struct_process_create_info.html#a3c3a4c1801eed8f52787a5e1f12a20ad">program</a>;         </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>} <a class="code hl_struct" href="struct_process_create_info.html">ProcessCreateInfo</a>;</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="};">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_process_array.html">   91</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="struct_process_array.html#ad3807d3fab8bde2e927806253e1f60ad">   93</a></span>    <a class="code hl_struct" href="struct_process.html">Process</a> **<a class="code hl_variable" href="struct_process_array.html#ad3807d3fab8bde2e927806253e1f60ad">processes</a>; </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="struct_process_array.html#acb9dd95ec44001bdffae152fbf0874ef">   94</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_process_array.html#acb9dd95ec44001bdffae152fbf0874ef">length</a>;       </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="struct_process_array.html#ae293864ee072ca406894611b92b8f07a">   95</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_process_array.html#ae293864ee072ca406894611b92b8f07a">capacity</a>;     </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>} <a class="code hl_struct" href="struct_process_array.html">ProcessArray</a>;</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><a class="code hl_struct" href="struct_process.html">Process</a> *<a class="code hl_function" href="process_8h.html#af90fc45878ff6db75fcd0dd57f11e448">newProcess</a>(<a class="code hl_struct" href="struct_process_create_info.html">ProcessCreateInfo</a> info);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> <a class="code hl_function" href="process_8h.html#a537199f3ea4032fe90ca168a6fbff616">initProcessArray</a>(<a class="code hl_struct" href="struct_process_array.html">ProcessArray</a> *array);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">void</span> <a class="code hl_function" href="process_8h.html#a2a65ab54256eea09530645363c1c6aff">appendProcessReferenceArray</a>(<a class="code hl_struct" href="struct_process_array.html">ProcessArray</a> *array, <a class="code hl_struct" href="struct_process.html">Process</a> *process);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keywordtype">void</span> <a class="code hl_function" href="process_8h.html#aa2a0d56d4dafd911e882faf1e5569273">removeFromProcessArray</a>(<a class="code hl_struct" href="struct_process_array.html">ProcessArray</a> *array, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><a class="code hl_struct" href="struct_process.html">Process</a> *<a class="code hl_function" href="process_8h.html#a14932d9cae3ab67e29d219b39fc98c9e">getFromProcessArray</a>(<a class="code hl_struct" href="struct_process_array.html">ProcessArray</a> *array, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keywordtype">bool</span> <a class="code hl_function" href="process_8h.html#af72c8b19a5f3c4fd46c4b5b73f63fa1f">hasProcess</a>(<a class="code hl_struct" href="struct_process_array.html">ProcessArray</a> *array);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><a class="code hl_typedef" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> <a class="code hl_function" href="process_8h.html#a85f9c4efa7c3acce55310de1dee3c547">getProcessBurstTime</a>(<a class="code hl_struct" href="struct_process.html">Process</a> *process);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ainstruction_8h_html"><div class="ttname"><a href="instruction_8h.html">instruction.h</a></div><div class="ttdoc">Definições de instruções e registradores para o sistema virtual HeliOS.</div></div>
+<div class="ttc" id="ainstruction_8h_html_a453f07a53194584fd2e0bb720c814c25"><div class="ttname"><a href="instruction_8h.html#a453f07a53194584fd2e0bb720c814c25">STACK_MAX_SIZE</a></div><div class="ttdeci">#define STACK_MAX_SIZE</div><div class="ttdoc">Tamanho máximo da pilha do sistema.</div><div class="ttdef"><b>Definição</b> instruction.h:14</div></div>
+<div class="ttc" id="ainstruction_8h_html_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33"><div class="ttname"><a href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33">REG_MAX</a></div><div class="ttdeci">@ REG_MAX</div><div class="ttdoc">Limite superior para registradores válidos.</div><div class="ttdef"><b>Definição</b> instruction.h:58</div></div>
+<div class="ttc" id="aprocess_8h_html_a14932d9cae3ab67e29d219b39fc98c9e"><div class="ttname"><a href="process_8h.html#a14932d9cae3ab67e29d219b39fc98c9e">getFromProcessArray</a></div><div class="ttdeci">Process * getFromProcessArray(ProcessArray *array, PID32 pid)</div><div class="ttdoc">Função para obter um processo do array de processos.</div><div class="ttdef"><b>Definição</b> process.c:58</div></div>
+<div class="ttc" id="aprocess_8h_html_a2a65ab54256eea09530645363c1c6aff"><div class="ttname"><a href="process_8h.html#a2a65ab54256eea09530645363c1c6aff">appendProcessReferenceArray</a></div><div class="ttdeci">void appendProcessReferenceArray(ProcessArray *array, Process *process)</div><div class="ttdoc">Função para adicionar um processo ao array de processos.</div><div class="ttdef"><b>Definição</b> process.c:34</div></div>
+<div class="ttc" id="aprocess_8h_html_a373a58178f69d5e3e1de7516d105675e"><div class="ttname"><a href="process_8h.html#a373a58178f69d5e3e1de7516d105675e">ProcessState</a></div><div class="ttdeci">ProcessState</div><div class="ttdoc">Estados possíveis de um processo.</div><div class="ttdef"><b>Definição</b> process.h:27</div></div>
+<div class="ttc" id="aprocess_8h_html_a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842"><div class="ttname"><a href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842">HL_PROC_TERMINATED</a></div><div class="ttdeci">@ HL_PROC_TERMINATED</div><div class="ttdoc">Processo terminou sua execução.</div><div class="ttdef"><b>Definição</b> process.h:31</div></div>
+<div class="ttc" id="aprocess_8h_html_a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf"><div class="ttname"><a href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf">HL_PROC_EXECUTING</a></div><div class="ttdeci">@ HL_PROC_EXECUTING</div><div class="ttdoc">Processo está em execução.</div><div class="ttdef"><b>Definição</b> process.h:29</div></div>
+<div class="ttc" id="aprocess_8h_html_a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc"><div class="ttname"><a href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc">HL_PROC_WAITING</a></div><div class="ttdeci">@ HL_PROC_WAITING</div><div class="ttdoc">Processo está aguardando algum recurso ou evento.</div><div class="ttdef"><b>Definição</b> process.h:30</div></div>
+<div class="ttc" id="aprocess_8h_html_a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874"><div class="ttname"><a href="process_8h.html#a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874">HL_PROC_READY</a></div><div class="ttdeci">@ HL_PROC_READY</div><div class="ttdoc">Processo está pronto para ser executado.</div><div class="ttdef"><b>Definição</b> process.h:28</div></div>
+<div class="ttc" id="aprocess_8h_html_a537199f3ea4032fe90ca168a6fbff616"><div class="ttname"><a href="process_8h.html#a537199f3ea4032fe90ca168a6fbff616">initProcessArray</a></div><div class="ttdeci">void initProcessArray(ProcessArray *array)</div><div class="ttdoc">Função para inicializar um array de processos.</div><div class="ttdef"><b>Definição</b> process.c:27</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></div><div class="ttdeci">ProcessPriority</div><div class="ttdoc">Prioridades de um processo.</div><div class="ttdef"><b>Definição</b> process.h:40</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba">HL_PROC_PRIORITY_HIGH</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_HIGH</div><div class="ttdoc">Prioridade alta.</div><div class="ttdef"><b>Definição</b> process.h:45</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e">HL_PROC_PRIORITY_DEFAULT</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_DEFAULT</div><div class="ttdoc">Prioridade padrão.</div><div class="ttdef"><b>Definição</b> process.h:41</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b">HL_PROC_PRIORITY_VERY_LOW</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_VERY_LOW</div><div class="ttdoc">Prioridade muito baixa.</div><div class="ttdef"><b>Definição</b> process.h:42</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7">HL_PROC_PRIORITY_VERY_HIGH</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_VERY_HIGH</div><div class="ttdoc">Prioridade muito alta.</div><div class="ttdef"><b>Definição</b> process.h:46</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98">HL_PROC_PRIORITY_MEDIUM</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_MEDIUM</div><div class="ttdoc">Prioridade média.</div><div class="ttdef"><b>Definição</b> process.h:44</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866">HL_PROC_PRIORITY_LOW</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_LOW</div><div class="ttdoc">Prioridade baixa.</div><div class="ttdef"><b>Definição</b> process.h:43</div></div>
+<div class="ttc" id="aprocess_8h_html_a85f9c4efa7c3acce55310de1dee3c547"><div class="ttname"><a href="process_8h.html#a85f9c4efa7c3acce55310de1dee3c547">getProcessBurstTime</a></div><div class="ttdeci">Time getProcessBurstTime(Process *process)</div><div class="ttdoc">Função para obter o tempo de burst de um processo.</div><div class="ttdef"><b>Definição</b> process.c:76</div></div>
+<div class="ttc" id="aprocess_8h_html_aa2a0d56d4dafd911e882faf1e5569273"><div class="ttname"><a href="process_8h.html#aa2a0d56d4dafd911e882faf1e5569273">removeFromProcessArray</a></div><div class="ttdeci">void removeFromProcessArray(ProcessArray *array, PID32 pid)</div><div class="ttdoc">Função para remover um processo do array de processos.</div><div class="ttdef"><b>Definição</b> process.c:44</div></div>
+<div class="ttc" id="aprocess_8h_html_af72c8b19a5f3c4fd46c4b5b73f63fa1f"><div class="ttname"><a href="process_8h.html#af72c8b19a5f3c4fd46c4b5b73f63fa1f">hasProcess</a></div><div class="ttdeci">bool hasProcess(ProcessArray *array)</div><div class="ttdoc">Função para verificar se o array de processos contém algum processo.</div><div class="ttdef"><b>Definição</b> process.c:71</div></div>
+<div class="ttc" id="aprocess_8h_html_af90fc45878ff6db75fcd0dd57f11e448"><div class="ttname"><a href="process_8h.html#af90fc45878ff6db75fcd0dd57f11e448">newProcess</a></div><div class="ttdeci">Process * newProcess(ProcessCreateInfo info)</div><div class="ttdoc">Função para criar um novo processo.</div><div class="ttdef"><b>Definição</b> process.c:5</div></div>
+<div class="ttc" id="aprogram_8h_html"><div class="ttname"><a href="program_8h.html">program.h</a></div><div class="ttdoc">Estruturas e funções para o gerenciamento de programas.</div></div>
+<div class="ttc" id="astruct_process_array_html"><div class="ttname"><a href="struct_process_array.html">ProcessArray</a></div><div class="ttdoc">Estrutura que representa uma lista de processos.</div><div class="ttdef"><b>Definição</b> process.h:92</div></div>
+<div class="ttc" id="astruct_process_array_html_acb9dd95ec44001bdffae152fbf0874ef"><div class="ttname"><a href="struct_process_array.html#acb9dd95ec44001bdffae152fbf0874ef">ProcessArray::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">Quantidade de processos no array.</div><div class="ttdef"><b>Definição</b> process.h:94</div></div>
+<div class="ttc" id="astruct_process_array_html_ad3807d3fab8bde2e927806253e1f60ad"><div class="ttname"><a href="struct_process_array.html#ad3807d3fab8bde2e927806253e1f60ad">ProcessArray::processes</a></div><div class="ttdeci">Process ** processes</div><div class="ttdoc">Array de ponteiros para processos.</div><div class="ttdef"><b>Definição</b> process.h:93</div></div>
+<div class="ttc" id="astruct_process_array_html_ae293864ee072ca406894611b92b8f07a"><div class="ttname"><a href="struct_process_array.html#ae293864ee072ca406894611b92b8f07a">ProcessArray::capacity</a></div><div class="ttdeci">size_t capacity</div><div class="ttdoc">Capacidade do array de processos.</div><div class="ttdef"><b>Definição</b> process.h:95</div></div>
+<div class="ttc" id="astruct_process_create_info_html"><div class="ttname"><a href="struct_process_create_info.html">ProcessCreateInfo</a></div><div class="ttdoc">Estrutura de informações para criação de um novo processo.</div><div class="ttdef"><b>Definição</b> process.h:77</div></div>
+<div class="ttc" id="astruct_process_create_info_html_a078dbdedf26cbef6c9639e90866dd047"><div class="ttname"><a href="struct_process_create_info.html#a078dbdedf26cbef6c9639e90866dd047">ProcessCreateInfo::arrivalTime</a></div><div class="ttdeci">Time arrivalTime</div><div class="ttdoc">Tempo de chegada do processo.</div><div class="ttdef"><b>Definição</b> process.h:79</div></div>
+<div class="ttc" id="astruct_process_create_info_html_a1dd09a9bb26c69dd2d0cb311360a2ce7"><div class="ttname"><a href="struct_process_create_info.html#a1dd09a9bb26c69dd2d0cb311360a2ce7">ProcessCreateInfo::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Nome do processo.</div><div class="ttdef"><b>Definição</b> process.h:78</div></div>
+<div class="ttc" id="astruct_process_create_info_html_a3c3a4c1801eed8f52787a5e1f12a20ad"><div class="ttname"><a href="struct_process_create_info.html#a3c3a4c1801eed8f52787a5e1f12a20ad">ProcessCreateInfo::program</a></div><div class="ttdeci">Program * program</div><div class="ttdoc">Ponteiro para o programa associado ao processo.</div><div class="ttdef"><b>Definição</b> process.h:82</div></div>
+<div class="ttc" id="astruct_process_create_info_html_a5742285ef9f00ac382941be0e082bf52"><div class="ttname"><a href="struct_process_create_info.html#a5742285ef9f00ac382941be0e082bf52">ProcessCreateInfo::priority</a></div><div class="ttdeci">ProcessPriority priority</div><div class="ttdoc">Prioridade do processo.</div><div class="ttdef"><b>Definição</b> process.h:81</div></div>
+<div class="ttc" id="astruct_process_create_info_html_a86a3e21511863b8623f51bf68c21793d"><div class="ttname"><a href="struct_process_create_info.html#a86a3e21511863b8623f51bf68c21793d">ProcessCreateInfo::burstTime</a></div><div class="ttdeci">int burstTime</div><div class="ttdoc">Tempo de execução do processo.</div><div class="ttdef"><b>Definição</b> process.h:80</div></div>
+<div class="ttc" id="astruct_process_html"><div class="ttname"><a href="struct_process.html">Process</a></div><div class="ttdoc">Estrutura que representa um processo no sistema.</div><div class="ttdef"><b>Definição</b> process.h:56</div></div>
+<div class="ttc" id="astruct_process_html_a2c5d676de5fbae15ca838c4056195912"><div class="ttname"><a href="struct_process.html#a2c5d676de5fbae15ca838c4056195912">Process::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Nome do processo.</div><div class="ttdef"><b>Definição</b> process.h:58</div></div>
+<div class="ttc" id="astruct_process_html_a39569681eea62f778f0b085834b12d37"><div class="ttname"><a href="struct_process.html#a39569681eea62f778f0b085834b12d37">Process::sp</a></div><div class="ttdeci">int sp</div><div class="ttdoc">Ponteiro de pilha.</div><div class="ttdef"><b>Definição</b> process.h:63</div></div>
+<div class="ttc" id="astruct_process_html_a51874bc28aba2bd6f273df2955152472"><div class="ttname"><a href="struct_process.html#a51874bc28aba2bd6f273df2955152472">Process::state</a></div><div class="ttdeci">ProcessState state</div><div class="ttdoc">Estado atual do processo.</div><div class="ttdef"><b>Definição</b> process.h:66</div></div>
+<div class="ttc" id="astruct_process_html_a70fd11270da0393a2f895affec660647"><div class="ttname"><a href="struct_process.html#a70fd11270da0393a2f895affec660647">Process::program</a></div><div class="ttdeci">Program * program</div><div class="ttdoc">Ponteiro para o programa associado ao processo.</div><div class="ttdef"><b>Definição</b> process.h:65</div></div>
+<div class="ttc" id="astruct_process_html_a8292a7a2862fd36eea9c9a6fb1713702"><div class="ttname"><a href="struct_process.html#a8292a7a2862fd36eea9c9a6fb1713702">Process::pid</a></div><div class="ttdeci">PID32 pid</div><div class="ttdoc">Identificador único do processo.</div><div class="ttdef"><b>Definição</b> process.h:57</div></div>
+<div class="ttc" id="astruct_process_html_a91bdc8681da6eececcd3f54225a57331"><div class="ttname"><a href="struct_process.html#a91bdc8681da6eececcd3f54225a57331">Process::arrivalTime</a></div><div class="ttdeci">uint32_t arrivalTime</div><div class="ttdoc">Tempo de chegada do processo.</div><div class="ttdef"><b>Definição</b> process.h:59</div></div>
+<div class="ttc" id="astruct_process_html_ac4d0f1edd605210431212c041a5c7c1e"><div class="ttname"><a href="struct_process.html#ac4d0f1edd605210431212c041a5c7c1e">Process::burstTime</a></div><div class="ttdeci">uint32_t burstTime</div><div class="ttdoc">Tempo de execução do processo.</div><div class="ttdef"><b>Definição</b> process.h:60</div></div>
+<div class="ttc" id="astruct_process_html_acfc1e85f59c265607558118efe0be185"><div class="ttname"><a href="struct_process.html#acfc1e85f59c265607558118efe0be185">Process::accumulator</a></div><div class="ttdeci">int accumulator</div><div class="ttdoc">Acumulador para resultados temporários.</div><div class="ttdef"><b>Definição</b> process.h:64</div></div>
+<div class="ttc" id="astruct_process_html_ad2afbc8fc6390f95e5bb17773ccc1e14"><div class="ttname"><a href="struct_process.html#ad2afbc8fc6390f95e5bb17773ccc1e14">Process::pc</a></div><div class="ttdeci">int pc</div><div class="ttdoc">Contador de programa (program counter).</div><div class="ttdef"><b>Definição</b> process.h:62</div></div>
+<div class="ttc" id="astruct_process_html_ad5201bc2f06e61c61f18094aa05ebc0e"><div class="ttname"><a href="struct_process.html#ad5201bc2f06e61c61f18094aa05ebc0e">Process::stack</a></div><div class="ttdeci">Byte stack[STACK_MAX_SIZE]</div><div class="ttdoc">Pilha do processo.</div><div class="ttdef"><b>Definição</b> process.h:67</div></div>
+<div class="ttc" id="astruct_process_html_aed5ec596d7f8a2880e5fc180382c5b20"><div class="ttname"><a href="struct_process.html#aed5ec596d7f8a2880e5fc180382c5b20">Process::registers</a></div><div class="ttdeci">Byte registers[REG_MAX]</div><div class="ttdoc">Registradores do processo.</div><div class="ttdef"><b>Definição</b> process.h:68</div></div>
+<div class="ttc" id="astruct_process_html_af87104e4190cb92aa510abc8647b318f"><div class="ttname"><a href="struct_process.html#af87104e4190cb92aa510abc8647b318f">Process::priority</a></div><div class="ttdeci">int priority</div><div class="ttdoc">Prioridade do processo.</div><div class="ttdef"><b>Definição</b> process.h:61</div></div>
+<div class="ttc" id="astruct_program_html"><div class="ttname"><a href="struct_program.html">Program</a></div><div class="ttdoc">Estrutura que representa um programa.</div><div class="ttdef"><b>Definição</b> program.h:37</div></div>
+<div class="ttc" id="asystem__types_8h_html"><div class="ttname"><a href="system__types_8h.html">system_types.h</a></div><div class="ttdoc">Define tipos básicos utilizados no sistema virtual HeliOS.</div></div>
+<div class="ttc" id="asystem__types_8h_html_a50626603cd245d9ac35514f5612171f3"><div class="ttname"><a href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></div><div class="ttdeci">char Byte</div><div class="ttdoc">Representa um único byte de dados.</div><div class="ttdef"><b>Definição</b> system_types.h:31</div></div>
+<div class="ttc" id="asystem__types_8h_html_a9337d107be24a2a7ac3d09befabf2a75"><div class="ttname"><a href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a></div><div class="ttdeci">unsigned int Time</div><div class="ttdoc">Representa o tempo em unidades específicas do sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:23</div></div>
+<div class="ttc" id="asystem__types_8h_html_aade98a87136cf030add759c3cbf7e385"><div class="ttname"><a href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></div><div class="ttdeci">int PID32</div><div class="ttdoc">Representa um identificador único para processos no sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="process_8h.html">process.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

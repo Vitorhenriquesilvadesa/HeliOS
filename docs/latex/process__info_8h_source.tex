@@ -1,0 +1,26 @@
+\doxysection{process\+\_\+info.\+h}
+\hypertarget{process__info_8h_source}{}\label{process__info_8h_source}\index{src/process/process\_info.h@{src/process/process\_info.h}}
+\mbox{\hyperlink{process__info_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ PROCESS\_INFO\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ PROCESS\_INFO\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{system__types_8h}{system\_types.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_process_statistics_ad76e3eb0e3319313bb81db0cef2d3558}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_process_statistics_ad8a34ce0534a3036dba7813ae2522351}{name}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_statistics_addf2860aebe442031536fcbe1d9bec4b}{arrivalTime}};\ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_statistics_a120551afe2773ff7fbb76f38295df29f}{startTime}};\ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_statistics_a7ec2425ee940ab3a183ca59a054f07af}{endTime}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_statistics_a8894234ccbbb43f2878638d48067012d}{waitingTime}};\ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_statistics_ac0ae0b383cce3aaedd7b8039b1870377}{turnaroundTime}};\ }
+\DoxyCodeLine{00040\ \}\ \mbox{\hyperlink{struct_process_statistics}{ProcessStatistics}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\doxysection{round\+\_\+robin.\+h}
+\hypertarget{round__robin_8h_source}{}\label{round__robin_8h_source}\index{src/process/round\_robin.h@{src/process/round\_robin.h}}
+\mbox{\hyperlink{round__robin_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HL\_ROUND\_ROBIN\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HL\_ROUND\_ROBIN\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process__manager_8h}{process\_manager.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ ROUND\_ROBIN\_QUANTUM\ 10\ }}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_r_node}{RRNode}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_r_r_node_ab05d7df59e2c34a405fbb577eaf3efab}{pid}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_r_r_node}{RRNode}}\ *\mbox{\hyperlink{struct_r_r_node_a59d4c2e3a0ecb431055dbb4cb6cbcb93}{next}};\ }
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{struct_r_r_node}{RRNode}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{struct_r_r_node}{RRNode}}\ *\mbox{\hyperlink{struct_r_r_proc_table_aaa4188ca9ee7586dbb84d1ff155acb22}{head}};\ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_r_r_node}{RRNode}}\ *\mbox{\hyperlink{struct_r_r_proc_table_aadeb9a84e3d76952b190c573ac3d1c9b}{tail}};\ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_r_r_node}{RRNode}}\ *\mbox{\hyperlink{struct_r_r_proc_table_ac185b556f811650e4a32e8ae0a7935c7}{current}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_r_r_proc_table_af3b337006f1c7f3e1fd393c9b8ee037c}{size}};\ \ \ \ \ }
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{struct_r_r_proc_table}{RRProcTable}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ \mbox{\hyperlink{struct_round_robin_process_manager_ac0a1ca27cc23f935e31de22e06d2db93}{manager}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{struct_r_r_proc_table}{RRProcTable}}\ *\mbox{\hyperlink{struct_round_robin_process_manager_a53f4229ec5b6d5a78c8a29ca09e47d11}{procTable}};\ }
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{struct_round_robin_process_manager}{RoundRobinProcessManager}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00064\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{round__robin_8h_a1cbf89c81dce2a05598e18951fafe214}{createRoundRobinProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00075\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{round__robin_8h_aa90532be428723ae3f0f8eb35ea02932}{RRCreateProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00087\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{round__robin_8h_afe4f6614108161c3160addcc336831e0}{RRScheduleProcess}}(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{round__robin_8h_a47fb8509fb4b37b1436b9ed6b2dc1df8}{RRInitProcTable}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00109\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{round__robin_8h_a764803208131fd40a6172f94207c9b50}{RRGetProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_r_r_node_ab05d7df59e2c34a405fbb577eaf3efab}{pid}});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{round__robin_8h_aad0b58c62757ff46ca637c6cb7332214}{RRHasProcess}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{round__robin_8h_a9f27f092b9bc037ce1c1b04f7ea7fab3}{RROnProcessDetach}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

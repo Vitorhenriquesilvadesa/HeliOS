@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['manager_0',['manager',['../struct_first_come_first_served_process_manager.html#a60cc5a6cc520c38d87e0c8ef6ce38036',1,'FirstComeFirstServedProcessManager::manager'],['../struct_lottery_scheduling_process_manager.html#aebe4b431fd888e9d39bc0155489897ac',1,'LotterySchedulingProcessManager::manager'],['../struct_priority_scheduling_multiple_queue_process_manager.html#a5b7ae7a63f9ffcfdbb6e0a56f0874b09',1,'PrioritySchedulingMultipleQueueProcessManager::manager'],['../struct_priority_scheduling_single_queue_process_manager.html#a59eb627c7ad3f5866a9ca8f8a9596911',1,'PrioritySchedulingSingleQueueProcessManager::manager'],['../struct_round_robin_process_manager.html#ac0a1ca27cc23f935e31de22e06d2db93',1,'RoundRobinProcessManager::manager'],['../struct_shortest_job_first_process_manager.html#a00ae190d10d336ecdbdbe9721701cf0d',1,'ShortestJobFirstProcessManager::manager']]]
+];

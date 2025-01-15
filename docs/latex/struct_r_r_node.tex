@@ -1,0 +1,51 @@
+\doxysection{Referência à estrutura RRNode}
+\hypertarget{struct_r_r_node}{}\label{struct_r_r_node}\index{RRNode@{RRNode}}
+
+
+Estrutura que representa um nó da lista encadeada de processos no escalonamento Round Robin.  
+
+
+
+
+{\ttfamily \#include $<$round\+\_\+robin.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{struct_r_r_node_ab05d7df59e2c34a405fbb577eaf3efab}{pid}}
+\begin{DoxyCompactList}\small\item\em PID do processo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_r_node}{RRNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_r_r_node_a59d4c2e3a0ecb431055dbb4cb6cbcb93}{next}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o próximo nó na lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura que representa um nó da lista encadeada de processos no escalonamento Round Robin. 
+
+Cada nó na lista representa um processo que está esperando para ser executado. Ele contém o PID do processo e um ponteiro para o próximo nó na lista. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_r_r_node_a59d4c2e3a0ecb431055dbb4cb6cbcb93}\index{RRNode@{RRNode}!next@{next}}
+\index{next@{next}!RRNode@{RRNode}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{struct_r_r_node_a59d4c2e3a0ecb431055dbb4cb6cbcb93} 
+struct \mbox{\hyperlink{struct_r_r_node}{RRNode}}\texorpdfstring{$\ast$}{*} RRNode\+::next}
+
+
+
+Ponteiro para o próximo nó na lista. 
+
+\Hypertarget{struct_r_r_node_ab05d7df59e2c34a405fbb577eaf3efab}\index{RRNode@{RRNode}!pid@{pid}}
+\index{pid@{pid}!RRNode@{RRNode}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily \label{struct_r_r_node_ab05d7df59e2c34a405fbb577eaf3efab} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} RRNode\+::pid}
+
+
+
+PID do processo. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{round__robin_8h}{round\+\_\+robin.\+h}}\end{DoxyCompactItemize}

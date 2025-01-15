@@ -1,0 +1,75 @@
+\doxysection{Referência à estrutura RRProc\+Table}
+\hypertarget{struct_r_r_proc_table}{}\label{struct_r_r_proc_table}\index{RRProcTable@{RRProcTable}}
+
+
+Estrutura que mantém a tabela de processos para o escalonamento Round Robin.  
+
+
+
+
+{\ttfamily \#include $<$round\+\_\+robin.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_r_r_node}{RRNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_r_r_proc_table_aaa4188ca9ee7586dbb84d1ff155acb22}{head}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o primeiro nó da lista de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_r_r_node}{RRNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_r_r_proc_table_aadeb9a84e3d76952b190c573ac3d1c9b}{tail}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o último nó da lista de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_r_r_node}{RRNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_r_r_proc_table_ac185b556f811650e4a32e8ae0a7935c7}{current}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o nó que está sendo executado atualmente. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_r_r_proc_table_af3b337006f1c7f3e1fd393c9b8ee037c}{size}}
+\begin{DoxyCompactList}\small\item\em Tamanho da tabela de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura que mantém a tabela de processos para o escalonamento Round Robin. 
+
+A tabela contém uma lista de processos prontos para execução. Também mantém o controle do processo atualmente em execução (head, tail, current) e o tamanho da fila. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_r_r_proc_table_ac185b556f811650e4a32e8ae0a7935c7}\index{RRProcTable@{RRProcTable}!current@{current}}
+\index{current@{current}!RRProcTable@{RRProcTable}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily \label{struct_r_r_proc_table_ac185b556f811650e4a32e8ae0a7935c7} 
+\mbox{\hyperlink{struct_r_r_node}{RRNode}}\texorpdfstring{$\ast$}{*} RRProc\+Table\+::current}
+
+
+
+Ponteiro para o nó que está sendo executado atualmente. 
+
+\Hypertarget{struct_r_r_proc_table_aaa4188ca9ee7586dbb84d1ff155acb22}\index{RRProcTable@{RRProcTable}!head@{head}}
+\index{head@{head}!RRProcTable@{RRProcTable}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \label{struct_r_r_proc_table_aaa4188ca9ee7586dbb84d1ff155acb22} 
+\mbox{\hyperlink{struct_r_r_node}{RRNode}}\texorpdfstring{$\ast$}{*} RRProc\+Table\+::head}
+
+
+
+Ponteiro para o primeiro nó da lista de processos. 
+
+\Hypertarget{struct_r_r_proc_table_af3b337006f1c7f3e1fd393c9b8ee037c}\index{RRProcTable@{RRProcTable}!size@{size}}
+\index{size@{size}!RRProcTable@{RRProcTable}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_r_r_proc_table_af3b337006f1c7f3e1fd393c9b8ee037c} 
+size\+\_\+t RRProc\+Table\+::size}
+
+
+
+Tamanho da tabela de processos. 
+
+\Hypertarget{struct_r_r_proc_table_aadeb9a84e3d76952b190c573ac3d1c9b}\index{RRProcTable@{RRProcTable}!tail@{tail}}
+\index{tail@{tail}!RRProcTable@{RRProcTable}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily \label{struct_r_r_proc_table_aadeb9a84e3d76952b190c573ac3d1c9b} 
+\mbox{\hyperlink{struct_r_r_node}{RRNode}}\texorpdfstring{$\ast$}{*} RRProc\+Table\+::tail}
+
+
+
+Ponteiro para o último nó da lista de processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{round__robin_8h}{round\+\_\+robin.\+h}}\end{DoxyCompactItemize}

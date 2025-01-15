@@ -1,0 +1,216 @@
+\doxysection{Referência ao ficheiro src/shortest\+\_\+job\+\_\+first.c}
+\hypertarget{shortest__job__first_8c}{}\label{shortest__job__first_8c}\index{src/shortest\_job\_first.c@{src/shortest\_job\_first.c}}
+{\ttfamily \#include $<$shortest\+\_\+job\+\_\+first.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shortest__job__first_8c_ad65acc27fdc203fa5eb44e06cda91d1e}{create\+Shortest\+Job\+First\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um gerenciador de processos para o escalonamento Shortest Job First. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{shortest__job__first_8c_aae2772ff55dcc554267194608009e56e}{SJFCreate\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo para o escalonamento Shortest Job First. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{shortest__job__first_8c_ab43558e0b36b43d6c02e290d5b8f691d}{SJFSchedule\+Process}} (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Realiza o escalonamento de um processo no algoritmo Shortest Job First. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shortest__job__first_8c_a718852d34a658db8329e8602a089ea58}{SJFInit\+Proc\+Table}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Inicializa a tabela de processos para o Shortest Job First. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shortest__job__first_8c_a0aa431b68ae8b5095c054cbf9af9b83b}{SJFGet\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém o processo de um determinado PID da tabela de processos Shortest Job First. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{shortest__job__first_8c_a2483dc832661ca7b7c54d6dc21fe6cb9}{SJFHas\+Process}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Verifica se há processos na tabela de processos Shortest Job First. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shortest__job__first_8c_a7e91b8de27223570dc3051b6b88c6f6d}{SJFOn\+Process\+Detach}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Função chamada quando um processo é desalocado ou removido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{shortest__job__first_8c_a24b168a506dd9836c196d4f3b96c5317}{SJFEnqueue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Adiciona um processo à tabela de processos Shortest Job First. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{shortest__job__first_8c_a55ea66b8492256fdb8b327bd4359e9fe}{SJFDequeue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProc\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Remove o processo de menor tempo de execução da tabela de processos Shortest Job First. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{shortest__job__first_8c_ad65acc27fdc203fa5eb44e06cda91d1e}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!createShortestJobFirstProcessManager@{createShortestJobFirstProcessManager}}
+\index{createShortestJobFirstProcessManager@{createShortestJobFirstProcessManager}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{createShortestJobFirstProcessManager()}{createShortestJobFirstProcessManager()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_ad65acc27fdc203fa5eb44e06cda91d1e} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+Shortest\+Job\+First\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um gerenciador de processos para o escalonamento Shortest Job First. 
+
+Função que cria e inicializa um novo gerenciador de processos para o algoritmo Shortest Job First. A tabela de processos será configurada para ordenar os processos com base no tempo de execução estimado.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações para criar o gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\+Manager\texorpdfstring{$\ast$}{*} Ponteiro para o gerenciador de processos recém-\/criado. 
+\end{DoxyReturn}
+\Hypertarget{shortest__job__first_8c_aae2772ff55dcc554267194608009e56e}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFCreateProcess@{SJFCreateProcess}}
+\index{SJFCreateProcess@{SJFCreateProcess}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFCreateProcess()}{SJFCreateProcess()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_aae2772ff55dcc554267194608009e56e} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} SJFCreate\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo para o escalonamento Shortest Job First. 
+
+Função que cria um novo processo e o adiciona à tabela de processos do Shortest Job First.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em info} & Informações necessárias para a criação do processo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} ID do processo recém-\/criado. 
+\end{DoxyReturn}
+\Hypertarget{shortest__job__first_8c_a55ea66b8492256fdb8b327bd4359e9fe}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFDequeueProcess@{SJFDequeueProcess}}
+\index{SJFDequeueProcess@{SJFDequeueProcess}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFDequeueProcess()}{SJFDequeueProcess()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_a55ea66b8492256fdb8b327bd4359e9fe} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} SJFDequeue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Remove o processo de menor tempo de execução da tabela de processos Shortest Job First. 
+
+Função que remove e retorna o PID do processo com o menor tempo de execução estimado.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em table} & Tabela de processos para o Shortest Job First. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} PID do processo removido. 
+\end{DoxyReturn}
+\Hypertarget{shortest__job__first_8c_a24b168a506dd9836c196d4f3b96c5317}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFEnqueueProcess@{SJFEnqueueProcess}}
+\index{SJFEnqueueProcess@{SJFEnqueueProcess}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFEnqueueProcess()}{SJFEnqueueProcess()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_a24b168a506dd9836c196d4f3b96c5317} 
+void SJFEnqueue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Adiciona um processo à tabela de processos Shortest Job First. 
+
+Função que insere um novo processo na tabela de processos, mantendo a ordem de acordo com o tempo de execução estimado.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em table} & Tabela de processos para o Shortest Job First. \\
+\hline
+{\em pid} & PID do processo a ser enfileirado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{shortest__job__first_8c_a0aa431b68ae8b5095c054cbf9af9b83b}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFGetProcess@{SJFGetProcess}}
+\index{SJFGetProcess@{SJFGetProcess}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFGetProcess()}{SJFGetProcess()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_a0aa431b68ae8b5095c054cbf9af9b83b} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} SJFGet\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém o processo de um determinado PID da tabela de processos Shortest Job First. 
+
+Função que busca um processo específico na tabela de processos com base no PID fornecido.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em pid} & PID do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para o processo correspondente ao PID. 
+\end{DoxyReturn}
+\Hypertarget{shortest__job__first_8c_a2483dc832661ca7b7c54d6dc21fe6cb9}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFHasProcess@{SJFHasProcess}}
+\index{SJFHasProcess@{SJFHasProcess}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFHasProcess()}{SJFHasProcess()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_a2483dc832661ca7b7c54d6dc21fe6cb9} 
+bool SJFHas\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se há processos na tabela de processos Shortest Job First. 
+
+Função que verifica se existem processos prontos para execução na tabela de processos do Shortest Job First.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+bool Retorna verdadeiro se houver processos prontos, falso caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{shortest__job__first_8c_a718852d34a658db8329e8602a089ea58}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFInitProcTable@{SJFInitProcTable}}
+\index{SJFInitProcTable@{SJFInitProcTable}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFInitProcTable()}{SJFInitProcTable()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_a718852d34a658db8329e8602a089ea58} 
+void \texorpdfstring{$\ast$}{*} SJFInit\+Proc\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a tabela de processos para o Shortest Job First. 
+
+Função que cria e inicializa a tabela de processos, configurando os ponteiros e a estrutura de dados necessária para o algoritmo Shortest Job First.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void\texorpdfstring{$\ast$}{*} Ponteiro para a tabela de processos recém-\/inicializada. 
+\end{DoxyReturn}
+\Hypertarget{shortest__job__first_8c_a7e91b8de27223570dc3051b6b88c6f6d}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFOnProcessDetach@{SJFOnProcessDetach}}
+\index{SJFOnProcessDetach@{SJFOnProcessDetach}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFOnProcessDetach()}{SJFOnProcessDetach()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_a7e91b8de27223570dc3051b6b88c6f6d} 
+void SJFOn\+Process\+Detach (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Função chamada quando um processo é desalocado ou removido. 
+
+Função que é chamada para realizar operações de limpeza ou atualizações quando um processo é removido ou desalocado da tabela de processos Shortest Job First.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em info} & Informações do CPU associadas ao processo a ser removido. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{shortest__job__first_8c_ab43558e0b36b43d6c02e290d5b8f691d}\index{shortest\_job\_first.c@{shortest\_job\_first.c}!SJFScheduleProcess@{SJFScheduleProcess}}
+\index{SJFScheduleProcess@{SJFScheduleProcess}!shortest\_job\_first.c@{shortest\_job\_first.c}}
+\doxysubsubsection{\texorpdfstring{SJFScheduleProcess()}{SJFScheduleProcess()}}
+{\footnotesize\ttfamily \label{shortest__job__first_8c_ab43558e0b36b43d6c02e290d5b8f691d} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} SJFSchedule\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{proc\+Table}{}\end{DoxyParamCaption})}
+
+
+
+Realiza o escalonamento de um processo no algoritmo Shortest Job First. 
+
+Função que seleciona o próximo processo da tabela de processos com o menor tempo de execução estimado, de acordo com o algoritmo Shortest Job First.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em proc\+Table} & Tabela de processos para o Shortest Job First. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} ID do processo selecionado para execução. 
+\end{DoxyReturn}

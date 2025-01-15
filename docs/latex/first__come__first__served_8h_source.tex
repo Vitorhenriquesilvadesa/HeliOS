@@ -1,0 +1,52 @@
+\doxysection{first\+\_\+come\+\_\+first\+\_\+served.\+h}
+\hypertarget{first__come__first__served_8h_source}{}\label{first__come__first__served_8h_source}\index{src/process/first\_come\_first\_served.h@{src/process/first\_come\_first\_served.h}}
+\mbox{\hyperlink{first__come__first__served_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ HL\_FCFS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ HL\_FCFS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process__manager_8h}{process\_manager.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_f_s_node}{FCFSNode}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_f_c_f_s_node_aea3811f55da0ca779087228d6d6e3fda}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_f_s_node}{FCFSNode}}\ *\mbox{\hyperlink{struct_f_c_f_s_node_a2b2240588d2b6a41d1840e65196a949a}{next}};\ }
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{struct_f_c_f_s_node}{FCFSNode}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_f_c_f_s_node}{FCFSNode}}\ *\mbox{\hyperlink{struct_f_c_f_s_proc_table_a99008c7e4b27199676267bc2123a6cbd}{head}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_f_c_f_s_node}{FCFSNode}}\ *\mbox{\hyperlink{struct_f_c_f_s_proc_table_acccffbbbc657fa5bb689a0f4b7f9191b}{tail}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_f_c_f_s_proc_table_a1de585749e44f710207a05d14400abc1}{size}};\ \ \ \ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProcTable}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ \mbox{\hyperlink{struct_first_come_first_served_process_manager_a60cc5a6cc520c38d87e0c8ef6ce38036}{manager}};\ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProcTable}}\ *\mbox{\hyperlink{struct_first_come_first_served_process_manager_a5fdd84099068c2c15bfeab5647461c23}{procTable}};\ }
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{struct_first_come_first_served_process_manager}{FirstComeFirstServedProcessManager}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{first__come__first__served_8h_a6f7c9e792f5014fb8f6cf4216ed183db}{createFirstComeFirstServedProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00068\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{first__come__first__served_8h_a3e87e30cc2fc9bfc0b5b4a1741b9364e}{FCFSCreateProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00077\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{first__come__first__served_8h_aef177e183d7729f1a1f80c2eaad9fefe}{FCFSScheduleProcess}}(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{first__come__first__served_8h_a13c14df252dd22f7a32cc2c8e91956fa}{FCFSInitProcTable}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00094\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{first__come__first__served_8h_a41fd21249f5338ccbfdef33300156666}{FCFSGetProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_f_c_f_s_node_aea3811f55da0ca779087228d6d6e3fda}{pid}});}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{first__come__first__served_8h_ab3fa5dc48da18388d8ad8b12a74577e2}{FCFSHasProcess}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{first__come__first__served_8h_acffe2d454f659aeb340f3662a526eb8c}{FCFSOnProcessDetach}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{first__come__first__served_8h_a1ec79960209e08f883f2b8708cc4c6b8}{FCFSEnqueueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProcTable}}\ *table,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_f_c_f_s_node_aea3811f55da0ca779087228d6d6e3fda}{pid}});}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{first__come__first__served_8h_a2ee1c1e94ad3bda9c3b4670dd79a3125}{FCFSDequeueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProcTable}}\ *table);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

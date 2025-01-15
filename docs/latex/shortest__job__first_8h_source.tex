@@ -1,0 +1,52 @@
+\doxysection{shortest\+\_\+job\+\_\+first.\+h}
+\hypertarget{shortest__job__first_8h_source}{}\label{shortest__job__first_8h_source}\index{src/process/shortest\_job\_first.h@{src/process/shortest\_job\_first.h}}
+\mbox{\hyperlink{shortest__job__first_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HL\_SHORTEST\_JOB\_FIRST\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HL\_SHORTEST\_JOB\_FIRST\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process__manager_8h}{process\_manager.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_s_j_f_node_ad081b6e7ccddabfb252b0868dee05610}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}\ *\mbox{\hyperlink{struct_s_j_f_node_a11366a6ac08e976a884b52dd2d83d374}{next}};\ }
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{struct_s_j_f_node}{SJFNode}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}\ *\mbox{\hyperlink{struct_s_j_f_proc_table_ac221c97aa77decffc469cc49baff6d58}{head}};\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}\ *\mbox{\hyperlink{struct_s_j_f_proc_table_aa2d7c46ee08d23028296fcd7df37814e}{tail}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_s_j_f_proc_table_af077dd75b77bb6e47f8e62e5e214249c}{size}};\ \ \ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProcTable}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ \mbox{\hyperlink{struct_shortest_job_first_process_manager_a00ae190d10d336ecdbdbe9721701cf0d}{manager}};\ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProcTable}}\ *\mbox{\hyperlink{struct_shortest_job_first_process_manager_af635e92d4bc9e1e245d30e89d79fd375}{procTable}};\ }
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{struct_shortest_job_first_process_manager}{ShortestJobFirstProcessManager}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00061\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{shortest__job__first_8h_ad65acc27fdc203fa5eb44e06cda91d1e}{createShortestJobFirstProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00072\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{shortest__job__first_8h_aae2772ff55dcc554267194608009e56e}{SJFCreateProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00084\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{shortest__job__first_8h_ab43558e0b36b43d6c02e290d5b8f691d}{SJFScheduleProcess}}(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{shortest__job__first_8h_a718852d34a658db8329e8602a089ea58}{SJFInitProcTable}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{shortest__job__first_8h_a0aa431b68ae8b5095c054cbf9af9b83b}{SJFGetProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_s_j_f_node_ad081b6e7ccddabfb252b0868dee05610}{pid}});}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{shortest__job__first_8h_a2483dc832661ca7b7c54d6dc21fe6cb9}{SJFHasProcess}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shortest__job__first_8h_a7e91b8de27223570dc3051b6b88c6f6d}{SJFOnProcessDetach}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{shortest__job__first_8h_a24b168a506dd9836c196d4f3b96c5317}{SJFEnqueueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProcTable}}\ *table,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_s_j_f_node_ad081b6e7ccddabfb252b0868dee05610}{pid}});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00149\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{shortest__job__first_8h_a55ea66b8492256fdb8b327bd4359e9fe}{SJFDequeueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_s_j_f_proc_table}{SJFProcTable}}\ *table);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,84 @@
+\doxysection{process.\+h}
+\hypertarget{process_8h_source}{}\label{process_8h_source}\index{src/process/process.h@{src/process/process.h}}
+\mbox{\hyperlink{process_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HELIOS\_PROCESS\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HELIOS\_PROCESS\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{instruction_8h}{instruction.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{system__types_8h}{system\_types.h}}>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{program_8h}{program.h}}>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ ERROR\_PID\ -\/1\ }}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874}{HL\_PROC\_READY}},\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf}{HL\_PROC\_EXECUTING}},\ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc}{HL\_PROC\_WAITING}},\ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842}{HL\_PROC\_TERMINATED}},\ }
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675e}{ProcessState}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e}{HL\_PROC\_PRIORITY\_DEFAULT}}\ =\ 0,\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b}{HL\_PROC\_PRIORITY\_VERY\_LOW}},\ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866}{HL\_PROC\_PRIORITY\_LOW}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98}{HL\_PROC\_PRIORITY\_MEDIUM}},\ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba}{HL\_PROC\_PRIORITY\_HIGH}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\_PROC\_PRIORITY\_VERY\_HIGH}},\ \ \ }
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_process}{Process}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_process_a8292a7a2862fd36eea9c9a6fb1713702}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_process_a2c5d676de5fbae15ca838c4056195912}{name}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_a91bdc8681da6eececcd3f54225a57331}{arrivalTime}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_process_ac4d0f1edd605210431212c041a5c7c1e}{burstTime}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_process_af87104e4190cb92aa510abc8647b318f}{priority}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_process_ad2afbc8fc6390f95e5bb17773ccc1e14}{pc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_process_a39569681eea62f778f0b085834b12d37}{sp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_process_acfc1e85f59c265607558118efe0be185}{accumulator}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{struct_program}{Program}}\ *\mbox{\hyperlink{struct_process_a70fd11270da0393a2f895affec660647}{program}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675e}{ProcessState}}\ \mbox{\hyperlink{struct_process_a51874bc28aba2bd6f273df2955152472}{state}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_process_ad5201bc2f06e61c61f18094aa05ebc0e}{stack}}[\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\_MAX\_SIZE}}];\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ \mbox{\hyperlink{struct_process_aed5ec596d7f8a2880e5fc180382c5b20}{registers}}[\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\_MAX}}];\ \ \ \ }
+\DoxyCodeLine{00069\ \}\ \mbox{\hyperlink{struct_process}{Process}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{struct_process_create_info_a1dd09a9bb26c69dd2d0cb311360a2ce7}{name}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}\ \mbox{\hyperlink{struct_process_create_info_a078dbdedf26cbef6c9639e90866dd047}{arrivalTime}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_process_create_info_a86a3e21511863b8623f51bf68c21793d}{burstTime}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ \mbox{\hyperlink{struct_process_create_info_a5742285ef9f00ac382941be0e082bf52}{priority}};\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{struct_program}{Program}}\ *\mbox{\hyperlink{struct_process_create_info_a3c3a4c1801eed8f52787a5e1f12a20ad}{program}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \}\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{struct_process}{Process}}\ **\mbox{\hyperlink{struct_process_array_ad3807d3fab8bde2e927806253e1f60ad}{processes}};\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_process_array_acb9dd95ec44001bdffae152fbf0874ef}{length}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_process_array_ae293864ee072ca406894611b92b8f07a}{capacity}};\ \ \ \ \ }
+\DoxyCodeLine{00096\ \}\ \mbox{\hyperlink{struct_process_array}{ProcessArray}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{process_8h_af90fc45878ff6db75fcd0dd57f11e448}{newProcess}}(\mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{process_8h_a537199f3ea4032fe90ca168a6fbff616}{initProcessArray}}(\mbox{\hyperlink{struct_process_array}{ProcessArray}}\ *array);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{process_8h_a2a65ab54256eea09530645363c1c6aff}{appendProcessReferenceArray}}(\mbox{\hyperlink{struct_process_array}{ProcessArray}}\ *array,\ \mbox{\hyperlink{struct_process}{Process}}\ *process);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{process_8h_aa2a0d56d4dafd911e882faf1e5569273}{removeFromProcessArray}}(\mbox{\hyperlink{struct_process_array}{ProcessArray}}\ *array,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ pid);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00147\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{process_8h_a14932d9cae3ab67e29d219b39fc98c9e}{getFromProcessArray}}(\mbox{\hyperlink{struct_process_array}{ProcessArray}}\ *array,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ pid);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{process_8h_af72c8b19a5f3c4fd46c4b5b73f63fa1f}{hasProcess}}(\mbox{\hyperlink{struct_process_array}{ProcessArray}}\ *array);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00167\ \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}\ \mbox{\hyperlink{process_8h_a85f9c4efa7c3acce55310de1dee3c547}{getProcessBurstTime}}(\mbox{\hyperlink{struct_process}{Process}}\ *process);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

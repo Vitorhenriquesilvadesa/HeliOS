@@ -1,0 +1,231 @@
+\doxysection{Referência ao ficheiro src/process/first\+\_\+come\+\_\+first\+\_\+served.h}
+\hypertarget{first__come__first__served_8h}{}\label{first__come__first__served_8h}\index{src/process/first\_come\_first\_served.h@{src/process/first\_come\_first\_served.h}}
+
+
+Implementação do gerenciador de processos utilizando o algoritmo First-\/\+Come, First-\/\+Served (FCFS).  
+
+
+{\ttfamily \#include $<$process\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_c_f_s_node}{FCFSNode}}
+\item 
+struct \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProc\+Table}}
+\item 
+struct \mbox{\hyperlink{struct_first_come_first_served_process_manager}{First\+Come\+First\+Served\+Process\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct FCFSNode \mbox{\hyperlink{first__come__first__served_8h_a830fe9d71a76bd78f71dab501e519e37}{FCFSNode}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{first__come__first__served_8h_a6f7c9e792f5014fb8f6cf4216ed183db}{create\+First\+Come\+First\+Served\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um gerenciador de processos FCFS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{first__come__first__served_8h_a3e87e30cc2fc9bfc0b5b4a1741b9364e}{FCFSCreate\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo e o adiciona ao gerenciador FCFS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{first__come__first__served_8h_aef177e183d7729f1a1f80c2eaad9fefe}{FCFSSchedule\+Process}} (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Agenda o próximo processo na fila para execução. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{first__come__first__served_8h_a13c14df252dd22f7a32cc2c8e91956fa}{FCFSInit\+Proc\+Table}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Inicializa a tabela de processos FCFS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{first__come__first__served_8h_a41fd21249f5338ccbfdef33300156666}{FCFSGet\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém um processo na tabela de processos pelo PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{first__come__first__served_8h_ab3fa5dc48da18388d8ad8b12a74577e2}{FCFSHas\+Process}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Verifica se há processos na fila de processos FCFS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{first__come__first__served_8h_acffe2d454f659aeb340f3662a526eb8c}{FCFSOn\+Process\+Detach}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Lida com a remoção de um processo da CPU e atualiza o gerenciador FCFS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{first__come__first__served_8h_a1ec79960209e08f883f2b8708cc4c6b8}{FCFSEnqueue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Adiciona um processo à tabela de processos FCFS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{first__come__first__served_8h_a2ee1c1e94ad3bda9c3b4670dd79a3125}{FCFSDequeue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProc\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Remove o próximo processo da tabela de processos FCFS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Implementação do gerenciador de processos utilizando o algoritmo First-\/\+Come, First-\/\+Served (FCFS). 
+
+Este arquivo define as estruturas e funções necessárias para gerenciar processos utilizando o algoritmo FCFS, no qual os processos são atendidos na ordem de chegada. 
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{first__come__first__served_8h_a830fe9d71a76bd78f71dab501e519e37}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSNode@{FCFSNode}}
+\index{FCFSNode@{FCFSNode}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSNode}{FCFSNode}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a830fe9d71a76bd78f71dab501e519e37} 
+typedef struct FCFSNode FCFSNode}
+
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{first__come__first__served_8h_a6f7c9e792f5014fb8f6cf4216ed183db}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!createFirstComeFirstServedProcessManager@{createFirstComeFirstServedProcessManager}}
+\index{createFirstComeFirstServedProcessManager@{createFirstComeFirstServedProcessManager}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{createFirstComeFirstServedProcessManager()}{createFirstComeFirstServedProcessManager()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a6f7c9e792f5014fb8f6cf4216ed183db} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+First\+Come\+First\+Served\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um gerenciador de processos FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações para inicialização do gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o gerenciador de processos criado. 
+\end{DoxyReturn}
+\Hypertarget{first__come__first__served_8h_a3e87e30cc2fc9bfc0b5b4a1741b9364e}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSCreateProcess@{FCFSCreateProcess}}
+\index{FCFSCreateProcess@{FCFSCreateProcess}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSCreateProcess()}{FCFSCreateProcess()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a3e87e30cc2fc9bfc0b5b4a1741b9364e} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} FCFSCreate\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo e o adiciona ao gerenciador FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+{\em info} & Informações do processo a ser criado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo criado. 
+\end{DoxyReturn}
+\Hypertarget{first__come__first__served_8h_a2ee1c1e94ad3bda9c3b4670dd79a3125}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSDequeueProcess@{FCFSDequeueProcess}}
+\index{FCFSDequeueProcess@{FCFSDequeueProcess}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSDequeueProcess()}{FCFSDequeueProcess()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a2ee1c1e94ad3bda9c3b4670dd79a3125} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} FCFSDequeue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Remove o próximo processo da tabela de processos FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo removido. 
+\end{DoxyReturn}
+\Hypertarget{first__come__first__served_8h_a1ec79960209e08f883f2b8708cc4c6b8}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSEnqueueProcess@{FCFSEnqueueProcess}}
+\index{FCFSEnqueueProcess@{FCFSEnqueueProcess}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSEnqueueProcess()}{FCFSEnqueueProcess()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a1ec79960209e08f883f2b8708cc4c6b8} 
+void FCFSEnqueue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_f_c_f_s_proc_table}{FCFSProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Adiciona um processo à tabela de processos FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{first__come__first__served_8h_a41fd21249f5338ccbfdef33300156666}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSGetProcess@{FCFSGetProcess}}
+\index{FCFSGetProcess@{FCFSGetProcess}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSGetProcess()}{FCFSGetProcess()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a41fd21249f5338ccbfdef33300156666} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} FCFSGet\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém um processo na tabela de processos pelo PID. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o processo correspondente. 
+\end{DoxyReturn}
+\Hypertarget{first__come__first__served_8h_ab3fa5dc48da18388d8ad8b12a74577e2}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSHasProcess@{FCFSHasProcess}}
+\index{FCFSHasProcess@{FCFSHasProcess}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSHasProcess()}{FCFSHasProcess()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_ab3fa5dc48da18388d8ad8b12a74577e2} 
+bool FCFSHas\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se há processos na fila de processos FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se houver processos na fila; caso contrário, {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{first__come__first__served_8h_a13c14df252dd22f7a32cc2c8e91956fa}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSInitProcTable@{FCFSInitProcTable}}
+\index{FCFSInitProcTable@{FCFSInitProcTable}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSInitProcTable()}{FCFSInitProcTable()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_a13c14df252dd22f7a32cc2c8e91956fa} 
+void \texorpdfstring{$\ast$}{*} FCFSInit\+Proc\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a tabela de processos FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para a tabela de processos inicializada. 
+\end{DoxyReturn}
+\Hypertarget{first__come__first__served_8h_acffe2d454f659aeb340f3662a526eb8c}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSOnProcessDetach@{FCFSOnProcessDetach}}
+\index{FCFSOnProcessDetach@{FCFSOnProcessDetach}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSOnProcessDetach()}{FCFSOnProcessDetach()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_acffe2d454f659aeb340f3662a526eb8c} 
+void FCFSOn\+Process\+Detach (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Lida com a remoção de um processo da CPU e atualiza o gerenciador FCFS. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+{\em info} & Informações sobre o estado da CPU ao destacar o processo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{first__come__first__served_8h_aef177e183d7729f1a1f80c2eaad9fefe}\index{first\_come\_first\_served.h@{first\_come\_first\_served.h}!FCFSScheduleProcess@{FCFSScheduleProcess}}
+\index{FCFSScheduleProcess@{FCFSScheduleProcess}!first\_come\_first\_served.h@{first\_come\_first\_served.h}}
+\doxysubsubsection{\texorpdfstring{FCFSScheduleProcess()}{FCFSScheduleProcess()}}
+{\footnotesize\ttfamily \label{first__come__first__served_8h_aef177e183d7729f1a1f80c2eaad9fefe} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} FCFSSchedule\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{proc\+Table}{}\end{DoxyParamCaption})}
+
+
+
+Agenda o próximo processo na fila para execução. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos FCFS. \\
+\hline
+{\em proc\+Table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo agendado. 
+\end{DoxyReturn}

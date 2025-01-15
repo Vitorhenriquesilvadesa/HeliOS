@@ -1,0 +1,65 @@
+\doxysection{Referência à estrutura PSMQQueue}
+\hypertarget{struct_p_s_m_q_queue}{}\label{struct_p_s_m_q_queue}\index{PSMQQueue@{PSMQQueue}}
+
+
+{\ttfamily \#include $<$priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_p_s_m_q_queue_a646a5c01511d0118145c2df1a4783bea}{head}}
+\begin{DoxyCompactList}\small\item\em Início da fila de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_p_s_m_q_queue_a2afd3e11bf8360548aebf3aaf5e73801}{tail}}
+\begin{DoxyCompactList}\small\item\em Fim da fila de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{struct_p_s_m_q_queue_a3a113d85f39d0d3f7cad97d827504511}{quantum}}
+\begin{DoxyCompactList}\small\item\em Quantum de tempo para os processos dessa fila. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_p_s_m_q_queue_a2410160e585aca71ec63997cb56ddf05}{length}}
+\begin{DoxyCompactList}\small\item\em Número de processos na fila. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_p_s_m_q_queue_a646a5c01511d0118145c2df1a4783bea}\index{PSMQQueue@{PSMQQueue}!head@{head}}
+\index{head@{head}!PSMQQueue@{PSMQQueue}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_queue_a646a5c01511d0118145c2df1a4783bea} 
+\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\texorpdfstring{$\ast$}{*} PSMQQueue\+::head}
+
+
+
+Início da fila de processos. 
+
+\Hypertarget{struct_p_s_m_q_queue_a2410160e585aca71ec63997cb56ddf05}\index{PSMQQueue@{PSMQQueue}!length@{length}}
+\index{length@{length}!PSMQQueue@{PSMQQueue}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_queue_a2410160e585aca71ec63997cb56ddf05} 
+size\+\_\+t PSMQQueue\+::length}
+
+
+
+Número de processos na fila. 
+
+\Hypertarget{struct_p_s_m_q_queue_a3a113d85f39d0d3f7cad97d827504511}\index{PSMQQueue@{PSMQQueue}!quantum@{quantum}}
+\index{quantum@{quantum}!PSMQQueue@{PSMQQueue}}
+\doxysubsubsection{\texorpdfstring{quantum}{quantum}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_queue_a3a113d85f39d0d3f7cad97d827504511} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} PSMQQueue\+::quantum}
+
+
+
+Quantum de tempo para os processos dessa fila. 
+
+\Hypertarget{struct_p_s_m_q_queue_a2afd3e11bf8360548aebf3aaf5e73801}\index{PSMQQueue@{PSMQQueue}!tail@{tail}}
+\index{tail@{tail}!PSMQQueue@{PSMQQueue}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_queue_a2afd3e11bf8360548aebf3aaf5e73801} 
+\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\texorpdfstring{$\ast$}{*} PSMQQueue\+::tail}
+
+
+
+Fim da fila de processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{priority__scheduling__multiple__queues_8h}{priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.\+h}}\end{DoxyCompactItemize}

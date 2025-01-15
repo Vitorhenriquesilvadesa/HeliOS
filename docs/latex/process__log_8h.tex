@@ -1,0 +1,50 @@
+\doxysection{Referência ao ficheiro src/process/process\+\_\+log.h}
+\hypertarget{process__log_8h}{}\label{process__log_8h}\index{src/process/process\_log.h@{src/process/process\_log.h}}
+
+
+Funções para log de informações sobre a execução de processos.  
+
+
+{\ttfamily \#include "{}process\+\_\+info.\+h"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{process__log_8h_a71dc8d288e01d409c1b5339c12e6f30e}{write\+Log}} (const char \texorpdfstring{$\ast$}{*}algorith\+Name, const char \texorpdfstring{$\ast$}{*}file\+Name, \mbox{\hyperlink{struct_process_statistics}{Process\+Statistics}} \texorpdfstring{$\ast$}{*}process, size\+\_\+t log\+Count, const char \texorpdfstring{$\ast$}{*}execution\+Order)
+\begin{DoxyCompactList}\small\item\em Função para escrever logs de execução de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Funções para log de informações sobre a execução de processos. 
+
+Este arquivo contém as definições das funções responsáveis por registrar informações sobre a execução dos processos. O objetivo é permitir o acompanhamento do comportamento dos processos, como o escalonamento e a execução de algoritmos. 
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{process__log_8h_a71dc8d288e01d409c1b5339c12e6f30e}\index{process\_log.h@{process\_log.h}!writeLog@{writeLog}}
+\index{writeLog@{writeLog}!process\_log.h@{process\_log.h}}
+\doxysubsubsection{\texorpdfstring{writeLog()}{writeLog()}}
+{\footnotesize\ttfamily \label{process__log_8h_a71dc8d288e01d409c1b5339c12e6f30e} 
+void write\+Log (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{algorith\+Name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+Name}{, }\item[{\mbox{\hyperlink{struct_process_statistics}{Process\+Statistics}} \texorpdfstring{$\ast$}{*}}]{process}{, }\item[{size\+\_\+t}]{log\+Count}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{execution\+Order}{}\end{DoxyParamCaption})}
+
+
+
+Função para escrever logs de execução de processos. 
+
+Esta função é responsável por escrever logs contendo informações sobre o comportamento dos processos, como os tempos de execução, a ordem de execução e os algoritmos utilizados. Esses logs são úteis para análise posterior da performance do sistema.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em algorith\+Name} & Nome do algoritmo de escalonamento utilizado. \\
+\hline
+{\em file\+Name} & Nome do arquivo onde o log será escrito. \\
+\hline
+{\em process} & Array de estruturas \doxylink{struct_process_statistics}{Process\+Statistics} contendo informações sobre os processos. \\
+\hline
+{\em log\+Count} & Número de logs que serão gravados no arquivo. \\
+\hline
+{\em execution\+Order} & String que define a ordem de execução dos processos (ex\+: "{}\+FIFO"{}, "{}\+SJF"{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void 
+\end{DoxyReturn}

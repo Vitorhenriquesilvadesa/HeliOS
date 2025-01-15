@@ -1,0 +1,201 @@
+\doxysection{Referência ao ficheiro src/lottery\+\_\+scheduling.c}
+\hypertarget{lottery__scheduling_8c}{}\label{lottery__scheduling_8c}\index{src/lottery\_scheduling.c@{src/lottery\_scheduling.c}}
+{\ttfamily \#include $<$lottery\+\_\+scheduling.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lottery__scheduling_8c_a82a3a8be9e80fb2d924e95e713322638}{create\+Lottery\+Scheduling\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um gerenciador de processos Lottery Scheduling. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lottery__scheduling_8c_aa58999064d3f067ea76368e02c5fe527}{LSInit\+Proc\+Table}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Inicializa a tabela de processos do Lottery Scheduling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lottery__scheduling_8c_a5818a70957d170f6aa7ced2582025267}{LSGet\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém um processo na tabela de processos pelo PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{lottery__scheduling_8c_ab2883b820b5c0882cd94972507fad1e7}{LSHas\+Process}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Verifica se há processos na tabela de processos do Lottery Scheduling. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lottery__scheduling_8c_a2b44da10828ab9f746a9213f6bbdb0ce}{LSOn\+Process\+Detach}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Lida com a remoção de um processo da CPU e atualiza o gerenciador Lottery Scheduling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{lottery__scheduling_8c_aa238f9230e4838e72f559ca53b52f705}{LSCreate\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo e o adiciona ao gerenciador Lottery Scheduling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{lottery__scheduling_8c_a0042cbd8f5c119d0dae88062b998695d}{LSSchedule\+Process}} (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Agenda o próximo processo para execução com base nos tickets de loteria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lottery__scheduling_8c_a34e229ec16734c39862d46ea68f2f2c8}{LSEnqueue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_lottery_proc_table}{Lottery\+Proc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid, int tickets)
+\begin{DoxyCompactList}\small\item\em Adiciona um processo à tabela de processos do Lottery Scheduling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{lottery__scheduling_8c_a89f276443314474363cddec4d543d2fb}{LSDequeue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_lottery_proc_table}{Lottery\+Proc\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Remove o próximo processo da tabela de processos do Lottery Scheduling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{lottery__scheduling_8c_a82a3a8be9e80fb2d924e95e713322638}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!createLotterySchedulingProcessManager@{createLotterySchedulingProcessManager}}
+\index{createLotterySchedulingProcessManager@{createLotterySchedulingProcessManager}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{createLotterySchedulingProcessManager()}{createLotterySchedulingProcessManager()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_a82a3a8be9e80fb2d924e95e713322638} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+Lottery\+Scheduling\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um gerenciador de processos Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações para inicialização do gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o gerenciador de processos criado. 
+\end{DoxyReturn}
+\Hypertarget{lottery__scheduling_8c_aa238f9230e4838e72f559ca53b52f705}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSCreateProcess@{LSCreateProcess}}
+\index{LSCreateProcess@{LSCreateProcess}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSCreateProcess()}{LSCreateProcess()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_aa238f9230e4838e72f559ca53b52f705} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} LSCreate\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo e o adiciona ao gerenciador Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+{\em info} & Informações do processo a ser criado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo criado. 
+\end{DoxyReturn}
+\Hypertarget{lottery__scheduling_8c_a89f276443314474363cddec4d543d2fb}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSDequeueProcess@{LSDequeueProcess}}
+\index{LSDequeueProcess@{LSDequeueProcess}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSDequeueProcess()}{LSDequeueProcess()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_a89f276443314474363cddec4d543d2fb} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} LSDequeue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_lottery_proc_table}{Lottery\+Proc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Remove o próximo processo da tabela de processos do Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo removido. 
+\end{DoxyReturn}
+\Hypertarget{lottery__scheduling_8c_a34e229ec16734c39862d46ea68f2f2c8}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSEnqueueProcess@{LSEnqueueProcess}}
+\index{LSEnqueueProcess@{LSEnqueueProcess}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSEnqueueProcess()}{LSEnqueueProcess()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_a34e229ec16734c39862d46ea68f2f2c8} 
+void LSEnqueue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_lottery_proc_table}{Lottery\+Proc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{, }\item[{int}]{tickets}{}\end{DoxyParamCaption})}
+
+
+
+Adiciona um processo à tabela de processos do Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser adicionado. \\
+\hline
+{\em tickets} & Número de tickets atribuídos ao processo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lottery__scheduling_8c_a5818a70957d170f6aa7ced2582025267}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSGetProcess@{LSGetProcess}}
+\index{LSGetProcess@{LSGetProcess}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSGetProcess()}{LSGetProcess()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_a5818a70957d170f6aa7ced2582025267} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} LSGet\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém um processo na tabela de processos pelo PID. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o processo correspondente. 
+\end{DoxyReturn}
+\Hypertarget{lottery__scheduling_8c_ab2883b820b5c0882cd94972507fad1e7}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSHasProcess@{LSHasProcess}}
+\index{LSHasProcess@{LSHasProcess}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSHasProcess()}{LSHasProcess()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_ab2883b820b5c0882cd94972507fad1e7} 
+bool LSHas\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se há processos na tabela de processos do Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se houver processos na tabela; caso contrário, {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{lottery__scheduling_8c_aa58999064d3f067ea76368e02c5fe527}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSInitProcTable@{LSInitProcTable}}
+\index{LSInitProcTable@{LSInitProcTable}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSInitProcTable()}{LSInitProcTable()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_aa58999064d3f067ea76368e02c5fe527} 
+void \texorpdfstring{$\ast$}{*} LSInit\+Proc\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a tabela de processos do Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para a tabela de processos inicializada. 
+\end{DoxyReturn}
+\Hypertarget{lottery__scheduling_8c_a2b44da10828ab9f746a9213f6bbdb0ce}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSOnProcessDetach@{LSOnProcessDetach}}
+\index{LSOnProcessDetach@{LSOnProcessDetach}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSOnProcessDetach()}{LSOnProcessDetach()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_a2b44da10828ab9f746a9213f6bbdb0ce} 
+void LSOn\+Process\+Detach (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Lida com a remoção de um processo da CPU e atualiza o gerenciador Lottery Scheduling. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+{\em info} & Informações sobre o estado da CPU ao destacar o processo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lottery__scheduling_8c_a0042cbd8f5c119d0dae88062b998695d}\index{lottery\_scheduling.c@{lottery\_scheduling.c}!LSScheduleProcess@{LSScheduleProcess}}
+\index{LSScheduleProcess@{LSScheduleProcess}!lottery\_scheduling.c@{lottery\_scheduling.c}}
+\doxysubsubsection{\texorpdfstring{LSScheduleProcess()}{LSScheduleProcess()}}
+{\footnotesize\ttfamily \label{lottery__scheduling_8c_a0042cbd8f5c119d0dae88062b998695d} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} LSSchedule\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{proc\+Table}{}\end{DoxyParamCaption})}
+
+
+
+Agenda o próximo processo para execução com base nos tickets de loteria. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Lottery Scheduling. \\
+\hline
+{\em proc\+Table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo agendado. 
+\end{DoxyReturn}

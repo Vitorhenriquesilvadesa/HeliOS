@@ -1,0 +1,55 @@
+\doxysection{Referência ao ficheiro src/kernel/system\+\_\+types.h}
+\hypertarget{system__types_8h}{}\label{system__types_8h}\index{src/kernel/system\_types.h@{src/kernel/system\_types.h}}
+
+
+Define tipos básicos utilizados no sistema virtual Heli\+OS.  
+
+
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}
+\begin{DoxyCompactList}\small\item\em Representa um identificador único para processos no sistema. \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}
+\begin{DoxyCompactList}\small\item\em Representa o tempo em unidades específicas do sistema. \end{DoxyCompactList}\item 
+typedef char \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}
+\begin{DoxyCompactList}\small\item\em Representa um único byte de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Define tipos básicos utilizados no sistema virtual Heli\+OS. 
+
+
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{system__types_8h_a50626603cd245d9ac35514f5612171f3}\index{system\_types.h@{system\_types.h}!Byte@{Byte}}
+\index{Byte@{Byte}!system\_types.h@{system\_types.h}}
+\doxysubsubsection{\texorpdfstring{Byte}{Byte}}
+{\footnotesize\ttfamily \label{system__types_8h_a50626603cd245d9ac35514f5612171f3} 
+typedef char \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}
+
+
+
+Representa um único byte de dados. 
+
+Usado para operações que requerem manipulação de dados em nível de byte. \Hypertarget{system__types_8h_aade98a87136cf030add759c3cbf7e385}\index{system\_types.h@{system\_types.h}!PID32@{PID32}}
+\index{PID32@{PID32}!system\_types.h@{system\_types.h}}
+\doxysubsubsection{\texorpdfstring{PID32}{PID32}}
+{\footnotesize\ttfamily \label{system__types_8h_aade98a87136cf030add759c3cbf7e385} 
+typedef int \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}
+
+
+
+Representa um identificador único para processos no sistema. 
+
+Este tipo é usado para identificar processos dentro do sistema operacional. \Hypertarget{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}\index{system\_types.h@{system\_types.h}!Time@{Time}}
+\index{Time@{Time}!system\_types.h@{system\_types.h}}
+\doxysubsubsection{\texorpdfstring{Time}{Time}}
+{\footnotesize\ttfamily \label{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75} 
+typedef unsigned int \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}}
+
+
+
+Representa o tempo em unidades específicas do sistema. 
+
+Este tipo pode ser usado para medir intervalos de tempo ou agendamento de processos. 

@@ -1,0 +1,182 @@
+\doxysection{Referência ao ficheiro src/system.c}
+\hypertarget{system_8c}{}\label{system_8c}\index{src/system.c@{src/system.c}}
+{\ttfamily \#include $<$system.\+h$>$}\newline
+{\ttfamily \#include $<$first\+\_\+come\+\_\+first\+\_\+served.\+h$>$}\newline
+{\ttfamily \#include $<$round\+\_\+robin.\+h$>$}\newline
+{\ttfamily \#include $<$shortest\+\_\+job\+\_\+first.\+h$>$}\newline
+{\ttfamily \#include $<$priority\+\_\+scheduling\+\_\+single\+\_\+queue.\+h$>$}\newline
+{\ttfamily \#include $<$priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.\+h$>$}\newline
+{\ttfamily \#include $<$lottery\+\_\+scheduling.\+h$>$}\newline
+{\ttfamily \#include $<$process\+\_\+log.\+h$>$}\newline
+{\ttfamily \#include $<$process\+\_\+info.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system_8c_a3596e8e37d4934941784d0743b52c530}{create\+System\+Instance}} (\mbox{\hyperlink{struct_system_create_info}{System\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria uma instância do sistema virtual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{system_8c_a59377f8e05d93670dbf26cfc4f280733}{create\+Process}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}} program)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{system_8c_a2c53b1cc733918ed4ad8f349df9a6a7b}{create\+Process\+With\+Priority}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}} program, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} priority)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo com prioridade especificada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{system_8c_a407999ca910452fbf241666fd368ec39}{create\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria o gerenciador de processos especificado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_program}{Program}} \mbox{\hyperlink{system_8c_ae82311d2a1da3192752fa22304eb1803}{get\+Process\+Program}} (\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém o programa associado a um processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}} \mbox{\hyperlink{system_8c_a0287305e2818e4155bf783d53c5d988a}{get\+Program\+By\+Index}} (\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} index)
+\begin{DoxyCompactList}\small\item\em Obtém um programa pela sua posição na lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system_8c_a26f49e94113dd2c92ea7a18c2a90fd54}{run\+System\+With\+Log}} (const char \texorpdfstring{$\ast$}{*}log\+File)
+\begin{DoxyCompactList}\small\item\em Inicia o sistema e registra um log em um arquivo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system_8c_ab51ff91048ec8956e8fd0a0e78d947b5}{run\+System}} ()
+\begin{DoxyCompactList}\small\item\em Inicia a execução do sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{system_8c_ad682aa1763f73316470f26e2423c3ea7}{free\+System\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Libera a memória usada pela instância atual do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{system_8c_a59377f8e05d93670dbf26cfc4f280733}\index{system.c@{system.c}!createProcess@{createProcess}}
+\index{createProcess@{createProcess}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{createProcess()}{createProcess()}}
+{\footnotesize\ttfamily \label{system_8c_a59377f8e05d93670dbf26cfc4f280733} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} create\+Process (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{\mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}}}]{program}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em name} & Nome do processo. \\
+\hline
+{\em program} & Programa associado ao processo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo criado (\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}). 
+\end{DoxyReturn}
+\Hypertarget{system_8c_a407999ca910452fbf241666fd368ec39}\index{system.c@{system.c}!createProcessManager@{createProcessManager}}
+\index{createProcessManager@{createProcessManager}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{createProcessManager()}{createProcessManager()}}
+{\footnotesize\ttfamily \label{system_8c_a407999ca910452fbf241666fd368ec39} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria o gerenciador de processos especificado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações de criação do gerenciador.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Um ponteiro para o gerenciador de processos criado. 
+\end{DoxyReturn}
+\Hypertarget{system_8c_a2c53b1cc733918ed4ad8f349df9a6a7b}\index{system.c@{system.c}!createProcessWithPriority@{createProcessWithPriority}}
+\index{createProcessWithPriority@{createProcessWithPriority}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{createProcessWithPriority()}{createProcessWithPriority()}}
+{\footnotesize\ttfamily \label{system_8c_a2c53b1cc733918ed4ad8f349df9a6a7b} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} create\+Process\+With\+Priority (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{\mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}}}]{program}{, }\item[{\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}]{priority}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo com prioridade especificada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em name} & Nome do processo. \\
+\hline
+{\em program} & Programa associado ao processo. \\
+\hline
+{\em priority} & Prioridade atribuída ao processo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo criado (\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}). 
+\end{DoxyReturn}
+\Hypertarget{system_8c_a3596e8e37d4934941784d0743b52c530}\index{system.c@{system.c}!createSystemInstance@{createSystemInstance}}
+\index{createSystemInstance@{createSystemInstance}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{createSystemInstance()}{createSystemInstance()}}
+{\footnotesize\ttfamily \label{system_8c_a3596e8e37d4934941784d0743b52c530} 
+void create\+System\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_system_create_info}{System\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma instância do sistema virtual. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações de criação do sistema. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{system_8c_ad682aa1763f73316470f26e2423c3ea7}\index{system.c@{system.c}!freeSystemInstance@{freeSystemInstance}}
+\index{freeSystemInstance@{freeSystemInstance}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{freeSystemInstance()}{freeSystemInstance()}}
+{\footnotesize\ttfamily \label{system_8c_ad682aa1763f73316470f26e2423c3ea7} 
+void free\+System\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Libera a memória usada pela instância atual do sistema. 
+
+\Hypertarget{system_8c_ae82311d2a1da3192752fa22304eb1803}\index{system.c@{system.c}!getProcessProgram@{getProcessProgram}}
+\index{getProcessProgram@{getProcessProgram}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{getProcessProgram()}{getProcessProgram()}}
+{\footnotesize\ttfamily \label{system_8c_ae82311d2a1da3192752fa22304eb1803} 
+\mbox{\hyperlink{struct_program}{Program}} get\+Process\+Program (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém o programa associado a um processo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em pid} & Identificador do processo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O programa associado ao processo. 
+\end{DoxyReturn}
+\Hypertarget{system_8c_a0287305e2818e4155bf783d53c5d988a}\index{system.c@{system.c}!getProgramByIndex@{getProgramByIndex}}
+\index{getProgramByIndex@{getProgramByIndex}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{getProgramByIndex()}{getProgramByIndex()}}
+{\footnotesize\ttfamily \label{system_8c_a0287305e2818e4155bf783d53c5d988a} 
+\mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}} get\+Program\+By\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Obtém um programa pela sua posição na lista. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em index} & Índice do programa na lista.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O programa correspondente ao índice fornecido. 
+\end{DoxyReturn}
+\Hypertarget{system_8c_ab51ff91048ec8956e8fd0a0e78d947b5}\index{system.c@{system.c}!runSystem@{runSystem}}
+\index{runSystem@{runSystem}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{runSystem()}{runSystem()}}
+{\footnotesize\ttfamily \label{system_8c_ab51ff91048ec8956e8fd0a0e78d947b5} 
+void run\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inicia a execução do sistema. 
+
+\Hypertarget{system_8c_a26f49e94113dd2c92ea7a18c2a90fd54}\index{system.c@{system.c}!runSystemWithLog@{runSystemWithLog}}
+\index{runSystemWithLog@{runSystemWithLog}!system.c@{system.c}}
+\doxysubsubsection{\texorpdfstring{runSystemWithLog()}{runSystemWithLog()}}
+{\footnotesize\ttfamily \label{system_8c_a26f49e94113dd2c92ea7a18c2a90fd54} 
+void run\+System\+With\+Log (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{log\+File}{}\end{DoxyParamCaption})}
+
+
+
+Inicia o sistema e registra um log em um arquivo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em log\+File} & Caminho para o arquivo de log. \\
+\hline
+\end{DoxyParams}

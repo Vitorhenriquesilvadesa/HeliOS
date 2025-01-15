@@ -1,0 +1,58 @@
+\doxysection{Referência à estrutura System\+Create\+Info}
+\hypertarget{struct_system_create_info}{}\label{struct_system_create_info}\index{SystemCreateInfo@{SystemCreateInfo}}
+
+
+Especifica os parâmetros para a criação do sistema virtual.  
+
+
+
+
+{\ttfamily \#include $<$system.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} \mbox{\hyperlink{struct_system_create_info_a1b16554bcfd1c2462a9d712d4ee17016}{proc\+Manager}}
+\begin{DoxyCompactList}\small\item\em Configuração do gerenciador de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_system_create_info_a1edccab7e963f8d58e436d43d28056c0}{programs}}
+\begin{DoxyCompactList}\small\item\em Lista de programas disponíveis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Especifica os parâmetros para a criação do sistema virtual. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em proc\+Manager} & Diz o tipo de algoritmo de agendamento de processos que será utilizado pelo sistema operacional. \\
+\hline
+{\em programs} & Especifica os conjuntos de instruções disponíveis para os processos executarem. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_system_create_info_a1b16554bcfd1c2462a9d712d4ee17016}\index{SystemCreateInfo@{SystemCreateInfo}!procManager@{procManager}}
+\index{procManager@{procManager}!SystemCreateInfo@{SystemCreateInfo}}
+\doxysubsubsection{\texorpdfstring{procManager}{procManager}}
+{\footnotesize\ttfamily \label{struct_system_create_info_a1b16554bcfd1c2462a9d712d4ee17016} 
+\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} System\+Create\+Info\+::proc\+Manager}
+
+
+
+Configuração do gerenciador de processos. 
+
+\Hypertarget{struct_system_create_info_a1edccab7e963f8d58e436d43d28056c0}\index{SystemCreateInfo@{SystemCreateInfo}!programs@{programs}}
+\index{programs@{programs}!SystemCreateInfo@{SystemCreateInfo}}
+\doxysubsubsection{\texorpdfstring{programs}{programs}}
+{\footnotesize\ttfamily \label{struct_system_create_info_a1edccab7e963f8d58e436d43d28056c0} 
+\mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}}\texorpdfstring{$\ast$}{*} System\+Create\+Info\+::programs}
+
+
+
+Lista de programas disponíveis. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/kernel/\mbox{\hyperlink{system_8h}{system.\+h}}\end{DoxyCompactItemize}

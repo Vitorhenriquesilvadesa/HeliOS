@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/system.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('system_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro system.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="system_8h_source.html">system.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="first__come__first__served_8h_source.html">first_come_first_served.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="round__robin_8h_source.html">round_robin.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="shortest__job__first_8h_source.html">shortest_job_first.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="priority__scheduling__single__queue_8h_source.html">priority_scheduling_single_queue.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="priority__scheduling__multiple__queues_8h_source.html">priority_scheduling_multiple_queues.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="lottery__scheduling_8h_source.html">lottery_scheduling.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="process__log_8h_source.html">process_log.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="process__info_8h_source.html">process_info.h</a>&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a3596e8e37d4934941784d0743b52c530" id="r_a3596e8e37d4934941784d0743b52c530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3596e8e37d4934941784d0743b52c530">createSystemInstance</a> (<a class="el" href="struct_system_create_info.html">SystemCreateInfo</a> createInfo)</td></tr>
+<tr class="memdesc:a3596e8e37d4934941784d0743b52c530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma instância do sistema virtual.  <br /></td></tr>
+<tr class="separator:a3596e8e37d4934941784d0743b52c530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59377f8e05d93670dbf26cfc4f280733" id="r_a59377f8e05d93670dbf26cfc4f280733"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59377f8e05d93670dbf26cfc4f280733">createProcess</a> (const char *name, <a class="el" href="program_8h.html#a9c81f236597270f262cd6d6915aeea1c">ProgramInstantiationFn</a> program)</td></tr>
+<tr class="memdesc:a59377f8e05d93670dbf26cfc4f280733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo processo.  <br /></td></tr>
+<tr class="separator:a59377f8e05d93670dbf26cfc4f280733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c53b1cc733918ed4ad8f349df9a6a7b" id="r_a2c53b1cc733918ed4ad8f349df9a6a7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c53b1cc733918ed4ad8f349df9a6a7b">createProcessWithPriority</a> (const char *name, <a class="el" href="program_8h.html#a9c81f236597270f262cd6d6915aeea1c">ProgramInstantiationFn</a> program, <a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> priority)</td></tr>
+<tr class="memdesc:a2c53b1cc733918ed4ad8f349df9a6a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo processo com prioridade especificada.  <br /></td></tr>
+<tr class="separator:a2c53b1cc733918ed4ad8f349df9a6a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407999ca910452fbf241666fd368ec39" id="r_a407999ca910452fbf241666fd368ec39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_manager.html">ProcessManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a407999ca910452fbf241666fd368ec39">createProcessManager</a> (<a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo)</td></tr>
+<tr class="memdesc:a407999ca910452fbf241666fd368ec39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria o gerenciador de processos especificado.  <br /></td></tr>
+<tr class="separator:a407999ca910452fbf241666fd368ec39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82311d2a1da3192752fa22304eb1803" id="r_ae82311d2a1da3192752fa22304eb1803"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_program.html">Program</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae82311d2a1da3192752fa22304eb1803">getProcessProgram</a> (<a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:ae82311d2a1da3192752fa22304eb1803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o programa associado a um processo.  <br /></td></tr>
+<tr class="separator:ae82311d2a1da3192752fa22304eb1803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0287305e2818e4155bf783d53c5d988a" id="r_a0287305e2818e4155bf783d53c5d988a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="program_8h.html#a9c81f236597270f262cd6d6915aeea1c">ProgramInstantiationFn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0287305e2818e4155bf783d53c5d988a">getProgramByIndex</a> (<a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> index)</td></tr>
+<tr class="memdesc:a0287305e2818e4155bf783d53c5d988a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém um programa pela sua posição na lista.  <br /></td></tr>
+<tr class="separator:a0287305e2818e4155bf783d53c5d988a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26f49e94113dd2c92ea7a18c2a90fd54" id="r_a26f49e94113dd2c92ea7a18c2a90fd54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f49e94113dd2c92ea7a18c2a90fd54">runSystemWithLog</a> (const char *logFile)</td></tr>
+<tr class="memdesc:a26f49e94113dd2c92ea7a18c2a90fd54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia o sistema e registra um log em um arquivo.  <br /></td></tr>
+<tr class="separator:a26f49e94113dd2c92ea7a18c2a90fd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51ff91048ec8956e8fd0a0e78d947b5" id="r_ab51ff91048ec8956e8fd0a0e78d947b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab51ff91048ec8956e8fd0a0e78d947b5">runSystem</a> ()</td></tr>
+<tr class="memdesc:ab51ff91048ec8956e8fd0a0e78d947b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia a execução do sistema.  <br /></td></tr>
+<tr class="separator:ab51ff91048ec8956e8fd0a0e78d947b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad682aa1763f73316470f26e2423c3ea7" id="r_ad682aa1763f73316470f26e2423c3ea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad682aa1763f73316470f26e2423c3ea7">freeSystemInstance</a> ()</td></tr>
+<tr class="memdesc:ad682aa1763f73316470f26e2423c3ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera a memória usada pela instância atual do sistema.  <br /></td></tr>
+<tr class="separator:ad682aa1763f73316470f26e2423c3ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a59377f8e05d93670dbf26cfc4f280733" name="a59377f8e05d93670dbf26cfc4f280733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59377f8e05d93670dbf26cfc4f280733">&#9670;&#160;</a></span>createProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> createProcess </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="program_8h.html#a9c81f236597270f262cd6d6915aeea1c">ProgramInstantiationFn</a></td>          <td class="paramname"><span class="paramname"><em>program</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo processo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nome do processo. </td></tr>
+    <tr><td class="paramname">program</td><td>Programa associado ao processo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo criado (<a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a>). </dd></dl>
+
+</div>
+</div>
+<a id="a407999ca910452fbf241666fd368ec39" name="a407999ca910452fbf241666fd368ec39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407999ca910452fbf241666fd368ec39">&#9670;&#160;</a></span>createProcessManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process_manager.html">ProcessManager</a> * createProcessManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>createInfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria o gerenciador de processos especificado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">createInfo</td><td>Informações de criação do gerenciador.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Um ponteiro para o gerenciador de processos criado. </dd></dl>
+
+</div>
+</div>
+<a id="a2c53b1cc733918ed4ad8f349df9a6a7b" name="a2c53b1cc733918ed4ad8f349df9a6a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c53b1cc733918ed4ad8f349df9a6a7b">&#9670;&#160;</a></span>createProcessWithPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> createProcessWithPriority </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="program_8h.html#a9c81f236597270f262cd6d6915aeea1c">ProgramInstantiationFn</a></td>          <td class="paramname"><span class="paramname"><em>program</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo processo com prioridade especificada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nome do processo. </td></tr>
+    <tr><td class="paramname">program</td><td>Programa associado ao processo. </td></tr>
+    <tr><td class="paramname">priority</td><td>Prioridade atribuída ao processo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo criado (<a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a>). </dd></dl>
+
+</div>
+</div>
+<a id="a3596e8e37d4934941784d0743b52c530" name="a3596e8e37d4934941784d0743b52c530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3596e8e37d4934941784d0743b52c530">&#9670;&#160;</a></span>createSystemInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void createSystemInstance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_system_create_info.html">SystemCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>createInfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria uma instância do sistema virtual. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">createInfo</td><td>Informações de criação do sistema. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad682aa1763f73316470f26e2423c3ea7" name="ad682aa1763f73316470f26e2423c3ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad682aa1763f73316470f26e2423c3ea7">&#9670;&#160;</a></span>freeSystemInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeSystemInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera a memória usada pela instância atual do sistema. </p>
+
+</div>
+</div>
+<a id="ae82311d2a1da3192752fa22304eb1803" name="ae82311d2a1da3192752fa22304eb1803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae82311d2a1da3192752fa22304eb1803">&#9670;&#160;</a></span>getProcessProgram()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_program.html">Program</a> getProcessProgram </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém o programa associado a um processo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pid</td><td>Identificador do processo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O programa associado ao processo. </dd></dl>
+
+</div>
+</div>
+<a id="a0287305e2818e4155bf783d53c5d988a" name="a0287305e2818e4155bf783d53c5d988a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0287305e2818e4155bf783d53c5d988a">&#9670;&#160;</a></span>getProgramByIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="program_8h.html#a9c81f236597270f262cd6d6915aeea1c">ProgramInstantiationFn</a> getProgramByIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém um programa pela sua posição na lista. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Índice do programa na lista.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O programa correspondente ao índice fornecido. </dd></dl>
+
+</div>
+</div>
+<a id="ab51ff91048ec8956e8fd0a0e78d947b5" name="ab51ff91048ec8956e8fd0a0e78d947b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab51ff91048ec8956e8fd0a0e78d947b5">&#9670;&#160;</a></span>runSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicia a execução do sistema. </p>
+
+</div>
+</div>
+<a id="a26f49e94113dd2c92ea7a18c2a90fd54" name="a26f49e94113dd2c92ea7a18c2a90fd54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26f49e94113dd2c92ea7a18c2a90fd54">&#9670;&#160;</a></span>runSystemWithLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runSystemWithLog </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>logFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicia o sistema e registra um log em um arquivo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logFile</td><td>Caminho para o arquivo de log. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="system_8c.html">system.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

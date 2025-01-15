@@ -1,0 +1,865 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/cpu/cpu.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('cpu_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#enum-members">Enumerações</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro cpu.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definições e funções relacionadas à CPU virtual do sistema HeliOS.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="instruction_8h_source.html">instruction.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="program_8h_source.html">program.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="system__types_8h_source.html">system_types.h</a>&gt;</code><br />
+</div>
+<p><a href="cpu_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cpu.html">Cpu</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_cpu_info.html">CpuInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que contém informações resumidas sobre a CPU.  <a href="struct_cpu_info.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a818035201aceff5d5f5463eeefdebe97" id="r_a818035201aceff5d5f5463eeefdebe97"><td class="memItemLeft" align="right" valign="top">typedef struct CpuInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a818035201aceff5d5f5463eeefdebe97">CpuInfo</a></td></tr>
+<tr class="memdesc:a818035201aceff5d5f5463eeefdebe97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que contém informações resumidas sobre a CPU.  <br /></td></tr>
+<tr class="separator:a818035201aceff5d5f5463eeefdebe97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerações</h2></td></tr>
+<tr class="memitem:ac6bf1bdc3219b7ab46bd25a403952c87" id="r_ac6bf1bdc3219b7ab46bd25a403952c87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6bf1bdc3219b7ab46bd25a403952c87">CpuState</a> { <a class="el" href="#ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62">CPU_RUNNING</a>
+, <a class="el" href="#ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8">CPU_IDLE</a>
+, <a class="el" href="#ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684">CPU_HALTED</a>
+ }</td></tr>
+<tr class="memdesc:ac6bf1bdc3219b7ab46bd25a403952c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa o estado atual da CPU.  <a href="#ac6bf1bdc3219b7ab46bd25a403952c87">Mais...</a><br /></td></tr>
+<tr class="separator:ac6bf1bdc3219b7ab46bd25a403952c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ab16eb50538eb67baacf22f84f3ae9b54" id="r_ab16eb50538eb67baacf22f84f3ae9b54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab16eb50538eb67baacf22f84f3ae9b54">initCpu</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:ab16eb50538eb67baacf22f84f3ae9b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a CPU.  <br /></td></tr>
+<tr class="separator:ab16eb50538eb67baacf22f84f3ae9b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2962dd52c472540bb7ff458c24d7f71" id="r_af2962dd52c472540bb7ff458c24d7f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2962dd52c472540bb7ff458c24d7f71">attachProcess</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="struct_process.html">Process</a> *process)</td></tr>
+<tr class="memdesc:af2962dd52c472540bb7ff458c24d7f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anexa um processo à CPU.  <br /></td></tr>
+<tr class="separator:af2962dd52c472540bb7ff458c24d7f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c923bd699264dee85f780038f8256f" id="r_a17c923bd699264dee85f780038f8256f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cpu_info.html">CpuInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17c923bd699264dee85f780038f8256f">detachProcess</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:a17c923bd699264dee85f780038f8256f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o processo atualmente anexado à CPU e retorna suas informações.  <br /></td></tr>
+<tr class="separator:a17c923bd699264dee85f780038f8256f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac80c4196956a8969ae561488e85141ec" id="r_ac80c4196956a8969ae561488e85141ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac80c4196956a8969ae561488e85141ec">decodeAndExecute</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:ac80c4196956a8969ae561488e85141ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodifica e executa a próxima instrução da CPU.  <br /></td></tr>
+<tr class="separator:ac80c4196956a8969ae561488e85141ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae019a5e72f76aa04eeb3011e3e0d6b" id="r_adae019a5e72f76aa04eeb3011e3e0d6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adae019a5e72f76aa04eeb3011e3e0d6b">readByte</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:adae019a5e72f76aa04eeb3011e3e0d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê um byte da memória.  <br /></td></tr>
+<tr class="separator:adae019a5e72f76aa04eeb3011e3e0d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0f3d709f9e2812185ed3bd545ce69d" id="r_a2b0f3d709f9e2812185ed3bd545ce69d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0f3d709f9e2812185ed3bd545ce69d">cpuPush</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, int constant)</td></tr>
+<tr class="memdesc:a2b0f3d709f9e2812185ed3bd545ce69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere um valor constante na pilha da CPU.  <br /></td></tr>
+<tr class="separator:a2b0f3d709f9e2812185ed3bd545ce69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4535eb7ed4659ce884fbb0db4ed04d26" id="r_a4535eb7ed4659ce884fbb0db4ed04d26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4535eb7ed4659ce884fbb0db4ed04d26">cpuPop</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg)</td></tr>
+<tr class="memdesc:a4535eb7ed4659ce884fbb0db4ed04d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um valor da pilha e o move para um registrador.  <br /></td></tr>
+<tr class="separator:a4535eb7ed4659ce884fbb0db4ed04d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd18d932f4becc5106ed37ddb038711a" id="r_afd18d932f4becc5106ed37ddb038711a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd18d932f4becc5106ed37ddb038711a">cpuAdd</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg1, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg2)</td></tr>
+<tr class="memdesc:afd18d932f4becc5106ed37ddb038711a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a soma de dois registradores.  <br /></td></tr>
+<tr class="separator:afd18d932f4becc5106ed37ddb038711a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0398d31a8d39f03f3e04d1252ffd44f0" id="r_a0398d31a8d39f03f3e04d1252ffd44f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0398d31a8d39f03f3e04d1252ffd44f0">cpuSub</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg1, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg2)</td></tr>
+<tr class="memdesc:a0398d31a8d39f03f3e04d1252ffd44f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a subtração entre dois registradores.  <br /></td></tr>
+<tr class="separator:a0398d31a8d39f03f3e04d1252ffd44f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae4f773a48ad29c50fe023f21fa7a4b" id="r_adae4f773a48ad29c50fe023f21fa7a4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adae4f773a48ad29c50fe023f21fa7a4b">cpuMul</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg1, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg2)</td></tr>
+<tr class="memdesc:adae4f773a48ad29c50fe023f21fa7a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplica os valores de dois registradores.  <br /></td></tr>
+<tr class="separator:adae4f773a48ad29c50fe023f21fa7a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af04d2e382910249ae9e25c987e98448f" id="r_af04d2e382910249ae9e25c987e98448f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af04d2e382910249ae9e25c987e98448f">cpuDiv</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg1, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg2)</td></tr>
+<tr class="memdesc:af04d2e382910249ae9e25c987e98448f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide os valores de dois registradores.  <br /></td></tr>
+<tr class="separator:af04d2e382910249ae9e25c987e98448f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9898acf0facf8ab33ac6dc420a1c4c0" id="r_af9898acf0facf8ab33ac6dc420a1c4c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9898acf0facf8ab33ac6dc420a1c4c0">cpuMovConst</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> value, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg1)</td></tr>
+<tr class="memdesc:af9898acf0facf8ab33ac6dc420a1c4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move um valor constante para um registrador.  <br /></td></tr>
+<tr class="separator:af9898acf0facf8ab33ac6dc420a1c4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a073d4b91dcf76b81f9a8ef0644739d2c" id="r_a073d4b91dcf76b81f9a8ef0644739d2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a073d4b91dcf76b81f9a8ef0644739d2c">cpuMovAcc</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg1)</td></tr>
+<tr class="memdesc:a073d4b91dcf76b81f9a8ef0644739d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move o valor do acumulador para um registrador.  <br /></td></tr>
+<tr class="separator:a073d4b91dcf76b81f9a8ef0644739d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9472d00b7cf1f86ce5259d2bbb5666" id="r_aad9472d00b7cf1f86ce5259d2bbb5666"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad9472d00b7cf1f86ce5259d2bbb5666">cpuJump</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:aad9472d00b7cf1f86ce5259d2bbb5666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salta para uma instrução específica.  <br /></td></tr>
+<tr class="separator:aad9472d00b7cf1f86ce5259d2bbb5666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf772384507f4049127958ec70e48aa" id="r_afbf772384507f4049127958ec70e48aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbf772384507f4049127958ec70e48aa">cpuJumpIfEqual</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> value, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> index)</td></tr>
+<tr class="memdesc:afbf772384507f4049127958ec70e48aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salta se o valor no registrador for igual ao valor especificado.  <br /></td></tr>
+<tr class="separator:afbf772384507f4049127958ec70e48aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a4e7c0617a41fa786abe2f3b600f8a" id="r_a77a4e7c0617a41fa786abe2f3b600f8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77a4e7c0617a41fa786abe2f3b600f8a">cpuJumpIfNotEqual</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> reg, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> value, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> index)</td></tr>
+<tr class="memdesc:a77a4e7c0617a41fa786abe2f3b600f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salta se o valor no registrador for diferente do valor especificado.  <br /></td></tr>
+<tr class="separator:a77a4e7c0617a41fa786abe2f3b600f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b145dfabbe03de1a93e72f9ebd78c9" id="r_ac8b145dfabbe03de1a93e72f9ebd78c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8b145dfabbe03de1a93e72f9ebd78c9">cpuPrint</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:ac8b145dfabbe03de1a93e72f9ebd78c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime o valor do acumulador.  <br /></td></tr>
+<tr class="separator:ac8b145dfabbe03de1a93e72f9ebd78c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633e070ade1dd5b98e7add42b14cc22e" id="r_a633e070ade1dd5b98e7add42b14cc22e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a633e070ade1dd5b98e7add42b14cc22e">cpuHalt</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu)</td></tr>
+<tr class="memdesc:a633e070ade1dd5b98e7add42b14cc22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrompe a execução da CPU.  <br /></td></tr>
+<tr class="separator:a633e070ade1dd5b98e7add42b14cc22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b2940cee2645fdd0cee13317209ad4" id="r_a92b2940cee2645fdd0cee13317209ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92b2940cee2645fdd0cee13317209ad4">cpuCreateProcess</a> (<a class="el" href="struct_cpu.html">Cpu</a> *cpu, <a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> priority, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> nameIndex, <a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> programIndex)</td></tr>
+<tr class="memdesc:a92b2940cee2645fdd0cee13317209ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo processo com a prioridade especificada.  <br /></td></tr>
+<tr class="separator:a92b2940cee2645fdd0cee13317209ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Definições e funções relacionadas à CPU virtual do sistema HeliOS. </p>
+<p>Este arquivo contém as estruturas e funções necessárias para gerenciar a CPU virtual, incluindo execução de instruções, manipulação de registradores e operações na pilha. </p>
+</div><h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a818035201aceff5d5f5463eeefdebe97" name="a818035201aceff5d5f5463eeefdebe97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a818035201aceff5d5f5463eeefdebe97">&#9670;&#160;</a></span>CpuInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct CpuInfo CpuInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estrutura que contém informações resumidas sobre a CPU. </p>
+<p>Esta estrutura é usada ao destacar um processo da CPU. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos valores da enumeração</h2>
+<a id="ac6bf1bdc3219b7ab46bd25a403952c87" name="ac6bf1bdc3219b7ab46bd25a403952c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6bf1bdc3219b7ab46bd25a403952c87">&#9670;&#160;</a></span>CpuState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ac6bf1bdc3219b7ab46bd25a403952c87">CpuState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Representa o estado atual da CPU. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62" name="ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62"></a>CPU_RUNNING&#160;</td><td class="fielddoc"><p>A CPU está em execução. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8" name="ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8"></a>CPU_IDLE&#160;</td><td class="fielddoc"><p>A CPU está ociosa. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684" name="ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684"></a>CPU_HALTED&#160;</td><td class="fielddoc"><p>A CPU foi interrompida. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="af2962dd52c472540bb7ff458c24d7f71" name="af2962dd52c472540bb7ff458c24d7f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2962dd52c472540bb7ff458c24d7f71">&#9670;&#160;</a></span>attachProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void attachProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_process.html">Process</a> *</td>          <td class="paramname"><span class="paramname"><em>process</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Anexa um processo à CPU. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">process</td><td>Processo a ser anexado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afd18d932f4becc5106ed37ddb038711a" name="afd18d932f4becc5106ed37ddb038711a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd18d932f4becc5106ed37ddb038711a">&#9670;&#160;</a></span>cpuAdd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuAdd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza a soma de dois registradores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg1</td><td>Primeiro registrador. </td></tr>
+    <tr><td class="paramname">reg2</td><td>Segundo registrador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92b2940cee2645fdd0cee13317209ad4" name="a92b2940cee2645fdd0cee13317209ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b2940cee2645fdd0cee13317209ad4">&#9670;&#160;</a></span>cpuCreateProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuCreateProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>nameIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>programIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo processo com a prioridade especificada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">priority</td><td>Prioridade do processo. </td></tr>
+    <tr><td class="paramname">nameIndex</td><td>Índice do nome do processo. </td></tr>
+    <tr><td class="paramname">programIndex</td><td>Índice do programa associado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af04d2e382910249ae9e25c987e98448f" name="af04d2e382910249ae9e25c987e98448f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af04d2e382910249ae9e25c987e98448f">&#9670;&#160;</a></span>cpuDiv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuDiv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Divide os valores de dois registradores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg1</td><td>Primeiro registrador. </td></tr>
+    <tr><td class="paramname">reg2</td><td>Segundo registrador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a633e070ade1dd5b98e7add42b14cc22e" name="a633e070ade1dd5b98e7add42b14cc22e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633e070ade1dd5b98e7add42b14cc22e">&#9670;&#160;</a></span>cpuHalt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuHalt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrompe a execução da CPU. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad9472d00b7cf1f86ce5259d2bbb5666" name="aad9472d00b7cf1f86ce5259d2bbb5666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9472d00b7cf1f86ce5259d2bbb5666">&#9670;&#160;</a></span>cpuJump()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuJump </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salta para uma instrução específica. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afbf772384507f4049127958ec70e48aa" name="afbf772384507f4049127958ec70e48aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf772384507f4049127958ec70e48aa">&#9670;&#160;</a></span>cpuJumpIfEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuJumpIfEqual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salta se o valor no registrador for igual ao valor especificado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg</td><td>Registrador a ser comparado. </td></tr>
+    <tr><td class="paramname">value</td><td>Valor a ser comparado. </td></tr>
+    <tr><td class="paramname">index</td><td>Índice de destino do salto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a77a4e7c0617a41fa786abe2f3b600f8a" name="a77a4e7c0617a41fa786abe2f3b600f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a4e7c0617a41fa786abe2f3b600f8a">&#9670;&#160;</a></span>cpuJumpIfNotEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuJumpIfNotEqual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salta se o valor no registrador for diferente do valor especificado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg</td><td>Registrador a ser comparado. </td></tr>
+    <tr><td class="paramname">value</td><td>Valor a ser comparado. </td></tr>
+    <tr><td class="paramname">index</td><td>Índice de destino do salto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a073d4b91dcf76b81f9a8ef0644739d2c" name="a073d4b91dcf76b81f9a8ef0644739d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073d4b91dcf76b81f9a8ef0644739d2c">&#9670;&#160;</a></span>cpuMovAcc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuMovAcc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg1</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move o valor do acumulador para um registrador. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg1</td><td>Registrador de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af9898acf0facf8ab33ac6dc420a1c4c0" name="af9898acf0facf8ab33ac6dc420a1c4c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9898acf0facf8ab33ac6dc420a1c4c0">&#9670;&#160;</a></span>cpuMovConst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuMovConst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg1</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move um valor constante para um registrador. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">value</td><td>Valor a ser movido. </td></tr>
+    <tr><td class="paramname">reg1</td><td>Registrador de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adae4f773a48ad29c50fe023f21fa7a4b" name="adae4f773a48ad29c50fe023f21fa7a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae4f773a48ad29c50fe023f21fa7a4b">&#9670;&#160;</a></span>cpuMul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuMul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplica os valores de dois registradores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg1</td><td>Primeiro registrador. </td></tr>
+    <tr><td class="paramname">reg2</td><td>Segundo registrador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4535eb7ed4659ce884fbb0db4ed04d26" name="a4535eb7ed4659ce884fbb0db4ed04d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4535eb7ed4659ce884fbb0db4ed04d26">&#9670;&#160;</a></span>cpuPop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuPop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um valor da pilha e o move para um registrador. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg</td><td>Registrador de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac8b145dfabbe03de1a93e72f9ebd78c9" name="ac8b145dfabbe03de1a93e72f9ebd78c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b145dfabbe03de1a93e72f9ebd78c9">&#9670;&#160;</a></span>cpuPrint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuPrint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime o valor do acumulador. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b0f3d709f9e2812185ed3bd545ce69d" name="a2b0f3d709f9e2812185ed3bd545ce69d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0f3d709f9e2812185ed3bd545ce69d">&#9670;&#160;</a></span>cpuPush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuPush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>constant</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insere um valor constante na pilha da CPU. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">constant</td><td>Valor constante a ser empilhado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0398d31a8d39f03f3e04d1252ffd44f0" name="a0398d31a8d39f03f3e04d1252ffd44f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0398d31a8d39f03f3e04d1252ffd44f0">&#9670;&#160;</a></span>cpuSub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpuSub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="instruction_8h.html#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>          <td class="paramname"><span class="paramname"><em>reg2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza a subtração entre dois registradores. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+    <tr><td class="paramname">reg1</td><td>Primeiro registrador. </td></tr>
+    <tr><td class="paramname">reg2</td><td>Segundo registrador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac80c4196956a8969ae561488e85141ec" name="ac80c4196956a8969ae561488e85141ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80c4196956a8969ae561488e85141ec">&#9670;&#160;</a></span>decodeAndExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decodeAndExecute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decodifica e executa a próxima instrução da CPU. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17c923bd699264dee85f780038f8256f" name="a17c923bd699264dee85f780038f8256f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17c923bd699264dee85f780038f8256f">&#9670;&#160;</a></span>detachProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_cpu_info.html">CpuInfo</a> detachProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove o processo atualmente anexado à CPU e retorna suas informações. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>As informações do processo que foi destacado. </dd></dl>
+
+</div>
+</div>
+<a id="ab16eb50538eb67baacf22f84f3ae9b54" name="ab16eb50538eb67baacf22f84f3ae9b54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16eb50538eb67baacf22f84f3ae9b54">&#9670;&#160;</a></span>initCpu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initCpu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa a CPU. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a estrutura da CPU a ser inicializada. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adae019a5e72f76aa04eeb3011e3e0d6b" name="adae019a5e72f76aa04eeb3011e3e0d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae019a5e72f76aa04eeb3011e3e0d6b">&#9670;&#160;</a></span>readByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#a50626603cd245d9ac35514f5612171f3">Byte</a> readByte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_cpu.html">Cpu</a> *</td>          <td class="paramname"><span class="paramname"><em>cpu</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lê um byte da memória. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cpu</td><td>Ponteiro para a CPU. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O byte lido. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2c61f424fd391396db977702a2beee9a.html">cpu</a></li><li class="navelem"><a class="el" href="cpu_8h.html">cpu.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

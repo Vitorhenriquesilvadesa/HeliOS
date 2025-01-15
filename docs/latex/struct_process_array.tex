@@ -1,0 +1,63 @@
+\doxysection{Referência à estrutura Process\+Array}
+\hypertarget{struct_process_array}{}\label{struct_process_array}\index{ProcessArray@{ProcessArray}}
+
+
+Estrutura que representa uma lista de processos.  
+
+
+
+
+{\ttfamily \#include $<$process.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_process_array_ad3807d3fab8bde2e927806253e1f60ad}{processes}}
+\begin{DoxyCompactList}\small\item\em Array de ponteiros para processos. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_process_array_acb9dd95ec44001bdffae152fbf0874ef}{length}}
+\begin{DoxyCompactList}\small\item\em Quantidade de processos no array. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_process_array_ae293864ee072ca406894611b92b8f07a}{capacity}}
+\begin{DoxyCompactList}\small\item\em Capacidade do array de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura que representa uma lista de processos. 
+
+A estrutura \doxylink{struct_process_array}{Process\+Array} é usada para armazenar múltiplos processos no sistema, permitindo operações de gerenciamento e manipulação de processos, como inserção e remoção. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_process_array_ae293864ee072ca406894611b92b8f07a}\index{ProcessArray@{ProcessArray}!capacity@{capacity}}
+\index{capacity@{capacity}!ProcessArray@{ProcessArray}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily \label{struct_process_array_ae293864ee072ca406894611b92b8f07a} 
+size\+\_\+t Process\+Array\+::capacity}
+
+
+
+Capacidade do array de processos. 
+
+\Hypertarget{struct_process_array_acb9dd95ec44001bdffae152fbf0874ef}\index{ProcessArray@{ProcessArray}!length@{length}}
+\index{length@{length}!ProcessArray@{ProcessArray}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily \label{struct_process_array_acb9dd95ec44001bdffae152fbf0874ef} 
+size\+\_\+t Process\+Array\+::length}
+
+
+
+Quantidade de processos no array. 
+
+\Hypertarget{struct_process_array_ad3807d3fab8bde2e927806253e1f60ad}\index{ProcessArray@{ProcessArray}!processes@{processes}}
+\index{processes@{processes}!ProcessArray@{ProcessArray}}
+\doxysubsubsection{\texorpdfstring{processes}{processes}}
+{\footnotesize\ttfamily \label{struct_process_array_ad3807d3fab8bde2e927806253e1f60ad} 
+\mbox{\hyperlink{struct_process}{Process}}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Process\+Array\+::processes}
+
+
+
+Array de ponteiros para processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{process_8h}{process.\+h}}\end{DoxyCompactItemize}

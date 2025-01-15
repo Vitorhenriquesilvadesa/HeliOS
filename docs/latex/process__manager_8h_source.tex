@@ -1,0 +1,68 @@
+\doxysection{process\+\_\+manager.\+h}
+\hypertarget{process__manager_8h_source}{}\label{process__manager_8h_source}\index{src/process/process\_manager.h@{src/process/process\_manager.h}}
+\mbox{\hyperlink{process__manager_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ HL\_PROC\_MANAGER\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ HL\_PROC\_MANAGER\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process_8h}{process.h}}>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ (*\mbox{\hyperlink{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687}{ProcCreateFn}})(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_process}{Process}}\ *(*GetProcessFn)(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ pid);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ (*\mbox{\hyperlink{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447}{ProcScheduleFn}})(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ *(*InitProcTableFn)(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ bool\ (*\mbox{\hyperlink{process__manager_8h_a3febc31b15e69aa564334898f5c311be}{HasProcFn}})(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{process__manager_8h_a8eec4e604853852c0cac702c26274dbe}{OnProcDetachFn}})(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383}{HL\_PROC\_MANAGER\_TYPE\_FIRST\_COME\_FIRST\_SERVED}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2}{HL\_PROC\_MANAGER\_TYPE\_SHORTEST\_JOB\_FIRST}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001}{HL\_PROC\_MANAGER\_TYPE\_ROUND\_ROBIN}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef}{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_SINGLE\_QUEUE}},\ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f}{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_MULTIPLE\_QUEUES}},\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847}{HL\_PROC\_MANAGER\_TYPE\_LOTTERY\_SCHEDULING}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f}{HL\_PROC\_MANAGER\_TYPE\_MAX}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \}\ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{ProcManagerType}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc}{PREEMPTION\_NONE}},\ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851}{PREEMPTION\_QUANTUM}},\ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2}{PREEMPTION\_PRIORITY}},\ }
+\DoxyCodeLine{00114\ \}\ \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77}{PreemptionType}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{ProcManagerType}}\ \mbox{\hyperlink{struct_process_manager_create_info_adf12231eb36ff6f30a73fd04cccccbb2}{type}};\ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}\ \mbox{\hyperlink{struct_process_manager_create_info_a499161fe58a6d51806337561dc2e9893}{quantum}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \}\ \mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}{PreemptionFlag}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{ProcManagerType}}\ \mbox{\hyperlink{struct_process_manager_a444868c67408b7e8680997fb4f19b595}{type}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}{PreemptionFlag}}\ \mbox{\hyperlink{struct_process_manager_a20d24924b9f6d85e464a7935a0582b57}{preemptionType}};\ }
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687}{ProcCreateFn}}\ \mbox{\hyperlink{struct_process_manager_a7ded61f56da77ef3c641903dc4de6c50}{createProc}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447}{ProcScheduleFn}}\ \mbox{\hyperlink{struct_process_manager_a4aeaf74898d8a65475b47e20f2d726ee}{schedule}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a956103fa8932386383a2e3b83ede37a0}{InitProcTableFn}}\ \mbox{\hyperlink{struct_process_manager_a8b675a99fc0e249d332e713ae417a9cb}{initTable}};\ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a3b70fb39abba75f75c961bfa121a5eeb}{GetProcessFn}}\ \mbox{\hyperlink{struct_process_manager_a0e7aa5a083e99e9a38c63075fb67bea3}{getProcess}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{struct_process_array}{ProcessArray}}\ \mbox{\hyperlink{struct_process_manager_a71cadeeab1c0fdb5f903241379713a83}{processes}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a3febc31b15e69aa564334898f5c311be}{HasProcFn}}\ \mbox{\hyperlink{struct_process_manager_a69d6b2acd48fcee752ef1753dacb4c08}{hasProcess}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{process__manager_8h_a8eec4e604853852c0cac702c26274dbe}{OnProcDetachFn}}\ \mbox{\hyperlink{struct_process_manager_a70942948d1d445920df072db5363e9dd}{onDetach}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}\ \mbox{\hyperlink{struct_process_manager_a35816d9def54bfc67757fd8ff4720f78}{quantum}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \}\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,147 @@
+\doxysection{Referência à estrutura Process\+Manager}
+\hypertarget{struct_process_manager}{}\label{struct_process_manager}\index{ProcessManager@{ProcessManager}}
+
+
+Estrutura do gerenciador de processos.  
+
+
+
+
+{\ttfamily \#include $<$process\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{Proc\+Manager\+Type}} \mbox{\hyperlink{struct_process_manager_a444868c67408b7e8680997fb4f19b595}{type}}
+\begin{DoxyCompactList}\small\item\em Tipo do gerenciador de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}{Preemption\+Flag}} \mbox{\hyperlink{struct_process_manager_a20d24924b9f6d85e464a7935a0582b57}{preemption\+Type}}
+\begin{DoxyCompactList}\small\item\em Tipo de preempção utilizado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687}{Proc\+Create\+Fn}} \mbox{\hyperlink{struct_process_manager_a7ded61f56da77ef3c641903dc4de6c50}{create\+Proc}}
+\begin{DoxyCompactList}\small\item\em Função para criação de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447}{Proc\+Schedule\+Fn}} \mbox{\hyperlink{struct_process_manager_a4aeaf74898d8a65475b47e20f2d726ee}{schedule}}
+\begin{DoxyCompactList}\small\item\em Função para escalonamento de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a956103fa8932386383a2e3b83ede37a0}{Init\+Proc\+Table\+Fn}} \mbox{\hyperlink{struct_process_manager_a8b675a99fc0e249d332e713ae417a9cb}{init\+Table}}
+\begin{DoxyCompactList}\small\item\em Função para inicialização da tabela de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a3b70fb39abba75f75c961bfa121a5eeb}{Get\+Process\+Fn}} \mbox{\hyperlink{struct_process_manager_a0e7aa5a083e99e9a38c63075fb67bea3}{get\+Process}}
+\begin{DoxyCompactList}\small\item\em Função para obtenção de um processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process_array}{Process\+Array}} \mbox{\hyperlink{struct_process_manager_a71cadeeab1c0fdb5f903241379713a83}{processes}}
+\begin{DoxyCompactList}\small\item\em Array de processos gerenciados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a3febc31b15e69aa564334898f5c311be}{Has\+Proc\+Fn}} \mbox{\hyperlink{struct_process_manager_a69d6b2acd48fcee752ef1753dacb4c08}{has\+Process}}
+\begin{DoxyCompactList}\small\item\em Função para verificar se há processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process__manager_8h_a8eec4e604853852c0cac702c26274dbe}{On\+Proc\+Detach\+Fn}} \mbox{\hyperlink{struct_process_manager_a70942948d1d445920df072db5363e9dd}{on\+Detach}}
+\begin{DoxyCompactList}\small\item\em Função chamada quando um processo é desacoplado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{struct_process_manager_a35816d9def54bfc67757fd8ff4720f78}{quantum}}
+\begin{DoxyCompactList}\small\item\em Quantum de tempo para algoritmos como Round Robin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura do gerenciador de processos. 
+
+Estrutura que define o gerenciador de processos, incluindo os algoritmos de escalonamento, tabelas de processos, e as funções associadas à criação, agendamento e gerenciamento de processos. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_process_manager_a7ded61f56da77ef3c641903dc4de6c50}\index{ProcessManager@{ProcessManager}!createProc@{createProc}}
+\index{createProc@{createProc}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{createProc}{createProc}}
+{\footnotesize\ttfamily \label{struct_process_manager_a7ded61f56da77ef3c641903dc4de6c50} 
+\mbox{\hyperlink{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687}{Proc\+Create\+Fn}} Process\+Manager\+::create\+Proc}
+
+
+
+Função para criação de processos. 
+
+\Hypertarget{struct_process_manager_a0e7aa5a083e99e9a38c63075fb67bea3}\index{ProcessManager@{ProcessManager}!getProcess@{getProcess}}
+\index{getProcess@{getProcess}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{getProcess}{getProcess}}
+{\footnotesize\ttfamily \label{struct_process_manager_a0e7aa5a083e99e9a38c63075fb67bea3} 
+\mbox{\hyperlink{process__manager_8h_a3b70fb39abba75f75c961bfa121a5eeb}{Get\+Process\+Fn}} Process\+Manager\+::get\+Process}
+
+
+
+Função para obtenção de um processo. 
+
+\Hypertarget{struct_process_manager_a69d6b2acd48fcee752ef1753dacb4c08}\index{ProcessManager@{ProcessManager}!hasProcess@{hasProcess}}
+\index{hasProcess@{hasProcess}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{hasProcess}{hasProcess}}
+{\footnotesize\ttfamily \label{struct_process_manager_a69d6b2acd48fcee752ef1753dacb4c08} 
+\mbox{\hyperlink{process__manager_8h_a3febc31b15e69aa564334898f5c311be}{Has\+Proc\+Fn}} Process\+Manager\+::has\+Process}
+
+
+
+Função para verificar se há processos. 
+
+\Hypertarget{struct_process_manager_a8b675a99fc0e249d332e713ae417a9cb}\index{ProcessManager@{ProcessManager}!initTable@{initTable}}
+\index{initTable@{initTable}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{initTable}{initTable}}
+{\footnotesize\ttfamily \label{struct_process_manager_a8b675a99fc0e249d332e713ae417a9cb} 
+\mbox{\hyperlink{process__manager_8h_a956103fa8932386383a2e3b83ede37a0}{Init\+Proc\+Table\+Fn}} Process\+Manager\+::init\+Table}
+
+
+
+Função para inicialização da tabela de processos. 
+
+\Hypertarget{struct_process_manager_a70942948d1d445920df072db5363e9dd}\index{ProcessManager@{ProcessManager}!onDetach@{onDetach}}
+\index{onDetach@{onDetach}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{onDetach}{onDetach}}
+{\footnotesize\ttfamily \label{struct_process_manager_a70942948d1d445920df072db5363e9dd} 
+\mbox{\hyperlink{process__manager_8h_a8eec4e604853852c0cac702c26274dbe}{On\+Proc\+Detach\+Fn}} Process\+Manager\+::on\+Detach}
+
+
+
+Função chamada quando um processo é desacoplado. 
+
+\Hypertarget{struct_process_manager_a20d24924b9f6d85e464a7935a0582b57}\index{ProcessManager@{ProcessManager}!preemptionType@{preemptionType}}
+\index{preemptionType@{preemptionType}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{preemptionType}{preemptionType}}
+{\footnotesize\ttfamily \label{struct_process_manager_a20d24924b9f6d85e464a7935a0582b57} 
+\mbox{\hyperlink{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}{Preemption\+Flag}} Process\+Manager\+::preemption\+Type}
+
+
+
+Tipo de preempção utilizado. 
+
+\Hypertarget{struct_process_manager_a71cadeeab1c0fdb5f903241379713a83}\index{ProcessManager@{ProcessManager}!processes@{processes}}
+\index{processes@{processes}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{processes}{processes}}
+{\footnotesize\ttfamily \label{struct_process_manager_a71cadeeab1c0fdb5f903241379713a83} 
+\mbox{\hyperlink{struct_process_array}{Process\+Array}} Process\+Manager\+::processes}
+
+
+
+Array de processos gerenciados. 
+
+\Hypertarget{struct_process_manager_a35816d9def54bfc67757fd8ff4720f78}\index{ProcessManager@{ProcessManager}!quantum@{quantum}}
+\index{quantum@{quantum}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{quantum}{quantum}}
+{\footnotesize\ttfamily \label{struct_process_manager_a35816d9def54bfc67757fd8ff4720f78} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} Process\+Manager\+::quantum}
+
+
+
+Quantum de tempo para algoritmos como Round Robin. 
+
+\Hypertarget{struct_process_manager_a4aeaf74898d8a65475b47e20f2d726ee}\index{ProcessManager@{ProcessManager}!schedule@{schedule}}
+\index{schedule@{schedule}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{schedule}{schedule}}
+{\footnotesize\ttfamily \label{struct_process_manager_a4aeaf74898d8a65475b47e20f2d726ee} 
+\mbox{\hyperlink{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447}{Proc\+Schedule\+Fn}} Process\+Manager\+::schedule}
+
+
+
+Função para escalonamento de processos. 
+
+\Hypertarget{struct_process_manager_a444868c67408b7e8680997fb4f19b595}\index{ProcessManager@{ProcessManager}!type@{type}}
+\index{type@{type}!ProcessManager@{ProcessManager}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{struct_process_manager_a444868c67408b7e8680997fb4f19b595} 
+\mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{Proc\+Manager\+Type}} Process\+Manager\+::type}
+
+
+
+Tipo do gerenciador de processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{process__manager_8h}{process\+\_\+manager.\+h}}\end{DoxyCompactItemize}

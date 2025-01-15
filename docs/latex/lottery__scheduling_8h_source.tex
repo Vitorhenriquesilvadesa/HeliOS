@@ -1,0 +1,54 @@
+\doxysection{lottery\+\_\+scheduling.\+h}
+\hypertarget{lottery__scheduling_8h_source}{}\label{lottery__scheduling_8h_source}\index{src/process/lottery\_scheduling.h@{src/process/lottery\_scheduling.h}}
+\mbox{\hyperlink{lottery__scheduling_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HL\_LOTTERY\_SCHEDULING\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HL\_LOTTERY\_SCHEDULING\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process__manager_8h}{process\_manager.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ LOTTERY\_QUANTUM\ 1}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lottery_node}{LotteryNode}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_lottery_node_a9152d3f7c6a0ba02d9c8367b8f01f5e1}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_lottery_node_a4d95623eacbec80046464b319b347dbc}{tickets}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lottery_node}{LotteryNode}}\ *\mbox{\hyperlink{struct_lottery_node_add1a6f7cd5d1c5e0222fccb1c37098e6}{next}};\ }
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{struct_lottery_node}{LotteryNode}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct_lottery_node}{LotteryNode}}\ *\mbox{\hyperlink{struct_lottery_proc_table_abc3880bd546f2cc39ca604710c8cbd7a}{head}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_lottery_proc_table_abd6271244ed71dda62c7e85fd17cd02e}{size}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_lottery_proc_table_aae2b7e8d5f0644e9d614ca64d846bcab}{totalTickets}};\ \ }
+\DoxyCodeLine{00046\ \}\ \mbox{\hyperlink{struct_lottery_proc_table}{LotteryProcTable}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ \mbox{\hyperlink{struct_lottery_scheduling_process_manager_aebe4b431fd888e9d39bc0155489897ac}{manager}};\ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{struct_lottery_proc_table}{LotteryProcTable}}\ *\mbox{\hyperlink{struct_lottery_scheduling_process_manager_af98da88e6b18f9a625c10e00e9f4a418}{procTable}};\ }
+\DoxyCodeLine{00058\ \}\ \mbox{\hyperlink{struct_lottery_scheduling_process_manager}{LotterySchedulingProcessManager}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{lottery__scheduling_8h_a82a3a8be9e80fb2d924e95e713322638}{createLotterySchedulingProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{lottery__scheduling_8h_aa238f9230e4838e72f559ca53b52f705}{LSCreateProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00084\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{lottery__scheduling_8h_a0042cbd8f5c119d0dae88062b998695d}{LSScheduleProcess}}(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{lottery__scheduling_8h_aa58999064d3f067ea76368e02c5fe527}{LSInitProcTable}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{lottery__scheduling_8h_a5818a70957d170f6aa7ced2582025267}{LSGetProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_lottery_node_a9152d3f7c6a0ba02d9c8367b8f01f5e1}{pid}});}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{lottery__scheduling_8h_ab2883b820b5c0882cd94972507fad1e7}{LSHasProcess}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lottery__scheduling_8h_a2b44da10828ab9f746a9213f6bbdb0ce}{LSOnProcessDetach}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00127\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lottery__scheduling_8h_a34e229ec16734c39862d46ea68f2f2c8}{LSEnqueueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_lottery_proc_table}{LotteryProcTable}}\ *table,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_lottery_node_a9152d3f7c6a0ba02d9c8367b8f01f5e1}{pid}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_lottery_node_a4d95623eacbec80046464b319b347dbc}{tickets}});}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00136\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{lottery__scheduling_8h_a89f276443314474363cddec4d543d2fb}{LSDequeueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_lottery_proc_table}{LotteryProcTable}}\ *table);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

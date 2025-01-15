@@ -1,0 +1,169 @@
+\doxysection{Referência ao ficheiro src/round\+\_\+robin.c}
+\hypertarget{round__robin_8c}{}\label{round__robin_8c}\index{src/round\_robin.c@{src/round\_robin.c}}
+{\ttfamily \#include $<$round\+\_\+robin.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{round__robin_8c_a1cbf89c81dce2a05598e18951fafe214}{create\+Round\+Robin\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um gerenciador de processos para o escalonamento Round Robin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{round__robin_8c_aa90532be428723ae3f0f8eb35ea02932}{RRCreate\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo para o escalonamento Round Robin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{round__robin_8c_afe4f6614108161c3160addcc336831e0}{RRSchedule\+Process}} (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Realiza o escalonamento de um processo no algoritmo Round Robin. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{round__robin_8c_a47fb8509fb4b37b1436b9ed6b2dc1df8}{RRInit\+Proc\+Table}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Inicializa a tabela de processos para o Round Robin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{round__robin_8c_a764803208131fd40a6172f94207c9b50}{RRGet\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém o processo de um determinado PID da tabela de processos Round Robin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{round__robin_8c_aad0b58c62757ff46ca637c6cb7332214}{RRHas\+Process}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Verifica se há processos na tabela de processos Round Robin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{round__robin_8c_a9f27f092b9bc037ce1c1b04f7ea7fab3}{RROn\+Process\+Detach}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Função chamada quando um processo é desalocado ou removido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{round__robin_8c_a1cbf89c81dce2a05598e18951fafe214}\index{round\_robin.c@{round\_robin.c}!createRoundRobinProcessManager@{createRoundRobinProcessManager}}
+\index{createRoundRobinProcessManager@{createRoundRobinProcessManager}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{createRoundRobinProcessManager()}{createRoundRobinProcessManager()}}
+{\footnotesize\ttfamily \label{round__robin_8c_a1cbf89c81dce2a05598e18951fafe214} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+Round\+Robin\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um gerenciador de processos para o escalonamento Round Robin. 
+
+Função que cria e inicializa um novo gerenciador de processos para o algoritmo Round Robin, configurando o quantum de tempo e a tabela de processos.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações para criar o gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\+Manager\texorpdfstring{$\ast$}{*} Ponteiro para o gerenciador de processos recém-\/criado. 
+\end{DoxyReturn}
+\Hypertarget{round__robin_8c_aa90532be428723ae3f0f8eb35ea02932}\index{round\_robin.c@{round\_robin.c}!RRCreateProcess@{RRCreateProcess}}
+\index{RRCreateProcess@{RRCreateProcess}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{RRCreateProcess()}{RRCreateProcess()}}
+{\footnotesize\ttfamily \label{round__robin_8c_aa90532be428723ae3f0f8eb35ea02932} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} RRCreate\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo para o escalonamento Round Robin. 
+
+Função que cria um novo processo e o adiciona à tabela de processos Round Robin.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em info} & Informações necessárias para a criação do processo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} ID do processo recém-\/criado. 
+\end{DoxyReturn}
+\Hypertarget{round__robin_8c_a764803208131fd40a6172f94207c9b50}\index{round\_robin.c@{round\_robin.c}!RRGetProcess@{RRGetProcess}}
+\index{RRGetProcess@{RRGetProcess}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{RRGetProcess()}{RRGetProcess()}}
+{\footnotesize\ttfamily \label{round__robin_8c_a764803208131fd40a6172f94207c9b50} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} RRGet\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém o processo de um determinado PID da tabela de processos Round Robin. 
+
+Função que busca um processo específico na tabela de processos com base no PID fornecido.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em pid} & PID do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para o processo correspondente ao PID. 
+\end{DoxyReturn}
+\Hypertarget{round__robin_8c_aad0b58c62757ff46ca637c6cb7332214}\index{round\_robin.c@{round\_robin.c}!RRHasProcess@{RRHasProcess}}
+\index{RRHasProcess@{RRHasProcess}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{RRHasProcess()}{RRHasProcess()}}
+{\footnotesize\ttfamily \label{round__robin_8c_aad0b58c62757ff46ca637c6cb7332214} 
+bool RRHas\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se há processos na tabela de processos Round Robin. 
+
+Função que verifica se existem processos prontos para execução na tabela de processos Round Robin.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+bool Retorna verdadeiro se houver processos prontos, falso caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{round__robin_8c_a47fb8509fb4b37b1436b9ed6b2dc1df8}\index{round\_robin.c@{round\_robin.c}!RRInitProcTable@{RRInitProcTable}}
+\index{RRInitProcTable@{RRInitProcTable}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{RRInitProcTable()}{RRInitProcTable()}}
+{\footnotesize\ttfamily \label{round__robin_8c_a47fb8509fb4b37b1436b9ed6b2dc1df8} 
+void \texorpdfstring{$\ast$}{*} RRInit\+Proc\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a tabela de processos para o Round Robin. 
+
+Função que cria e inicializa a tabela de processos, configurando os ponteiros e a estrutura de dados necessária para o escalonamento Round Robin.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void\texorpdfstring{$\ast$}{*} Ponteiro para a tabela de processos recém-\/inicializada. 
+\end{DoxyReturn}
+\Hypertarget{round__robin_8c_a9f27f092b9bc037ce1c1b04f7ea7fab3}\index{round\_robin.c@{round\_robin.c}!RROnProcessDetach@{RROnProcessDetach}}
+\index{RROnProcessDetach@{RROnProcessDetach}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{RROnProcessDetach()}{RROnProcessDetach()}}
+{\footnotesize\ttfamily \label{round__robin_8c_a9f27f092b9bc037ce1c1b04f7ea7fab3} 
+void RROn\+Process\+Detach (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Função chamada quando um processo é desalocado ou removido. 
+
+Função que é chamada para realizar operações de limpeza ou atualizações quando um processo é removido ou desalocado da tabela de processos Round Robin.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em info} & Informações do CPU associadas ao processo a ser removido. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{round__robin_8c_afe4f6614108161c3160addcc336831e0}\index{round\_robin.c@{round\_robin.c}!RRScheduleProcess@{RRScheduleProcess}}
+\index{RRScheduleProcess@{RRScheduleProcess}!round\_robin.c@{round\_robin.c}}
+\doxysubsubsection{\texorpdfstring{RRScheduleProcess()}{RRScheduleProcess()}}
+{\footnotesize\ttfamily \label{round__robin_8c_afe4f6614108161c3160addcc336831e0} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} RRSchedule\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{proc\+Table}{}\end{DoxyParamCaption})}
+
+
+
+Realiza o escalonamento de um processo no algoritmo Round Robin. 
+
+Função que seleciona o próximo processo da tabela de processos para execução, aplicando o algoritmo de escalonamento Round Robin.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em proc\+Table} & Tabela de processos para o Round Robin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} ID do processo selecionado para execução. 
+\end{DoxyReturn}

@@ -1,0 +1,74 @@
+\doxysection{Referência ao ficheiro src/process/program.h}
+\hypertarget{program_8h}{}\label{program_8h}\index{src/process/program.h@{src/process/program.h}}
+
+
+Estruturas e funções para o gerenciamento de programas.  
+
+
+{\ttfamily \#include $<$instruction.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_program_create_info}{Program\+Create\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura de informações para a criação de um programa. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_program}{Program}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{struct_program}{Program}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{Program\+Instantiation\+Fn}}) ()
+\begin{DoxyCompactList}\small\item\em Função de instância para criar um programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_program}{Program}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{program_8h_acf775e4e4330c3e2382f9f7686e97511}{create\+Program}} (\mbox{\hyperlink{struct_program_create_info}{Program\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Função para criar um programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estruturas e funções para o gerenciamento de programas. 
+
+Este arquivo define as estruturas e funções necessárias para a criação e manipulação de programas. Um programa é composto por um conjunto de instruções que serão executadas pelo processador. A estrutura de um programa inclui a lista de instruções e o número total de instruções. 
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{program_8h_a9c81f236597270f262cd6d6915aeea1c}\index{program.h@{program.h}!ProgramInstantiationFn@{ProgramInstantiationFn}}
+\index{ProgramInstantiationFn@{ProgramInstantiationFn}!program.h@{program.h}}
+\doxysubsubsection{\texorpdfstring{ProgramInstantiationFn}{ProgramInstantiationFn}}
+{\footnotesize\ttfamily \label{program_8h_a9c81f236597270f262cd6d6915aeea1c} 
+typedef \mbox{\hyperlink{struct_program}{Program}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} Program\+Instantiation\+Fn) ()}
+
+
+
+Função de instância para criar um programa. 
+
+Função para criar um novo programa baseado em uma estrutura de informações fornecida. A criação de um programa envolve a alocação de memória para suas instruções.
+
+\begin{DoxyReturn}{Retorna}
+Program\texorpdfstring{$\ast$}{*} Ponteiro para o programa recém-\/criado. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{program_8h_acf775e4e4330c3e2382f9f7686e97511}\index{program.h@{program.h}!createProgram@{createProgram}}
+\index{createProgram@{createProgram}!program.h@{program.h}}
+\doxysubsubsection{\texorpdfstring{createProgram()}{createProgram()}}
+{\footnotesize\ttfamily \label{program_8h_acf775e4e4330c3e2382f9f7686e97511} 
+\mbox{\hyperlink{struct_program}{Program}} \texorpdfstring{$\ast$}{*} create\+Program (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_program_create_info}{Program\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Função para criar um programa. 
+
+Cria um novo programa com base nas informações fornecidas, incluindo as instruções e a quantidade de instruções. A memória é alocada para armazenar as instruções do programa.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Estrutura contendo as informações necessárias para criar o programa. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Program\texorpdfstring{$\ast$}{*} Ponteiro para o programa criado. 
+\end{DoxyReturn}

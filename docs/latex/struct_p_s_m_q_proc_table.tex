@@ -1,0 +1,89 @@
+\doxysection{Referência à estrutura PSMQProc\+Table}
+\hypertarget{struct_p_s_m_q_proc_table}{}\label{struct_p_s_m_q_proc_table}\index{PSMQProcTable@{PSMQProcTable}}
+
+
+{\ttfamily \#include $<$priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_p_s_m_q_queue}{PSMQQueue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_p_s_m_q_proc_table_a396e775156c503a2dd9b5b25d4c5bbda}{queues}} \mbox{[}\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+HIGH}}+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em Filas de processos por prioridade. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{struct_p_s_m_q_proc_table_a65cbc8b0a48ecffe05629742338d6126}{quantums}} \mbox{[}\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+HIGH}}+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em Quantums de tempo por prioridade. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} \mbox{\hyperlink{struct_p_s_m_q_proc_table_a1414234df4271c030df68aa1539f54bf}{current\+Priority}}
+\begin{DoxyCompactList}\small\item\em Prioridade atual da fila. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_p_s_m_q_proc_table_af12eb69da2c4651d5a9b105442a708cc}{current\+Node}}
+\begin{DoxyCompactList}\small\item\em Nó atual sendo escalonado. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_p_s_m_q_proc_table_a1e9eaf5d95cc5a674a51789caf8fbc96}{current\+Index}}
+\begin{DoxyCompactList}\small\item\em Índice da fila de prioridade atual. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_p_s_m_q_proc_table_a6e57c94cd7453ce1c7e58c1d6d983b09}{size}}
+\begin{DoxyCompactList}\small\item\em Número total de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_p_s_m_q_proc_table_a1e9eaf5d95cc5a674a51789caf8fbc96}\index{PSMQProcTable@{PSMQProcTable}!currentIndex@{currentIndex}}
+\index{currentIndex@{currentIndex}!PSMQProcTable@{PSMQProcTable}}
+\doxysubsubsection{\texorpdfstring{currentIndex}{currentIndex}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_proc_table_a1e9eaf5d95cc5a674a51789caf8fbc96} 
+size\+\_\+t PSMQProc\+Table\+::current\+Index}
+
+
+
+Índice da fila de prioridade atual. 
+
+\Hypertarget{struct_p_s_m_q_proc_table_af12eb69da2c4651d5a9b105442a708cc}\index{PSMQProcTable@{PSMQProcTable}!currentNode@{currentNode}}
+\index{currentNode@{currentNode}!PSMQProcTable@{PSMQProcTable}}
+\doxysubsubsection{\texorpdfstring{currentNode}{currentNode}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_proc_table_af12eb69da2c4651d5a9b105442a708cc} 
+\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\texorpdfstring{$\ast$}{*} PSMQProc\+Table\+::current\+Node}
+
+
+
+Nó atual sendo escalonado. 
+
+\Hypertarget{struct_p_s_m_q_proc_table_a1414234df4271c030df68aa1539f54bf}\index{PSMQProcTable@{PSMQProcTable}!currentPriority@{currentPriority}}
+\index{currentPriority@{currentPriority}!PSMQProcTable@{PSMQProcTable}}
+\doxysubsubsection{\texorpdfstring{currentPriority}{currentPriority}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_proc_table_a1414234df4271c030df68aa1539f54bf} 
+\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} PSMQProc\+Table\+::current\+Priority}
+
+
+
+Prioridade atual da fila. 
+
+\Hypertarget{struct_p_s_m_q_proc_table_a65cbc8b0a48ecffe05629742338d6126}\index{PSMQProcTable@{PSMQProcTable}!quantums@{quantums}}
+\index{quantums@{quantums}!PSMQProcTable@{PSMQProcTable}}
+\doxysubsubsection{\texorpdfstring{quantums}{quantums}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_proc_table_a65cbc8b0a48ecffe05629742338d6126} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} PSMQProc\+Table\+::quantums\mbox{[}\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+HIGH}}+1\mbox{]}}
+
+
+
+Quantums de tempo por prioridade. 
+
+\Hypertarget{struct_p_s_m_q_proc_table_a396e775156c503a2dd9b5b25d4c5bbda}\index{PSMQProcTable@{PSMQProcTable}!queues@{queues}}
+\index{queues@{queues}!PSMQProcTable@{PSMQProcTable}}
+\doxysubsubsection{\texorpdfstring{queues}{queues}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_proc_table_a396e775156c503a2dd9b5b25d4c5bbda} 
+\mbox{\hyperlink{struct_p_s_m_q_queue}{PSMQQueue}}\texorpdfstring{$\ast$}{*} PSMQProc\+Table\+::queues\mbox{[}\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+HIGH}}+1\mbox{]}}
+
+
+
+Filas de processos por prioridade. 
+
+\Hypertarget{struct_p_s_m_q_proc_table_a6e57c94cd7453ce1c7e58c1d6d983b09}\index{PSMQProcTable@{PSMQProcTable}!size@{size}}
+\index{size@{size}!PSMQProcTable@{PSMQProcTable}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_p_s_m_q_proc_table_a6e57c94cd7453ce1c7e58c1d6d983b09} 
+size\+\_\+t PSMQProc\+Table\+::size}
+
+
+
+Número total de processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{priority__scheduling__multiple__queues_8h}{priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.\+h}}\end{DoxyCompactItemize}

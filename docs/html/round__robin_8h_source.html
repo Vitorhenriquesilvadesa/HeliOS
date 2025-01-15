@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Código-Fonte de src/process/round_robin.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('round__robin_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">round_robin.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="round__robin_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef HL_ROUND_ROBIN_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define HL_ROUND_ROBIN_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="process__manager_8h.html">process_manager.h</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="round__robin_8h.html#a1c996bef28778787b5351f57dee64e45">   16</a></span><span class="preprocessor">#define ROUND_ROBIN_QUANTUM 10 </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_r_r_node.html">   24</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_r_node.html">RRNode</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_r_r_node.html#ab05d7df59e2c34a405fbb577eaf3efab">   26</a></span>    <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_r_r_node.html#ab05d7df59e2c34a405fbb577eaf3efab">pid</a>;           </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_r_r_node.html#a59d4c2e3a0ecb431055dbb4cb6cbcb93">   27</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_r_r_node.html">RRNode</a> *<a class="code hl_variable" href="struct_r_r_node.html#a59d4c2e3a0ecb431055dbb4cb6cbcb93">next</a>; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="round__robin_8h.html#a0690f0c97807302cef546dcb47fd142a">   28</a></span>} <a class="code hl_struct" href="struct_r_r_node.html">RRNode</a>;</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_r_r_proc_table.html">   36</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_r_r_proc_table.html#aaa4188ca9ee7586dbb84d1ff155acb22">   38</a></span>    <a class="code hl_struct" href="struct_r_r_node.html">RRNode</a> *<a class="code hl_variable" href="struct_r_r_proc_table.html#aaa4188ca9ee7586dbb84d1ff155acb22">head</a>;    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_r_r_proc_table.html#aadeb9a84e3d76952b190c573ac3d1c9b">   39</a></span>    <a class="code hl_struct" href="struct_r_r_node.html">RRNode</a> *<a class="code hl_variable" href="struct_r_r_proc_table.html#aadeb9a84e3d76952b190c573ac3d1c9b">tail</a>;    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_r_r_proc_table.html#ac185b556f811650e4a32e8ae0a7935c7">   40</a></span>    <a class="code hl_struct" href="struct_r_r_node.html">RRNode</a> *<a class="code hl_variable" href="struct_r_r_proc_table.html#ac185b556f811650e4a32e8ae0a7935c7">current</a>; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="struct_r_r_proc_table.html#af3b337006f1c7f3e1fd393c9b8ee037c">   41</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_r_r_proc_table.html#af3b337006f1c7f3e1fd393c9b8ee037c">size</a>;     </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>} <a class="code hl_struct" href="struct_r_r_proc_table.html">RRProcTable</a>;</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_round_robin_process_manager.html">   49</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_round_robin_process_manager.html#ac0a1ca27cc23f935e31de22e06d2db93">   51</a></span>    <a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a> <a class="code hl_variable" href="struct_round_robin_process_manager.html#ac0a1ca27cc23f935e31de22e06d2db93">manager</a>; </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_round_robin_process_manager.html#a53f4229ec5b6d5a78c8a29ca09e47d11">   52</a></span>    <a class="code hl_struct" href="struct_r_r_proc_table.html">RRProcTable</a> *<a class="code hl_variable" href="struct_round_robin_process_manager.html#a53f4229ec5b6d5a78c8a29ca09e47d11">procTable</a>; </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>} <a class="code hl_struct" href="struct_round_robin_process_manager.html">RoundRobinProcessManager</a>;</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a> *<a class="code hl_function" href="round__robin_8h.html#a1cbf89c81dce2a05598e18951fafe214">createRoundRobinProcessManager</a>(<a class="code hl_struct" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="round__robin_8h.html#aa90532be428723ae3f0f8eb35ea02932">RRCreateProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_process_create_info.html">ProcessCreateInfo</a> info);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="round__robin_8h.html#afe4f6614108161c3160addcc336831e0">RRScheduleProcess</a>(<span class="keywordtype">void</span> *self, <span class="keywordtype">void</span> *procTable);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> *<a class="code hl_function" href="round__robin_8h.html#a47fb8509fb4b37b1436b9ed6b2dc1df8">RRInitProcTable</a>(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><a class="code hl_struct" href="struct_process.html">Process</a> *<a class="code hl_function" href="round__robin_8h.html#a764803208131fd40a6172f94207c9b50">RRGetProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_r_r_node.html#ab05d7df59e2c34a405fbb577eaf3efab">pid</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">bool</span> <a class="code hl_function" href="round__robin_8h.html#aad0b58c62757ff46ca637c6cb7332214">RRHasProcess</a>(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keywordtype">void</span> <a class="code hl_function" href="round__robin_8h.html#a9f27f092b9bc037ce1c1b04f7ea7fab3">RROnProcessDetach</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_cpu_info.html">CpuInfo</a> info);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aprocess__manager_8h_html"><div class="ttname"><a href="process__manager_8h.html">process_manager.h</a></div></div>
+<div class="ttc" id="around__robin_8h_html_a1cbf89c81dce2a05598e18951fafe214"><div class="ttname"><a href="round__robin_8h.html#a1cbf89c81dce2a05598e18951fafe214">createRoundRobinProcessManager</a></div><div class="ttdeci">ProcessManager * createRoundRobinProcessManager(ProcessManagerCreateInfo createInfo)</div><div class="ttdoc">Cria um gerenciador de processos para o escalonamento Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.c:4</div></div>
+<div class="ttc" id="around__robin_8h_html_a47fb8509fb4b37b1436b9ed6b2dc1df8"><div class="ttname"><a href="round__robin_8h.html#a47fb8509fb4b37b1436b9ed6b2dc1df8">RRInitProcTable</a></div><div class="ttdeci">void * RRInitProcTable(void *self)</div><div class="ttdoc">Inicializa a tabela de processos para o Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.c:72</div></div>
+<div class="ttc" id="around__robin_8h_html_a764803208131fd40a6172f94207c9b50"><div class="ttname"><a href="round__robin_8h.html#a764803208131fd40a6172f94207c9b50">RRGetProcess</a></div><div class="ttdeci">Process * RRGetProcess(void *self, PID32 pid)</div><div class="ttdoc">Obtém o processo de um determinado PID da tabela de processos Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.c:87</div></div>
+<div class="ttc" id="around__robin_8h_html_a9f27f092b9bc037ce1c1b04f7ea7fab3"><div class="ttname"><a href="round__robin_8h.html#a9f27f092b9bc037ce1c1b04f7ea7fab3">RROnProcessDetach</a></div><div class="ttdeci">void RROnProcessDetach(void *self, CpuInfo info)</div><div class="ttdoc">Função chamada quando um processo é desalocado ou removido.</div><div class="ttdef"><b>Definição</b> round_robin.c:115</div></div>
+<div class="ttc" id="around__robin_8h_html_aa90532be428723ae3f0f8eb35ea02932"><div class="ttname"><a href="round__robin_8h.html#aa90532be428723ae3f0f8eb35ea02932">RRCreateProcess</a></div><div class="ttdeci">PID32 RRCreateProcess(void *self, ProcessCreateInfo info)</div><div class="ttdoc">Cria um novo processo para o escalonamento Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.c:21</div></div>
+<div class="ttc" id="around__robin_8h_html_aad0b58c62757ff46ca637c6cb7332214"><div class="ttname"><a href="round__robin_8h.html#aad0b58c62757ff46ca637c6cb7332214">RRHasProcess</a></div><div class="ttdeci">bool RRHasProcess(void *self)</div><div class="ttdoc">Verifica se há processos na tabela de processos Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.c:107</div></div>
+<div class="ttc" id="around__robin_8h_html_afe4f6614108161c3160addcc336831e0"><div class="ttname"><a href="round__robin_8h.html#afe4f6614108161c3160addcc336831e0">RRScheduleProcess</a></div><div class="ttdeci">PID32 RRScheduleProcess(void *self, void *procTable)</div><div class="ttdoc">Realiza o escalonamento de um processo no algoritmo Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.c:60</div></div>
+<div class="ttc" id="astruct_cpu_info_html"><div class="ttname"><a href="struct_cpu_info.html">CpuInfo</a></div><div class="ttdoc">Estrutura que contém informações resumidas sobre a CPU.</div><div class="ttdef"><b>Definição</b> cpu.h:59</div></div>
+<div class="ttc" id="astruct_process_create_info_html"><div class="ttname"><a href="struct_process_create_info.html">ProcessCreateInfo</a></div><div class="ttdoc">Estrutura de informações para criação de um novo processo.</div><div class="ttdef"><b>Definição</b> process.h:77</div></div>
+<div class="ttc" id="astruct_process_html"><div class="ttname"><a href="struct_process.html">Process</a></div><div class="ttdoc">Estrutura que representa um processo no sistema.</div><div class="ttdef"><b>Definição</b> process.h:56</div></div>
+<div class="ttc" id="astruct_process_manager_create_info_html"><div class="ttname"><a href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></div><div class="ttdoc">Estrutura com informações para criar um gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:123</div></div>
+<div class="ttc" id="astruct_process_manager_html"><div class="ttname"><a href="struct_process_manager.html">ProcessManager</a></div><div class="ttdoc">Estrutura do gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:140</div></div>
+<div class="ttc" id="astruct_r_r_node_html"><div class="ttname"><a href="struct_r_r_node.html">RRNode</a></div><div class="ttdoc">Estrutura que representa um nó da lista encadeada de processos no escalonamento Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.h:25</div></div>
+<div class="ttc" id="astruct_r_r_node_html_a59d4c2e3a0ecb431055dbb4cb6cbcb93"><div class="ttname"><a href="struct_r_r_node.html#a59d4c2e3a0ecb431055dbb4cb6cbcb93">RRNode::next</a></div><div class="ttdeci">struct RRNode * next</div><div class="ttdoc">Ponteiro para o próximo nó na lista.</div><div class="ttdef"><b>Definição</b> round_robin.h:27</div></div>
+<div class="ttc" id="astruct_r_r_node_html_ab05d7df59e2c34a405fbb577eaf3efab"><div class="ttname"><a href="struct_r_r_node.html#ab05d7df59e2c34a405fbb577eaf3efab">RRNode::pid</a></div><div class="ttdeci">PID32 pid</div><div class="ttdoc">PID do processo.</div><div class="ttdef"><b>Definição</b> round_robin.h:26</div></div>
+<div class="ttc" id="astruct_r_r_proc_table_html"><div class="ttname"><a href="struct_r_r_proc_table.html">RRProcTable</a></div><div class="ttdoc">Estrutura que mantém a tabela de processos para o escalonamento Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.h:37</div></div>
+<div class="ttc" id="astruct_r_r_proc_table_html_aaa4188ca9ee7586dbb84d1ff155acb22"><div class="ttname"><a href="struct_r_r_proc_table.html#aaa4188ca9ee7586dbb84d1ff155acb22">RRProcTable::head</a></div><div class="ttdeci">RRNode * head</div><div class="ttdoc">Ponteiro para o primeiro nó da lista de processos.</div><div class="ttdef"><b>Definição</b> round_robin.h:38</div></div>
+<div class="ttc" id="astruct_r_r_proc_table_html_aadeb9a84e3d76952b190c573ac3d1c9b"><div class="ttname"><a href="struct_r_r_proc_table.html#aadeb9a84e3d76952b190c573ac3d1c9b">RRProcTable::tail</a></div><div class="ttdeci">RRNode * tail</div><div class="ttdoc">Ponteiro para o último nó da lista de processos.</div><div class="ttdef"><b>Definição</b> round_robin.h:39</div></div>
+<div class="ttc" id="astruct_r_r_proc_table_html_ac185b556f811650e4a32e8ae0a7935c7"><div class="ttname"><a href="struct_r_r_proc_table.html#ac185b556f811650e4a32e8ae0a7935c7">RRProcTable::current</a></div><div class="ttdeci">RRNode * current</div><div class="ttdoc">Ponteiro para o nó que está sendo executado atualmente.</div><div class="ttdef"><b>Definição</b> round_robin.h:40</div></div>
+<div class="ttc" id="astruct_r_r_proc_table_html_af3b337006f1c7f3e1fd393c9b8ee037c"><div class="ttname"><a href="struct_r_r_proc_table.html#af3b337006f1c7f3e1fd393c9b8ee037c">RRProcTable::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Tamanho da tabela de processos.</div><div class="ttdef"><b>Definição</b> round_robin.h:41</div></div>
+<div class="ttc" id="astruct_round_robin_process_manager_html"><div class="ttname"><a href="struct_round_robin_process_manager.html">RoundRobinProcessManager</a></div><div class="ttdoc">Estrutura que representa o gerenciador de processos para o escalonamento Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.h:50</div></div>
+<div class="ttc" id="astruct_round_robin_process_manager_html_a53f4229ec5b6d5a78c8a29ca09e47d11"><div class="ttname"><a href="struct_round_robin_process_manager.html#a53f4229ec5b6d5a78c8a29ca09e47d11">RoundRobinProcessManager::procTable</a></div><div class="ttdeci">RRProcTable * procTable</div><div class="ttdoc">Tabela de processos específica para o Round Robin.</div><div class="ttdef"><b>Definição</b> round_robin.h:52</div></div>
+<div class="ttc" id="astruct_round_robin_process_manager_html_ac0a1ca27cc23f935e31de22e06d2db93"><div class="ttname"><a href="struct_round_robin_process_manager.html#ac0a1ca27cc23f935e31de22e06d2db93">RoundRobinProcessManager::manager</a></div><div class="ttdeci">ProcessManager manager</div><div class="ttdoc">Gerenciador de processos base.</div><div class="ttdef"><b>Definição</b> round_robin.h:51</div></div>
+<div class="ttc" id="asystem__types_8h_html_aade98a87136cf030add759c3cbf7e385"><div class="ttname"><a href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></div><div class="ttdeci">int PID32</div><div class="ttdoc">Representa um identificador único para processos no sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="round__robin_8h.html">round_robin.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
