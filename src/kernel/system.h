@@ -15,7 +15,7 @@ typedef struct HeliOSSystem
 {
     ProcessManager *processManager;
     ProgramInstantiationFn *programs;
-    Cpu cpu;
+    Cpu *cpu;
     void *processTable;
 } HeliOSSystem;
 
@@ -28,5 +28,8 @@ Program getProcessProgram(PID32 pid);
 ProgramInstantiationFn getProgramByIndex(Byte index);
 
 void runSystem();
+void freeSystemInstance();
+
+void runSystemWithLog(const char *logFile);
 
 #endif

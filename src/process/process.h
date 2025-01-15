@@ -31,8 +31,8 @@ typedef struct Process
 {
     PID32 pid;
     const char *name;
-    int arrivalTime;
-    int burstTime;
+    uint32_t arrivalTime;
+    uint32_t burstTime;
     int priority;
     int pc;
     int sp;

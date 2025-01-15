@@ -33,6 +33,8 @@ Program *exampleProgram2()
     size_t count = 15;
     Byte *instructions = ALLOCATE(Byte, count);
 
+    static char endCharacter = '0';
+
     instructions[0] = HL_OP_PUSH;
     instructions[1] = 'P';
     instructions[2] = HL_OP_PUSH;
@@ -42,12 +44,14 @@ Program *exampleProgram2()
     instructions[6] = HL_OP_PUSH;
     instructions[7] = 'c';
     instructions[8] = HL_OP_PUSH;
-    instructions[9] = '1';
+    instructions[9] = endCharacter;
     instructions[10] = HL_OP_CREATE_PROCESS;
     instructions[11] = 1;
     instructions[12] = 0;
     instructions[13] = HL_PROC_PRIORITY_LOW;
     instructions[14] = HL_OP_HALT;
+
+    endCharacter = (endCharacter + 1) == ('9' + 1) ? '0' : (endCharacter + 1);
 
     ProgramCreateInfo createInfo = {
         .instructions = instructions,
@@ -104,27 +108,29 @@ Program *exampleProgram3()
     return createProgram(createInfo);
 }
 
-int main(void)
+int main(int argc, const char **argv)
 {
+    if (argc != 2)
+    {
+        printf("Error: Too many arguments.\nUsage: HeliOS algorithm_id");
+        exit(EXIT_FAILURE);
+    }
+
     ProgramInstantiationFn *programs = ALLOCATE(ProgramInstantiationFn, 3);
     programs[0] = exampleProgram1;
     programs[1] = exampleProgram2;
     programs[2] = exampleProgram3;
 
     SystemCreateInfo createInfo = {
-        .procManager = HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST,
+        .procManager = atoi(argv[1]),
         .programs = programs,
     };
 
     createSystemInstance(createInfo);
 
-    // createProcessWithPriority("Test1", exampleProgram1, HL_PROC_PRIORITY_HIGH);
-
-    // Nao rodar, é recursivo
     createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
-    // createProcessWithPriority("Test3", exampleProgram3, HL_PROC_PRIORITY_LOW);
 
-    runSystem();
+    runSystemWithLog("../logs/scheduler_log.txt");
 
     return 0;
 }

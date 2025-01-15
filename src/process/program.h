@@ -2,6 +2,7 @@
 #define HL_PROGRAM_H
 
 #include <instruction.h>
+#include <stddef.h>
 #include <system_types.h>
 #include <stdint.h>
 
