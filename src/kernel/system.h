@@ -30,6 +30,6 @@ ProgramInstantiationFn getProgramByIndex(Byte index);
 void runSystem();
 void freeSystemInstance();
 
-void runSystemWithLog(const char *algorithName, const char *logFile);
+void runSystemWithLog(const char *logFile);
 
 #endif

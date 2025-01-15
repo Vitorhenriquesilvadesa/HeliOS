@@ -6,5 +6,5 @@
 #define PROCESS_LOG_H
 #include "process_info.h"
 #include <stddef.h>
-void writeLog(const char *algorithName,const char *fileName, ProcessLog *process,size_t logCount, const char *executionOrder);
-#endif //PROCESS_LOG_H
+void writeLog(const char *algorithName, const char *fileName, ProcessLog *process, size_t logCount, const char *executionOrder);
+#endif // PROCESS_LOG_H

@@ -11,6 +11,14 @@
 
 static HeliOSSystem systemInstance;
 
+static const char *enumToString[HL_PROC_MANAGER_TYPE_MAX] = {
+    "First come first served",
+    "Shortest Job First",
+    "Round Robin",
+    "Priority scheduling single queue",
+    "Priority scheduling multiple queues",
+    "Lotery scheduling"};
+
 void createSystemInstance(SystemCreateInfo createInfo)
 {
     ProcessManager *manager = createProcessManager(createInfo.procManager);
@@ -89,7 +97,7 @@ ProgramInstantiationFn getProgramByIndex(Byte index)
     return systemInstance.programs[index];
 }
 
-void runSystemWithLog(const char *algorithName, const char *logFile)
+void runSystemWithLog(const char *logFile)
 {
     ProcessManager *manager = systemInstance.processManager;
     Cpu *cpu = systemInstance.cpu;
@@ -159,7 +167,7 @@ void runSystemWithLog(const char *algorithName, const char *logFile)
         manager->onDetach(manager, detachProcess(cpu));
     }
 
-    writeLog(algorithName, logFile, logs, logCount, executionOrder);
+    writeLog(enumToString[manager->type], logFile, logs, logCount, executionOrder);
 }
 
 void runSystem()
@@ -225,4 +233,5 @@ void freeSystemInstance()
     FREE(systemInstance.processManager);
     FREE(systemInstance.processTable);
     FREE(systemInstance.programs);
+    FREE(systemInstance.cpu);
 }
