@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['length_0',['length',['../struct_p_s_m_q_queue.html#a2410160e585aca71ec63997cb56ddf05',1,'PSMQQueue::length'],['../struct_process_array.html#acb9dd95ec44001bdffae152fbf0874ef',1,'ProcessArray::length']]],
+  ['lottery_5fquantum_1',['LOTTERY_QUANTUM',['../lottery__scheduling_8h.html#afcf9434573e0f785ba7db8a24655f059',1,'lottery_scheduling.h']]],
+  ['lottery_5fscheduling_2ec_2',['lottery_scheduling.c',['../lottery__scheduling_8c.html',1,'']]],
+  ['lottery_5fscheduling_2ec_2eobj_2ed_3',['lottery_scheduling.c.obj.d',['../lottery__scheduling_8c_8obj_8d.html',1,'']]],
+  ['lottery_5fscheduling_2eh_4',['lottery_scheduling.h',['../lottery__scheduling_8h.html',1,'']]],
+  ['lotterynode_5',['LotteryNode',['../struct_lottery_node.html',1,'LotteryNode'],['../lottery__scheduling_8h.html#ab07f79dd3d8365bba4a37be380cf2847',1,'LotteryNode:&#160;lottery_scheduling.h']]],
+  ['lotteryproctable_6',['LotteryProcTable',['../struct_lottery_proc_table.html',1,'']]],
+  ['lotteryschedulingprocessmanager_7',['LotterySchedulingProcessManager',['../struct_lottery_scheduling_process_manager.html',1,'']]],
+  ['lscreateprocess_8',['LSCreateProcess',['../lottery__scheduling_8c.html#aa238f9230e4838e72f559ca53b52f705',1,'LSCreateProcess(void *self, ProcessCreateInfo info):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#aa238f9230e4838e72f559ca53b52f705',1,'LSCreateProcess(void *self, ProcessCreateInfo info):&#160;lottery_scheduling.c']]],
+  ['lsdequeueprocess_9',['LSDequeueProcess',['../lottery__scheduling_8c.html#a89f276443314474363cddec4d543d2fb',1,'LSDequeueProcess(void *self, LotteryProcTable *table):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#a89f276443314474363cddec4d543d2fb',1,'LSDequeueProcess(void *self, LotteryProcTable *table):&#160;lottery_scheduling.c']]],
+  ['lsenqueueprocess_10',['LSEnqueueProcess',['../lottery__scheduling_8c.html#a34e229ec16734c39862d46ea68f2f2c8',1,'LSEnqueueProcess(void *self, LotteryProcTable *table, PID32 pid, int tickets):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#a34e229ec16734c39862d46ea68f2f2c8',1,'LSEnqueueProcess(void *self, LotteryProcTable *table, PID32 pid, int tickets):&#160;lottery_scheduling.c']]],
+  ['lsgetprocess_11',['LSGetProcess',['../lottery__scheduling_8c.html#a5818a70957d170f6aa7ced2582025267',1,'LSGetProcess(void *self, PID32 pid):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#a5818a70957d170f6aa7ced2582025267',1,'LSGetProcess(void *self, PID32 pid):&#160;lottery_scheduling.c']]],
+  ['lshasprocess_12',['LSHasProcess',['../lottery__scheduling_8c.html#ab2883b820b5c0882cd94972507fad1e7',1,'LSHasProcess(void *self):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#ab2883b820b5c0882cd94972507fad1e7',1,'LSHasProcess(void *self):&#160;lottery_scheduling.c']]],
+  ['lsinitproctable_13',['LSInitProcTable',['../lottery__scheduling_8c.html#aa58999064d3f067ea76368e02c5fe527',1,'LSInitProcTable(void *self):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#aa58999064d3f067ea76368e02c5fe527',1,'LSInitProcTable(void *self):&#160;lottery_scheduling.c']]],
+  ['lsonprocessdetach_14',['LSOnProcessDetach',['../lottery__scheduling_8c.html#a2b44da10828ab9f746a9213f6bbdb0ce',1,'LSOnProcessDetach(void *self, CpuInfo info):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#a2b44da10828ab9f746a9213f6bbdb0ce',1,'LSOnProcessDetach(void *self, CpuInfo info):&#160;lottery_scheduling.c']]],
+  ['lsscheduleprocess_15',['LSScheduleProcess',['../lottery__scheduling_8c.html#a0042cbd8f5c119d0dae88062b998695d',1,'LSScheduleProcess(void *self, void *procTable):&#160;lottery_scheduling.c'],['../lottery__scheduling_8h.html#a0042cbd8f5c119d0dae88062b998695d',1,'LSScheduleProcess(void *self, void *procTable):&#160;lottery_scheduling.c']]]
+];

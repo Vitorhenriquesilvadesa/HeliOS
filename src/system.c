@@ -101,7 +101,7 @@ void runSystemWithLog(const char *logFile)
 {
     ProcessManager *manager = systemInstance.processManager;
     Cpu *cpu = systemInstance.cpu;
-    ProcessLog logs[100];
+    ProcessStatistics logs[100];
     size_t logCount = 0;
 
     char executionOrder[500] = "";
@@ -152,7 +152,7 @@ void runSystemWithLog(const char *logFile)
 
         uint32_t endTime = systemInstance.cpu->cycles;
 
-        ProcessLog log = {
+        ProcessStatistics log = {
             .pid = process->pid,
             .name = process->name,
             .arrivalTime = process->arrivalTime,

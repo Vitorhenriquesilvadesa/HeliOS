@@ -1,0 +1,63 @@
+\doxysection{Referência à estrutura SJFProc\+Table}
+\hypertarget{struct_s_j_f_proc_table}{}\label{struct_s_j_f_proc_table}\index{SJFProcTable@{SJFProcTable}}
+
+
+Estrutura que mantém a tabela de processos para o escalonamento Shortest Job First.  
+
+
+
+
+{\ttfamily \#include $<$shortest\+\_\+job\+\_\+first.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_j_f_node}{SJFNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_s_j_f_proc_table_ac221c97aa77decffc469cc49baff6d58}{head}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o primeiro nó da lista de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_j_f_node}{SJFNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_s_j_f_proc_table_aa2d7c46ee08d23028296fcd7df37814e}{tail}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o último nó da lista de processos. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_s_j_f_proc_table_af077dd75b77bb6e47f8e62e5e214249c}{size}}
+\begin{DoxyCompactList}\small\item\em Tamanho da tabela de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura que mantém a tabela de processos para o escalonamento Shortest Job First. 
+
+A tabela contém uma lista de processos prontos para execução, ordenada de acordo com o tempo de execução estimado dos processos. O processo com o menor tempo de execução é o primeiro na fila. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_s_j_f_proc_table_ac221c97aa77decffc469cc49baff6d58}\index{SJFProcTable@{SJFProcTable}!head@{head}}
+\index{head@{head}!SJFProcTable@{SJFProcTable}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \label{struct_s_j_f_proc_table_ac221c97aa77decffc469cc49baff6d58} 
+\mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}\texorpdfstring{$\ast$}{*} SJFProc\+Table\+::head}
+
+
+
+Ponteiro para o primeiro nó da lista de processos. 
+
+\Hypertarget{struct_s_j_f_proc_table_af077dd75b77bb6e47f8e62e5e214249c}\index{SJFProcTable@{SJFProcTable}!size@{size}}
+\index{size@{size}!SJFProcTable@{SJFProcTable}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{struct_s_j_f_proc_table_af077dd75b77bb6e47f8e62e5e214249c} 
+size\+\_\+t SJFProc\+Table\+::size}
+
+
+
+Tamanho da tabela de processos. 
+
+\Hypertarget{struct_s_j_f_proc_table_aa2d7c46ee08d23028296fcd7df37814e}\index{SJFProcTable@{SJFProcTable}!tail@{tail}}
+\index{tail@{tail}!SJFProcTable@{SJFProcTable}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily \label{struct_s_j_f_proc_table_aa2d7c46ee08d23028296fcd7df37814e} 
+\mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}\texorpdfstring{$\ast$}{*} SJFProc\+Table\+::tail}
+
+
+
+Ponteiro para o último nó da lista de processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{shortest__job__first_8h}{shortest\+\_\+job\+\_\+first.\+h}}\end{DoxyCompactItemize}

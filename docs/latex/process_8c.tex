@@ -1,0 +1,162 @@
+\doxysection{Referência ao ficheiro src/process.c}
+\hypertarget{process_8c}{}\label{process_8c}\index{src/process.c@{src/process.c}}
+{\ttfamily \#include $<$process.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process_8c_af90fc45878ff6db75fcd0dd57f11e448}{new\+Process}} (\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Função para criar um novo processo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a537199f3ea4032fe90ca168a6fbff616}{init\+Process\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Função para inicializar um array de processos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_a2a65ab54256eea09530645363c1c6aff}{append\+Process\+Reference\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}process)
+\begin{DoxyCompactList}\small\item\em Função para adicionar um processo ao array de processos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8c_aa2a0d56d4dafd911e882faf1e5569273}{remove\+From\+Process\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Função para remover um processo do array de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process_8c_a14932d9cae3ab67e29d219b39fc98c9e}{get\+From\+Process\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Função para obter um processo do array de processos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{process_8c_af72c8b19a5f3c4fd46c4b5b73f63fa1f}{has\+Process}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Função para verificar se o array de processos contém algum processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{process_8c_a85f9c4efa7c3acce55310de1dee3c547}{get\+Process\+Burst\+Time}} (\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}process)
+\begin{DoxyCompactList}\small\item\em Função para obter o tempo de burst de um processo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{process_8c_a2a65ab54256eea09530645363c1c6aff}\index{process.c@{process.c}!appendProcessReferenceArray@{appendProcessReferenceArray}}
+\index{appendProcessReferenceArray@{appendProcessReferenceArray}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{appendProcessReferenceArray()}{appendProcessReferenceArray()}}
+{\footnotesize\ttfamily \label{process_8c_a2a65ab54256eea09530645363c1c6aff} 
+void append\+Process\+Reference\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}}]{process}{}\end{DoxyParamCaption})}
+
+
+
+Função para adicionar um processo ao array de processos. 
+
+Adiciona uma referência a um processo ao array de processos. O processo não é copiado, apenas o ponteiro é adicionado ao array.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+{\em process} & Ponteiro para o processo a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{process_8c_a14932d9cae3ab67e29d219b39fc98c9e}\index{process.c@{process.c}!getFromProcessArray@{getFromProcessArray}}
+\index{getFromProcessArray@{getFromProcessArray}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{getFromProcessArray()}{getFromProcessArray()}}
+{\footnotesize\ttfamily \label{process_8c_a14932d9cae3ab67e29d219b39fc98c9e} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} get\+From\+Process\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Função para obter um processo do array de processos. 
+
+Obtém um processo do array de processos baseado no PID.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para o processo obtido. 
+\end{DoxyReturn}
+\Hypertarget{process_8c_a85f9c4efa7c3acce55310de1dee3c547}\index{process.c@{process.c}!getProcessBurstTime@{getProcessBurstTime}}
+\index{getProcessBurstTime@{getProcessBurstTime}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{getProcessBurstTime()}{getProcessBurstTime()}}
+{\footnotesize\ttfamily \label{process_8c_a85f9c4efa7c3acce55310de1dee3c547} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} get\+Process\+Burst\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}}]{process}{}\end{DoxyParamCaption})}
+
+
+
+Função para obter o tempo de burst de um processo. 
+
+Retorna o tempo de execução (burst time) de um processo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em process} & Ponteiro para o processo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time} O tempo de execução do processo. 
+\end{DoxyReturn}
+\Hypertarget{process_8c_af72c8b19a5f3c4fd46c4b5b73f63fa1f}\index{process.c@{process.c}!hasProcess@{hasProcess}}
+\index{hasProcess@{hasProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{hasProcess()}{hasProcess()}}
+{\footnotesize\ttfamily \label{process_8c_af72c8b19a5f3c4fd46c4b5b73f63fa1f} 
+bool has\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{}\end{DoxyParamCaption})}
+
+
+
+Função para verificar se o array de processos contém algum processo. 
+
+Verifica se o array de processos contém pelo menos um processo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+bool Retorna verdadeiro se houver processos no array, falso caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{process_8c_a537199f3ea4032fe90ca168a6fbff616}\index{process.c@{process.c}!initProcessArray@{initProcessArray}}
+\index{initProcessArray@{initProcessArray}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{initProcessArray()}{initProcessArray()}}
+{\footnotesize\ttfamily \label{process_8c_a537199f3ea4032fe90ca168a6fbff616} 
+void init\+Process\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{}\end{DoxyParamCaption})}
+
+
+
+Função para inicializar um array de processos. 
+
+Inicializa um array de processos com capacidade definida para armazenar os processos no sistema.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos a ser inicializado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{process_8c_af90fc45878ff6db75fcd0dd57f11e448}\index{process.c@{process.c}!newProcess@{newProcess}}
+\index{newProcess@{newProcess}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{newProcess()}{newProcess()}}
+{\footnotesize\ttfamily \label{process_8c_af90fc45878ff6db75fcd0dd57f11e448} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} new\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Função para criar um novo processo. 
+
+Cria um novo processo no sistema com base nas informações fornecidas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em info} & Estrutura contendo as informações necessárias para a criação do processo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para o processo criado. 
+\end{DoxyReturn}
+\Hypertarget{process_8c_aa2a0d56d4dafd911e882faf1e5569273}\index{process.c@{process.c}!removeFromProcessArray@{removeFromProcessArray}}
+\index{removeFromProcessArray@{removeFromProcessArray}!process.c@{process.c}}
+\doxysubsubsection{\texorpdfstring{removeFromProcessArray()}{removeFromProcessArray()}}
+{\footnotesize\ttfamily \label{process_8c_aa2a0d56d4dafd911e882faf1e5569273} 
+void remove\+From\+Process\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Função para remover um processo do array de processos. 
+
+Remove um processo do array de processos baseado no PID do processo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser removido. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,196 @@
+\doxysection{Referência ao ficheiro src/kernel/instruction.h}
+\hypertarget{instruction_8h}{}\label{instruction_8h}\index{src/kernel/instruction.h@{src/kernel/instruction.h}}
+
+
+Definições de instruções e registradores para o sistema virtual Heli\+OS.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\+\_\+\+MAX\+\_\+\+SIZE}}~32
+\begin{DoxyCompactList}\small\item\em Tamanho máximo da pilha do sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684}{Instruction}} \{ \newline
+\mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b}{HL\+\_\+\+OP\+\_\+\+HALT}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917}{HL\+\_\+\+OP\+\_\+\+ADD}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb}{HL\+\_\+\+OP\+\_\+\+SUB}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32}{HL\+\_\+\+OP\+\_\+\+MUL}}
+, \newline
+\mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b}{HL\+\_\+\+OP\+\_\+\+DIV}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94}{HL\+\_\+\+OP\+\_\+\+MOV}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c}{HL\+\_\+\+OP\+\_\+\+MOV\+\_\+\+CONST}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe}{HL\+\_\+\+OP\+\_\+\+MOV\+\_\+\+ACC}}
+, \newline
+\mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb}{HL\+\_\+\+OP\+\_\+\+PUSH}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568}{HL\+\_\+\+OP\+\_\+\+POP}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf}{HL\+\_\+\+OP\+\_\+\+GOTO}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628}{HL\+\_\+\+OP\+\_\+\+JEQ}}
+, \newline
+\mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9}{HL\+\_\+\+OP\+\_\+\+JNQ}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51}{HL\+\_\+\+OP\+\_\+\+PRINT}}
+, \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0}{HL\+\_\+\+OP\+\_\+\+CREATE\+\_\+\+PROCESS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeração de instruções suportadas pela máquina virtual. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} \{ \newline
+\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd}{REG\+\_\+\+R0}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d}{REG\+\_\+\+R1}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2}{REG\+\_\+\+R2}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a}{REG\+\_\+\+R3}}
+, \newline
+\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f}{REG\+\_\+\+R4}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8}{REG\+\_\+\+R5}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976}{REG\+\_\+\+R6}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889}{REG\+\_\+\+R7}}
+, \newline
+\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1}{REG\+\_\+\+S1}}
+, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeração dos registradores da máquina virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Definições de instruções e registradores para o sistema virtual Heli\+OS. 
+
+Este arquivo contém as definições das instruções e registradores utilizados pela máquina virtual do sistema operacional Heli\+OS. Ele também define o tamanho máximo da pilha do sistema. 
+
+\doxysubsection{Documentação das macros}
+\Hypertarget{instruction_8h_a453f07a53194584fd2e0bb720c814c25}\index{instruction.h@{instruction.h}!STACK\_MAX\_SIZE@{STACK\_MAX\_SIZE}}
+\index{STACK\_MAX\_SIZE@{STACK\_MAX\_SIZE}!instruction.h@{instruction.h}}
+\doxysubsubsection{\texorpdfstring{STACK\_MAX\_SIZE}{STACK\_MAX\_SIZE}}
+{\footnotesize\ttfamily \label{instruction_8h_a453f07a53194584fd2e0bb720c814c25} 
+\#define STACK\+\_\+\+MAX\+\_\+\+SIZE~32}
+
+
+
+Tamanho máximo da pilha do sistema. 
+
+
+
+\doxysubsection{Documentação dos valores da enumeração}
+\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684}\index{instruction.h@{instruction.h}!Instruction@{Instruction}}
+\index{Instruction@{Instruction}!instruction.h@{instruction.h}}
+\doxysubsubsection{\texorpdfstring{Instruction}{Instruction}}
+{\footnotesize\ttfamily \label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684} 
+enum \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684}{Instruction}}}
+
+
+
+Enumeração de instruções suportadas pela máquina virtual. 
+
+Essas instruções representam as operações básicas que a máquina virtual pode executar. \begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_HALT@{HL\_OP\_HALT}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_HALT@{HL\_OP\_HALT}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b} 
+HL\+\_\+\+OP\+\_\+\+HALT&Interrompe a execução do programa. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_ADD@{HL\_OP\_ADD}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_ADD@{HL\_OP\_ADD}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917} 
+HL\+\_\+\+OP\+\_\+\+ADD&Soma dois valores. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_SUB@{HL\_OP\_SUB}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_SUB@{HL\_OP\_SUB}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb} 
+HL\+\_\+\+OP\+\_\+\+SUB&Subtrai dois valores. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_MUL@{HL\_OP\_MUL}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_MUL@{HL\_OP\_MUL}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32} 
+HL\+\_\+\+OP\+\_\+\+MUL&Multiplica dois valores. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_DIV@{HL\_OP\_DIV}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_DIV@{HL\_OP\_DIV}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b} 
+HL\+\_\+\+OP\+\_\+\+DIV&Divide dois valores. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_MOV@{HL\_OP\_MOV}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_MOV@{HL\_OP\_MOV}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94} 
+HL\+\_\+\+OP\+\_\+\+MOV&Move um valor entre registradores. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_MOV\_CONST@{HL\_OP\_MOV\_CONST}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_MOV\_CONST@{HL\_OP\_MOV\_CONST}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c} 
+HL\+\_\+\+OP\+\_\+\+MOV\+\_\+\+CONST&Move um valor constante para um registrador. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_MOV\_ACC@{HL\_OP\_MOV\_ACC}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_MOV\_ACC@{HL\_OP\_MOV\_ACC}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe} 
+HL\+\_\+\+OP\+\_\+\+MOV\+\_\+\+ACC&Move o valor do acumulador para um registrador. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_PUSH@{HL\_OP\_PUSH}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_PUSH@{HL\_OP\_PUSH}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb} 
+HL\+\_\+\+OP\+\_\+\+PUSH&Empilha um valor na pilha. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_POP@{HL\_OP\_POP}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_POP@{HL\_OP\_POP}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568} 
+HL\+\_\+\+OP\+\_\+\+POP&Remove um valor do topo da pilha. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_GOTO@{HL\_OP\_GOTO}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_GOTO@{HL\_OP\_GOTO}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf} 
+HL\+\_\+\+OP\+\_\+\+GOTO&Salta para uma instrução específica. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_JEQ@{HL\_OP\_JEQ}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_JEQ@{HL\_OP\_JEQ}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628} 
+HL\+\_\+\+OP\+\_\+\+JEQ&Salta se os valores forem iguais. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_JNQ@{HL\_OP\_JNQ}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_JNQ@{HL\_OP\_JNQ}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9} 
+HL\+\_\+\+OP\+\_\+\+JNQ&Salta se os valores forem diferentes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_PRINT@{HL\_OP\_PRINT}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_PRINT@{HL\_OP\_PRINT}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51} 
+HL\+\_\+\+OP\+\_\+\+PRINT&Imprime um valor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_OP\_CREATE\_PROCESS@{HL\_OP\_CREATE\_PROCESS}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!HL\_OP\_CREATE\_PROCESS@{HL\_OP\_CREATE\_PROCESS}}}\Hypertarget{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0}\label{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0} 
+HL\+\_\+\+OP\+\_\+\+CREATE\+\_\+\+PROCESS&Cria um novo processo. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}\index{instruction.h@{instruction.h}!Register@{Register}}
+\index{Register@{Register}!instruction.h@{instruction.h}}
+\doxysubsubsection{\texorpdfstring{Register}{Register}}
+{\footnotesize\ttfamily \label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b} 
+enum \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}
+
+
+
+Enumeração dos registradores da máquina virtual. 
+
+Os registradores são utilizados para armazenar valores temporários durante a execução do programa. \begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R0@{REG\_R0}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R0@{REG\_R0}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd} 
+REG\+\_\+\+R0&Registrador 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R1@{REG\_R1}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R1@{REG\_R1}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d} 
+REG\+\_\+\+R1&Registrador 1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R2@{REG\_R2}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R2@{REG\_R2}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2} 
+REG\+\_\+\+R2&Registrador 2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R3@{REG\_R3}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R3@{REG\_R3}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a} 
+REG\+\_\+\+R3&Registrador 3. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R4@{REG\_R4}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R4@{REG\_R4}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f} 
+REG\+\_\+\+R4&Registrador 4. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R5@{REG\_R5}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R5@{REG\_R5}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8} 
+REG\+\_\+\+R5&Registrador 5. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R6@{REG\_R6}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R6@{REG\_R6}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976} 
+REG\+\_\+\+R6&Registrador 6. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_R7@{REG\_R7}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_R7@{REG\_R7}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889} 
+REG\+\_\+\+R7&Registrador 7. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_S1@{REG\_S1}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_S1@{REG\_S1}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1} 
+REG\+\_\+\+S1&Registrador especial 1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REG\_MAX@{REG\_MAX}!instruction.h@{instruction.h}}\index{instruction.h@{instruction.h}!REG\_MAX@{REG\_MAX}}}\Hypertarget{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}\label{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33} 
+REG\+\_\+\+MAX&Limite superior para registradores válidos. \\
+\hline
+
+\end{DoxyEnumFields}

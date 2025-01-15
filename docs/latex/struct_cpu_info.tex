@@ -1,0 +1,123 @@
+\doxysection{Referência à estrutura Cpu\+Info}
+\hypertarget{struct_cpu_info}{}\label{struct_cpu_info}\index{CpuInfo@{CpuInfo}}
+
+
+Estrutura que contém informações resumidas sobre a CPU.  
+
+
+
+
+{\ttfamily \#include $<$cpu.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_info_adc873b5ca7a094c701403b3706bb0adf}{accumulator}}
+\begin{DoxyCompactList}\small\item\em Acumulador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_info_a9a77246a208cb6f7c20fd03d3e0255d7}{pc}}
+\begin{DoxyCompactList}\small\item\em Contador de programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_info_a1da078f888c1b2c1cf5c1a119069466b}{sp}}
+\begin{DoxyCompactList}\small\item\em Ponteiro de pilha. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_program}{Program}} \mbox{\hyperlink{struct_cpu_info_a3c95c6344f41d923393e7a67a83c4041}{current\+Program}}
+\begin{DoxyCompactList}\small\item\em Programa atual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{Cpu\+State}} \mbox{\hyperlink{struct_cpu_info_aaae736127485331ebfbe4a5661a54ec2}{state}}
+\begin{DoxyCompactList}\small\item\em Estado da CPU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{struct_cpu_info_a97a3f5a52499615deb043f0151b4496e}{current\+Process\+Id}}
+\begin{DoxyCompactList}\small\item\em ID do processo atual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_info_a4d7f689b64369f115c51363c1d1fcd6e}{registers}} \mbox{[}\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\+\_\+\+MAX}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Registradores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{struct_cpu_info_aa52b152253773d6e492866470ab85120}{stack}} \mbox{[}\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\+\_\+\+MAX\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Pilha da CPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura que contém informações resumidas sobre a CPU. 
+
+Esta estrutura é usada ao destacar um processo da CPU. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_cpu_info_adc873b5ca7a094c701403b3706bb0adf}\index{CpuInfo@{CpuInfo}!accumulator@{accumulator}}
+\index{accumulator@{accumulator}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{accumulator}{accumulator}}
+{\footnotesize\ttfamily \label{struct_cpu_info_adc873b5ca7a094c701403b3706bb0adf} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+Info\+::accumulator}
+
+
+
+Acumulador. 
+
+\Hypertarget{struct_cpu_info_a97a3f5a52499615deb043f0151b4496e}\index{CpuInfo@{CpuInfo}!currentProcessId@{currentProcessId}}
+\index{currentProcessId@{currentProcessId}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{currentProcessId}{currentProcessId}}
+{\footnotesize\ttfamily \label{struct_cpu_info_a97a3f5a52499615deb043f0151b4496e} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} Cpu\+Info\+::current\+Process\+Id}
+
+
+
+ID do processo atual. 
+
+\Hypertarget{struct_cpu_info_a3c95c6344f41d923393e7a67a83c4041}\index{CpuInfo@{CpuInfo}!currentProgram@{currentProgram}}
+\index{currentProgram@{currentProgram}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{currentProgram}{currentProgram}}
+{\footnotesize\ttfamily \label{struct_cpu_info_a3c95c6344f41d923393e7a67a83c4041} 
+\mbox{\hyperlink{struct_program}{Program}} Cpu\+Info\+::current\+Program}
+
+
+
+Programa atual. 
+
+\Hypertarget{struct_cpu_info_a9a77246a208cb6f7c20fd03d3e0255d7}\index{CpuInfo@{CpuInfo}!pc@{pc}}
+\index{pc@{pc}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily \label{struct_cpu_info_a9a77246a208cb6f7c20fd03d3e0255d7} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+Info\+::pc}
+
+
+
+Contador de programa. 
+
+\Hypertarget{struct_cpu_info_a4d7f689b64369f115c51363c1d1fcd6e}\index{CpuInfo@{CpuInfo}!registers@{registers}}
+\index{registers@{registers}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{registers}{registers}}
+{\footnotesize\ttfamily \label{struct_cpu_info_a4d7f689b64369f115c51363c1d1fcd6e} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+Info\+::registers\mbox{[}\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\+\_\+\+MAX}}\mbox{]}}
+
+
+
+Registradores. 
+
+\Hypertarget{struct_cpu_info_a1da078f888c1b2c1cf5c1a119069466b}\index{CpuInfo@{CpuInfo}!sp@{sp}}
+\index{sp@{sp}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{sp}{sp}}
+{\footnotesize\ttfamily \label{struct_cpu_info_a1da078f888c1b2c1cf5c1a119069466b} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+Info\+::sp}
+
+
+
+Ponteiro de pilha. 
+
+\Hypertarget{struct_cpu_info_aa52b152253773d6e492866470ab85120}\index{CpuInfo@{CpuInfo}!stack@{stack}}
+\index{stack@{stack}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily \label{struct_cpu_info_aa52b152253773d6e492866470ab85120} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} Cpu\+Info\+::stack\mbox{[}\mbox{\hyperlink{instruction_8h_a453f07a53194584fd2e0bb720c814c25}{STACK\+\_\+\+MAX\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+Pilha da CPU. 
+
+\Hypertarget{struct_cpu_info_aaae736127485331ebfbe4a5661a54ec2}\index{CpuInfo@{CpuInfo}!state@{state}}
+\index{state@{state}!CpuInfo@{CpuInfo}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{struct_cpu_info_aaae736127485331ebfbe4a5661a54ec2} 
+\mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{Cpu\+State}} Cpu\+Info\+::state}
+
+
+
+Estado da CPU. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/cpu/\mbox{\hyperlink{cpu_8h}{cpu.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\doxysection{system.\+h}
+\hypertarget{system_8h_source}{}\label{system_8h_source}\index{src/kernel/system.h@{src/kernel/system.h}}
+\mbox{\hyperlink{system_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HL\_SYSTEM\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HL\_SYSTEM\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{kernel_8h}{kernel.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *(\mbox{\hyperlink{system_8h_a9efe7f6357c0504b9ae0fbea1a1a5b06}{ProcManagerCreationFn}})(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ \mbox{\hyperlink{struct_system_create_info_a1b16554bcfd1c2462a9d712d4ee17016}{procManager}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{ProgramInstantiationFn}}\ *\mbox{\hyperlink{struct_system_create_info_a1edccab7e963f8d58e436d43d28056c0}{programs}};\ \ \ \ \ }
+\DoxyCodeLine{00037\ \}\ \mbox{\hyperlink{struct_system_create_info}{SystemCreateInfo}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_heli_o_s_system}{HeliOSSystem}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{struct_heli_o_s_system_a8ed5bd95ae52438e3abf3c98062a4ce2}{processManager}};}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{ProgramInstantiationFn}}\ *\mbox{\hyperlink{struct_heli_o_s_system_ad297b9d792a1c1605703578ea37e0c66}{programs}};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{struct_cpu}{Cpu}}\ *\mbox{\hyperlink{struct_heli_o_s_system_a4feee819da780242c6ce7d6910377a86}{cpu}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{struct_heli_o_s_system_ab1c76d965fd6b798c46cfabd1bd8d3b7}{processTable}};}
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{struct_heli_o_s_system}{HeliOSSystem}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{system_8h_a3596e8e37d4934941784d0743b52c530}{createSystemInstance}}(\mbox{\hyperlink{struct_system_create_info}{SystemCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00070\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{system_8h_a59377f8e05d93670dbf26cfc4f280733}{createProcess}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{ProgramInstantiationFn}}\ program);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00081\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{system_8h_a2c53b1cc733918ed4ad8f349df9a6a7b}{createProcessWithPriority}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name,\ \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{ProgramInstantiationFn}}\ program,\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ priority);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{system_8h_a407999ca910452fbf241666fd368ec39}{createProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \mbox{\hyperlink{struct_program}{Program}}\ \mbox{\hyperlink{system_8h_ae82311d2a1da3192752fa22304eb1803}{getProcessProgram}}(\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ pid);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \mbox{\hyperlink{program_8h_a9c81f236597270f262cd6d6915aeea1c}{ProgramInstantiationFn}}\ \mbox{\hyperlink{system_8h_a0287305e2818e4155bf783d53c5d988a}{getProgramByIndex}}(\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ index);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{system_8h_ab51ff91048ec8956e8fd0a0e78d947b5}{runSystem}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{system_8h_ad682aa1763f73316470f26e2423c3ea7}{freeSystemInstance}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{system_8h_a26f49e94113dd2c92ea7a18c2a90fd54}{runSystemWithLog}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *logFile);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

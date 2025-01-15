@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Código-Fonte de src/process/process_info.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('process__info_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">process_info.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="process__info_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef PROCESS_INFO_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define PROCESS_INFO_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="system__types_8h.html">system_types.h</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_process_statistics.html">   31</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#ad76e3eb0e3319313bb81db0cef2d3558">   33</a></span>    <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_process_statistics.html#ad76e3eb0e3319313bb81db0cef2d3558">pid</a>;               </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#ad8a34ce0534a3036dba7813ae2522351">   34</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="struct_process_statistics.html#ad8a34ce0534a3036dba7813ae2522351">name</a>;        </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#addf2860aebe442031536fcbe1d9bec4b">   35</a></span>    uint32_t <a class="code hl_variable" href="struct_process_statistics.html#addf2860aebe442031536fcbe1d9bec4b">arrivalTime</a>;    </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#a120551afe2773ff7fbb76f38295df29f">   36</a></span>    uint32_t <a class="code hl_variable" href="struct_process_statistics.html#a120551afe2773ff7fbb76f38295df29f">startTime</a>;      </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#a7ec2425ee940ab3a183ca59a054f07af">   37</a></span>    uint32_t <a class="code hl_variable" href="struct_process_statistics.html#a7ec2425ee940ab3a183ca59a054f07af">endTime</a>;        </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#a8894234ccbbb43f2878638d48067012d">   38</a></span>    uint32_t <a class="code hl_variable" href="struct_process_statistics.html#a8894234ccbbb43f2878638d48067012d">waitingTime</a>;    </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_process_statistics.html#ac0ae0b383cce3aaedd7b8039b1870377">   39</a></span>    uint32_t <a class="code hl_variable" href="struct_process_statistics.html#ac0ae0b383cce3aaedd7b8039b1870377">turnaroundTime</a>; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>} <a class="code hl_struct" href="struct_process_statistics.html">ProcessStatistics</a>;</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astruct_process_statistics_html"><div class="ttname"><a href="struct_process_statistics.html">ProcessStatistics</a></div><div class="ttdef"><b>Definição</b> process_info.h:32</div></div>
+<div class="ttc" id="astruct_process_statistics_html_a120551afe2773ff7fbb76f38295df29f"><div class="ttname"><a href="struct_process_statistics.html#a120551afe2773ff7fbb76f38295df29f">ProcessStatistics::startTime</a></div><div class="ttdeci">uint32_t startTime</div><div class="ttdoc">Tempo de início da execução do processo.</div><div class="ttdef"><b>Definição</b> process_info.h:36</div></div>
+<div class="ttc" id="astruct_process_statistics_html_a7ec2425ee940ab3a183ca59a054f07af"><div class="ttname"><a href="struct_process_statistics.html#a7ec2425ee940ab3a183ca59a054f07af">ProcessStatistics::endTime</a></div><div class="ttdeci">uint32_t endTime</div><div class="ttdoc">Tempo de término da execução do processo.</div><div class="ttdef"><b>Definição</b> process_info.h:37</div></div>
+<div class="ttc" id="astruct_process_statistics_html_a8894234ccbbb43f2878638d48067012d"><div class="ttname"><a href="struct_process_statistics.html#a8894234ccbbb43f2878638d48067012d">ProcessStatistics::waitingTime</a></div><div class="ttdeci">uint32_t waitingTime</div><div class="ttdoc">Tempo que o processo aguardou na fila.</div><div class="ttdef"><b>Definição</b> process_info.h:38</div></div>
+<div class="ttc" id="astruct_process_statistics_html_ac0ae0b383cce3aaedd7b8039b1870377"><div class="ttname"><a href="struct_process_statistics.html#ac0ae0b383cce3aaedd7b8039b1870377">ProcessStatistics::turnaroundTime</a></div><div class="ttdeci">uint32_t turnaroundTime</div><div class="ttdoc">Tempo total entre a chegada e a finalização do processo.</div><div class="ttdef"><b>Definição</b> process_info.h:39</div></div>
+<div class="ttc" id="astruct_process_statistics_html_ad76e3eb0e3319313bb81db0cef2d3558"><div class="ttname"><a href="struct_process_statistics.html#ad76e3eb0e3319313bb81db0cef2d3558">ProcessStatistics::pid</a></div><div class="ttdeci">PID32 pid</div><div class="ttdoc">Identificador único do processo.</div><div class="ttdef"><b>Definição</b> process_info.h:33</div></div>
+<div class="ttc" id="astruct_process_statistics_html_ad8a34ce0534a3036dba7813ae2522351"><div class="ttname"><a href="struct_process_statistics.html#ad8a34ce0534a3036dba7813ae2522351">ProcessStatistics::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Nome do processo.</div><div class="ttdef"><b>Definição</b> process_info.h:34</div></div>
+<div class="ttc" id="astruct_process_statistics_html_addf2860aebe442031536fcbe1d9bec4b"><div class="ttname"><a href="struct_process_statistics.html#addf2860aebe442031536fcbe1d9bec4b">ProcessStatistics::arrivalTime</a></div><div class="ttdeci">uint32_t arrivalTime</div><div class="ttdoc">Tempo de chegada do processo ao sistema.</div><div class="ttdef"><b>Definição</b> process_info.h:35</div></div>
+<div class="ttc" id="asystem__types_8h_html"><div class="ttname"><a href="system__types_8h.html">system_types.h</a></div><div class="ttdoc">Define tipos básicos utilizados no sistema virtual HeliOS.</div></div>
+<div class="ttc" id="asystem__types_8h_html_aade98a87136cf030add759c3cbf7e385"><div class="ttname"><a href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></div><div class="ttdeci">int PID32</div><div class="ttdoc">Representa um identificador único para processos no sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="process__info_8h.html">process_info.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

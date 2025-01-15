@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Código-Fonte de src/process/process_manager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('process__manager_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">process_manager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="process__manager_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef HL_PROC_MANAGER_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define HL_PROC_MANAGER_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="process_8h.html">process.h</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_cpu_info.html">CpuInfo</a> <a class="code hl_struct" href="struct_cpu_info.html">CpuInfo</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a5b2a6bc5e999daad02bebe2abe749687">   28</a></span><span class="keyword">typedef</span> <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> (*<a class="code hl_typedef" href="process__manager_8h.html#a5b2a6bc5e999daad02bebe2abe749687">ProcCreateFn</a>)(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_process_create_info.html">ProcessCreateInfo</a> info);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a3b70fb39abba75f75c961bfa121a5eeb">   40</a></span><span class="keyword">typedef</span> <a class="code hl_struct" href="struct_process.html">Process</a> *(*GetProcessFn)(<span class="keywordtype">void</span> *self, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a37d91cb30bf50091e18a1c326aadd447">   52</a></span><span class="keyword">typedef</span> <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> (*<a class="code hl_typedef" href="process__manager_8h.html#a37d91cb30bf50091e18a1c326aadd447">ProcScheduleFn</a>)(<span class="keywordtype">void</span> *self, <span class="keywordtype">void</span> *procTable);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a956103fa8932386383a2e3b83ede37a0">   64</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> *(*InitProcTableFn)(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a3febc31b15e69aa564334898f5c311be">   75</a></span><span class="keyword">typedef</span> bool (*<a class="code hl_typedef" href="process__manager_8h.html#a3febc31b15e69aa564334898f5c311be">HasProcFn</a>)(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a8eec4e604853852c0cac702c26274dbe">   86</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="process__manager_8h.html#a8eec4e604853852c0cac702c26274dbe">OnProcDetachFn</a>)(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_cpu_info.html">CpuInfo</a> info);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="};">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0">   93</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383">   95</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383">HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED</a>,             </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2">   96</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2">HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST</a>,                  </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001">   97</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001">HL_PROC_MANAGER_TYPE_ROUND_ROBIN</a>,                         </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef">   98</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef">HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE</a>,    </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f">   99</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f">HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES</a>, </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847">  100</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847">HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING</a>,                  </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f">  101</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f">HL_PROC_MANAGER_TYPE_MAX</a>,                                 </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>} <a class="code hl_enumeration" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0">ProcManagerType</a>;</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="};">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77">  109</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc">  111</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc">PREEMPTION_NONE</a>,     </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851">  112</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851">PREEMPTION_QUANTUM</a>,  </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2">  113</a></span>    <a class="code hl_enumvalue" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2">PREEMPTION_PRIORITY</a>, </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>} <a class="code hl_enumeration" href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77">PreemptionType</a>;</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="};">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="struct_process_manager_create_info.html">  122</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="struct_process_manager_create_info.html#adf12231eb36ff6f30a73fd04cccccbb2">  124</a></span>    <a class="code hl_enumeration" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0">ProcManagerType</a> <a class="code hl_variable" href="struct_process_manager_create_info.html#adf12231eb36ff6f30a73fd04cccccbb2">type</a>; </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="struct_process_manager_create_info.html#a499161fe58a6d51806337561dc2e9893">  125</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> <a class="code hl_variable" href="struct_process_manager_create_info.html#a499161fe58a6d51806337561dc2e9893">quantum</a>;         </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <a class="code hl_struct" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a>;</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="process__manager_8h.html#a462eb45d1bb8d6a2035f79fc16dc6111">  131</a></span><span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="process__manager_8h.html#a462eb45d1bb8d6a2035f79fc16dc6111">PreemptionFlag</a>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="};">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="struct_process_manager.html">  139</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>{</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a444868c67408b7e8680997fb4f19b595">  141</a></span>    <a class="code hl_enumeration" href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0">ProcManagerType</a> <a class="code hl_variable" href="struct_process_manager.html#a444868c67408b7e8680997fb4f19b595">type</a>;          </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a20d24924b9f6d85e464a7935a0582b57">  142</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a462eb45d1bb8d6a2035f79fc16dc6111">PreemptionFlag</a> <a class="code hl_variable" href="struct_process_manager.html#a20d24924b9f6d85e464a7935a0582b57">preemptionType</a>; </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a7ded61f56da77ef3c641903dc4de6c50">  143</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a5b2a6bc5e999daad02bebe2abe749687">ProcCreateFn</a> <a class="code hl_variable" href="struct_process_manager.html#a7ded61f56da77ef3c641903dc4de6c50">createProc</a>;       </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a4aeaf74898d8a65475b47e20f2d726ee">  144</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a37d91cb30bf50091e18a1c326aadd447">ProcScheduleFn</a> <a class="code hl_variable" href="struct_process_manager.html#a4aeaf74898d8a65475b47e20f2d726ee">schedule</a>;       </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a8b675a99fc0e249d332e713ae417a9cb">  145</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a956103fa8932386383a2e3b83ede37a0">InitProcTableFn</a> <a class="code hl_variable" href="struct_process_manager.html#a8b675a99fc0e249d332e713ae417a9cb">initTable</a>;     </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a0e7aa5a083e99e9a38c63075fb67bea3">  146</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a3b70fb39abba75f75c961bfa121a5eeb">GetProcessFn</a> <a class="code hl_variable" href="struct_process_manager.html#a0e7aa5a083e99e9a38c63075fb67bea3">getProcess</a>;       </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a71cadeeab1c0fdb5f903241379713a83">  147</a></span>    <a class="code hl_struct" href="struct_process_array.html">ProcessArray</a> <a class="code hl_variable" href="struct_process_manager.html#a71cadeeab1c0fdb5f903241379713a83">processes</a>;        </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a69d6b2acd48fcee752ef1753dacb4c08">  148</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a3febc31b15e69aa564334898f5c311be">HasProcFn</a> <a class="code hl_variable" href="struct_process_manager.html#a69d6b2acd48fcee752ef1753dacb4c08">hasProcess</a>;          </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a70942948d1d445920df072db5363e9dd">  149</a></span>    <a class="code hl_typedef" href="process__manager_8h.html#a8eec4e604853852c0cac702c26274dbe">OnProcDetachFn</a> <a class="code hl_variable" href="struct_process_manager.html#a70942948d1d445920df072db5363e9dd">onDetach</a>;       </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="struct_process_manager.html#a35816d9def54bfc67757fd8ff4720f78">  150</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> <a class="code hl_variable" href="struct_process_manager.html#a35816d9def54bfc67757fd8ff4720f78">quantum</a>;                  </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>} <a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a>;</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aprocess_8h_html"><div class="ttname"><a href="process_8h.html">process.h</a></div><div class="ttdoc">Estruturas e funções para gerenciamento de processos no sistema operacional.</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a2e4d453663337e4fa265c003b2d0da77"><div class="ttname"><a href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77">PreemptionType</a></div><div class="ttdeci">PreemptionType</div><div class="ttdoc">Tipos de preempção no gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:110</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2"><div class="ttname"><a href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2">PREEMPTION_PRIORITY</a></div><div class="ttdeci">@ PREEMPTION_PRIORITY</div><div class="ttdoc">Preempção por prioridade.</div><div class="ttdef"><b>Definição</b> process_manager.h:113</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc"><div class="ttname"><a href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc">PREEMPTION_NONE</a></div><div class="ttdeci">@ PREEMPTION_NONE</div><div class="ttdoc">Sem preempção.</div><div class="ttdef"><b>Definição</b> process_manager.h:111</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851"><div class="ttname"><a href="process__manager_8h.html#a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851">PREEMPTION_QUANTUM</a></div><div class="ttdeci">@ PREEMPTION_QUANTUM</div><div class="ttdoc">Preempção por quantum de tempo.</div><div class="ttdef"><b>Definição</b> process_manager.h:112</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a37d91cb30bf50091e18a1c326aadd447"><div class="ttname"><a href="process__manager_8h.html#a37d91cb30bf50091e18a1c326aadd447">ProcScheduleFn</a></div><div class="ttdeci">PID32(* ProcScheduleFn)(void *self, void *procTable)</div><div class="ttdoc">Função para agendar um processo.</div><div class="ttdef"><b>Definição</b> process_manager.h:52</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a3b70fb39abba75f75c961bfa121a5eeb"><div class="ttname"><a href="process__manager_8h.html#a3b70fb39abba75f75c961bfa121a5eeb">GetProcessFn</a></div><div class="ttdeci">Process *(* GetProcessFn)(void *self, PID32 pid)</div><div class="ttdoc">Função para obter um processo pelo seu PID.</div><div class="ttdef"><b>Definição</b> process_manager.h:40</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a3febc31b15e69aa564334898f5c311be"><div class="ttname"><a href="process__manager_8h.html#a3febc31b15e69aa564334898f5c311be">HasProcFn</a></div><div class="ttdeci">bool(* HasProcFn)(void *self)</div><div class="ttdoc">Função para verificar se há processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:75</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a462eb45d1bb8d6a2035f79fc16dc6111"><div class="ttname"><a href="process__manager_8h.html#a462eb45d1bb8d6a2035f79fc16dc6111">PreemptionFlag</a></div><div class="ttdeci">unsigned int PreemptionFlag</div><div class="ttdoc">Tipo para as flags de preempção.</div><div class="ttdef"><b>Definição</b> process_manager.h:131</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a5b2a6bc5e999daad02bebe2abe749687"><div class="ttname"><a href="process__manager_8h.html#a5b2a6bc5e999daad02bebe2abe749687">ProcCreateFn</a></div><div class="ttdeci">PID32(* ProcCreateFn)(void *self, ProcessCreateInfo info)</div><div class="ttdoc">Função para criar um processo.</div><div class="ttdef"><b>Definição</b> process_manager.h:28</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0">ProcManagerType</a></div><div class="ttdeci">ProcManagerType</div><div class="ttdoc">Tipos de gerenciadores de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:94</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001">HL_PROC_MANAGER_TYPE_ROUND_ROBIN</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_ROUND_ROBIN</div><div class="ttdoc">Round Robin.</div><div class="ttdef"><b>Definição</b> process_manager.h:97</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f">HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES</div><div class="ttdoc">Priority Scheduling (Multiple Queues)</div><div class="ttdef"><b>Definição</b> process_manager.h:99</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef">HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE</div><div class="ttdoc">Priority Scheduling (Single Queue)</div><div class="ttdef"><b>Definição</b> process_manager.h:98</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383">HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED</div><div class="ttdoc">First Come First Served (FCFS)</div><div class="ttdef"><b>Definição</b> process_manager.h:95</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f">HL_PROC_MANAGER_TYPE_MAX</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_MAX</div><div class="ttdoc">Tipo máximo de gerenciador.</div><div class="ttdef"><b>Definição</b> process_manager.h:101</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2">HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST</div><div class="ttdoc">Shortest Job First (SJF)</div><div class="ttdef"><b>Definição</b> process_manager.h:96</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847"><div class="ttname"><a href="process__manager_8h.html#a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847">HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING</a></div><div class="ttdeci">@ HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING</div><div class="ttdoc">Lottery Scheduling.</div><div class="ttdef"><b>Definição</b> process_manager.h:100</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a8eec4e604853852c0cac702c26274dbe"><div class="ttname"><a href="process__manager_8h.html#a8eec4e604853852c0cac702c26274dbe">OnProcDetachFn</a></div><div class="ttdeci">void(* OnProcDetachFn)(void *self, CpuInfo info)</div><div class="ttdoc">Função a ser chamada quando um processo for desacoplado.</div><div class="ttdef"><b>Definição</b> process_manager.h:86</div></div>
+<div class="ttc" id="aprocess__manager_8h_html_a956103fa8932386383a2e3b83ede37a0"><div class="ttname"><a href="process__manager_8h.html#a956103fa8932386383a2e3b83ede37a0">InitProcTableFn</a></div><div class="ttdeci">void *(* InitProcTableFn)(void *self)</div><div class="ttdoc">Função para inicializar a tabela de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:64</div></div>
+<div class="ttc" id="astruct_cpu_info_html"><div class="ttname"><a href="struct_cpu_info.html">CpuInfo</a></div><div class="ttdoc">Estrutura que contém informações resumidas sobre a CPU.</div><div class="ttdef"><b>Definição</b> cpu.h:59</div></div>
+<div class="ttc" id="astruct_process_array_html"><div class="ttname"><a href="struct_process_array.html">ProcessArray</a></div><div class="ttdoc">Estrutura que representa uma lista de processos.</div><div class="ttdef"><b>Definição</b> process.h:92</div></div>
+<div class="ttc" id="astruct_process_create_info_html"><div class="ttname"><a href="struct_process_create_info.html">ProcessCreateInfo</a></div><div class="ttdoc">Estrutura de informações para criação de um novo processo.</div><div class="ttdef"><b>Definição</b> process.h:77</div></div>
+<div class="ttc" id="astruct_process_html"><div class="ttname"><a href="struct_process.html">Process</a></div><div class="ttdoc">Estrutura que representa um processo no sistema.</div><div class="ttdef"><b>Definição</b> process.h:56</div></div>
+<div class="ttc" id="astruct_process_manager_create_info_html"><div class="ttname"><a href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></div><div class="ttdoc">Estrutura com informações para criar um gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:123</div></div>
+<div class="ttc" id="astruct_process_manager_create_info_html_a499161fe58a6d51806337561dc2e9893"><div class="ttname"><a href="struct_process_manager_create_info.html#a499161fe58a6d51806337561dc2e9893">ProcessManagerCreateInfo::quantum</a></div><div class="ttdeci">Time quantum</div><div class="ttdoc">Quantum de tempo (aplicável para algoritmos como Round Robin)</div><div class="ttdef"><b>Definição</b> process_manager.h:125</div></div>
+<div class="ttc" id="astruct_process_manager_create_info_html_adf12231eb36ff6f30a73fd04cccccbb2"><div class="ttname"><a href="struct_process_manager_create_info.html#adf12231eb36ff6f30a73fd04cccccbb2">ProcessManagerCreateInfo::type</a></div><div class="ttdeci">ProcManagerType type</div><div class="ttdoc">Tipo de gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:124</div></div>
+<div class="ttc" id="astruct_process_manager_html"><div class="ttname"><a href="struct_process_manager.html">ProcessManager</a></div><div class="ttdoc">Estrutura do gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:140</div></div>
+<div class="ttc" id="astruct_process_manager_html_a0e7aa5a083e99e9a38c63075fb67bea3"><div class="ttname"><a href="struct_process_manager.html#a0e7aa5a083e99e9a38c63075fb67bea3">ProcessManager::getProcess</a></div><div class="ttdeci">GetProcessFn getProcess</div><div class="ttdoc">Função para obtenção de um processo.</div><div class="ttdef"><b>Definição</b> process_manager.h:146</div></div>
+<div class="ttc" id="astruct_process_manager_html_a20d24924b9f6d85e464a7935a0582b57"><div class="ttname"><a href="struct_process_manager.html#a20d24924b9f6d85e464a7935a0582b57">ProcessManager::preemptionType</a></div><div class="ttdeci">PreemptionFlag preemptionType</div><div class="ttdoc">Tipo de preempção utilizado.</div><div class="ttdef"><b>Definição</b> process_manager.h:142</div></div>
+<div class="ttc" id="astruct_process_manager_html_a35816d9def54bfc67757fd8ff4720f78"><div class="ttname"><a href="struct_process_manager.html#a35816d9def54bfc67757fd8ff4720f78">ProcessManager::quantum</a></div><div class="ttdeci">Time quantum</div><div class="ttdoc">Quantum de tempo para algoritmos como Round Robin.</div><div class="ttdef"><b>Definição</b> process_manager.h:150</div></div>
+<div class="ttc" id="astruct_process_manager_html_a444868c67408b7e8680997fb4f19b595"><div class="ttname"><a href="struct_process_manager.html#a444868c67408b7e8680997fb4f19b595">ProcessManager::type</a></div><div class="ttdeci">ProcManagerType type</div><div class="ttdoc">Tipo do gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:141</div></div>
+<div class="ttc" id="astruct_process_manager_html_a4aeaf74898d8a65475b47e20f2d726ee"><div class="ttname"><a href="struct_process_manager.html#a4aeaf74898d8a65475b47e20f2d726ee">ProcessManager::schedule</a></div><div class="ttdeci">ProcScheduleFn schedule</div><div class="ttdoc">Função para escalonamento de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:144</div></div>
+<div class="ttc" id="astruct_process_manager_html_a69d6b2acd48fcee752ef1753dacb4c08"><div class="ttname"><a href="struct_process_manager.html#a69d6b2acd48fcee752ef1753dacb4c08">ProcessManager::hasProcess</a></div><div class="ttdeci">HasProcFn hasProcess</div><div class="ttdoc">Função para verificar se há processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:148</div></div>
+<div class="ttc" id="astruct_process_manager_html_a70942948d1d445920df072db5363e9dd"><div class="ttname"><a href="struct_process_manager.html#a70942948d1d445920df072db5363e9dd">ProcessManager::onDetach</a></div><div class="ttdeci">OnProcDetachFn onDetach</div><div class="ttdoc">Função chamada quando um processo é desacoplado.</div><div class="ttdef"><b>Definição</b> process_manager.h:149</div></div>
+<div class="ttc" id="astruct_process_manager_html_a71cadeeab1c0fdb5f903241379713a83"><div class="ttname"><a href="struct_process_manager.html#a71cadeeab1c0fdb5f903241379713a83">ProcessManager::processes</a></div><div class="ttdeci">ProcessArray processes</div><div class="ttdoc">Array de processos gerenciados.</div><div class="ttdef"><b>Definição</b> process_manager.h:147</div></div>
+<div class="ttc" id="astruct_process_manager_html_a7ded61f56da77ef3c641903dc4de6c50"><div class="ttname"><a href="struct_process_manager.html#a7ded61f56da77ef3c641903dc4de6c50">ProcessManager::createProc</a></div><div class="ttdeci">ProcCreateFn createProc</div><div class="ttdoc">Função para criação de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:143</div></div>
+<div class="ttc" id="astruct_process_manager_html_a8b675a99fc0e249d332e713ae417a9cb"><div class="ttname"><a href="struct_process_manager.html#a8b675a99fc0e249d332e713ae417a9cb">ProcessManager::initTable</a></div><div class="ttdeci">InitProcTableFn initTable</div><div class="ttdoc">Função para inicialização da tabela de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:145</div></div>
+<div class="ttc" id="asystem__types_8h_html_a9337d107be24a2a7ac3d09befabf2a75"><div class="ttname"><a href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a></div><div class="ttdeci">unsigned int Time</div><div class="ttdoc">Representa o tempo em unidades específicas do sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:23</div></div>
+<div class="ttc" id="asystem__types_8h_html_aade98a87136cf030add759c3cbf7e385"><div class="ttname"><a href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></div><div class="ttdeci">int PID32</div><div class="ttdoc">Representa um identificador único para processos no sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="process__manager_8h.html">process_manager.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

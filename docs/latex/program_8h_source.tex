@@ -1,0 +1,33 @@
+\doxysection{program.\+h}
+\hypertarget{program_8h_source}{}\label{program_8h_source}\index{src/process/program.h@{src/process/program.h}}
+\mbox{\hyperlink{program_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HL\_PROGRAM\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HL\_PROGRAM\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{instruction_8h}{instruction.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{system__types_8h}{system\_types.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ *\mbox{\hyperlink{struct_program_create_info_aa87b6eaa434d6a3075753ac8d6e1c016}{instructions}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_program_create_info_a2f02bebd89678643976fc6161efa9e35}{count}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \}\ \mbox{\hyperlink{struct_program_create_info}{ProgramCreateInfo}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}\ *\mbox{\hyperlink{struct_program_a5447565c3dabd219d2e90c18932cb5df}{instructions}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_program_a2afc625fd3093d722fcabb17d8b76b49}{count}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \}\ \mbox{\hyperlink{struct_program}{Program}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_program}{Program}}\ *(*ProgramInstantiationFn)();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00061\ \mbox{\hyperlink{struct_program}{Program}}\ *\mbox{\hyperlink{program_8h_acf775e4e4330c3e2382f9f7686e97511}{createProgram}}(\mbox{\hyperlink{struct_program_create_info}{ProgramCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

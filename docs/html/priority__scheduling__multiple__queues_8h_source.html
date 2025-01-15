@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Código-Fonte de src/process/priority_scheduling_multiple_queues.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('priority__scheduling__multiple__queues_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">priority_scheduling_multiple_queues.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="priority__scheduling__multiple__queues_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef HL_PRIORITY_SCHEDULING_MULTIPLE_QEUES_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define HL_PRIORITY_SCHEDULING_MULTIPLE_QEUES_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="process__manager_8h.html">process_manager.h</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="system__types_8h.html">system_types.h</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="priority__scheduling__multiple__queues_8h.html#a0a8ed3f0095f1f2aaecfd695b416006b">   18</a></span><span class="preprocessor">#define PRIORITY_SCHEDULING_MULTIPLE_QEUES_QUANTUM 5</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_node.html">   27</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_p_s_m_q_node.html">PSMQNode</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_node.html#a3049bad78c718e4f113f4bec2d1071df">   29</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_p_s_m_q_node.html">PSMQNode</a> *<a class="code hl_variable" href="struct_p_s_m_q_node.html#a3049bad78c718e4f113f4bec2d1071df">next</a>;    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_node.html#a0c6ae1befa7d9232f99f5758110aed9c">   30</a></span>    <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#a0c6ae1befa7d9232f99f5758110aed9c">pid</a>;                </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_node.html#ac5f13212361340e16b30842ae34a99cf">   31</a></span>    <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#ac5f13212361340e16b30842ae34a99cf">priority</a>; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="priority__scheduling__multiple__queues_8h.html#a4de51e3517cc90c1ac9bbcd60ba9f406">   32</a></span>} <a class="code hl_struct" href="struct_p_s_m_q_node.html">PSMQNode</a>;</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_queue.html">   42</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_queue.html#a646a5c01511d0118145c2df1a4783bea">   44</a></span>    <a class="code hl_struct" href="struct_p_s_m_q_node.html">PSMQNode</a> *<a class="code hl_variable" href="struct_p_s_m_q_queue.html#a646a5c01511d0118145c2df1a4783bea">head</a>; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_queue.html#a2afd3e11bf8360548aebf3aaf5e73801">   45</a></span>    <a class="code hl_struct" href="struct_p_s_m_q_node.html">PSMQNode</a> *<a class="code hl_variable" href="struct_p_s_m_q_queue.html#a2afd3e11bf8360548aebf3aaf5e73801">tail</a>; </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_queue.html#a3a113d85f39d0d3f7cad97d827504511">   46</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> <a class="code hl_variable" href="struct_p_s_m_q_queue.html#a3a113d85f39d0d3f7cad97d827504511">quantum</a>;   </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_queue.html#a2410160e585aca71ec63997cb56ddf05">   47</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_p_s_m_q_queue.html#a2410160e585aca71ec63997cb56ddf05">length</a>;  </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <a class="code hl_struct" href="struct_p_s_m_q_queue.html">PSMQQueue</a>;</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html">   60</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html#a396e775156c503a2dd9b5b25d4c5bbda">   62</a></span>    <a class="code hl_struct" href="struct_p_s_m_q_queue.html">PSMQQueue</a> *<a class="code hl_variable" href="struct_p_s_m_q_proc_table.html#a396e775156c503a2dd9b5b25d4c5bbda">queues</a>[<a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7">HL_PROC_PRIORITY_VERY_HIGH</a> + 1]; </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html#a65cbc8b0a48ecffe05629742338d6126">   63</a></span>    <a class="code hl_typedef" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> <a class="code hl_variable" href="struct_p_s_m_q_proc_table.html#a65cbc8b0a48ecffe05629742338d6126">quantums</a>[<a class="code hl_enumvalue" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7">HL_PROC_PRIORITY_VERY_HIGH</a> + 1];     </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html#a1414234df4271c030df68aa1539f54bf">   64</a></span>    <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> <a class="code hl_variable" href="struct_p_s_m_q_proc_table.html#a1414234df4271c030df68aa1539f54bf">currentPriority</a>;                   </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html#af12eb69da2c4651d5a9b105442a708cc">   65</a></span>    <a class="code hl_struct" href="struct_p_s_m_q_node.html">PSMQNode</a> *<a class="code hl_variable" href="struct_p_s_m_q_proc_table.html#af12eb69da2c4651d5a9b105442a708cc">currentNode</a>;                             </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html#a1e9eaf5d95cc5a674a51789caf8fbc96">   66</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_p_s_m_q_proc_table.html#a1e9eaf5d95cc5a674a51789caf8fbc96">currentIndex</a>;                               </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="struct_p_s_m_q_proc_table.html#a6e57c94cd7453ce1c7e58c1d6d983b09">   67</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="struct_p_s_m_q_proc_table.html#a6e57c94cd7453ce1c7e58c1d6d983b09">size</a>;                                       </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <a class="code hl_struct" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a>;</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="struct_priority_scheduling_multiple_queue_process_manager.html">   76</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="struct_priority_scheduling_multiple_queue_process_manager.html#a5b7ae7a63f9ffcfdbb6e0a56f0874b09">   78</a></span>    <a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a> <a class="code hl_variable" href="struct_priority_scheduling_multiple_queue_process_manager.html#a5b7ae7a63f9ffcfdbb6e0a56f0874b09">manager</a>; </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_priority_scheduling_multiple_queue_process_manager.html#ab01e2589906829f12f7d2b5cbb27d875">   79</a></span>    <a class="code hl_struct" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *<a class="code hl_variable" href="struct_priority_scheduling_multiple_queue_process_manager.html#ab01e2589906829f12f7d2b5cbb27d875">table</a>;   </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>} <a class="code hl_struct" href="struct_priority_scheduling_multiple_queue_process_manager.html">PrioritySchedulingMultipleQueueProcessManager</a>;</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><a class="code hl_struct" href="struct_process_manager.html">ProcessManager</a> *<a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a511f44c99b42a194b6f56659ed37a529">createPrioritySchedulingMultipleQueueProcessManager</a>(<a class="code hl_struct" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#afe6bbe6b8200ad53dc3166921a0557cf">PSMQCreateProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_process_create_info.html">ProcessCreateInfo</a> info);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#aef4a60fb2c36b002e08976d7f8b833ab">PSMQScheduleProcess</a>(<span class="keywordtype">void</span> *self, <span class="keywordtype">void</span> *procTable);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">void</span> *<a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a1ba1294241e325c9db8967916a553a6b">PSMQInitProcTable</a>(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><a class="code hl_struct" href="struct_process.html">Process</a> *<a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#ad3543388c100622f13b64801bb2ea833">PSMQGetProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#a0c6ae1befa7d9232f99f5758110aed9c">pid</a>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keywordtype">bool</span> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a20673d1b9f40634026dd4667cc676536">PSMQHasProcess</a>(<span class="keywordtype">void</span> *self);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keywordtype">void</span> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a92337e1ffa225e69dafd256c47272e0b">PSMQOnProcessDetach</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_cpu_info.html">CpuInfo</a> info);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keywordtype">void</span> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a4ee807e55ecd4ddec5132730316ad823">PSMQEnqueueProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *table, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#a0c6ae1befa7d9232f99f5758110aed9c">pid</a>, <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#ac5f13212361340e16b30842ae34a99cf">priority</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a6d001b729ded4258a73d92c5cd776c50">PSMQDequeueProcess</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *table, <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#ac5f13212361340e16b30842ae34a99cf">priority</a>, <a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#a0c6ae1befa7d9232f99f5758110aed9c">pid</a>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><a class="code hl_typedef" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> <a class="code hl_function" href="priority__scheduling__multiple__queues_8h.html#a22d259eed918124e5aaf5f006797622b">PSMQDequeueProcessByIndex</a>(<span class="keywordtype">void</span> *self, <a class="code hl_struct" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *table, <a class="code hl_enumeration" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> <a class="code hl_variable" href="struct_p_s_m_q_node.html#ac5f13212361340e16b30842ae34a99cf">priority</a>, <span class="keywordtype">size_t</span> index);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a1ba1294241e325c9db8967916a553a6b"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a1ba1294241e325c9db8967916a553a6b">PSMQInitProcTable</a></div><div class="ttdeci">void * PSMQInitProcTable(void *self)</div><div class="ttdoc">Inicializa a tabela de processos do Escalonamento por Prioridade com Múltiplas Filas.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:63</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a20673d1b9f40634026dd4667cc676536"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a20673d1b9f40634026dd4667cc676536">PSMQHasProcess</a></div><div class="ttdeci">bool PSMQHasProcess(void *self)</div><div class="ttdoc">Verifica se há processos na tabela de processos do Escalonamento por Prioridade com Múltiplas Filas.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:102</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a22d259eed918124e5aaf5f006797622b"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a22d259eed918124e5aaf5f006797622b">PSMQDequeueProcessByIndex</a></div><div class="ttdeci">PID32 PSMQDequeueProcessByIndex(void *self, PSMQProcTable *table, ProcessPriority priority, size_t index)</div><div class="ttdoc">Remove um processo da fila de prioridade pelo índice.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:222</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a4ee807e55ecd4ddec5132730316ad823"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a4ee807e55ecd4ddec5132730316ad823">PSMQEnqueueProcess</a></div><div class="ttdeci">void PSMQEnqueueProcess(void *self, PSMQProcTable *table, PID32 pid, ProcessPriority priority)</div><div class="ttdoc">Adiciona um processo à fila de prioridade correspondente.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:136</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a511f44c99b42a194b6f56659ed37a529"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a511f44c99b42a194b6f56659ed37a529">createPrioritySchedulingMultipleQueueProcessManager</a></div><div class="ttdeci">ProcessManager * createPrioritySchedulingMultipleQueueProcessManager(ProcessManagerCreateInfo createInfo)</div><div class="ttdoc">Cria um gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:4</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a6d001b729ded4258a73d92c5cd776c50"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a6d001b729ded4258a73d92c5cd776c50">PSMQDequeueProcess</a></div><div class="ttdeci">PID32 PSMQDequeueProcess(void *self, PSMQProcTable *table, ProcessPriority priority, PID32 pid)</div><div class="ttdoc">Remove o próximo processo da fila de prioridade correspondente.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:166</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_a92337e1ffa225e69dafd256c47272e0b"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#a92337e1ffa225e69dafd256c47272e0b">PSMQOnProcessDetach</a></div><div class="ttdeci">void PSMQOnProcessDetach(void *self, CpuInfo info)</div><div class="ttdoc">Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com Mú...</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:109</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_ad3543388c100622f13b64801bb2ea833"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#ad3543388c100622f13b64801bb2ea833">PSMQGetProcess</a></div><div class="ttdeci">Process * PSMQGetProcess(void *self, PID32 pid)</div><div class="ttdoc">Obtém um processo na tabela de processos pelo PID.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:95</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_aef4a60fb2c36b002e08976d7f8b833ab"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#aef4a60fb2c36b002e08976d7f8b833ab">PSMQScheduleProcess</a></div><div class="ttdeci">PID32 PSMQScheduleProcess(void *self, void *procTable)</div><div class="ttdoc">Agenda o próximo processo para execução com base na prioridade e no quantum de tempo.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:38</div></div>
+<div class="ttc" id="apriority__scheduling__multiple__queues_8h_html_afe6bbe6b8200ad53dc3166921a0557cf"><div class="ttname"><a href="priority__scheduling__multiple__queues_8h.html#afe6bbe6b8200ad53dc3166921a0557cf">PSMQCreateProcess</a></div><div class="ttdeci">PID32 PSMQCreateProcess(void *self, ProcessCreateInfo info)</div><div class="ttdoc">Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com Múltiplas Filas.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.c:21</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></div><div class="ttdeci">ProcessPriority</div><div class="ttdoc">Prioridades de um processo.</div><div class="ttdef"><b>Definição</b> process.h:40</div></div>
+<div class="ttc" id="aprocess_8h_html_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7"><div class="ttname"><a href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7">HL_PROC_PRIORITY_VERY_HIGH</a></div><div class="ttdeci">@ HL_PROC_PRIORITY_VERY_HIGH</div><div class="ttdoc">Prioridade muito alta.</div><div class="ttdef"><b>Definição</b> process.h:46</div></div>
+<div class="ttc" id="aprocess__manager_8h_html"><div class="ttname"><a href="process__manager_8h.html">process_manager.h</a></div></div>
+<div class="ttc" id="astruct_cpu_info_html"><div class="ttname"><a href="struct_cpu_info.html">CpuInfo</a></div><div class="ttdoc">Estrutura que contém informações resumidas sobre a CPU.</div><div class="ttdef"><b>Definição</b> cpu.h:59</div></div>
+<div class="ttc" id="astruct_p_s_m_q_node_html"><div class="ttname"><a href="struct_p_s_m_q_node.html">PSMQNode</a></div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:28</div></div>
+<div class="ttc" id="astruct_p_s_m_q_node_html_a0c6ae1befa7d9232f99f5758110aed9c"><div class="ttname"><a href="struct_p_s_m_q_node.html#a0c6ae1befa7d9232f99f5758110aed9c">PSMQNode::pid</a></div><div class="ttdeci">PID32 pid</div><div class="ttdoc">Identificador do processo.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:30</div></div>
+<div class="ttc" id="astruct_p_s_m_q_node_html_a3049bad78c718e4f113f4bec2d1071df"><div class="ttname"><a href="struct_p_s_m_q_node.html#a3049bad78c718e4f113f4bec2d1071df">PSMQNode::next</a></div><div class="ttdeci">struct PSMQNode * next</div><div class="ttdoc">Ponteiro para o próximo nó na fila.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:29</div></div>
+<div class="ttc" id="astruct_p_s_m_q_node_html_ac5f13212361340e16b30842ae34a99cf"><div class="ttname"><a href="struct_p_s_m_q_node.html#ac5f13212361340e16b30842ae34a99cf">PSMQNode::priority</a></div><div class="ttdeci">ProcessPriority priority</div><div class="ttdoc">Prioridade do processo.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:31</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a></div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:61</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html_a1414234df4271c030df68aa1539f54bf"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html#a1414234df4271c030df68aa1539f54bf">PSMQProcTable::currentPriority</a></div><div class="ttdeci">ProcessPriority currentPriority</div><div class="ttdoc">Prioridade atual da fila.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:64</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html_a1e9eaf5d95cc5a674a51789caf8fbc96"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html#a1e9eaf5d95cc5a674a51789caf8fbc96">PSMQProcTable::currentIndex</a></div><div class="ttdeci">size_t currentIndex</div><div class="ttdoc">Índice da fila de prioridade atual.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:66</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html_a396e775156c503a2dd9b5b25d4c5bbda"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html#a396e775156c503a2dd9b5b25d4c5bbda">PSMQProcTable::queues</a></div><div class="ttdeci">PSMQQueue * queues[HL_PROC_PRIORITY_VERY_HIGH+1]</div><div class="ttdoc">Filas de processos por prioridade.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:62</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html_a65cbc8b0a48ecffe05629742338d6126"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html#a65cbc8b0a48ecffe05629742338d6126">PSMQProcTable::quantums</a></div><div class="ttdeci">Time quantums[HL_PROC_PRIORITY_VERY_HIGH+1]</div><div class="ttdoc">Quantums de tempo por prioridade.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:63</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html_a6e57c94cd7453ce1c7e58c1d6d983b09"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html#a6e57c94cd7453ce1c7e58c1d6d983b09">PSMQProcTable::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Número total de processos.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:67</div></div>
+<div class="ttc" id="astruct_p_s_m_q_proc_table_html_af12eb69da2c4651d5a9b105442a708cc"><div class="ttname"><a href="struct_p_s_m_q_proc_table.html#af12eb69da2c4651d5a9b105442a708cc">PSMQProcTable::currentNode</a></div><div class="ttdeci">PSMQNode * currentNode</div><div class="ttdoc">Nó atual sendo escalonado.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:65</div></div>
+<div class="ttc" id="astruct_p_s_m_q_queue_html"><div class="ttname"><a href="struct_p_s_m_q_queue.html">PSMQQueue</a></div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:43</div></div>
+<div class="ttc" id="astruct_p_s_m_q_queue_html_a2410160e585aca71ec63997cb56ddf05"><div class="ttname"><a href="struct_p_s_m_q_queue.html#a2410160e585aca71ec63997cb56ddf05">PSMQQueue::length</a></div><div class="ttdeci">size_t length</div><div class="ttdoc">Número de processos na fila.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:47</div></div>
+<div class="ttc" id="astruct_p_s_m_q_queue_html_a2afd3e11bf8360548aebf3aaf5e73801"><div class="ttname"><a href="struct_p_s_m_q_queue.html#a2afd3e11bf8360548aebf3aaf5e73801">PSMQQueue::tail</a></div><div class="ttdeci">PSMQNode * tail</div><div class="ttdoc">Fim da fila de processos.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:45</div></div>
+<div class="ttc" id="astruct_p_s_m_q_queue_html_a3a113d85f39d0d3f7cad97d827504511"><div class="ttname"><a href="struct_p_s_m_q_queue.html#a3a113d85f39d0d3f7cad97d827504511">PSMQQueue::quantum</a></div><div class="ttdeci">Time quantum</div><div class="ttdoc">Quantum de tempo para os processos dessa fila.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:46</div></div>
+<div class="ttc" id="astruct_p_s_m_q_queue_html_a646a5c01511d0118145c2df1a4783bea"><div class="ttname"><a href="struct_p_s_m_q_queue.html#a646a5c01511d0118145c2df1a4783bea">PSMQQueue::head</a></div><div class="ttdeci">PSMQNode * head</div><div class="ttdoc">Início da fila de processos.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:44</div></div>
+<div class="ttc" id="astruct_priority_scheduling_multiple_queue_process_manager_html"><div class="ttname"><a href="struct_priority_scheduling_multiple_queue_process_manager.html">PrioritySchedulingMultipleQueueProcessManager</a></div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:77</div></div>
+<div class="ttc" id="astruct_priority_scheduling_multiple_queue_process_manager_html_a5b7ae7a63f9ffcfdbb6e0a56f0874b09"><div class="ttname"><a href="struct_priority_scheduling_multiple_queue_process_manager.html#a5b7ae7a63f9ffcfdbb6e0a56f0874b09">PrioritySchedulingMultipleQueueProcessManager::manager</a></div><div class="ttdeci">ProcessManager manager</div><div class="ttdoc">Gerenciador de processos base.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:78</div></div>
+<div class="ttc" id="astruct_priority_scheduling_multiple_queue_process_manager_html_ab01e2589906829f12f7d2b5cbb27d875"><div class="ttname"><a href="struct_priority_scheduling_multiple_queue_process_manager.html#ab01e2589906829f12f7d2b5cbb27d875">PrioritySchedulingMultipleQueueProcessManager::table</a></div><div class="ttdeci">PSMQProcTable * table</div><div class="ttdoc">Tabela de processos com as filas de prioridade.</div><div class="ttdef"><b>Definição</b> priority_scheduling_multiple_queues.h:79</div></div>
+<div class="ttc" id="astruct_process_create_info_html"><div class="ttname"><a href="struct_process_create_info.html">ProcessCreateInfo</a></div><div class="ttdoc">Estrutura de informações para criação de um novo processo.</div><div class="ttdef"><b>Definição</b> process.h:77</div></div>
+<div class="ttc" id="astruct_process_html"><div class="ttname"><a href="struct_process.html">Process</a></div><div class="ttdoc">Estrutura que representa um processo no sistema.</div><div class="ttdef"><b>Definição</b> process.h:56</div></div>
+<div class="ttc" id="astruct_process_manager_create_info_html"><div class="ttname"><a href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></div><div class="ttdoc">Estrutura com informações para criar um gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:123</div></div>
+<div class="ttc" id="astruct_process_manager_html"><div class="ttname"><a href="struct_process_manager.html">ProcessManager</a></div><div class="ttdoc">Estrutura do gerenciador de processos.</div><div class="ttdef"><b>Definição</b> process_manager.h:140</div></div>
+<div class="ttc" id="asystem__types_8h_html"><div class="ttname"><a href="system__types_8h.html">system_types.h</a></div><div class="ttdoc">Define tipos básicos utilizados no sistema virtual HeliOS.</div></div>
+<div class="ttc" id="asystem__types_8h_html_a9337d107be24a2a7ac3d09befabf2a75"><div class="ttname"><a href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a></div><div class="ttdeci">unsigned int Time</div><div class="ttdoc">Representa o tempo em unidades específicas do sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:23</div></div>
+<div class="ttc" id="asystem__types_8h_html_aade98a87136cf030add759c3cbf7e385"><div class="ttname"><a href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></div><div class="ttdeci">int PID32</div><div class="ttdoc">Representa um identificador único para processos no sistema.</div><div class="ttdef"><b>Definição</b> system_types.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="priority__scheduling__multiple__queues_8h.html">priority_scheduling_multiple_queues.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

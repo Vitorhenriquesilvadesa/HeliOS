@@ -1,0 +1,87 @@
+\doxysection{Referência à estrutura Process\+Create\+Info}
+\hypertarget{struct_process_create_info}{}\label{struct_process_create_info}\index{ProcessCreateInfo@{ProcessCreateInfo}}
+
+
+Estrutura de informações para criação de um novo processo.  
+
+
+
+
+{\ttfamily \#include $<$process.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_process_create_info_a1dd09a9bb26c69dd2d0cb311360a2ce7}{name}}
+\begin{DoxyCompactList}\small\item\em Nome do processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{struct_process_create_info_a078dbdedf26cbef6c9639e90866dd047}{arrival\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo de chegada do processo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_process_create_info_a86a3e21511863b8623f51bf68c21793d}{burst\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo de execução do processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} \mbox{\hyperlink{struct_process_create_info_a5742285ef9f00ac382941be0e082bf52}{priority}}
+\begin{DoxyCompactList}\small\item\em Prioridade do processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_program}{Program}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_process_create_info_a3c3a4c1801eed8f52787a5e1f12a20ad}{program}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o programa associado ao processo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura de informações para criação de um novo processo. 
+
+Contém os parâmetros necessários para criar um processo no sistema operacional. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_process_create_info_a078dbdedf26cbef6c9639e90866dd047}\index{ProcessCreateInfo@{ProcessCreateInfo}!arrivalTime@{arrivalTime}}
+\index{arrivalTime@{arrivalTime}!ProcessCreateInfo@{ProcessCreateInfo}}
+\doxysubsubsection{\texorpdfstring{arrivalTime}{arrivalTime}}
+{\footnotesize\ttfamily \label{struct_process_create_info_a078dbdedf26cbef6c9639e90866dd047} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} Process\+Create\+Info\+::arrival\+Time}
+
+
+
+Tempo de chegada do processo. 
+
+\Hypertarget{struct_process_create_info_a86a3e21511863b8623f51bf68c21793d}\index{ProcessCreateInfo@{ProcessCreateInfo}!burstTime@{burstTime}}
+\index{burstTime@{burstTime}!ProcessCreateInfo@{ProcessCreateInfo}}
+\doxysubsubsection{\texorpdfstring{burstTime}{burstTime}}
+{\footnotesize\ttfamily \label{struct_process_create_info_a86a3e21511863b8623f51bf68c21793d} 
+int Process\+Create\+Info\+::burst\+Time}
+
+
+
+Tempo de execução do processo. 
+
+\Hypertarget{struct_process_create_info_a1dd09a9bb26c69dd2d0cb311360a2ce7}\index{ProcessCreateInfo@{ProcessCreateInfo}!name@{name}}
+\index{name@{name}!ProcessCreateInfo@{ProcessCreateInfo}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_process_create_info_a1dd09a9bb26c69dd2d0cb311360a2ce7} 
+const char\texorpdfstring{$\ast$}{*} Process\+Create\+Info\+::name}
+
+
+
+Nome do processo. 
+
+\Hypertarget{struct_process_create_info_a5742285ef9f00ac382941be0e082bf52}\index{ProcessCreateInfo@{ProcessCreateInfo}!priority@{priority}}
+\index{priority@{priority}!ProcessCreateInfo@{ProcessCreateInfo}}
+\doxysubsubsection{\texorpdfstring{priority}{priority}}
+{\footnotesize\ttfamily \label{struct_process_create_info_a5742285ef9f00ac382941be0e082bf52} 
+\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} Process\+Create\+Info\+::priority}
+
+
+
+Prioridade do processo. 
+
+\Hypertarget{struct_process_create_info_a3c3a4c1801eed8f52787a5e1f12a20ad}\index{ProcessCreateInfo@{ProcessCreateInfo}!program@{program}}
+\index{program@{program}!ProcessCreateInfo@{ProcessCreateInfo}}
+\doxysubsubsection{\texorpdfstring{program}{program}}
+{\footnotesize\ttfamily \label{struct_process_create_info_a3c3a4c1801eed8f52787a5e1f12a20ad} 
+\mbox{\hyperlink{struct_program}{Program}}\texorpdfstring{$\ast$}{*} Process\+Create\+Info\+::program}
+
+
+
+Ponteiro para o programa associado ao processo. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{process_8h}{process.\+h}}\end{DoxyCompactItemize}

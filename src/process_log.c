@@ -1,7 +1,7 @@
 #include "process_log.h"
 #include <stdio.h>
 
-void writeLog(const char *algorithName, const char *fileName, ProcessLog *process, size_t logCount, const char *executionOrder)
+void writeLog(const char *algorithName, const char *fileName, ProcessStatistics *process, size_t logCount, const char *executionOrder)
 {
     FILE *file = fopen(fileName, "a");
 

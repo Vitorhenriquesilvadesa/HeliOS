@@ -1,0 +1,283 @@
+\doxysection{Referência ao ficheiro src/process/priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.h}
+\hypertarget{priority__scheduling__multiple__queues_8h}{}\label{priority__scheduling__multiple__queues_8h}\index{src/process/priority\_scheduling\_multiple\_queues.h@{src/process/priority\_scheduling\_multiple\_queues.h}}
+
+
+Implementação do gerenciador de processos utilizando o algoritmo de Escalonamento por Prioridade com Múltiplas Filas.  
+
+
+{\ttfamily \#include $<$process\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+types.\+h$>$}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}
+\item 
+struct \mbox{\hyperlink{struct_p_s_m_q_queue}{PSMQQueue}}
+\item 
+struct \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}}
+\item 
+struct \mbox{\hyperlink{struct_priority_scheduling_multiple_queue_process_manager}{Priority\+Scheduling\+Multiple\+Queue\+Process\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a0a8ed3f0095f1f2aaecfd695b416006b}{PRIORITY\+\_\+\+SCHEDULING\+\_\+\+MULTIPLE\+\_\+\+QEUES\+\_\+\+QUANTUM}}~5
+\begin{DoxyCompactList}\small\item\em Quantum de tempo para cada processo nas filas de prioridade no algoritmo de Escalonamento por Prioridade com Múltiplas Filas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct PSMQNode \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a4de51e3517cc90c1ac9bbcd60ba9f406}{PSMQNode}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a511f44c99b42a194b6f56659ed37a529}{create\+Priority\+Scheduling\+Multiple\+Queue\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_afe6bbe6b8200ad53dc3166921a0557cf}{PSMQCreate\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com Múltiplas Filas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_aef4a60fb2c36b002e08976d7f8b833ab}{PSMQSchedule\+Process}} (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Agenda o próximo processo para execução com base na prioridade e no quantum de tempo. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a1ba1294241e325c9db8967916a553a6b}{PSMQInit\+Proc\+Table}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Inicializa a tabela de processos do Escalonamento por Prioridade com Múltiplas Filas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_ad3543388c100622f13b64801bb2ea833}{PSMQGet\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém um processo na tabela de processos pelo PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a20673d1b9f40634026dd4667cc676536}{PSMQHas\+Process}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Verifica se há processos na tabela de processos do Escalonamento por Prioridade com Múltiplas Filas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a92337e1ffa225e69dafd256c47272e0b}{PSMQOn\+Process\+Detach}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com Múltiplas Filas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a4ee807e55ecd4ddec5132730316ad823}{PSMQEnqueue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} priority)
+\begin{DoxyCompactList}\small\item\em Adiciona um processo à fila de prioridade correspondente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a6d001b729ded4258a73d92c5cd776c50}{PSMQDequeue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} priority, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Remove o próximo processo da fila de prioridade correspondente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a22d259eed918124e5aaf5f006797622b}{PSMQDequeue\+Process\+By\+Index}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} priority, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Remove um processo da fila de prioridade pelo índice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Implementação do gerenciador de processos utilizando o algoritmo de Escalonamento por Prioridade com Múltiplas Filas. 
+
+Este arquivo define as estruturas e funções necessárias para gerenciar processos utilizando o algoritmo de escalonamento por prioridade, onde processos com diferentes prioridades são alocados em filas separadas e escalonados conforme sua prioridade. 
+
+\doxysubsection{Documentação das macros}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a0a8ed3f0095f1f2aaecfd695b416006b}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM@{PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM}}
+\index{PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM@{PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM}{PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a0a8ed3f0095f1f2aaecfd695b416006b} 
+\#define PRIORITY\+\_\+\+SCHEDULING\+\_\+\+MULTIPLE\+\_\+\+QEUES\+\_\+\+QUANTUM~5}
+
+
+
+Quantum de tempo para cada processo nas filas de prioridade no algoritmo de Escalonamento por Prioridade com Múltiplas Filas. 
+
+
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a4de51e3517cc90c1ac9bbcd60ba9f406}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQNode@{PSMQNode}}
+\index{PSMQNode@{PSMQNode}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQNode}{PSMQNode}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a4de51e3517cc90c1ac9bbcd60ba9f406} 
+typedef struct PSMQNode PSMQNode}
+
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a511f44c99b42a194b6f56659ed37a529}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!createPrioritySchedulingMultipleQueueProcessManager@{createPrioritySchedulingMultipleQueueProcessManager}}
+\index{createPrioritySchedulingMultipleQueueProcessManager@{createPrioritySchedulingMultipleQueueProcessManager}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{createPrioritySchedulingMultipleQueueProcessManager()}{createPrioritySchedulingMultipleQueueProcessManager()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a511f44c99b42a194b6f56659ed37a529} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+Priority\+Scheduling\+Multiple\+Queue\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações para inicialização do gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o gerenciador de processos criado. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_afe6bbe6b8200ad53dc3166921a0557cf}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQCreateProcess@{PSMQCreateProcess}}
+\index{PSMQCreateProcess@{PSMQCreateProcess}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQCreateProcess()}{PSMQCreateProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_afe6bbe6b8200ad53dc3166921a0557cf} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSMQCreate\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com Múltiplas Filas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em info} & Informações do processo a ser criado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo criado. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a6d001b729ded4258a73d92c5cd776c50}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQDequeueProcess@{PSMQDequeueProcess}}
+\index{PSMQDequeueProcess@{PSMQDequeueProcess}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQDequeueProcess()}{PSMQDequeueProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a6d001b729ded4258a73d92c5cd776c50} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSMQDequeue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}]{priority}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Remove o próximo processo da fila de prioridade correspondente. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+{\em priority} & Prioridade da fila de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser removido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo removido. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a22d259eed918124e5aaf5f006797622b}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQDequeueProcessByIndex@{PSMQDequeueProcessByIndex}}
+\index{PSMQDequeueProcessByIndex@{PSMQDequeueProcessByIndex}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQDequeueProcessByIndex()}{PSMQDequeueProcessByIndex()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a22d259eed918124e5aaf5f006797622b} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSMQDequeue\+Process\+By\+Index (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}]{priority}{, }\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Remove um processo da fila de prioridade pelo índice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+{\em priority} & Prioridade da fila de processos. \\
+\hline
+{\em index} & Índice do processo na fila. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo removido. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a4ee807e55ecd4ddec5132730316ad823}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQEnqueueProcess@{PSMQEnqueueProcess}}
+\index{PSMQEnqueueProcess@{PSMQEnqueueProcess}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQEnqueueProcess()}{PSMQEnqueueProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a4ee807e55ecd4ddec5132730316ad823} 
+void PSMQEnqueue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{, }\item[{\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}]{priority}{}\end{DoxyParamCaption})}
+
+
+
+Adiciona um processo à fila de prioridade correspondente. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser adicionado. \\
+\hline
+{\em priority} & Prioridade do processo a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{priority__scheduling__multiple__queues_8h_ad3543388c100622f13b64801bb2ea833}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQGetProcess@{PSMQGetProcess}}
+\index{PSMQGetProcess@{PSMQGetProcess}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQGetProcess()}{PSMQGetProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_ad3543388c100622f13b64801bb2ea833} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} PSMQGet\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém um processo na tabela de processos pelo PID. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o processo correspondente. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a20673d1b9f40634026dd4667cc676536}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQHasProcess@{PSMQHasProcess}}
+\index{PSMQHasProcess@{PSMQHasProcess}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQHasProcess()}{PSMQHasProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a20673d1b9f40634026dd4667cc676536} 
+bool PSMQHas\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se há processos na tabela de processos do Escalonamento por Prioridade com Múltiplas Filas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se houver processos na tabela; caso contrário, {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a1ba1294241e325c9db8967916a553a6b}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQInitProcTable@{PSMQInitProcTable}}
+\index{PSMQInitProcTable@{PSMQInitProcTable}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQInitProcTable()}{PSMQInitProcTable()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a1ba1294241e325c9db8967916a553a6b} 
+void \texorpdfstring{$\ast$}{*} PSMQInit\+Proc\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a tabela de processos do Escalonamento por Prioridade com Múltiplas Filas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para a tabela de processos inicializada. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__multiple__queues_8h_a92337e1ffa225e69dafd256c47272e0b}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQOnProcessDetach@{PSMQOnProcessDetach}}
+\index{PSMQOnProcessDetach@{PSMQOnProcessDetach}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQOnProcessDetach()}{PSMQOnProcessDetach()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_a92337e1ffa225e69dafd256c47272e0b} 
+void PSMQOn\+Process\+Detach (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com Múltiplas Filas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em info} & Informações sobre o estado da CPU ao destacar o processo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{priority__scheduling__multiple__queues_8h_aef4a60fb2c36b002e08976d7f8b833ab}\index{priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}!PSMQScheduleProcess@{PSMQScheduleProcess}}
+\index{PSMQScheduleProcess@{PSMQScheduleProcess}!priority\_scheduling\_multiple\_queues.h@{priority\_scheduling\_multiple\_queues.h}}
+\doxysubsubsection{\texorpdfstring{PSMQScheduleProcess()}{PSMQScheduleProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__multiple__queues_8h_aef4a60fb2c36b002e08976d7f8b833ab} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSMQSchedule\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{proc\+Table}{}\end{DoxyParamCaption})}
+
+
+
+Agenda o próximo processo para execução com base na prioridade e no quantum de tempo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. \\
+\hline
+{\em proc\+Table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo agendado. 
+\end{DoxyReturn}

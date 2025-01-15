@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/shortest_job_first.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('shortest__job__first_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro shortest_job_first.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="shortest__job__first_8h_source.html">shortest_job_first.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_8h_source.html">kernel.h</a>&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ad65acc27fdc203fa5eb44e06cda91d1e" id="r_ad65acc27fdc203fa5eb44e06cda91d1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_manager.html">ProcessManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad65acc27fdc203fa5eb44e06cda91d1e">createShortestJobFirstProcessManager</a> (<a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo)</td></tr>
+<tr class="memdesc:ad65acc27fdc203fa5eb44e06cda91d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um gerenciador de processos para o escalonamento Shortest Job First.  <br /></td></tr>
+<tr class="separator:ad65acc27fdc203fa5eb44e06cda91d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae2772ff55dcc554267194608009e56e" id="r_aae2772ff55dcc554267194608009e56e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae2772ff55dcc554267194608009e56e">SJFCreateProcess</a> (void *self, <a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a> info)</td></tr>
+<tr class="memdesc:aae2772ff55dcc554267194608009e56e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo processo para o escalonamento Shortest Job First.  <br /></td></tr>
+<tr class="separator:aae2772ff55dcc554267194608009e56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab43558e0b36b43d6c02e290d5b8f691d" id="r_ab43558e0b36b43d6c02e290d5b8f691d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab43558e0b36b43d6c02e290d5b8f691d">SJFScheduleProcess</a> (void *self, void *procTable)</td></tr>
+<tr class="memdesc:ab43558e0b36b43d6c02e290d5b8f691d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza o escalonamento de um processo no algoritmo Shortest Job First.  <br /></td></tr>
+<tr class="separator:ab43558e0b36b43d6c02e290d5b8f691d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718852d34a658db8329e8602a089ea58" id="r_a718852d34a658db8329e8602a089ea58"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a718852d34a658db8329e8602a089ea58">SJFInitProcTable</a> (void *self)</td></tr>
+<tr class="memdesc:a718852d34a658db8329e8602a089ea58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a tabela de processos para o Shortest Job First.  <br /></td></tr>
+<tr class="separator:a718852d34a658db8329e8602a089ea58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa431b68ae8b5095c054cbf9af9b83b" id="r_a0aa431b68ae8b5095c054cbf9af9b83b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aa431b68ae8b5095c054cbf9af9b83b">SJFGetProcess</a> (void *self, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a0aa431b68ae8b5095c054cbf9af9b83b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém o processo de um determinado PID da tabela de processos Shortest Job First.  <br /></td></tr>
+<tr class="separator:a0aa431b68ae8b5095c054cbf9af9b83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2483dc832661ca7b7c54d6dc21fe6cb9" id="r_a2483dc832661ca7b7c54d6dc21fe6cb9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2483dc832661ca7b7c54d6dc21fe6cb9">SJFHasProcess</a> (void *self)</td></tr>
+<tr class="memdesc:a2483dc832661ca7b7c54d6dc21fe6cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se há processos na tabela de processos Shortest Job First.  <br /></td></tr>
+<tr class="separator:a2483dc832661ca7b7c54d6dc21fe6cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e91b8de27223570dc3051b6b88c6f6d" id="r_a7e91b8de27223570dc3051b6b88c6f6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e91b8de27223570dc3051b6b88c6f6d">SJFOnProcessDetach</a> (void *self, <a class="el" href="struct_cpu_info.html">CpuInfo</a> info)</td></tr>
+<tr class="memdesc:a7e91b8de27223570dc3051b6b88c6f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função chamada quando um processo é desalocado ou removido.  <br /></td></tr>
+<tr class="separator:a7e91b8de27223570dc3051b6b88c6f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b168a506dd9836c196d4f3b96c5317" id="r_a24b168a506dd9836c196d4f3b96c5317"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24b168a506dd9836c196d4f3b96c5317">SJFEnqueueProcess</a> (void *self, <a class="el" href="struct_s_j_f_proc_table.html">SJFProcTable</a> *table, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a24b168a506dd9836c196d4f3b96c5317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um processo à tabela de processos Shortest Job First.  <br /></td></tr>
+<tr class="separator:a24b168a506dd9836c196d4f3b96c5317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ea66b8492256fdb8b327bd4359e9fe" id="r_a55ea66b8492256fdb8b327bd4359e9fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55ea66b8492256fdb8b327bd4359e9fe">SJFDequeueProcess</a> (void *self, <a class="el" href="struct_s_j_f_proc_table.html">SJFProcTable</a> *table)</td></tr>
+<tr class="memdesc:a55ea66b8492256fdb8b327bd4359e9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o processo de menor tempo de execução da tabela de processos Shortest Job First.  <br /></td></tr>
+<tr class="separator:a55ea66b8492256fdb8b327bd4359e9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="ad65acc27fdc203fa5eb44e06cda91d1e" name="ad65acc27fdc203fa5eb44e06cda91d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65acc27fdc203fa5eb44e06cda91d1e">&#9670;&#160;</a></span>createShortestJobFirstProcessManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process_manager.html">ProcessManager</a> * createShortestJobFirstProcessManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>createInfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um gerenciador de processos para o escalonamento Shortest Job First. </p>
+<p>Função que cria e inicializa um novo gerenciador de processos para o algoritmo Shortest Job First. A tabela de processos será configurada para ordenar os processos com base no tempo de execução estimado.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">createInfo</td><td>Informações para criar o gerenciador de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>ProcessManager* Ponteiro para o gerenciador de processos recém-criado. </dd></dl>
+
+</div>
+</div>
+<a id="aae2772ff55dcc554267194608009e56e" name="aae2772ff55dcc554267194608009e56e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae2772ff55dcc554267194608009e56e">&#9670;&#160;</a></span>SJFCreateProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> SJFCreateProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo processo para o escalonamento Shortest Job First. </p>
+<p>Função que cria um novo processo e o adiciona à tabela de processos do Shortest Job First.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações necessárias para a criação do processo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a> ID do processo recém-criado. </dd></dl>
+
+</div>
+</div>
+<a id="a55ea66b8492256fdb8b327bd4359e9fe" name="a55ea66b8492256fdb8b327bd4359e9fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ea66b8492256fdb8b327bd4359e9fe">&#9670;&#160;</a></span>SJFDequeueProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> SJFDequeueProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_s_j_f_proc_table.html">SJFProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove o processo de menor tempo de execução da tabela de processos Shortest Job First. </p>
+<p>Função que remove e retorna o PID do processo com o menor tempo de execução estimado.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">table</td><td>Tabela de processos para o Shortest Job First. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a> PID do processo removido. </dd></dl>
+
+</div>
+</div>
+<a id="a24b168a506dd9836c196d4f3b96c5317" name="a24b168a506dd9836c196d4f3b96c5317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b168a506dd9836c196d4f3b96c5317">&#9670;&#160;</a></span>SJFEnqueueProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SJFEnqueueProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_s_j_f_proc_table.html">SJFProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um processo à tabela de processos Shortest Job First. </p>
+<p>Função que insere um novo processo na tabela de processos, mantendo a ordem de acordo com o tempo de execução estimado.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">table</td><td>Tabela de processos para o Shortest Job First. </td></tr>
+    <tr><td class="paramname">pid</td><td>PID do processo a ser enfileirado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0aa431b68ae8b5095c054cbf9af9b83b" name="a0aa431b68ae8b5095c054cbf9af9b83b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa431b68ae8b5095c054cbf9af9b83b">&#9670;&#160;</a></span>SJFGetProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process.html">Process</a> * SJFGetProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém o processo de um determinado PID da tabela de processos Shortest Job First. </p>
+<p>Função que busca um processo específico na tabela de processos com base no PID fornecido.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>PID do processo a ser obtido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Process* Ponteiro para o processo correspondente ao PID. </dd></dl>
+
+</div>
+</div>
+<a id="a2483dc832661ca7b7c54d6dc21fe6cb9" name="a2483dc832661ca7b7c54d6dc21fe6cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2483dc832661ca7b7c54d6dc21fe6cb9">&#9670;&#160;</a></span>SJFHasProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SJFHasProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se há processos na tabela de processos Shortest Job First. </p>
+<p>Função que verifica se existem processos prontos para execução na tabela de processos do Shortest Job First.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se houver processos prontos, falso caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a718852d34a658db8329e8602a089ea58" name="a718852d34a658db8329e8602a089ea58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718852d34a658db8329e8602a089ea58">&#9670;&#160;</a></span>SJFInitProcTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * SJFInitProcTable </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa a tabela de processos para o Shortest Job First. </p>
+<p>Função que cria e inicializa a tabela de processos, configurando os ponteiros e a estrutura de dados necessária para o algoritmo Shortest Job First.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>void* Ponteiro para a tabela de processos recém-inicializada. </dd></dl>
+
+</div>
+</div>
+<a id="a7e91b8de27223570dc3051b6b88c6f6d" name="a7e91b8de27223570dc3051b6b88c6f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e91b8de27223570dc3051b6b88c6f6d">&#9670;&#160;</a></span>SJFOnProcessDetach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SJFOnProcessDetach </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cpu_info.html">CpuInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função chamada quando um processo é desalocado ou removido. </p>
+<p>Função que é chamada para realizar operações de limpeza ou atualizações quando um processo é removido ou desalocado da tabela de processos Shortest Job First.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações do CPU associadas ao processo a ser removido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab43558e0b36b43d6c02e290d5b8f691d" name="ab43558e0b36b43d6c02e290d5b8f691d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab43558e0b36b43d6c02e290d5b8f691d">&#9670;&#160;</a></span>SJFScheduleProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> SJFScheduleProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>procTable</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza o escalonamento de um processo no algoritmo Shortest Job First. </p>
+<p>Função que seleciona o próximo processo da tabela de processos com o menor tempo de execução estimado, de acordo com o algoritmo Shortest Job First.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">procTable</td><td>Tabela de processos para o Shortest Job First. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a> ID do processo selecionado para execução. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="shortest__job__first_8c.html">shortest_job_first.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

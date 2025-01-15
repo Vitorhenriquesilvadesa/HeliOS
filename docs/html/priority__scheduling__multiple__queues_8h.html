@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/process/priority_scheduling_multiple_queues.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('priority__scheduling__multiple__queues_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro priority_scheduling_multiple_queues.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação do gerenciador de processos utilizando o algoritmo de Escalonamento por Prioridade com Múltiplas Filas.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="process__manager_8h_source.html">process_manager.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="system__types_8h_source.html">system_types.h</a>&gt;</code><br />
+</div>
+<p><a href="priority__scheduling__multiple__queues_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_m_q_node.html">PSMQNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_m_q_queue.html">PSMQQueue</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_priority_scheduling_multiple_queue_process_manager.html">PrioritySchedulingMultipleQueueProcessManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0a8ed3f0095f1f2aaecfd695b416006b" id="r_a0a8ed3f0095f1f2aaecfd695b416006b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a8ed3f0095f1f2aaecfd695b416006b">PRIORITY_SCHEDULING_MULTIPLE_QEUES_QUANTUM</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:a0a8ed3f0095f1f2aaecfd695b416006b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantum de tempo para cada processo nas filas de prioridade no algoritmo de Escalonamento por Prioridade com Múltiplas Filas.  <br /></td></tr>
+<tr class="separator:a0a8ed3f0095f1f2aaecfd695b416006b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a4de51e3517cc90c1ac9bbcd60ba9f406" id="r_a4de51e3517cc90c1ac9bbcd60ba9f406"><td class="memItemLeft" align="right" valign="top">typedef struct PSMQNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de51e3517cc90c1ac9bbcd60ba9f406">PSMQNode</a></td></tr>
+<tr class="separator:a4de51e3517cc90c1ac9bbcd60ba9f406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a511f44c99b42a194b6f56659ed37a529" id="r_a511f44c99b42a194b6f56659ed37a529"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_manager.html">ProcessManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a511f44c99b42a194b6f56659ed37a529">createPrioritySchedulingMultipleQueueProcessManager</a> (<a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo)</td></tr>
+<tr class="memdesc:a511f44c99b42a194b6f56659ed37a529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas.  <br /></td></tr>
+<tr class="separator:a511f44c99b42a194b6f56659ed37a529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6bbe6b8200ad53dc3166921a0557cf" id="r_afe6bbe6b8200ad53dc3166921a0557cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe6bbe6b8200ad53dc3166921a0557cf">PSMQCreateProcess</a> (void *self, <a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a> info)</td></tr>
+<tr class="memdesc:afe6bbe6b8200ad53dc3166921a0557cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com Múltiplas Filas.  <br /></td></tr>
+<tr class="separator:afe6bbe6b8200ad53dc3166921a0557cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4a60fb2c36b002e08976d7f8b833ab" id="r_aef4a60fb2c36b002e08976d7f8b833ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef4a60fb2c36b002e08976d7f8b833ab">PSMQScheduleProcess</a> (void *self, void *procTable)</td></tr>
+<tr class="memdesc:aef4a60fb2c36b002e08976d7f8b833ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agenda o próximo processo para execução com base na prioridade e no quantum de tempo.  <br /></td></tr>
+<tr class="separator:aef4a60fb2c36b002e08976d7f8b833ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba1294241e325c9db8967916a553a6b" id="r_a1ba1294241e325c9db8967916a553a6b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ba1294241e325c9db8967916a553a6b">PSMQInitProcTable</a> (void *self)</td></tr>
+<tr class="memdesc:a1ba1294241e325c9db8967916a553a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a tabela de processos do Escalonamento por Prioridade com Múltiplas Filas.  <br /></td></tr>
+<tr class="separator:a1ba1294241e325c9db8967916a553a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3543388c100622f13b64801bb2ea833" id="r_ad3543388c100622f13b64801bb2ea833"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3543388c100622f13b64801bb2ea833">PSMQGetProcess</a> (void *self, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:ad3543388c100622f13b64801bb2ea833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém um processo na tabela de processos pelo PID.  <br /></td></tr>
+<tr class="separator:ad3543388c100622f13b64801bb2ea833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20673d1b9f40634026dd4667cc676536" id="r_a20673d1b9f40634026dd4667cc676536"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20673d1b9f40634026dd4667cc676536">PSMQHasProcess</a> (void *self)</td></tr>
+<tr class="memdesc:a20673d1b9f40634026dd4667cc676536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se há processos na tabela de processos do Escalonamento por Prioridade com Múltiplas Filas.  <br /></td></tr>
+<tr class="separator:a20673d1b9f40634026dd4667cc676536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92337e1ffa225e69dafd256c47272e0b" id="r_a92337e1ffa225e69dafd256c47272e0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92337e1ffa225e69dafd256c47272e0b">PSMQOnProcessDetach</a> (void *self, <a class="el" href="struct_cpu_info.html">CpuInfo</a> info)</td></tr>
+<tr class="memdesc:a92337e1ffa225e69dafd256c47272e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com Múltiplas Filas.  <br /></td></tr>
+<tr class="separator:a92337e1ffa225e69dafd256c47272e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee807e55ecd4ddec5132730316ad823" id="r_a4ee807e55ecd4ddec5132730316ad823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ee807e55ecd4ddec5132730316ad823">PSMQEnqueueProcess</a> (void *self, <a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *table, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid, <a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> priority)</td></tr>
+<tr class="memdesc:a4ee807e55ecd4ddec5132730316ad823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um processo à fila de prioridade correspondente.  <br /></td></tr>
+<tr class="separator:a4ee807e55ecd4ddec5132730316ad823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d001b729ded4258a73d92c5cd776c50" id="r_a6d001b729ded4258a73d92c5cd776c50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d001b729ded4258a73d92c5cd776c50">PSMQDequeueProcess</a> (void *self, <a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *table, <a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> priority, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a6d001b729ded4258a73d92c5cd776c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o próximo processo da fila de prioridade correspondente.  <br /></td></tr>
+<tr class="separator:a6d001b729ded4258a73d92c5cd776c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d259eed918124e5aaf5f006797622b" id="r_a22d259eed918124e5aaf5f006797622b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d259eed918124e5aaf5f006797622b">PSMQDequeueProcessByIndex</a> (void *self, <a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *table, <a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a> priority, size_t index)</td></tr>
+<tr class="memdesc:a22d259eed918124e5aaf5f006797622b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove um processo da fila de prioridade pelo índice.  <br /></td></tr>
+<tr class="separator:a22d259eed918124e5aaf5f006797622b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação do gerenciador de processos utilizando o algoritmo de Escalonamento por Prioridade com Múltiplas Filas. </p>
+<p>Este arquivo define as estruturas e funções necessárias para gerenciar processos utilizando o algoritmo de escalonamento por prioridade, onde processos com diferentes prioridades são alocados em filas separadas e escalonados conforme sua prioridade. </p>
+</div><h2 class="groupheader">Documentação das macros</h2>
+<a id="a0a8ed3f0095f1f2aaecfd695b416006b" name="a0a8ed3f0095f1f2aaecfd695b416006b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a8ed3f0095f1f2aaecfd695b416006b">&#9670;&#160;</a></span>PRIORITY_SCHEDULING_MULTIPLE_QEUES_QUANTUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRIORITY_SCHEDULING_MULTIPLE_QEUES_QUANTUM&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Quantum de tempo para cada processo nas filas de prioridade no algoritmo de Escalonamento por Prioridade com Múltiplas Filas. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a4de51e3517cc90c1ac9bbcd60ba9f406" name="a4de51e3517cc90c1ac9bbcd60ba9f406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de51e3517cc90c1ac9bbcd60ba9f406">&#9670;&#160;</a></span>PSMQNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct PSMQNode PSMQNode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a511f44c99b42a194b6f56659ed37a529" name="a511f44c99b42a194b6f56659ed37a529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511f44c99b42a194b6f56659ed37a529">&#9670;&#160;</a></span>createPrioritySchedulingMultipleQueueProcessManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process_manager.html">ProcessManager</a> * createPrioritySchedulingMultipleQueueProcessManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>createInfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">createInfo</td><td>Informações para inicialização do gerenciador de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o gerenciador de processos criado. </dd></dl>
+
+</div>
+</div>
+<a id="afe6bbe6b8200ad53dc3166921a0557cf" name="afe6bbe6b8200ad53dc3166921a0557cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6bbe6b8200ad53dc3166921a0557cf">&#9670;&#160;</a></span>PSMQCreateProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> PSMQCreateProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com Múltiplas Filas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações do processo a ser criado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo criado. </dd></dl>
+
+</div>
+</div>
+<a id="a6d001b729ded4258a73d92c5cd776c50" name="a6d001b729ded4258a73d92c5cd776c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d001b729ded4258a73d92c5cd776c50">&#9670;&#160;</a></span>PSMQDequeueProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> PSMQDequeueProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove o próximo processo da fila de prioridade correspondente. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">table</td><td>Ponteiro para a tabela de processos. </td></tr>
+    <tr><td class="paramname">priority</td><td>Prioridade da fila de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser removido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo removido. </dd></dl>
+
+</div>
+</div>
+<a id="a22d259eed918124e5aaf5f006797622b" name="a22d259eed918124e5aaf5f006797622b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d259eed918124e5aaf5f006797622b">&#9670;&#160;</a></span>PSMQDequeueProcessByIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> PSMQDequeueProcessByIndex </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove um processo da fila de prioridade pelo índice. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">table</td><td>Ponteiro para a tabela de processos. </td></tr>
+    <tr><td class="paramname">priority</td><td>Prioridade da fila de processos. </td></tr>
+    <tr><td class="paramname">index</td><td>Índice do processo na fila. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo removido. </dd></dl>
+
+</div>
+</div>
+<a id="a4ee807e55ecd4ddec5132730316ad823" name="a4ee807e55ecd4ddec5132730316ad823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee807e55ecd4ddec5132730316ad823">&#9670;&#160;</a></span>PSMQEnqueueProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PSMQEnqueueProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_s_m_q_proc_table.html">PSMQProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="process_8h.html#a5e14e71e8f5d4107da75207e9f8ebca4">ProcessPriority</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um processo à fila de prioridade correspondente. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">table</td><td>Ponteiro para a tabela de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser adicionado. </td></tr>
+    <tr><td class="paramname">priority</td><td>Prioridade do processo a ser adicionado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad3543388c100622f13b64801bb2ea833" name="ad3543388c100622f13b64801bb2ea833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3543388c100622f13b64801bb2ea833">&#9670;&#160;</a></span>PSMQGetProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process.html">Process</a> * PSMQGetProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém um processo na tabela de processos pelo PID. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser obtido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o processo correspondente. </dd></dl>
+
+</div>
+</div>
+<a id="a20673d1b9f40634026dd4667cc676536" name="a20673d1b9f40634026dd4667cc676536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20673d1b9f40634026dd4667cc676536">&#9670;&#160;</a></span>PSMQHasProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PSMQHasProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se há processos na tabela de processos do Escalonamento por Prioridade com Múltiplas Filas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se houver processos na tabela; caso contrário, <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a1ba1294241e325c9db8967916a553a6b" name="a1ba1294241e325c9db8967916a553a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ba1294241e325c9db8967916a553a6b">&#9670;&#160;</a></span>PSMQInitProcTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * PSMQInitProcTable </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa a tabela de processos do Escalonamento por Prioridade com Múltiplas Filas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para a tabela de processos inicializada. </dd></dl>
+
+</div>
+</div>
+<a id="a92337e1ffa225e69dafd256c47272e0b" name="a92337e1ffa225e69dafd256c47272e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92337e1ffa225e69dafd256c47272e0b">&#9670;&#160;</a></span>PSMQOnProcessDetach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PSMQOnProcessDetach </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cpu_info.html">CpuInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com Múltiplas Filas. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações sobre o estado da CPU ao destacar o processo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef4a60fb2c36b002e08976d7f8b833ab" name="aef4a60fb2c36b002e08976d7f8b833ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef4a60fb2c36b002e08976d7f8b833ab">&#9670;&#160;</a></span>PSMQScheduleProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> PSMQScheduleProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>procTable</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agenda o próximo processo para execução com base na prioridade e no quantum de tempo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos Escalonamento por Prioridade com Múltiplas Filas. </td></tr>
+    <tr><td class="paramname">procTable</td><td>Ponteiro para a tabela de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo agendado. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="priority__scheduling__multiple__queues_8h.html">priority_scheduling_multiple_queues.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

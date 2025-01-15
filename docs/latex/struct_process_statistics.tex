@@ -1,0 +1,101 @@
+\doxysection{Referência à estrutura Process\+Statistics}
+\hypertarget{struct_process_statistics}{}\label{struct_process_statistics}\index{ProcessStatistics@{ProcessStatistics}}
+
+
+{\ttfamily \#include $<$process\+\_\+info.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{struct_process_statistics_ad76e3eb0e3319313bb81db0cef2d3558}{pid}}
+\begin{DoxyCompactList}\small\item\em Identificador único do processo. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_process_statistics_ad8a34ce0534a3036dba7813ae2522351}{name}}
+\begin{DoxyCompactList}\small\item\em Nome do processo. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_process_statistics_addf2860aebe442031536fcbe1d9bec4b}{arrival\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo de chegada do processo ao sistema. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_process_statistics_a120551afe2773ff7fbb76f38295df29f}{start\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo de início da execução do processo. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_process_statistics_a7ec2425ee940ab3a183ca59a054f07af}{end\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo de término da execução do processo. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_process_statistics_a8894234ccbbb43f2878638d48067012d}{waiting\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo que o processo aguardou na fila. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_process_statistics_ac0ae0b383cce3aaedd7b8039b1870377}{turnaround\+Time}}
+\begin{DoxyCompactList}\small\item\em Tempo total entre a chegada e a finalização do processo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_process_statistics_addf2860aebe442031536fcbe1d9bec4b}\index{ProcessStatistics@{ProcessStatistics}!arrivalTime@{arrivalTime}}
+\index{arrivalTime@{arrivalTime}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{arrivalTime}{arrivalTime}}
+{\footnotesize\ttfamily \label{struct_process_statistics_addf2860aebe442031536fcbe1d9bec4b} 
+uint32\+\_\+t Process\+Statistics\+::arrival\+Time}
+
+
+
+Tempo de chegada do processo ao sistema. 
+
+\Hypertarget{struct_process_statistics_a7ec2425ee940ab3a183ca59a054f07af}\index{ProcessStatistics@{ProcessStatistics}!endTime@{endTime}}
+\index{endTime@{endTime}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{endTime}{endTime}}
+{\footnotesize\ttfamily \label{struct_process_statistics_a7ec2425ee940ab3a183ca59a054f07af} 
+uint32\+\_\+t Process\+Statistics\+::end\+Time}
+
+
+
+Tempo de término da execução do processo. 
+
+\Hypertarget{struct_process_statistics_ad8a34ce0534a3036dba7813ae2522351}\index{ProcessStatistics@{ProcessStatistics}!name@{name}}
+\index{name@{name}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_process_statistics_ad8a34ce0534a3036dba7813ae2522351} 
+const char\texorpdfstring{$\ast$}{*} Process\+Statistics\+::name}
+
+
+
+Nome do processo. 
+
+\Hypertarget{struct_process_statistics_ad76e3eb0e3319313bb81db0cef2d3558}\index{ProcessStatistics@{ProcessStatistics}!pid@{pid}}
+\index{pid@{pid}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily \label{struct_process_statistics_ad76e3eb0e3319313bb81db0cef2d3558} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} Process\+Statistics\+::pid}
+
+
+
+Identificador único do processo. 
+
+\Hypertarget{struct_process_statistics_a120551afe2773ff7fbb76f38295df29f}\index{ProcessStatistics@{ProcessStatistics}!startTime@{startTime}}
+\index{startTime@{startTime}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily \label{struct_process_statistics_a120551afe2773ff7fbb76f38295df29f} 
+uint32\+\_\+t Process\+Statistics\+::start\+Time}
+
+
+
+Tempo de início da execução do processo. 
+
+\Hypertarget{struct_process_statistics_ac0ae0b383cce3aaedd7b8039b1870377}\index{ProcessStatistics@{ProcessStatistics}!turnaroundTime@{turnaroundTime}}
+\index{turnaroundTime@{turnaroundTime}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{turnaroundTime}{turnaroundTime}}
+{\footnotesize\ttfamily \label{struct_process_statistics_ac0ae0b383cce3aaedd7b8039b1870377} 
+uint32\+\_\+t Process\+Statistics\+::turnaround\+Time}
+
+
+
+Tempo total entre a chegada e a finalização do processo. 
+
+\Hypertarget{struct_process_statistics_a8894234ccbbb43f2878638d48067012d}\index{ProcessStatistics@{ProcessStatistics}!waitingTime@{waitingTime}}
+\index{waitingTime@{waitingTime}!ProcessStatistics@{ProcessStatistics}}
+\doxysubsubsection{\texorpdfstring{waitingTime}{waitingTime}}
+{\footnotesize\ttfamily \label{struct_process_statistics_a8894234ccbbb43f2878638d48067012d} 
+uint32\+\_\+t Process\+Statistics\+::waiting\+Time}
+
+
+
+Tempo que o processo aguardou na fila. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{process__info_8h}{process\+\_\+info.\+h}}\end{DoxyCompactItemize}

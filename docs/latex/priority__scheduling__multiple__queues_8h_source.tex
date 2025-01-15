@@ -1,0 +1,68 @@
+\doxysection{priority\+\_\+scheduling\+\_\+multiple\+\_\+queues.\+h}
+\hypertarget{priority__scheduling__multiple__queues_8h_source}{}\label{priority__scheduling__multiple__queues_8h_source}\index{src/process/priority\_scheduling\_multiple\_queues.h@{src/process/priority\_scheduling\_multiple\_queues.h}}
+\mbox{\hyperlink{priority__scheduling__multiple__queues_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ HL\_PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ HL\_PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process__manager_8h}{process\_manager.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{system__types_8h}{system\_types.h}}>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ PRIORITY\_SCHEDULING\_MULTIPLE\_QEUES\_QUANTUM\ 5}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\ *\mbox{\hyperlink{struct_p_s_m_q_node_a3049bad78c718e4f113f4bec2d1071df}{next}};\ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_p_s_m_q_node_a0c6ae1befa7d9232f99f5758110aed9c}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ \mbox{\hyperlink{struct_p_s_m_q_node_ac5f13212361340e16b30842ae34a99cf}{priority}};\ }
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\ *\mbox{\hyperlink{struct_p_s_m_q_queue_a646a5c01511d0118145c2df1a4783bea}{head}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\ *\mbox{\hyperlink{struct_p_s_m_q_queue_a2afd3e11bf8360548aebf3aaf5e73801}{tail}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}\ \mbox{\hyperlink{struct_p_s_m_q_queue_a3a113d85f39d0d3f7cad97d827504511}{quantum}};\ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_p_s_m_q_queue_a2410160e585aca71ec63997cb56ddf05}{length}};\ \ }
+\DoxyCodeLine{00048\ \}\ \mbox{\hyperlink{struct_p_s_m_q_queue}{PSMQQueue}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{struct_p_s_m_q_queue}{PSMQQueue}}\ *\mbox{\hyperlink{struct_p_s_m_q_proc_table_a396e775156c503a2dd9b5b25d4c5bbda}{queues}}[\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\_PROC\_PRIORITY\_VERY\_HIGH}}\ +\ 1];\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}}\ \mbox{\hyperlink{struct_p_s_m_q_proc_table_a65cbc8b0a48ecffe05629742338d6126}{quantums}}[\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\_PROC\_PRIORITY\_VERY\_HIGH}}\ +\ 1];\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ \mbox{\hyperlink{struct_p_s_m_q_proc_table_a1414234df4271c030df68aa1539f54bf}{currentPriority}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{struct_p_s_m_q_node}{PSMQNode}}\ *\mbox{\hyperlink{struct_p_s_m_q_proc_table_af12eb69da2c4651d5a9b105442a708cc}{currentNode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_p_s_m_q_proc_table_a1e9eaf5d95cc5a674a51789caf8fbc96}{currentIndex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_p_s_m_q_proc_table_a6e57c94cd7453ce1c7e58c1d6d983b09}{size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \}\ \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProcTable}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ \mbox{\hyperlink{struct_priority_scheduling_multiple_queue_process_manager_a5b7ae7a63f9ffcfdbb6e0a56f0874b09}{manager}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProcTable}}\ *\mbox{\hyperlink{struct_priority_scheduling_multiple_queue_process_manager_ab01e2589906829f12f7d2b5cbb27d875}{table}};\ \ \ }
+\DoxyCodeLine{00080\ \}\ \mbox{\hyperlink{struct_priority_scheduling_multiple_queue_process_manager}{PrioritySchedulingMultipleQueueProcessManager}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a511f44c99b42a194b6f56659ed37a529}{createPrioritySchedulingMultipleQueueProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_afe6bbe6b8200ad53dc3166921a0557cf}{PSMQCreateProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_aef4a60fb2c36b002e08976d7f8b833ab}{PSMQScheduleProcess}}(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a1ba1294241e325c9db8967916a553a6b}{PSMQInitProcTable}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00123\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{priority__scheduling__multiple__queues_8h_ad3543388c100622f13b64801bb2ea833}{PSMQGetProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_p_s_m_q_node_a0c6ae1befa7d9232f99f5758110aed9c}{pid}});}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a20673d1b9f40634026dd4667cc676536}{PSMQHasProcess}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00139\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a92337e1ffa225e69dafd256c47272e0b}{PSMQOnProcessDetach}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a4ee807e55ecd4ddec5132730316ad823}{PSMQEnqueueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProcTable}}\ *table,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_p_s_m_q_node_a0c6ae1befa7d9232f99f5758110aed9c}{pid}},\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ \mbox{\hyperlink{struct_p_s_m_q_node_ac5f13212361340e16b30842ae34a99cf}{priority}});}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00160\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a6d001b729ded4258a73d92c5cd776c50}{PSMQDequeueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProcTable}}\ *table,\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ \mbox{\hyperlink{struct_p_s_m_q_node_ac5f13212361340e16b30842ae34a99cf}{priority}},\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_p_s_m_q_node_a0c6ae1befa7d9232f99f5758110aed9c}{pid}});}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00171\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__multiple__queues_8h_a22d259eed918124e5aaf5f006797622b}{PSMQDequeueProcessByIndex}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_p_s_m_q_proc_table}{PSMQProcTable}}\ *table,\ \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{ProcessPriority}}\ \mbox{\hyperlink{struct_p_s_m_q_node_ac5f13212361340e16b30842ae34a99cf}{priority}},\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

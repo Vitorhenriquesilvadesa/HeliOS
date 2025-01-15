@@ -1,0 +1,47 @@
+\doxysection{instruction.\+h}
+\hypertarget{instruction_8h_source}{}\label{instruction_8h_source}\index{src/kernel/instruction.h@{src/kernel/instruction.h}}
+\mbox{\hyperlink{instruction_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ HL\_INSTRUCTION\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HL\_INSTRUCTION\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ STACK\_MAX\_SIZE\ 32}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b}{HL\_OP\_HALT}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917}{HL\_OP\_ADD}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb}{HL\_OP\_SUB}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32}{HL\_OP\_MUL}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b}{HL\_OP\_DIV}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94}{HL\_OP\_MOV}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c}{HL\_OP\_MOV\_CONST}},\ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe}{HL\_OP\_MOV\_ACC}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb}{HL\_OP\_PUSH}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568}{HL\_OP\_POP}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf}{HL\_OP\_GOTO}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628}{HL\_OP\_JEQ}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9}{HL\_OP\_JNQ}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51}{HL\_OP\_PRINT}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0}{HL\_OP\_CREATE\_PROCESS}},\ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{instruction_8h_acbd603b5f7c788a74eade8d4837ba684}{Instruction}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd}{REG\_R0}},\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d}{REG\_R1}},\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2}{REG\_R2}},\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a}{REG\_R3}},\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f}{REG\_R4}},\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8}{REG\_R5}},\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976}{REG\_R6}},\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889}{REG\_R7}},\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1}{REG\_S1}},\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33}{REG\_MAX}}\ }
+\DoxyCodeLine{00059\ \}\ \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

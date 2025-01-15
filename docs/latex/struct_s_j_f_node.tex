@@ -1,0 +1,51 @@
+\doxysection{Referência à estrutura SJFNode}
+\hypertarget{struct_s_j_f_node}{}\label{struct_s_j_f_node}\index{SJFNode@{SJFNode}}
+
+
+Estrutura que representa um nó da lista encadeada de processos no escalonamento Shortest Job First.  
+
+
+
+
+{\ttfamily \#include $<$shortest\+\_\+job\+\_\+first.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{struct_s_j_f_node_ad081b6e7ccddabfb252b0868dee05610}{pid}}
+\begin{DoxyCompactList}\small\item\em PID do processo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_j_f_node}{SJFNode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_s_j_f_node_a11366a6ac08e976a884b52dd2d83d374}{next}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o próximo nó na lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura que representa um nó da lista encadeada de processos no escalonamento Shortest Job First. 
+
+Cada nó na lista contém o PID de um processo e um ponteiro para o próximo nó na lista. A lista é ordenada de acordo com o tempo de execução estimado (burst time) dos processos, com o processo de menor tempo de execução no início da lista. 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_s_j_f_node_a11366a6ac08e976a884b52dd2d83d374}\index{SJFNode@{SJFNode}!next@{next}}
+\index{next@{next}!SJFNode@{SJFNode}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{struct_s_j_f_node_a11366a6ac08e976a884b52dd2d83d374} 
+struct \mbox{\hyperlink{struct_s_j_f_node}{SJFNode}}\texorpdfstring{$\ast$}{*} SJFNode\+::next}
+
+
+
+Ponteiro para o próximo nó na lista. 
+
+\Hypertarget{struct_s_j_f_node_ad081b6e7ccddabfb252b0868dee05610}\index{SJFNode@{SJFNode}!pid@{pid}}
+\index{pid@{pid}!SJFNode@{SJFNode}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily \label{struct_s_j_f_node_ad081b6e7ccddabfb252b0868dee05610} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} SJFNode\+::pid}
+
+
+
+PID do processo. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{shortest__job__first_8h}{shortest\+\_\+job\+\_\+first.\+h}}\end{DoxyCompactItemize}

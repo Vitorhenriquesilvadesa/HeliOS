@@ -1,0 +1,198 @@
+\doxysection{Referência ao ficheiro src/priority\+\_\+scheduling\+\_\+single\+\_\+queue.c}
+\hypertarget{priority__scheduling__single__queue_8c}{}\label{priority__scheduling__single__queue_8c}\index{src/priority\_scheduling\_single\_queue.c@{src/priority\_scheduling\_single\_queue.c}}
+{\ttfamily \#include $<$priority\+\_\+scheduling\+\_\+single\+\_\+queue.\+h$>$}\newline
+{\ttfamily \#include $<$kernel.\+h$>$}\newline
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{priority__scheduling__single__queue_8c_a9d2cb1df2bdd4e20eba7c0686ea83408}{create\+Priority\+Scheduling\+Single\+Queue\+Process\+Manager}} (\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}} create\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um gerenciador de processos Escalonamento por Prioridade com uma única fila. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__single__queue_8c_acc22e3ed0cdf691414d7d5794b9b2c97}{PSSQCreate\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com uma única fila. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__single__queue_8c_a72b1aff968b50df2c3cf0b57f61f2bf9}{PSSQSchedule\+Process}} (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Agenda o próximo processo para execução na fila de prioridade. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{priority__scheduling__single__queue_8c_a97c3a28796fcbc25372ccbc418929403}{PSSQInit\+Proc\+Table}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Inicializa a tabela de processos do Escalonamento por Prioridade com uma única fila. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{priority__scheduling__single__queue_8c_a1e00ae3ef311f9acaac4ef608dbe6656}{PSSQGet\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Obtém um processo na tabela de processos pelo PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{priority__scheduling__single__queue_8c_a80b054f9a017abe875ac1a1a5ad56abc}{PSSQHas\+Process}} (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Verifica se há processos na tabela de processos do Escalonamento por Prioridade com uma única fila. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{priority__scheduling__single__queue_8c_a07d30a93abb90ab35425a38f14bb7221}{PSSQOn\+Process\+Detach}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com uma única fila. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{priority__scheduling__single__queue_8c_a3b99eda952b0c2a8091ac2357b70027b}{PSSQEnqueue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_priority_proc_table}{Priority\+Proc\+Table}} \texorpdfstring{$\ast$}{*}table, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Adiciona um processo à fila de prioridade. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} \mbox{\hyperlink{priority__scheduling__single__queue_8c_a71a9d4a9aecafa888b8bf0132d0a576d}{PSSQDequeue\+Process}} (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_priority_proc_table}{Priority\+Proc\+Table}} \texorpdfstring{$\ast$}{*}table)
+\begin{DoxyCompactList}\small\item\em Remove o próximo processo da fila de prioridade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{priority__scheduling__single__queue_8c_a9d2cb1df2bdd4e20eba7c0686ea83408}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!createPrioritySchedulingSingleQueueProcessManager@{createPrioritySchedulingSingleQueueProcessManager}}
+\index{createPrioritySchedulingSingleQueueProcessManager@{createPrioritySchedulingSingleQueueProcessManager}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{createPrioritySchedulingSingleQueueProcessManager()}{createPrioritySchedulingSingleQueueProcessManager()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a9d2cb1df2bdd4e20eba7c0686ea83408} 
+\mbox{\hyperlink{struct_process_manager}{Process\+Manager}} \texorpdfstring{$\ast$}{*} create\+Priority\+Scheduling\+Single\+Queue\+Process\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}}]{create\+Info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um gerenciador de processos Escalonamento por Prioridade com uma única fila. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em create\+Info} & Informações para inicialização do gerenciador de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o gerenciador de processos criado. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__single__queue_8c_acc22e3ed0cdf691414d7d5794b9b2c97}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQCreateProcess@{PSSQCreateProcess}}
+\index{PSSQCreateProcess@{PSSQCreateProcess}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQCreateProcess()}{PSSQCreateProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_acc22e3ed0cdf691414d7d5794b9b2c97} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSSQCreate\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo e o adiciona ao gerenciador Escalonamento por Prioridade com uma única fila. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+{\em info} & Informações do processo a ser criado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo criado. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__single__queue_8c_a71a9d4a9aecafa888b8bf0132d0a576d}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQDequeueProcess@{PSSQDequeueProcess}}
+\index{PSSQDequeueProcess@{PSSQDequeueProcess}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQDequeueProcess()}{PSSQDequeueProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a71a9d4a9aecafa888b8bf0132d0a576d} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSSQDequeue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_priority_proc_table}{Priority\+Proc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{}\end{DoxyParamCaption})}
+
+
+
+Remove o próximo processo da fila de prioridade. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo removido. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__single__queue_8c_a3b99eda952b0c2a8091ac2357b70027b}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQEnqueueProcess@{PSSQEnqueueProcess}}
+\index{PSSQEnqueueProcess@{PSSQEnqueueProcess}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQEnqueueProcess()}{PSSQEnqueueProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a3b99eda952b0c2a8091ac2357b70027b} 
+void PSSQEnqueue\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_priority_proc_table}{Priority\+Proc\+Table}} \texorpdfstring{$\ast$}{*}}]{table}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Adiciona um processo à fila de prioridade. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+{\em table} & Ponteiro para a tabela de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{priority__scheduling__single__queue_8c_a1e00ae3ef311f9acaac4ef608dbe6656}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQGetProcess@{PSSQGetProcess}}
+\index{PSSQGetProcess@{PSSQGetProcess}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQGetProcess()}{PSSQGetProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a1e00ae3ef311f9acaac4ef608dbe6656} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} PSSQGet\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Obtém um processo na tabela de processos pelo PID. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o processo correspondente. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__single__queue_8c_a80b054f9a017abe875ac1a1a5ad56abc}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQHasProcess@{PSSQHasProcess}}
+\index{PSSQHasProcess@{PSSQHasProcess}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQHasProcess()}{PSSQHasProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a80b054f9a017abe875ac1a1a5ad56abc} 
+bool PSSQHas\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se há processos na tabela de processos do Escalonamento por Prioridade com uma única fila. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily true} se houver processos na tabela; caso contrário, {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__single__queue_8c_a97c3a28796fcbc25372ccbc418929403}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQInitProcTable@{PSSQInitProcTable}}
+\index{PSSQInitProcTable@{PSSQInitProcTable}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQInitProcTable()}{PSSQInitProcTable()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a97c3a28796fcbc25372ccbc418929403} 
+void \texorpdfstring{$\ast$}{*} PSSQInit\+Proc\+Table (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a tabela de processos do Escalonamento por Prioridade com uma única fila. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para a tabela de processos inicializada. 
+\end{DoxyReturn}
+\Hypertarget{priority__scheduling__single__queue_8c_a07d30a93abb90ab35425a38f14bb7221}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQOnProcessDetach@{PSSQOnProcessDetach}}
+\index{PSSQOnProcessDetach@{PSSQOnProcessDetach}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQOnProcessDetach()}{PSSQOnProcessDetach()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a07d30a93abb90ab35425a38f14bb7221} 
+void PSSQOn\+Process\+Detach (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Lida com a remoção de um processo da CPU e atualiza o gerenciador Escalonamento por Prioridade com uma única fila. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+{\em info} & Informações sobre o estado da CPU ao destacar o processo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{priority__scheduling__single__queue_8c_a72b1aff968b50df2c3cf0b57f61f2bf9}\index{priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}!PSSQScheduleProcess@{PSSQScheduleProcess}}
+\index{PSSQScheduleProcess@{PSSQScheduleProcess}!priority\_scheduling\_single\_queue.c@{priority\_scheduling\_single\_queue.c}}
+\doxysubsubsection{\texorpdfstring{PSSQScheduleProcess()}{PSSQScheduleProcess()}}
+{\footnotesize\ttfamily \label{priority__scheduling__single__queue_8c_a72b1aff968b50df2c3cf0b57f61f2bf9} 
+\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} PSSQSchedule\+Process (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{self}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{proc\+Table}{}\end{DoxyParamCaption})}
+
+
+
+Agenda o próximo processo para execução na fila de prioridade. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos Escalonamento por Prioridade com uma única fila. \\
+\hline
+{\em proc\+Table} & Ponteiro para a tabela de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O identificador do processo agendado. 
+\end{DoxyReturn}

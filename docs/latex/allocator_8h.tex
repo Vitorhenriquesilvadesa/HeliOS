@@ -1,0 +1,51 @@
+\doxysection{Referência ao ficheiro src/memory/allocator.h}
+\hypertarget{allocator_8h}{}\label{allocator_8h}\index{src/memory/allocator.h@{src/memory/allocator.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{allocator_8h_a2da742c7ef6139ccdc18900b8fe2434f}{ARRAY\+\_\+\+MIN\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{allocator_8h_a882216792ed031be183f9ebf1b0e0fab}{ARRAY\+\_\+\+GROW\+\_\+\+FACTOR}}~2
+\item 
+\#define \mbox{\hyperlink{allocator_8h_a9b802bbc56b822e67bf1523c9d87ee3f}{ALLOCATE}}(type,  count)
+\item 
+\#define \mbox{\hyperlink{allocator_8h_a105949c59c998e38aad80266afac92bf}{FREE}}(ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\Hypertarget{allocator_8h_a9b802bbc56b822e67bf1523c9d87ee3f}\index{allocator.h@{allocator.h}!ALLOCATE@{ALLOCATE}}
+\index{ALLOCATE@{ALLOCATE}!allocator.h@{allocator.h}}
+\doxysubsubsection{\texorpdfstring{ALLOCATE}{ALLOCATE}}
+{\footnotesize\ttfamily \label{allocator_8h_a9b802bbc56b822e67bf1523c9d87ee3f} 
+\#define ALLOCATE(\begin{DoxyParamCaption}\item[{}]{type}{, }\item[{}]{count}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((type\ *)malloc(\textcolor{keyword}{sizeof}(type)\ *\ (count)))}
+
+\end{DoxyCode}
+\Hypertarget{allocator_8h_a882216792ed031be183f9ebf1b0e0fab}\index{allocator.h@{allocator.h}!ARRAY\_GROW\_FACTOR@{ARRAY\_GROW\_FACTOR}}
+\index{ARRAY\_GROW\_FACTOR@{ARRAY\_GROW\_FACTOR}!allocator.h@{allocator.h}}
+\doxysubsubsection{\texorpdfstring{ARRAY\_GROW\_FACTOR}{ARRAY\_GROW\_FACTOR}}
+{\footnotesize\ttfamily \label{allocator_8h_a882216792ed031be183f9ebf1b0e0fab} 
+\#define ARRAY\+\_\+\+GROW\+\_\+\+FACTOR~2}
+
+\Hypertarget{allocator_8h_a2da742c7ef6139ccdc18900b8fe2434f}\index{allocator.h@{allocator.h}!ARRAY\_MIN\_SIZE@{ARRAY\_MIN\_SIZE}}
+\index{ARRAY\_MIN\_SIZE@{ARRAY\_MIN\_SIZE}!allocator.h@{allocator.h}}
+\doxysubsubsection{\texorpdfstring{ARRAY\_MIN\_SIZE}{ARRAY\_MIN\_SIZE}}
+{\footnotesize\ttfamily \label{allocator_8h_a2da742c7ef6139ccdc18900b8fe2434f} 
+\#define ARRAY\+\_\+\+MIN\+\_\+\+SIZE~8}
+
+\Hypertarget{allocator_8h_a105949c59c998e38aad80266afac92bf}\index{allocator.h@{allocator.h}!FREE@{FREE}}
+\index{FREE@{FREE}!allocator.h@{allocator.h}}
+\doxysubsubsection{\texorpdfstring{FREE}{FREE}}
+{\footnotesize\ttfamily \label{allocator_8h_a105949c59c998e38aad80266afac92bf} 
+\#define FREE(\begin{DoxyParamCaption}\item[{}]{ptr}{}\end{DoxyParamCaption})}
+
+{\bfseries Valor\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{free(ptr)}
+
+\end{DoxyCode}

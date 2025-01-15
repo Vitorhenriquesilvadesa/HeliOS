@@ -1,0 +1,18 @@
+\doxysection{allocator.\+h}
+\hypertarget{allocator_8h_source}{}\label{allocator_8h_source}\index{src/memory/allocator.h@{src/memory/allocator.h}}
+\mbox{\hyperlink{allocator_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ALLOCATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ALLOCATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ ARRAY\_MIN\_SIZE\ 8}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ARRAY\_GROW\_FACTOR\ 2}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ ALLOCATE(type,\ count)\ ((type\ *)malloc(sizeof(type)\ *\ (count)))}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FREE(ptr)\ free(ptr)}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,53 @@
+\doxysection{priority\+\_\+scheduling\+\_\+single\+\_\+queue.\+h}
+\hypertarget{priority__scheduling__single__queue_8h_source}{}\label{priority__scheduling__single__queue_8h_source}\index{src/process/priority\_scheduling\_single\_queue.h@{src/process/priority\_scheduling\_single\_queue.h}}
+\mbox{\hyperlink{priority__scheduling__single__queue_8h}{Ir para a documentação deste ficheiro.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ HL\_PRIORITY\_SCHEDULING\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ HL\_PRIORITY\_SCHEDULING\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{process__manager_8h}{process\_manager.h}}>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_priority_node}{PriorityNode}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_priority_node_a50a54e101e671f25fea72df0d7677e80}{pid}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_priority_node}{PriorityNode}}\ *\mbox{\hyperlink{struct_priority_node_af59f4a871495bd038cc637dfce11be06}{next}};\ }
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{struct_priority_node}{PriorityNode}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_priority_node}{PriorityNode}}\ *\mbox{\hyperlink{struct_priority_proc_table_a293b46f5d8bf40f7a4ab6764ae10a0f4}{head}};\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{struct_priority_node}{PriorityNode}}\ *\mbox{\hyperlink{struct_priority_proc_table_af82982aac4816cedbb9692cf4cad8d08}{tail}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_priority_proc_table_a754cc9bf4a33a5a14e813786a43d8063}{size}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \}\ \mbox{\hyperlink{struct_priority_proc_table}{PriorityProcTable}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ \mbox{\hyperlink{struct_priority_scheduling_single_queue_process_manager_a59eb627c7ad3f5866a9ca8f8a9596911}{manager}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{struct_priority_proc_table}{PriorityProcTable}}\ *\mbox{\hyperlink{struct_priority_scheduling_single_queue_process_manager_a22acd31389ebe9a6baf676cc160fdb5e}{procTable}};\ }
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{struct_priority_scheduling_single_queue_process_manager}{PrioritySchedulingSingleQueueProcessManager}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \mbox{\hyperlink{struct_process_manager}{ProcessManager}}\ *\mbox{\hyperlink{priority__scheduling__single__queue_8h_a9d2cb1df2bdd4e20eba7c0686ea83408}{createPrioritySchedulingSingleQueueProcessManager}}(\mbox{\hyperlink{struct_process_manager_create_info}{ProcessManagerCreateInfo}}\ createInfo);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__single__queue_8h_acc22e3ed0cdf691414d7d5794b9b2c97}{PSSQCreateProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_process_create_info}{ProcessCreateInfo}}\ info);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__single__queue_8h_a72b1aff968b50df2c3cf0b57f61f2bf9}{PSSQScheduleProcess}}(\textcolor{keywordtype}{void}\ *self,\ \textcolor{keywordtype}{void}\ *procTable);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{priority__scheduling__single__queue_8h_a97c3a28796fcbc25372ccbc418929403}{PSSQInitProcTable}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \mbox{\hyperlink{struct_process}{Process}}\ *\mbox{\hyperlink{priority__scheduling__single__queue_8h_a1e00ae3ef311f9acaac4ef608dbe6656}{PSSQGetProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_priority_node_a50a54e101e671f25fea72df0d7677e80}{pid}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{priority__scheduling__single__queue_8h_a80b054f9a017abe875ac1a1a5ad56abc}{PSSQHasProcess}}(\textcolor{keywordtype}{void}\ *self);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{priority__scheduling__single__queue_8h_a07d30a93abb90ab35425a38f14bb7221}{PSSQOnProcessDetach}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_cpu_info}{CpuInfo}}\ info);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{priority__scheduling__single__queue_8h_a3b99eda952b0c2a8091ac2357b70027b}{PSSQEnqueueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_priority_proc_table}{PriorityProcTable}}\ *table,\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{struct_priority_node_a50a54e101e671f25fea72df0d7677e80}{pid}});}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00129\ \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}\ \mbox{\hyperlink{priority__scheduling__single__queue_8h_a71a9d4a9aecafa888b8bf0132d0a576d}{PSSQDequeueProcess}}(\textcolor{keywordtype}{void}\ *self,\ \mbox{\hyperlink{struct_priority_proc_table}{PriorityProcTable}}\ *table);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

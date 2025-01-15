@@ -1,0 +1,51 @@
+\doxysection{Referência à estrutura Process\+Manager\+Create\+Info}
+\hypertarget{struct_process_manager_create_info}{}\label{struct_process_manager_create_info}\index{ProcessManagerCreateInfo@{ProcessManagerCreateInfo}}
+
+
+Estrutura com informações para criar um gerenciador de processos.  
+
+
+
+
+{\ttfamily \#include $<$process\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{Proc\+Manager\+Type}} \mbox{\hyperlink{struct_process_manager_create_info_adf12231eb36ff6f30a73fd04cccccbb2}{type}}
+\begin{DoxyCompactList}\small\item\em Tipo de gerenciador de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{struct_process_manager_create_info_a499161fe58a6d51806337561dc2e9893}{quantum}}
+\begin{DoxyCompactList}\small\item\em Quantum de tempo (aplicável para algoritmos como Round Robin) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura com informações para criar um gerenciador de processos. 
+
+Estrutura que contém as informações necessárias para criar um gerenciador de processos, como o tipo de algoritmo de escalonamento e o quantum de tempo (se aplicável). 
+
+\doxysubsection{Documentação dos dados membro}
+\Hypertarget{struct_process_manager_create_info_a499161fe58a6d51806337561dc2e9893}\index{ProcessManagerCreateInfo@{ProcessManagerCreateInfo}!quantum@{quantum}}
+\index{quantum@{quantum}!ProcessManagerCreateInfo@{ProcessManagerCreateInfo}}
+\doxysubsubsection{\texorpdfstring{quantum}{quantum}}
+{\footnotesize\ttfamily \label{struct_process_manager_create_info_a499161fe58a6d51806337561dc2e9893} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} Process\+Manager\+Create\+Info\+::quantum}
+
+
+
+Quantum de tempo (aplicável para algoritmos como Round Robin) 
+
+\Hypertarget{struct_process_manager_create_info_adf12231eb36ff6f30a73fd04cccccbb2}\index{ProcessManagerCreateInfo@{ProcessManagerCreateInfo}!type@{type}}
+\index{type@{type}!ProcessManagerCreateInfo@{ProcessManagerCreateInfo}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{struct_process_manager_create_info_adf12231eb36ff6f30a73fd04cccccbb2} 
+\mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{Proc\+Manager\+Type}} Process\+Manager\+Create\+Info\+::type}
+
+
+
+Tipo de gerenciador de processos. 
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+src/process/\mbox{\hyperlink{process__manager_8h}{process\+\_\+manager.\+h}}\end{DoxyCompactItemize}

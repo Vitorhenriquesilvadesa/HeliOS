@@ -1,0 +1,456 @@
+\doxysection{Referência ao ficheiro src/cpu/cpu.h}
+\hypertarget{cpu_8h}{}\label{cpu_8h}\index{src/cpu/cpu.h@{src/cpu/cpu.h}}
+
+
+Definições e funções relacionadas à CPU virtual do sistema Heli\+OS.  
+
+
+{\ttfamily \#include $<$instruction.\+h$>$}\newline
+{\ttfamily \#include $<$program.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+types.\+h$>$}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_cpu}{Cpu}}
+\item 
+struct \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura que contém informações resumidas sobre a CPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Cpu\+Info \mbox{\hyperlink{cpu_8h_a818035201aceff5d5f5463eeefdebe97}{Cpu\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura que contém informações resumidas sobre a CPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{Cpu\+State}} \{ \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62}{CPU\+\_\+\+RUNNING}}
+, \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8}{CPU\+\_\+\+IDLE}}
+, \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684}{CPU\+\_\+\+HALTED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Representa o estado atual da CPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cpu_8h_ab16eb50538eb67baacf22f84f3ae9b54}{init\+Cpu}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Inicializa a CPU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_af2962dd52c472540bb7ff458c24d7f71}{attach\+Process}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}process)
+\begin{DoxyCompactList}\small\item\em Anexa um processo à CPU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} \mbox{\hyperlink{cpu_8h_a17c923bd699264dee85f780038f8256f}{detach\+Process}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Remove o processo atualmente anexado à CPU e retorna suas informações. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_ac80c4196956a8969ae561488e85141ec}{decode\+And\+Execute}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Decodifica e executa a próxima instrução da CPU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} \mbox{\hyperlink{cpu_8h_adae019a5e72f76aa04eeb3011e3e0d6b}{read\+Byte}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Lê um byte da memória. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a2b0f3d709f9e2812185ed3bd545ce69d}{cpu\+Push}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, int constant)
+\begin{DoxyCompactList}\small\item\em Insere um valor constante na pilha da CPU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a4535eb7ed4659ce884fbb0db4ed04d26}{cpu\+Pop}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg)
+\begin{DoxyCompactList}\small\item\em Remove um valor da pilha e o move para um registrador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_afd18d932f4becc5106ed37ddb038711a}{cpu\+Add}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg1, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg2)
+\begin{DoxyCompactList}\small\item\em Realiza a soma de dois registradores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a0398d31a8d39f03f3e04d1252ffd44f0}{cpu\+Sub}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg1, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg2)
+\begin{DoxyCompactList}\small\item\em Realiza a subtração entre dois registradores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_adae4f773a48ad29c50fe023f21fa7a4b}{cpu\+Mul}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg1, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg2)
+\begin{DoxyCompactList}\small\item\em Multiplica os valores de dois registradores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_af04d2e382910249ae9e25c987e98448f}{cpu\+Div}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg1, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg2)
+\begin{DoxyCompactList}\small\item\em Divide os valores de dois registradores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_af9898acf0facf8ab33ac6dc420a1c4c0}{cpu\+Mov\+Const}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} value, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg1)
+\begin{DoxyCompactList}\small\item\em Move um valor constante para um registrador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a073d4b91dcf76b81f9a8ef0644739d2c}{cpu\+Mov\+Acc}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg1)
+\begin{DoxyCompactList}\small\item\em Move o valor do acumulador para um registrador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_aad9472d00b7cf1f86ce5259d2bbb5666}{cpu\+Jump}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Salta para uma instrução específica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_afbf772384507f4049127958ec70e48aa}{cpu\+Jump\+If\+Equal}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} value, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} index)
+\begin{DoxyCompactList}\small\item\em Salta se o valor no registrador for igual ao valor especificado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a77a4e7c0617a41fa786abe2f3b600f8a}{cpu\+Jump\+If\+Not\+Equal}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}} reg, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} value, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} index)
+\begin{DoxyCompactList}\small\item\em Salta se o valor no registrador for diferente do valor especificado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_ac8b145dfabbe03de1a93e72f9ebd78c9}{cpu\+Print}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Imprime o valor do acumulador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a633e070ade1dd5b98e7add42b14cc22e}{cpu\+Halt}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu)
+\begin{DoxyCompactList}\small\item\em Interrompe a execução da CPU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cpu_8h_a92b2940cee2645fdd0cee13317209ad4}{cpu\+Create\+Process}} (\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}cpu, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} priority, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} name\+Index, \mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} program\+Index)
+\begin{DoxyCompactList}\small\item\em Cria um novo processo com a prioridade especificada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Definições e funções relacionadas à CPU virtual do sistema Heli\+OS. 
+
+Este arquivo contém as estruturas e funções necessárias para gerenciar a CPU virtual, incluindo execução de instruções, manipulação de registradores e operações na pilha. 
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{cpu_8h_a818035201aceff5d5f5463eeefdebe97}\index{cpu.h@{cpu.h}!CpuInfo@{CpuInfo}}
+\index{CpuInfo@{CpuInfo}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{CpuInfo}{CpuInfo}}
+{\footnotesize\ttfamily \label{cpu_8h_a818035201aceff5d5f5463eeefdebe97} 
+typedef struct Cpu\+Info Cpu\+Info}
+
+
+
+Estrutura que contém informações resumidas sobre a CPU. 
+
+Esta estrutura é usada ao destacar um processo da CPU. 
+
+\doxysubsection{Documentação dos valores da enumeração}
+\Hypertarget{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}\index{cpu.h@{cpu.h}!CpuState@{CpuState}}
+\index{CpuState@{CpuState}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{CpuState}{CpuState}}
+{\footnotesize\ttfamily \label{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87} 
+enum \mbox{\hyperlink{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87}{Cpu\+State}}}
+
+
+
+Representa o estado atual da CPU. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPU\_RUNNING@{CPU\_RUNNING}!cpu.h@{cpu.h}}\index{cpu.h@{cpu.h}!CPU\_RUNNING@{CPU\_RUNNING}}}\Hypertarget{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62}\label{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a584fcfa794b84712561d7dbfcaa9ea62} 
+CPU\+\_\+\+RUNNING&A CPU está em execução. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPU\_IDLE@{CPU\_IDLE}!cpu.h@{cpu.h}}\index{cpu.h@{cpu.h}!CPU\_IDLE@{CPU\_IDLE}}}\Hypertarget{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8}\label{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a9a3438c7255c58d22af6dbb6e05b77f8} 
+CPU\+\_\+\+IDLE&A CPU está ociosa. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPU\_HALTED@{CPU\_HALTED}!cpu.h@{cpu.h}}\index{cpu.h@{cpu.h}!CPU\_HALTED@{CPU\_HALTED}}}\Hypertarget{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684}\label{cpu_8h_ac6bf1bdc3219b7ab46bd25a403952c87a8c93c508f46f77241d7ec43295e3b684} 
+CPU\+\_\+\+HALTED&A CPU foi interrompida. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{cpu_8h_af2962dd52c472540bb7ff458c24d7f71}\index{cpu.h@{cpu.h}!attachProcess@{attachProcess}}
+\index{attachProcess@{attachProcess}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{attachProcess()}{attachProcess()}}
+{\footnotesize\ttfamily \label{cpu_8h_af2962dd52c472540bb7ff458c24d7f71} 
+void attach\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}}]{process}{}\end{DoxyParamCaption})}
+
+
+
+Anexa um processo à CPU. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em process} & Processo a ser anexado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_afd18d932f4becc5106ed37ddb038711a}\index{cpu.h@{cpu.h}!cpuAdd@{cpuAdd}}
+\index{cpuAdd@{cpuAdd}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuAdd()}{cpuAdd()}}
+{\footnotesize\ttfamily \label{cpu_8h_afd18d932f4becc5106ed37ddb038711a} 
+void cpu\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg1}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg2}{}\end{DoxyParamCaption})}
+
+
+
+Realiza a soma de dois registradores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg1} & Primeiro registrador. \\
+\hline
+{\em reg2} & Segundo registrador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a92b2940cee2645fdd0cee13317209ad4}\index{cpu.h@{cpu.h}!cpuCreateProcess@{cpuCreateProcess}}
+\index{cpuCreateProcess@{cpuCreateProcess}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuCreateProcess()}{cpuCreateProcess()}}
+{\footnotesize\ttfamily \label{cpu_8h_a92b2940cee2645fdd0cee13317209ad4} 
+void cpu\+Create\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}]{priority}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{name\+Index}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{program\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo processo com a prioridade especificada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em priority} & Prioridade do processo. \\
+\hline
+{\em name\+Index} & Índice do nome do processo. \\
+\hline
+{\em program\+Index} & Índice do programa associado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_af04d2e382910249ae9e25c987e98448f}\index{cpu.h@{cpu.h}!cpuDiv@{cpuDiv}}
+\index{cpuDiv@{cpuDiv}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuDiv()}{cpuDiv()}}
+{\footnotesize\ttfamily \label{cpu_8h_af04d2e382910249ae9e25c987e98448f} 
+void cpu\+Div (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg1}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg2}{}\end{DoxyParamCaption})}
+
+
+
+Divide os valores de dois registradores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg1} & Primeiro registrador. \\
+\hline
+{\em reg2} & Segundo registrador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a633e070ade1dd5b98e7add42b14cc22e}\index{cpu.h@{cpu.h}!cpuHalt@{cpuHalt}}
+\index{cpuHalt@{cpuHalt}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuHalt()}{cpuHalt()}}
+{\footnotesize\ttfamily \label{cpu_8h_a633e070ade1dd5b98e7add42b14cc22e} 
+void cpu\+Halt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Interrompe a execução da CPU. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_aad9472d00b7cf1f86ce5259d2bbb5666}\index{cpu.h@{cpu.h}!cpuJump@{cpuJump}}
+\index{cpuJump@{cpuJump}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuJump()}{cpuJump()}}
+{\footnotesize\ttfamily \label{cpu_8h_aad9472d00b7cf1f86ce5259d2bbb5666} 
+void cpu\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Salta para uma instrução específica. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_afbf772384507f4049127958ec70e48aa}\index{cpu.h@{cpu.h}!cpuJumpIfEqual@{cpuJumpIfEqual}}
+\index{cpuJumpIfEqual@{cpuJumpIfEqual}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuJumpIfEqual()}{cpuJumpIfEqual()}}
+{\footnotesize\ttfamily \label{cpu_8h_afbf772384507f4049127958ec70e48aa} 
+void cpu\+Jump\+If\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{value}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Salta se o valor no registrador for igual ao valor especificado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg} & Registrador a ser comparado. \\
+\hline
+{\em value} & Valor a ser comparado. \\
+\hline
+{\em index} & Índice de destino do salto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a77a4e7c0617a41fa786abe2f3b600f8a}\index{cpu.h@{cpu.h}!cpuJumpIfNotEqual@{cpuJumpIfNotEqual}}
+\index{cpuJumpIfNotEqual@{cpuJumpIfNotEqual}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuJumpIfNotEqual()}{cpuJumpIfNotEqual()}}
+{\footnotesize\ttfamily \label{cpu_8h_a77a4e7c0617a41fa786abe2f3b600f8a} 
+void cpu\+Jump\+If\+Not\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{value}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Salta se o valor no registrador for diferente do valor especificado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg} & Registrador a ser comparado. \\
+\hline
+{\em value} & Valor a ser comparado. \\
+\hline
+{\em index} & Índice de destino do salto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a073d4b91dcf76b81f9a8ef0644739d2c}\index{cpu.h@{cpu.h}!cpuMovAcc@{cpuMovAcc}}
+\index{cpuMovAcc@{cpuMovAcc}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuMovAcc()}{cpuMovAcc()}}
+{\footnotesize\ttfamily \label{cpu_8h_a073d4b91dcf76b81f9a8ef0644739d2c} 
+void cpu\+Mov\+Acc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg1}{}\end{DoxyParamCaption})}
+
+
+
+Move o valor do acumulador para um registrador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg1} & Registrador de destino. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_af9898acf0facf8ab33ac6dc420a1c4c0}\index{cpu.h@{cpu.h}!cpuMovConst@{cpuMovConst}}
+\index{cpuMovConst@{cpuMovConst}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuMovConst()}{cpuMovConst()}}
+{\footnotesize\ttfamily \label{cpu_8h_af9898acf0facf8ab33ac6dc420a1c4c0} 
+void cpu\+Mov\+Const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}}}]{value}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg1}{}\end{DoxyParamCaption})}
+
+
+
+Move um valor constante para um registrador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em value} & Valor a ser movido. \\
+\hline
+{\em reg1} & Registrador de destino. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_adae4f773a48ad29c50fe023f21fa7a4b}\index{cpu.h@{cpu.h}!cpuMul@{cpuMul}}
+\index{cpuMul@{cpuMul}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuMul()}{cpuMul()}}
+{\footnotesize\ttfamily \label{cpu_8h_adae4f773a48ad29c50fe023f21fa7a4b} 
+void cpu\+Mul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg1}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg2}{}\end{DoxyParamCaption})}
+
+
+
+Multiplica os valores de dois registradores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg1} & Primeiro registrador. \\
+\hline
+{\em reg2} & Segundo registrador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a4535eb7ed4659ce884fbb0db4ed04d26}\index{cpu.h@{cpu.h}!cpuPop@{cpuPop}}
+\index{cpuPop@{cpuPop}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuPop()}{cpuPop()}}
+{\footnotesize\ttfamily \label{cpu_8h_a4535eb7ed4659ce884fbb0db4ed04d26} 
+void cpu\+Pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg}{}\end{DoxyParamCaption})}
+
+
+
+Remove um valor da pilha e o move para um registrador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg} & Registrador de destino. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_ac8b145dfabbe03de1a93e72f9ebd78c9}\index{cpu.h@{cpu.h}!cpuPrint@{cpuPrint}}
+\index{cpuPrint@{cpuPrint}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuPrint()}{cpuPrint()}}
+{\footnotesize\ttfamily \label{cpu_8h_ac8b145dfabbe03de1a93e72f9ebd78c9} 
+void cpu\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Imprime o valor do acumulador. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a2b0f3d709f9e2812185ed3bd545ce69d}\index{cpu.h@{cpu.h}!cpuPush@{cpuPush}}
+\index{cpuPush@{cpuPush}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuPush()}{cpuPush()}}
+{\footnotesize\ttfamily \label{cpu_8h_a2b0f3d709f9e2812185ed3bd545ce69d} 
+void cpu\+Push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{int}]{constant}{}\end{DoxyParamCaption})}
+
+
+
+Insere um valor constante na pilha da CPU. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em constant} & Valor constante a ser empilhado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a0398d31a8d39f03f3e04d1252ffd44f0}\index{cpu.h@{cpu.h}!cpuSub@{cpuSub}}
+\index{cpuSub@{cpuSub}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{cpuSub()}{cpuSub()}}
+{\footnotesize\ttfamily \label{cpu_8h_a0398d31a8d39f03f3e04d1252ffd44f0} 
+void cpu\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg1}{, }\item[{\mbox{\hyperlink{instruction_8h_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}}]{reg2}{}\end{DoxyParamCaption})}
+
+
+
+Realiza a subtração entre dois registradores. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+{\em reg1} & Primeiro registrador. \\
+\hline
+{\em reg2} & Segundo registrador. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_ac80c4196956a8969ae561488e85141ec}\index{cpu.h@{cpu.h}!decodeAndExecute@{decodeAndExecute}}
+\index{decodeAndExecute@{decodeAndExecute}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{decodeAndExecute()}{decodeAndExecute()}}
+{\footnotesize\ttfamily \label{cpu_8h_ac80c4196956a8969ae561488e85141ec} 
+void decode\+And\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Decodifica e executa a próxima instrução da CPU. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_a17c923bd699264dee85f780038f8256f}\index{cpu.h@{cpu.h}!detachProcess@{detachProcess}}
+\index{detachProcess@{detachProcess}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{detachProcess()}{detachProcess()}}
+{\footnotesize\ttfamily \label{cpu_8h_a17c923bd699264dee85f780038f8256f} 
+\mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} detach\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Remove o processo atualmente anexado à CPU e retorna suas informações. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+As informações do processo que foi destacado. 
+\end{DoxyReturn}
+\Hypertarget{cpu_8h_ab16eb50538eb67baacf22f84f3ae9b54}\index{cpu.h@{cpu.h}!initCpu@{initCpu}}
+\index{initCpu@{initCpu}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{initCpu()}{initCpu()}}
+{\footnotesize\ttfamily \label{cpu_8h_ab16eb50538eb67baacf22f84f3ae9b54} 
+void init\+Cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa a CPU. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a estrutura da CPU a ser inicializada. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{cpu_8h_adae019a5e72f76aa04eeb3011e3e0d6b}\index{cpu.h@{cpu.h}!readByte@{readByte}}
+\index{readByte@{readByte}!cpu.h@{cpu.h}}
+\doxysubsubsection{\texorpdfstring{readByte()}{readByte()}}
+{\footnotesize\ttfamily \label{cpu_8h_adae019a5e72f76aa04eeb3011e3e0d6b} 
+\mbox{\hyperlink{system__types_8h_a50626603cd245d9ac35514f5612171f3}{Byte}} read\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cpu}{Cpu}} \texorpdfstring{$\ast$}{*}}]{cpu}{}\end{DoxyParamCaption})}
+
+
+
+Lê um byte da memória. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cpu} & Ponteiro para a CPU. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+O byte lido. 
+\end{DoxyReturn}

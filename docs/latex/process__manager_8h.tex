@@ -1,0 +1,251 @@
+\doxysection{Referência ao ficheiro src/process/process\+\_\+manager.h}
+\hypertarget{process__manager_8h}{}\label{process__manager_8h}\index{src/process/process\_manager.h@{src/process/process\_manager.h}}
+{\ttfamily \#include $<$process.\+h$>$}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_process_manager_create_info}{Process\+Manager\+Create\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura com informações para criar um gerenciador de processos. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_process_manager}{Process\+Manager}}
+\begin{DoxyCompactList}\small\item\em Estrutura do gerenciador de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687}{Proc\+Create\+Fn}}) (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Função para criar um processo. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__manager_8h_a3b70fb39abba75f75c961bfa121a5eeb}{Get\+Process\+Fn}}) (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Função para obter um processo pelo seu PID. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447}{Proc\+Schedule\+Fn}}) (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)
+\begin{DoxyCompactList}\small\item\em Função para agendar um processo. \end{DoxyCompactList}\item 
+typedef void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__manager_8h_a956103fa8932386383a2e3b83ede37a0}{Init\+Proc\+Table\+Fn}}) (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Função para inicializar a tabela de processos. \end{DoxyCompactList}\item 
+typedef bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__manager_8h_a3febc31b15e69aa564334898f5c311be}{Has\+Proc\+Fn}}) (void \texorpdfstring{$\ast$}{*}self)
+\begin{DoxyCompactList}\small\item\em Função para verificar se há processos. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process__manager_8h_a8eec4e604853852c0cac702c26274dbe}{On\+Proc\+Detach\+Fn}}) (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Função a ser chamada quando um processo for desacoplado. \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}{Preemption\+Flag}}
+\begin{DoxyCompactList}\small\item\em Tipo para as flags de preempção. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{Proc\+Manager\+Type}} \{ \newline
+\mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+FIRST\+\_\+\+COME\+\_\+\+FIRST\+\_\+\+SERVED}}
+, \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+SHORTEST\+\_\+\+JOB\+\_\+\+FIRST}}
+, \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+ROUND\+\_\+\+ROBIN}}
+, \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+PRIORITY\+\_\+\+SCHEDULING\+\_\+\+SINGLE\+\_\+\+QUEUE}}
+, \newline
+\mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+PRIORITY\+\_\+\+SCHEDULING\+\_\+\+MULTIPLE\+\_\+\+QUEUES}}
+, \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+LOTTERY\+\_\+\+SCHEDULING}}
+, \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f}{HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Tipos de gerenciadores de processos. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77}{Preemption\+Type}} \{ \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc}{PREEMPTION\+\_\+\+NONE}}
+, \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851}{PREEMPTION\+\_\+\+QUANTUM}}
+, \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2}{PREEMPTION\+\_\+\+PRIORITY}}
+ \}
+\begin{DoxyCompactList}\small\item\em Tipos de preempção no gerenciador de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{process__manager_8h_a3b70fb39abba75f75c961bfa121a5eeb}\index{process\_manager.h@{process\_manager.h}!GetProcessFn@{GetProcessFn}}
+\index{GetProcessFn@{GetProcessFn}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{GetProcessFn}{GetProcessFn}}
+{\footnotesize\ttfamily \label{process__manager_8h_a3b70fb39abba75f75c961bfa121a5eeb} 
+typedef \mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} Get\+Process\+Fn) (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)}
+
+
+
+Função para obter um processo pelo seu PID. 
+
+Função responsável por retornar um processo dado seu identificador único (PID).
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para a estrutura do processo. 
+\end{DoxyReturn}
+\Hypertarget{process__manager_8h_a3febc31b15e69aa564334898f5c311be}\index{process\_manager.h@{process\_manager.h}!HasProcFn@{HasProcFn}}
+\index{HasProcFn@{HasProcFn}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{HasProcFn}{HasProcFn}}
+{\footnotesize\ttfamily \label{process__manager_8h_a3febc31b15e69aa564334898f5c311be} 
+typedef bool(\texorpdfstring{$\ast$}{*} Has\+Proc\+Fn) (void \texorpdfstring{$\ast$}{*}self)}
+
+
+
+Função para verificar se há processos. 
+
+Função responsável por verificar se existem processos na tabela.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+bool Retorna verdadeiro se houver processos, caso contrário, falso. 
+\end{DoxyReturn}
+\Hypertarget{process__manager_8h_a956103fa8932386383a2e3b83ede37a0}\index{process\_manager.h@{process\_manager.h}!InitProcTableFn@{InitProcTableFn}}
+\index{InitProcTableFn@{InitProcTableFn}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{InitProcTableFn}{InitProcTableFn}}
+{\footnotesize\ttfamily \label{process__manager_8h_a956103fa8932386383a2e3b83ede37a0} 
+typedef void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} Init\+Proc\+Table\+Fn) (void \texorpdfstring{$\ast$}{*}self)}
+
+
+
+Função para inicializar a tabela de processos. 
+
+Função responsável por inicializar a tabela de processos, estrutura que armazena os processos disponíveis para o escalonamento.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+void\texorpdfstring{$\ast$}{*} Ponteiro para a tabela de processos inicializada. 
+\end{DoxyReturn}
+\Hypertarget{process__manager_8h_a8eec4e604853852c0cac702c26274dbe}\index{process\_manager.h@{process\_manager.h}!OnProcDetachFn@{OnProcDetachFn}}
+\index{OnProcDetachFn@{OnProcDetachFn}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{OnProcDetachFn}{OnProcDetachFn}}
+{\footnotesize\ttfamily \label{process__manager_8h_a8eec4e604853852c0cac702c26274dbe} 
+typedef void(\texorpdfstring{$\ast$}{*} On\+Proc\+Detach\+Fn) (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_cpu_info}{Cpu\+Info}} info)}
+
+
+
+Função a ser chamada quando um processo for desacoplado. 
+
+Função responsável por lidar com a desvinculação de um processo, o que pode envolver operações de limpeza ou atualização do estado do gerenciador.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em info} & Informações sobre o CPU no momento da desvinculação. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}\index{process\_manager.h@{process\_manager.h}!PreemptionFlag@{PreemptionFlag}}
+\index{PreemptionFlag@{PreemptionFlag}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{PreemptionFlag}{PreemptionFlag}}
+{\footnotesize\ttfamily \label{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111} 
+typedef unsigned int \mbox{\hyperlink{process__manager_8h_a462eb45d1bb8d6a2035f79fc16dc6111}{Preemption\+Flag}}}
+
+
+
+Tipo para as flags de preempção. 
+
+\Hypertarget{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687}\index{process\_manager.h@{process\_manager.h}!ProcCreateFn@{ProcCreateFn}}
+\index{ProcCreateFn@{ProcCreateFn}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{ProcCreateFn}{ProcCreateFn}}
+{\footnotesize\ttfamily \label{process__manager_8h_a5b2a6bc5e999daad02bebe2abe749687} 
+typedef \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}(\texorpdfstring{$\ast$}{*} Proc\+Create\+Fn) (void \texorpdfstring{$\ast$}{*}self, \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)}
+
+
+
+Função para criar um processo. 
+
+Função responsável por criar um processo dado um conjunto de informações de criação.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em info} & Estrutura contendo informações necessárias para criar o processo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} Identificador do processo criado. 
+\end{DoxyReturn}
+\Hypertarget{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447}\index{process\_manager.h@{process\_manager.h}!ProcScheduleFn@{ProcScheduleFn}}
+\index{ProcScheduleFn@{ProcScheduleFn}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{ProcScheduleFn}{ProcScheduleFn}}
+{\footnotesize\ttfamily \label{process__manager_8h_a37d91cb30bf50091e18a1c326aadd447} 
+typedef \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}(\texorpdfstring{$\ast$}{*} Proc\+Schedule\+Fn) (void \texorpdfstring{$\ast$}{*}self, void \texorpdfstring{$\ast$}{*}proc\+Table)}
+
+
+
+Função para agendar um processo. 
+
+Função responsável por agendar a execução de um processo baseado no algoritmo de escalonamento.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em self} & Ponteiro para o gerenciador de processos. \\
+\hline
+{\em proc\+Table} & Tabela de processos que deve ser considerada para o agendamento.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32} Identificador do processo agendado. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentação dos valores da enumeração}
+\Hypertarget{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77}\index{process\_manager.h@{process\_manager.h}!PreemptionType@{PreemptionType}}
+\index{PreemptionType@{PreemptionType}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{PreemptionType}{PreemptionType}}
+{\footnotesize\ttfamily \label{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77} 
+enum \mbox{\hyperlink{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77}{Preemption\+Type}}}
+
+
+
+Tipos de preempção no gerenciador de processos. 
+
+Enumeração que define os tipos de preempção aplicáveis ao escalonamento de processos. \begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PREEMPTION\_NONE@{PREEMPTION\_NONE}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!PREEMPTION\_NONE@{PREEMPTION\_NONE}}}\Hypertarget{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc}\label{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc} 
+PREEMPTION\+\_\+\+NONE&Sem preempção. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PREEMPTION\_QUANTUM@{PREEMPTION\_QUANTUM}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!PREEMPTION\_QUANTUM@{PREEMPTION\_QUANTUM}}}\Hypertarget{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851}\label{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851} 
+PREEMPTION\+\_\+\+QUANTUM&Preempção por quantum de tempo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PREEMPTION\_PRIORITY@{PREEMPTION\_PRIORITY}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!PREEMPTION\_PRIORITY@{PREEMPTION\_PRIORITY}}}\Hypertarget{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2}\label{process__manager_8h_a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2} 
+PREEMPTION\+\_\+\+PRIORITY&Preempção por prioridade. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}\index{process\_manager.h@{process\_manager.h}!ProcManagerType@{ProcManagerType}}
+\index{ProcManagerType@{ProcManagerType}!process\_manager.h@{process\_manager.h}}
+\doxysubsubsection{\texorpdfstring{ProcManagerType}{ProcManagerType}}
+{\footnotesize\ttfamily \label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0} 
+enum \mbox{\hyperlink{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0}{Proc\+Manager\+Type}}}
+
+
+
+Tipos de gerenciadores de processos. 
+
+Enumeração que define os diferentes tipos de algoritmos de escalonamento de processos. \begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_FIRST\_COME\_FIRST\_SERVED@{HL\_PROC\_MANAGER\_TYPE\_FIRST\_COME\_FIRST\_SERVED}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_FIRST\_COME\_FIRST\_SERVED@{HL\_PROC\_MANAGER\_TYPE\_FIRST\_COME\_FIRST\_SERVED}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+FIRST\+\_\+\+COME\+\_\+\+FIRST\+\_\+\+SERVED&First Come First Served (FCFS) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_SHORTEST\_JOB\_FIRST@{HL\_PROC\_MANAGER\_TYPE\_SHORTEST\_JOB\_FIRST}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_SHORTEST\_JOB\_FIRST@{HL\_PROC\_MANAGER\_TYPE\_SHORTEST\_JOB\_FIRST}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+SHORTEST\+\_\+\+JOB\+\_\+\+FIRST&Shortest Job First (SJF) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_ROUND\_ROBIN@{HL\_PROC\_MANAGER\_TYPE\_ROUND\_ROBIN}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_ROUND\_ROBIN@{HL\_PROC\_MANAGER\_TYPE\_ROUND\_ROBIN}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+ROUND\+\_\+\+ROBIN&Round Robin. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_SINGLE\_QUEUE@{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_SINGLE\_QUEUE}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_SINGLE\_QUEUE@{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_SINGLE\_QUEUE}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+PRIORITY\+\_\+\+SCHEDULING\+\_\+\+SINGLE\+\_\+\+QUEUE&Priority Scheduling (Single Queue) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_MULTIPLE\_QUEUES@{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_MULTIPLE\_QUEUES}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_MULTIPLE\_QUEUES@{HL\_PROC\_MANAGER\_TYPE\_PRIORITY\_SCHEDULING\_MULTIPLE\_QUEUES}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+PRIORITY\+\_\+\+SCHEDULING\+\_\+\+MULTIPLE\+\_\+\+QUEUES&Priority Scheduling (Multiple Queues) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_LOTTERY\_SCHEDULING@{HL\_PROC\_MANAGER\_TYPE\_LOTTERY\_SCHEDULING}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_LOTTERY\_SCHEDULING@{HL\_PROC\_MANAGER\_TYPE\_LOTTERY\_SCHEDULING}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+LOTTERY\+\_\+\+SCHEDULING&Lottery Scheduling. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_MANAGER\_TYPE\_MAX@{HL\_PROC\_MANAGER\_TYPE\_MAX}!process\_manager.h@{process\_manager.h}}\index{process\_manager.h@{process\_manager.h}!HL\_PROC\_MANAGER\_TYPE\_MAX@{HL\_PROC\_MANAGER\_TYPE\_MAX}}}\Hypertarget{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f}\label{process__manager_8h_a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f} 
+HL\+\_\+\+PROC\+\_\+\+MANAGER\+\_\+\+TYPE\+\_\+\+MAX&Tipo máximo de gerenciador. \\
+\hline
+
+\end{DoxyEnumFields}

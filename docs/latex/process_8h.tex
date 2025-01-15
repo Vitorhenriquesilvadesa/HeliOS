@@ -1,0 +1,317 @@
+\doxysection{Referência ao ficheiro src/process/process.h}
+\hypertarget{process_8h}{}\label{process_8h}\index{src/process/process.h@{src/process/process.h}}
+
+
+Estruturas e funções para gerenciamento de processos no sistema operacional.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$instruction.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$program.\+h$>$}\newline
+\doxysubsubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_process}{Process}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um processo no sistema. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura de informações para criação de um novo processo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_process_array}{Process\+Array}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma lista de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{process_8h_a02196e5b6c5efa67986daed4fb1c6968}{ERROR\+\_\+\+PID}}~-\/1
+\begin{DoxyCompactList}\small\item\em Valor de erro para PID não encontrado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} \mbox{\hyperlink{process_8h_a0deaeadfd222b25583c294a4060e3d15}{Process\+Priority}}
+\begin{DoxyCompactList}\small\item\em Prioridades de um processo. \end{DoxyCompactList}\item 
+typedef struct Process \mbox{\hyperlink{process_8h_a3b5b0413545e0d4ff600b0a7203e3086}{Process}}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa um processo no sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675e}{Process\+State}} \{ \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874}{HL\+\_\+\+PROC\+\_\+\+READY}}
+, \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf}{HL\+\_\+\+PROC\+\_\+\+EXECUTING}}
+, \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc}{HL\+\_\+\+PROC\+\_\+\+WAITING}}
+, \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842}{HL\+\_\+\+PROC\+\_\+\+TERMINATED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Estados possíveis de um processo. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} \{ \newline
+\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+DEFAULT}} = 0
+, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+LOW}}
+, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+LOW}}
+, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+MEDIUM}}
+, \newline
+\mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+HIGH}}
+, \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}{HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+HIGH}}
+ \}
+\begin{DoxyCompactList}\small\item\em Prioridades de um processo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process_8h_af90fc45878ff6db75fcd0dd57f11e448}{new\+Process}} (\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}} info)
+\begin{DoxyCompactList}\small\item\em Função para criar um novo processo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8h_a537199f3ea4032fe90ca168a6fbff616}{init\+Process\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Função para inicializar um array de processos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8h_a2a65ab54256eea09530645363c1c6aff}{append\+Process\+Reference\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}process)
+\begin{DoxyCompactList}\small\item\em Função para adicionar um processo ao array de processos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_8h_aa2a0d56d4dafd911e882faf1e5569273}{remove\+From\+Process\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Função para remover um processo do array de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{process_8h_a14932d9cae3ab67e29d219b39fc98c9e}{get\+From\+Process\+Array}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array, \mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}} pid)
+\begin{DoxyCompactList}\small\item\em Função para obter um processo do array de processos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{process_8h_af72c8b19a5f3c4fd46c4b5b73f63fa1f}{has\+Process}} (\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}array)
+\begin{DoxyCompactList}\small\item\em Função para verificar se o array de processos contém algum processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} \mbox{\hyperlink{process_8h_a85f9c4efa7c3acce55310de1dee3c547}{get\+Process\+Burst\+Time}} (\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}process)
+\begin{DoxyCompactList}\small\item\em Função para obter o tempo de burst de um processo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estruturas e funções para gerenciamento de processos no sistema operacional. 
+
+Este arquivo define as estruturas e funções necessárias para a criação, manipulação e gerenciamento de processos no sistema operacional. Os processos possuem um identificador único (PID), tempo de chegada, tempo de execução, prioridade e outros atributos essenciais para o controle do sistema. 
+
+\doxysubsection{Documentação das macros}
+\Hypertarget{process_8h_a02196e5b6c5efa67986daed4fb1c6968}\index{process.h@{process.h}!ERROR\_PID@{ERROR\_PID}}
+\index{ERROR\_PID@{ERROR\_PID}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{ERROR\_PID}{ERROR\_PID}}
+{\footnotesize\ttfamily \label{process_8h_a02196e5b6c5efa67986daed4fb1c6968} 
+\#define ERROR\+\_\+\+PID~-\/1}
+
+
+
+Valor de erro para PID não encontrado. 
+
+
+
+\doxysubsection{Documentação dos tipos}
+\Hypertarget{process_8h_a3b5b0413545e0d4ff600b0a7203e3086}\index{process.h@{process.h}!Process@{Process}}
+\index{Process@{Process}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{Process}{Process}}
+{\footnotesize\ttfamily \label{process_8h_a3b5b0413545e0d4ff600b0a7203e3086} 
+typedef struct Process Process}
+
+
+
+Estrutura que representa um processo no sistema. 
+
+A estrutura \doxylink{struct_process}{Process} contém todos os dados necessários para a execução de um processo no sistema, incluindo seu identificador, estado, tempos de execução e as informações sobre o programa a ser executado. \Hypertarget{process_8h_a0deaeadfd222b25583c294a4060e3d15}\index{process.h@{process.h}!ProcessPriority@{ProcessPriority}}
+\index{ProcessPriority@{ProcessPriority}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{ProcessPriority}{ProcessPriority}}
+{\footnotesize\ttfamily \label{process_8h_a0deaeadfd222b25583c294a4060e3d15} 
+typedef enum \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}} \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}
+
+
+
+Prioridades de um processo. 
+
+Enumeração que define as prioridades possíveis de um processo. 
+
+\doxysubsection{Documentação dos valores da enumeração}
+\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}\index{process.h@{process.h}!ProcessPriority@{ProcessPriority}}
+\index{ProcessPriority@{ProcessPriority}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{ProcessPriority}{ProcessPriority}}
+{\footnotesize\ttfamily \label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4} 
+enum \mbox{\hyperlink{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4}{Process\+Priority}}}
+
+
+
+Prioridades de um processo. 
+
+Enumeração que define as prioridades possíveis de um processo. \begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_PRIORITY\_DEFAULT@{HL\_PROC\_PRIORITY\_DEFAULT}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_PRIORITY\_DEFAULT@{HL\_PROC\_PRIORITY\_DEFAULT}}}\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e}\label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a573619fae4c56d85588438fb24bb119e} 
+HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+DEFAULT&Prioridade padrão. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_PRIORITY\_VERY\_LOW@{HL\_PROC\_PRIORITY\_VERY\_LOW}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_PRIORITY\_VERY\_LOW@{HL\_PROC\_PRIORITY\_VERY\_LOW}}}\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b}\label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a6f0d9c301e4b277dc11323045ad3a78b} 
+HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+LOW&Prioridade muito baixa. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_PRIORITY\_LOW@{HL\_PROC\_PRIORITY\_LOW}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_PRIORITY\_LOW@{HL\_PROC\_PRIORITY\_LOW}}}\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866}\label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4afd6362dd0f0861fda49107ccb6e96866} 
+HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+LOW&Prioridade baixa. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_PRIORITY\_MEDIUM@{HL\_PROC\_PRIORITY\_MEDIUM}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_PRIORITY\_MEDIUM@{HL\_PROC\_PRIORITY\_MEDIUM}}}\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98}\label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4aadcffaf4123537735afbc2b3343baf98} 
+HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+MEDIUM&Prioridade média. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_PRIORITY\_HIGH@{HL\_PROC\_PRIORITY\_HIGH}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_PRIORITY\_HIGH@{HL\_PROC\_PRIORITY\_HIGH}}}\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba}\label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a5227c99c84a6bb84b12542f68e8526ba} 
+HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+HIGH&Prioridade alta. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_PRIORITY\_VERY\_HIGH@{HL\_PROC\_PRIORITY\_VERY\_HIGH}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_PRIORITY\_VERY\_HIGH@{HL\_PROC\_PRIORITY\_VERY\_HIGH}}}\Hypertarget{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7}\label{process_8h_a5e14e71e8f5d4107da75207e9f8ebca4a87fe614de6c3a3dfcabc474b74fe32d7} 
+HL\+\_\+\+PROC\+\_\+\+PRIORITY\+\_\+\+VERY\+\_\+\+HIGH&Prioridade muito alta. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{process_8h_a373a58178f69d5e3e1de7516d105675e}\index{process.h@{process.h}!ProcessState@{ProcessState}}
+\index{ProcessState@{ProcessState}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{ProcessState}{ProcessState}}
+{\footnotesize\ttfamily \label{process_8h_a373a58178f69d5e3e1de7516d105675e} 
+enum \mbox{\hyperlink{process_8h_a373a58178f69d5e3e1de7516d105675e}{Process\+State}}}
+
+
+
+Estados possíveis de um processo. 
+
+Enumeração que define os estados possíveis de um processo no sistema. \begin{DoxyEnumFields}[2]{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_READY@{HL\_PROC\_READY}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_READY@{HL\_PROC\_READY}}}\Hypertarget{process_8h_a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874}\label{process_8h_a373a58178f69d5e3e1de7516d105675ea5b4c0cb199cdf30cd684700317446874} 
+HL\+\_\+\+PROC\+\_\+\+READY&Processo está pronto para ser executado. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_EXECUTING@{HL\_PROC\_EXECUTING}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_EXECUTING@{HL\_PROC\_EXECUTING}}}\Hypertarget{process_8h_a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf}\label{process_8h_a373a58178f69d5e3e1de7516d105675ea0f9eb5c4a1b718c81856f8e75700eecf} 
+HL\+\_\+\+PROC\+\_\+\+EXECUTING&Processo está em execução. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_WAITING@{HL\_PROC\_WAITING}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_WAITING@{HL\_PROC\_WAITING}}}\Hypertarget{process_8h_a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc}\label{process_8h_a373a58178f69d5e3e1de7516d105675ea4bd2ebba6084a5ebd51915443f1109cc} 
+HL\+\_\+\+PROC\+\_\+\+WAITING&Processo está aguardando algum recurso ou evento. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HL\_PROC\_TERMINATED@{HL\_PROC\_TERMINATED}!process.h@{process.h}}\index{process.h@{process.h}!HL\_PROC\_TERMINATED@{HL\_PROC\_TERMINATED}}}\Hypertarget{process_8h_a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842}\label{process_8h_a373a58178f69d5e3e1de7516d105675ea08b699485a50aba823e15eb36361f842} 
+HL\+\_\+\+PROC\+\_\+\+TERMINATED&Processo terminou sua execução. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentação das funções}
+\Hypertarget{process_8h_a2a65ab54256eea09530645363c1c6aff}\index{process.h@{process.h}!appendProcessReferenceArray@{appendProcessReferenceArray}}
+\index{appendProcessReferenceArray@{appendProcessReferenceArray}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{appendProcessReferenceArray()}{appendProcessReferenceArray()}}
+{\footnotesize\ttfamily \label{process_8h_a2a65ab54256eea09530645363c1c6aff} 
+void append\+Process\+Reference\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}}]{process}{}\end{DoxyParamCaption})}
+
+
+
+Função para adicionar um processo ao array de processos. 
+
+Adiciona uma referência a um processo ao array de processos. O processo não é copiado, apenas o ponteiro é adicionado ao array.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+{\em process} & Ponteiro para o processo a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{process_8h_a14932d9cae3ab67e29d219b39fc98c9e}\index{process.h@{process.h}!getFromProcessArray@{getFromProcessArray}}
+\index{getFromProcessArray@{getFromProcessArray}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{getFromProcessArray()}{getFromProcessArray()}}
+{\footnotesize\ttfamily \label{process_8h_a14932d9cae3ab67e29d219b39fc98c9e} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} get\+From\+Process\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Função para obter um processo do array de processos. 
+
+Obtém um processo do array de processos baseado no PID.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser obtido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para o processo obtido. 
+\end{DoxyReturn}
+\Hypertarget{process_8h_a85f9c4efa7c3acce55310de1dee3c547}\index{process.h@{process.h}!getProcessBurstTime@{getProcessBurstTime}}
+\index{getProcessBurstTime@{getProcessBurstTime}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{getProcessBurstTime()}{getProcessBurstTime()}}
+{\footnotesize\ttfamily \label{process_8h_a85f9c4efa7c3acce55310de1dee3c547} 
+\mbox{\hyperlink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time}} get\+Process\+Burst\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*}}]{process}{}\end{DoxyParamCaption})}
+
+
+
+Função para obter o tempo de burst de um processo. 
+
+Retorna o tempo de execução (burst time) de um processo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em process} & Ponteiro para o processo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+\doxylink{system__types_8h_a9337d107be24a2a7ac3d09befabf2a75}{Time} O tempo de execução do processo. 
+\end{DoxyReturn}
+\Hypertarget{process_8h_af72c8b19a5f3c4fd46c4b5b73f63fa1f}\index{process.h@{process.h}!hasProcess@{hasProcess}}
+\index{hasProcess@{hasProcess}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{hasProcess()}{hasProcess()}}
+{\footnotesize\ttfamily \label{process_8h_af72c8b19a5f3c4fd46c4b5b73f63fa1f} 
+bool has\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{}\end{DoxyParamCaption})}
+
+
+
+Função para verificar se o array de processos contém algum processo. 
+
+Verifica se o array de processos contém pelo menos um processo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+bool Retorna verdadeiro se houver processos no array, falso caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{process_8h_a537199f3ea4032fe90ca168a6fbff616}\index{process.h@{process.h}!initProcessArray@{initProcessArray}}
+\index{initProcessArray@{initProcessArray}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{initProcessArray()}{initProcessArray()}}
+{\footnotesize\ttfamily \label{process_8h_a537199f3ea4032fe90ca168a6fbff616} 
+void init\+Process\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{}\end{DoxyParamCaption})}
+
+
+
+Função para inicializar um array de processos. 
+
+Inicializa um array de processos com capacidade definida para armazenar os processos no sistema.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos a ser inicializado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{process_8h_af90fc45878ff6db75fcd0dd57f11e448}\index{process.h@{process.h}!newProcess@{newProcess}}
+\index{newProcess@{newProcess}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{newProcess()}{newProcess()}}
+{\footnotesize\ttfamily \label{process_8h_af90fc45878ff6db75fcd0dd57f11e448} 
+\mbox{\hyperlink{struct_process}{Process}} \texorpdfstring{$\ast$}{*} new\+Process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_create_info}{Process\+Create\+Info}}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Função para criar um novo processo. 
+
+Cria um novo processo no sistema com base nas informações fornecidas.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em info} & Estrutura contendo as informações necessárias para a criação do processo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Process\texorpdfstring{$\ast$}{*} Ponteiro para o processo criado. 
+\end{DoxyReturn}
+\Hypertarget{process_8h_aa2a0d56d4dafd911e882faf1e5569273}\index{process.h@{process.h}!removeFromProcessArray@{removeFromProcessArray}}
+\index{removeFromProcessArray@{removeFromProcessArray}!process.h@{process.h}}
+\doxysubsubsection{\texorpdfstring{removeFromProcessArray()}{removeFromProcessArray()}}
+{\footnotesize\ttfamily \label{process_8h_aa2a0d56d4dafd911e882faf1e5569273} 
+void remove\+From\+Process\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_process_array}{Process\+Array}} \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{\mbox{\hyperlink{system__types_8h_aade98a87136cf030add759c3cbf7e385}{PID32}}}]{pid}{}\end{DoxyParamCaption})}
+
+
+
+Função para remover um processo do array de processos. 
+
+Remove um processo do array de processos baseado no PID do processo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em array} & Ponteiro para o array de processos. \\
+\hline
+{\em pid} & Identificador do processo a ser removido. \\
+\hline
+\end{DoxyParams}

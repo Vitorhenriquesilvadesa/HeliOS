@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/process.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('process_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro process.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="process_8h_source.html">process.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="kernel_8h_source.html">kernel.h</a>&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:af90fc45878ff6db75fcd0dd57f11e448" id="r_af90fc45878ff6db75fcd0dd57f11e448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af90fc45878ff6db75fcd0dd57f11e448">newProcess</a> (<a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a> info)</td></tr>
+<tr class="memdesc:af90fc45878ff6db75fcd0dd57f11e448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para criar um novo processo.  <br /></td></tr>
+<tr class="separator:af90fc45878ff6db75fcd0dd57f11e448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537199f3ea4032fe90ca168a6fbff616" id="r_a537199f3ea4032fe90ca168a6fbff616"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a537199f3ea4032fe90ca168a6fbff616">initProcessArray</a> (<a class="el" href="struct_process_array.html">ProcessArray</a> *array)</td></tr>
+<tr class="memdesc:a537199f3ea4032fe90ca168a6fbff616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para inicializar um array de processos.  <br /></td></tr>
+<tr class="separator:a537199f3ea4032fe90ca168a6fbff616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a65ab54256eea09530645363c1c6aff" id="r_a2a65ab54256eea09530645363c1c6aff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a65ab54256eea09530645363c1c6aff">appendProcessReferenceArray</a> (<a class="el" href="struct_process_array.html">ProcessArray</a> *array, <a class="el" href="struct_process.html">Process</a> *process)</td></tr>
+<tr class="memdesc:a2a65ab54256eea09530645363c1c6aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para adicionar um processo ao array de processos.  <br /></td></tr>
+<tr class="separator:a2a65ab54256eea09530645363c1c6aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a0d56d4dafd911e882faf1e5569273" id="r_aa2a0d56d4dafd911e882faf1e5569273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2a0d56d4dafd911e882faf1e5569273">removeFromProcessArray</a> (<a class="el" href="struct_process_array.html">ProcessArray</a> *array, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:aa2a0d56d4dafd911e882faf1e5569273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para remover um processo do array de processos.  <br /></td></tr>
+<tr class="separator:aa2a0d56d4dafd911e882faf1e5569273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14932d9cae3ab67e29d219b39fc98c9e" id="r_a14932d9cae3ab67e29d219b39fc98c9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14932d9cae3ab67e29d219b39fc98c9e">getFromProcessArray</a> (<a class="el" href="struct_process_array.html">ProcessArray</a> *array, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a14932d9cae3ab67e29d219b39fc98c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para obter um processo do array de processos.  <br /></td></tr>
+<tr class="separator:a14932d9cae3ab67e29d219b39fc98c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72c8b19a5f3c4fd46c4b5b73f63fa1f" id="r_af72c8b19a5f3c4fd46c4b5b73f63fa1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af72c8b19a5f3c4fd46c4b5b73f63fa1f">hasProcess</a> (<a class="el" href="struct_process_array.html">ProcessArray</a> *array)</td></tr>
+<tr class="memdesc:af72c8b19a5f3c4fd46c4b5b73f63fa1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para verificar se o array de processos contém algum processo.  <br /></td></tr>
+<tr class="separator:af72c8b19a5f3c4fd46c4b5b73f63fa1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f9c4efa7c3acce55310de1dee3c547" id="r_a85f9c4efa7c3acce55310de1dee3c547"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85f9c4efa7c3acce55310de1dee3c547">getProcessBurstTime</a> (<a class="el" href="struct_process.html">Process</a> *process)</td></tr>
+<tr class="memdesc:a85f9c4efa7c3acce55310de1dee3c547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para obter o tempo de burst de um processo.  <br /></td></tr>
+<tr class="separator:a85f9c4efa7c3acce55310de1dee3c547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a2a65ab54256eea09530645363c1c6aff" name="a2a65ab54256eea09530645363c1c6aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a65ab54256eea09530645363c1c6aff">&#9670;&#160;</a></span>appendProcessReferenceArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendProcessReferenceArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_array.html">ProcessArray</a> *</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_process.html">Process</a> *</td>          <td class="paramname"><span class="paramname"><em>process</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para adicionar um processo ao array de processos. </p>
+<p>Adiciona uma referência a um processo ao array de processos. O processo não é copiado, apenas o ponteiro é adicionado ao array.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Ponteiro para o array de processos. </td></tr>
+    <tr><td class="paramname">process</td><td>Ponteiro para o processo a ser adicionado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a14932d9cae3ab67e29d219b39fc98c9e" name="a14932d9cae3ab67e29d219b39fc98c9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14932d9cae3ab67e29d219b39fc98c9e">&#9670;&#160;</a></span>getFromProcessArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process.html">Process</a> * getFromProcessArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_array.html">ProcessArray</a> *</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para obter um processo do array de processos. </p>
+<p>Obtém um processo do array de processos baseado no PID.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Ponteiro para o array de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser obtido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Process* Ponteiro para o processo obtido. </dd></dl>
+
+</div>
+</div>
+<a id="a85f9c4efa7c3acce55310de1dee3c547" name="a85f9c4efa7c3acce55310de1dee3c547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f9c4efa7c3acce55310de1dee3c547">&#9670;&#160;</a></span>getProcessBurstTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75">Time</a> getProcessBurstTime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process.html">Process</a> *</td>          <td class="paramname"><span class="paramname"><em>process</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para obter o tempo de burst de um processo. </p>
+<p>Retorna o tempo de execução (burst time) de um processo.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Ponteiro para o processo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="system__types_8h.html#a9337d107be24a2a7ac3d09befabf2a75" title="Representa o tempo em unidades específicas do sistema.">Time</a> O tempo de execução do processo. </dd></dl>
+
+</div>
+</div>
+<a id="af72c8b19a5f3c4fd46c4b5b73f63fa1f" name="af72c8b19a5f3c4fd46c4b5b73f63fa1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72c8b19a5f3c4fd46c4b5b73f63fa1f">&#9670;&#160;</a></span>hasProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hasProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_array.html">ProcessArray</a> *</td>          <td class="paramname"><span class="paramname"><em>array</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para verificar se o array de processos contém algum processo. </p>
+<p>Verifica se o array de processos contém pelo menos um processo.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Ponteiro para o array de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se houver processos no array, falso caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a537199f3ea4032fe90ca168a6fbff616" name="a537199f3ea4032fe90ca168a6fbff616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537199f3ea4032fe90ca168a6fbff616">&#9670;&#160;</a></span>initProcessArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initProcessArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_array.html">ProcessArray</a> *</td>          <td class="paramname"><span class="paramname"><em>array</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para inicializar um array de processos. </p>
+<p>Inicializa um array de processos com capacidade definida para armazenar os processos no sistema.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Ponteiro para o array de processos a ser inicializado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af90fc45878ff6db75fcd0dd57f11e448" name="af90fc45878ff6db75fcd0dd57f11e448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90fc45878ff6db75fcd0dd57f11e448">&#9670;&#160;</a></span>newProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process.html">Process</a> * newProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para criar um novo processo. </p>
+<p>Cria um novo processo no sistema com base nas informações fornecidas.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>Estrutura contendo as informações necessárias para a criação do processo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Process* Ponteiro para o processo criado. </dd></dl>
+
+</div>
+</div>
+<a id="aa2a0d56d4dafd911e882faf1e5569273" name="aa2a0d56d4dafd911e882faf1e5569273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a0d56d4dafd911e882faf1e5569273">&#9670;&#160;</a></span>removeFromProcessArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeFromProcessArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_array.html">ProcessArray</a> *</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para remover um processo do array de processos. </p>
+<p>Remove um processo do array de processos baseado no PID do processo.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Ponteiro para o array de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser removido. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="process_8c.html">process.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

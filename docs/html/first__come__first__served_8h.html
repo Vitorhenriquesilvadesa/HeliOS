@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/process/first_come_first_served.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('first__come__first__served_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro first_come_first_served.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação do gerenciador de processos utilizando o algoritmo First-Come, First-Served (FCFS).  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="process__manager_8h_source.html">process_manager.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div>
+<p><a href="first__come__first__served_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_f_s_node.html">FCFSNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_f_s_proc_table.html">FCFSProcTable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_first_come_first_served_process_manager.html">FirstComeFirstServedProcessManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a830fe9d71a76bd78f71dab501e519e37" id="r_a830fe9d71a76bd78f71dab501e519e37"><td class="memItemLeft" align="right" valign="top">typedef struct FCFSNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a830fe9d71a76bd78f71dab501e519e37">FCFSNode</a></td></tr>
+<tr class="separator:a830fe9d71a76bd78f71dab501e519e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a6f7c9e792f5014fb8f6cf4216ed183db" id="r_a6f7c9e792f5014fb8f6cf4216ed183db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process_manager.html">ProcessManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f7c9e792f5014fb8f6cf4216ed183db">createFirstComeFirstServedProcessManager</a> (<a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a> createInfo)</td></tr>
+<tr class="memdesc:a6f7c9e792f5014fb8f6cf4216ed183db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um gerenciador de processos FCFS.  <br /></td></tr>
+<tr class="separator:a6f7c9e792f5014fb8f6cf4216ed183db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e87e30cc2fc9bfc0b5b4a1741b9364e" id="r_a3e87e30cc2fc9bfc0b5b4a1741b9364e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e87e30cc2fc9bfc0b5b4a1741b9364e">FCFSCreateProcess</a> (void *self, <a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a> info)</td></tr>
+<tr class="memdesc:a3e87e30cc2fc9bfc0b5b4a1741b9364e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um novo processo e o adiciona ao gerenciador FCFS.  <br /></td></tr>
+<tr class="separator:a3e87e30cc2fc9bfc0b5b4a1741b9364e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef177e183d7729f1a1f80c2eaad9fefe" id="r_aef177e183d7729f1a1f80c2eaad9fefe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef177e183d7729f1a1f80c2eaad9fefe">FCFSScheduleProcess</a> (void *self, void *procTable)</td></tr>
+<tr class="memdesc:aef177e183d7729f1a1f80c2eaad9fefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agenda o próximo processo na fila para execução.  <br /></td></tr>
+<tr class="separator:aef177e183d7729f1a1f80c2eaad9fefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c14df252dd22f7a32cc2c8e91956fa" id="r_a13c14df252dd22f7a32cc2c8e91956fa"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13c14df252dd22f7a32cc2c8e91956fa">FCFSInitProcTable</a> (void *self)</td></tr>
+<tr class="memdesc:a13c14df252dd22f7a32cc2c8e91956fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a tabela de processos FCFS.  <br /></td></tr>
+<tr class="separator:a13c14df252dd22f7a32cc2c8e91956fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41fd21249f5338ccbfdef33300156666" id="r_a41fd21249f5338ccbfdef33300156666"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_process.html">Process</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41fd21249f5338ccbfdef33300156666">FCFSGetProcess</a> (void *self, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a41fd21249f5338ccbfdef33300156666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtém um processo na tabela de processos pelo PID.  <br /></td></tr>
+<tr class="separator:a41fd21249f5338ccbfdef33300156666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fa5dc48da18388d8ad8b12a74577e2" id="r_ab3fa5dc48da18388d8ad8b12a74577e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3fa5dc48da18388d8ad8b12a74577e2">FCFSHasProcess</a> (void *self)</td></tr>
+<tr class="memdesc:ab3fa5dc48da18388d8ad8b12a74577e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se há processos na fila de processos FCFS.  <br /></td></tr>
+<tr class="separator:ab3fa5dc48da18388d8ad8b12a74577e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acffe2d454f659aeb340f3662a526eb8c" id="r_acffe2d454f659aeb340f3662a526eb8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acffe2d454f659aeb340f3662a526eb8c">FCFSOnProcessDetach</a> (void *self, <a class="el" href="struct_cpu_info.html">CpuInfo</a> info)</td></tr>
+<tr class="memdesc:acffe2d454f659aeb340f3662a526eb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lida com a remoção de um processo da CPU e atualiza o gerenciador FCFS.  <br /></td></tr>
+<tr class="separator:acffe2d454f659aeb340f3662a526eb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ec79960209e08f883f2b8708cc4c6b8" id="r_a1ec79960209e08f883f2b8708cc4c6b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ec79960209e08f883f2b8708cc4c6b8">FCFSEnqueueProcess</a> (void *self, <a class="el" href="struct_f_c_f_s_proc_table.html">FCFSProcTable</a> *table, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a1ec79960209e08f883f2b8708cc4c6b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um processo à tabela de processos FCFS.  <br /></td></tr>
+<tr class="separator:a1ec79960209e08f883f2b8708cc4c6b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee1c1e94ad3bda9c3b4670dd79a3125" id="r_a2ee1c1e94ad3bda9c3b4670dd79a3125"><td class="memItemLeft" align="right" valign="top"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ee1c1e94ad3bda9c3b4670dd79a3125">FCFSDequeueProcess</a> (void *self, <a class="el" href="struct_f_c_f_s_proc_table.html">FCFSProcTable</a> *table)</td></tr>
+<tr class="memdesc:a2ee1c1e94ad3bda9c3b4670dd79a3125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o próximo processo da tabela de processos FCFS.  <br /></td></tr>
+<tr class="separator:a2ee1c1e94ad3bda9c3b4670dd79a3125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação do gerenciador de processos utilizando o algoritmo First-Come, First-Served (FCFS). </p>
+<p>Este arquivo define as estruturas e funções necessárias para gerenciar processos utilizando o algoritmo FCFS, no qual os processos são atendidos na ordem de chegada. </p>
+</div><h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a830fe9d71a76bd78f71dab501e519e37" name="a830fe9d71a76bd78f71dab501e519e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830fe9d71a76bd78f71dab501e519e37">&#9670;&#160;</a></span>FCFSNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct FCFSNode FCFSNode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="a6f7c9e792f5014fb8f6cf4216ed183db" name="a6f7c9e792f5014fb8f6cf4216ed183db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f7c9e792f5014fb8f6cf4216ed183db">&#9670;&#160;</a></span>createFirstComeFirstServedProcessManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process_manager.html">ProcessManager</a> * createFirstComeFirstServedProcessManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>createInfo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um gerenciador de processos FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">createInfo</td><td>Informações para inicialização do gerenciador de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o gerenciador de processos criado. </dd></dl>
+
+</div>
+</div>
+<a id="a3e87e30cc2fc9bfc0b5b4a1741b9364e" name="a3e87e30cc2fc9bfc0b5b4a1741b9364e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e87e30cc2fc9bfc0b5b4a1741b9364e">&#9670;&#160;</a></span>FCFSCreateProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> FCFSCreateProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um novo processo e o adiciona ao gerenciador FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações do processo a ser criado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo criado. </dd></dl>
+
+</div>
+</div>
+<a id="a2ee1c1e94ad3bda9c3b4670dd79a3125" name="a2ee1c1e94ad3bda9c3b4670dd79a3125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee1c1e94ad3bda9c3b4670dd79a3125">&#9670;&#160;</a></span>FCFSDequeueProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> FCFSDequeueProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_f_s_proc_table.html">FCFSProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove o próximo processo da tabela de processos FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+    <tr><td class="paramname">table</td><td>Ponteiro para a tabela de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo removido. </dd></dl>
+
+</div>
+</div>
+<a id="a1ec79960209e08f883f2b8708cc4c6b8" name="a1ec79960209e08f883f2b8708cc4c6b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ec79960209e08f883f2b8708cc4c6b8">&#9670;&#160;</a></span>FCFSEnqueueProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCFSEnqueueProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_f_s_proc_table.html">FCFSProcTable</a> *</td>          <td class="paramname"><span class="paramname"><em>table</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um processo à tabela de processos FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+    <tr><td class="paramname">table</td><td>Ponteiro para a tabela de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser adicionado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a41fd21249f5338ccbfdef33300156666" name="a41fd21249f5338ccbfdef33300156666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41fd21249f5338ccbfdef33300156666">&#9670;&#160;</a></span>FCFSGetProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_process.html">Process</a> * FCFSGetProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtém um processo na tabela de processos pelo PID. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser obtido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o processo correspondente. </dd></dl>
+
+</div>
+</div>
+<a id="ab3fa5dc48da18388d8ad8b12a74577e2" name="ab3fa5dc48da18388d8ad8b12a74577e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fa5dc48da18388d8ad8b12a74577e2">&#9670;&#160;</a></span>FCFSHasProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FCFSHasProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se há processos na fila de processos FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>true</code> se houver processos na fila; caso contrário, <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a13c14df252dd22f7a32cc2c8e91956fa" name="a13c14df252dd22f7a32cc2c8e91956fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c14df252dd22f7a32cc2c8e91956fa">&#9670;&#160;</a></span>FCFSInitProcTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * FCFSInitProcTable </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa a tabela de processos FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para a tabela de processos inicializada. </dd></dl>
+
+</div>
+</div>
+<a id="acffe2d454f659aeb340f3662a526eb8c" name="acffe2d454f659aeb340f3662a526eb8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acffe2d454f659aeb340f3662a526eb8c">&#9670;&#160;</a></span>FCFSOnProcessDetach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCFSOnProcessDetach </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_cpu_info.html">CpuInfo</a></td>          <td class="paramname"><span class="paramname"><em>info</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lida com a remoção de um processo da CPU e atualiza o gerenciador FCFS. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações sobre o estado da CPU ao destacar o processo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aef177e183d7729f1a1f80c2eaad9fefe" name="aef177e183d7729f1a1f80c2eaad9fefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef177e183d7729f1a1f80c2eaad9fefe">&#9670;&#160;</a></span>FCFSScheduleProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> FCFSScheduleProcess </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>procTable</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agenda o próximo processo na fila para execução. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos FCFS. </td></tr>
+    <tr><td class="paramname">procTable</td><td>Ponteiro para a tabela de processos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>O identificador do processo agendado. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="first__come__first__served_8h.html">first_come_first_served.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

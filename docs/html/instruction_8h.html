@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/kernel/instruction.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('instruction_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerações</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro instruction.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definições de instruções e registradores para o sistema virtual HeliOS.  
+<a href="#details">Mais...</a></p>
+
+<p><a href="instruction_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a453f07a53194584fd2e0bb720c814c25" id="r_a453f07a53194584fd2e0bb720c814c25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a453f07a53194584fd2e0bb720c814c25">STACK_MAX_SIZE</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:a453f07a53194584fd2e0bb720c814c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamanho máximo da pilha do sistema.  <br /></td></tr>
+<tr class="separator:a453f07a53194584fd2e0bb720c814c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerações</h2></td></tr>
+<tr class="memitem:acbd603b5f7c788a74eade8d4837ba684" id="r_acbd603b5f7c788a74eade8d4837ba684"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbd603b5f7c788a74eade8d4837ba684">Instruction</a> { <br />
+&#160;&#160;<a class="el" href="#acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b">HL_OP_HALT</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917">HL_OP_ADD</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb">HL_OP_SUB</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32">HL_OP_MUL</a>
+, <br />
+&#160;&#160;<a class="el" href="#acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b">HL_OP_DIV</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94">HL_OP_MOV</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c">HL_OP_MOV_CONST</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe">HL_OP_MOV_ACC</a>
+, <br />
+&#160;&#160;<a class="el" href="#acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb">HL_OP_PUSH</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568">HL_OP_POP</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf">HL_OP_GOTO</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628">HL_OP_JEQ</a>
+, <br />
+&#160;&#160;<a class="el" href="#acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9">HL_OP_JNQ</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51">HL_OP_PRINT</a>
+, <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0">HL_OP_CREATE_PROCESS</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:acbd603b5f7c788a74eade8d4837ba684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeração de instruções suportadas pela máquina virtual.  <a href="#acbd603b5f7c788a74eade8d4837ba684">Mais...</a><br /></td></tr>
+<tr class="separator:acbd603b5f7c788a74eade8d4837ba684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e39d30bce1b2172c347b10e96f05d1b" id="r_a8e39d30bce1b2172c347b10e96f05d1b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1b">Register</a> { <br />
+&#160;&#160;<a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd">REG_R0</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d">REG_R1</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2">REG_R2</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a">REG_R3</a>
+, <br />
+&#160;&#160;<a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f">REG_R4</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8">REG_R5</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976">REG_R6</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889">REG_R7</a>
+, <br />
+&#160;&#160;<a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1">REG_S1</a>
+, <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33">REG_MAX</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a8e39d30bce1b2172c347b10e96f05d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeração dos registradores da máquina virtual.  <a href="#a8e39d30bce1b2172c347b10e96f05d1b">Mais...</a><br /></td></tr>
+<tr class="separator:a8e39d30bce1b2172c347b10e96f05d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Definições de instruções e registradores para o sistema virtual HeliOS. </p>
+<p>Este arquivo contém as definições das instruções e registradores utilizados pela máquina virtual do sistema operacional HeliOS. Ele também define o tamanho máximo da pilha do sistema. </p>
+</div><h2 class="groupheader">Documentação das macros</h2>
+<a id="a453f07a53194584fd2e0bb720c814c25" name="a453f07a53194584fd2e0bb720c814c25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453f07a53194584fd2e0bb720c814c25">&#9670;&#160;</a></span>STACK_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STACK_MAX_SIZE&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tamanho máximo da pilha do sistema. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos valores da enumeração</h2>
+<a id="acbd603b5f7c788a74eade8d4837ba684" name="acbd603b5f7c788a74eade8d4837ba684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd603b5f7c788a74eade8d4837ba684">&#9670;&#160;</a></span>Instruction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#acbd603b5f7c788a74eade8d4837ba684">Instruction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeração de instruções suportadas pela máquina virtual. </p>
+<p>Essas instruções representam as operações básicas que a máquina virtual pode executar. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b" name="acbd603b5f7c788a74eade8d4837ba684ac300008b92b9f3c9e18204e86a6c438b"></a>HL_OP_HALT&#160;</td><td class="fielddoc"><p>Interrompe a execução do programa. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917" name="acbd603b5f7c788a74eade8d4837ba684a094887002cbc596f4dfd8e1691f5c917"></a>HL_OP_ADD&#160;</td><td class="fielddoc"><p>Soma dois valores. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb" name="acbd603b5f7c788a74eade8d4837ba684a8e2bb31e70e94ce2c055bf486dc44fcb"></a>HL_OP_SUB&#160;</td><td class="fielddoc"><p>Subtrai dois valores. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32" name="acbd603b5f7c788a74eade8d4837ba684aff00037b6f76832950d0875829886f32"></a>HL_OP_MUL&#160;</td><td class="fielddoc"><p>Multiplica dois valores. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b" name="acbd603b5f7c788a74eade8d4837ba684abb2647652d5f616d47ec7788143b270b"></a>HL_OP_DIV&#160;</td><td class="fielddoc"><p>Divide dois valores. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94" name="acbd603b5f7c788a74eade8d4837ba684aaa0e5bb0563ca7d328f7bf2749324e94"></a>HL_OP_MOV&#160;</td><td class="fielddoc"><p>Move um valor entre registradores. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c" name="acbd603b5f7c788a74eade8d4837ba684a668d3296dee13a9de7b25cb50931747c"></a>HL_OP_MOV_CONST&#160;</td><td class="fielddoc"><p>Move um valor constante para um registrador. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe" name="acbd603b5f7c788a74eade8d4837ba684a3221952ea29e7e48a526f4ce3d84bfbe"></a>HL_OP_MOV_ACC&#160;</td><td class="fielddoc"><p>Move o valor do acumulador para um registrador. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb" name="acbd603b5f7c788a74eade8d4837ba684aeba7e814d3abbdd0c23a121c1914addb"></a>HL_OP_PUSH&#160;</td><td class="fielddoc"><p>Empilha um valor na pilha. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568" name="acbd603b5f7c788a74eade8d4837ba684a993644899013440294ba13bb3df61568"></a>HL_OP_POP&#160;</td><td class="fielddoc"><p>Remove um valor do topo da pilha. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf" name="acbd603b5f7c788a74eade8d4837ba684af9c99f8e887375cf0e375430f67305bf"></a>HL_OP_GOTO&#160;</td><td class="fielddoc"><p>Salta para uma instrução específica. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628" name="acbd603b5f7c788a74eade8d4837ba684abd296ca54dfed38d1ea5fa3a31023628"></a>HL_OP_JEQ&#160;</td><td class="fielddoc"><p>Salta se os valores forem iguais. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9" name="acbd603b5f7c788a74eade8d4837ba684ad0853a6e0301c8a35f9cddc063b494e9"></a>HL_OP_JNQ&#160;</td><td class="fielddoc"><p>Salta se os valores forem diferentes. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51" name="acbd603b5f7c788a74eade8d4837ba684a6925996a0d60ac081407e07dad2f5c51"></a>HL_OP_PRINT&#160;</td><td class="fielddoc"><p>Imprime um valor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0" name="acbd603b5f7c788a74eade8d4837ba684a26baac14c937fadec2e71e0e8ab644d0"></a>HL_OP_CREATE_PROCESS&#160;</td><td class="fielddoc"><p>Cria um novo processo. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a8e39d30bce1b2172c347b10e96f05d1b" name="a8e39d30bce1b2172c347b10e96f05d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e39d30bce1b2172c347b10e96f05d1b">&#9670;&#160;</a></span>Register</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a8e39d30bce1b2172c347b10e96f05d1b">Register</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumeração dos registradores da máquina virtual. </p>
+<p>Os registradores são utilizados para armazenar valores temporários durante a execução do programa. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd" name="a8e39d30bce1b2172c347b10e96f05d1baefaeb42fd6c38c9b6421c983dc1debfd"></a>REG_R0&#160;</td><td class="fielddoc"><p>Registrador 0. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d" name="a8e39d30bce1b2172c347b10e96f05d1ba9daed868b95902dd409110e1764ebd2d"></a>REG_R1&#160;</td><td class="fielddoc"><p>Registrador 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2" name="a8e39d30bce1b2172c347b10e96f05d1ba3fec9ecaeac55c743a84d0a37c4d45e2"></a>REG_R2&#160;</td><td class="fielddoc"><p>Registrador 2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a" name="a8e39d30bce1b2172c347b10e96f05d1bad73a7c68c236fce5be9bafed94c4074a"></a>REG_R3&#160;</td><td class="fielddoc"><p>Registrador 3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f" name="a8e39d30bce1b2172c347b10e96f05d1baffa9da96183a34b36d59b2407dfc3d9f"></a>REG_R4&#160;</td><td class="fielddoc"><p>Registrador 4. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8" name="a8e39d30bce1b2172c347b10e96f05d1ba7be7d31315ba2a9c4210996af69c72f8"></a>REG_R5&#160;</td><td class="fielddoc"><p>Registrador 5. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976" name="a8e39d30bce1b2172c347b10e96f05d1ba8be7bc76a6fc28254030616eba37a976"></a>REG_R6&#160;</td><td class="fielddoc"><p>Registrador 6. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889" name="a8e39d30bce1b2172c347b10e96f05d1ba043bf030ac49786703111d4860012889"></a>REG_R7&#160;</td><td class="fielddoc"><p>Registrador 7. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1" name="a8e39d30bce1b2172c347b10e96f05d1baba1d758e9fe0e7246834f27cc14247a1"></a>REG_S1&#160;</td><td class="fielddoc"><p>Registrador especial 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33" name="a8e39d30bce1b2172c347b10e96f05d1ba9df1f4b6c3caaa69bf46d818c76eca33"></a>REG_MAX&#160;</td><td class="fielddoc"><p>Limite superior para registradores válidos. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cbd7f246bdf7dc0a50281a272327e6ed.html">kernel</a></li><li class="navelem"><a class="el" href="instruction_8h.html">instruction.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

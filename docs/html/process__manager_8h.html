@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HeliOS: Referência ao ficheiro src/process/process_manager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">HeliOS
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('process__manager_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrada</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#typedef-members">Definições de tipos</a> &#124;
+<a href="#enum-members">Enumerações</a>  </div>
+  <div class="headertitle"><div class="title">Referência ao ficheiro process_manager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="process_8h_source.html">process.h</a>&gt;</code><br />
+</div>
+<p><a href="process__manager_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_process_manager_create_info.html">ProcessManagerCreateInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura com informações para criar um gerenciador de processos.  <a href="struct_process_manager_create_info.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_process_manager.html">ProcessManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura do gerenciador de processos.  <a href="struct_process_manager.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definições de tipos</h2></td></tr>
+<tr class="memitem:a5b2a6bc5e999daad02bebe2abe749687" id="r_a5b2a6bc5e999daad02bebe2abe749687"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b2a6bc5e999daad02bebe2abe749687">ProcCreateFn</a>) (void *self, <a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a> info)</td></tr>
+<tr class="memdesc:a5b2a6bc5e999daad02bebe2abe749687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para criar um processo.  <br /></td></tr>
+<tr class="separator:a5b2a6bc5e999daad02bebe2abe749687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b70fb39abba75f75c961bfa121a5eeb" id="r_a3b70fb39abba75f75c961bfa121a5eeb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="struct_process.html">Process</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b70fb39abba75f75c961bfa121a5eeb">GetProcessFn</a>) (void *self, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td></tr>
+<tr class="memdesc:a3b70fb39abba75f75c961bfa121a5eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para obter um processo pelo seu PID.  <br /></td></tr>
+<tr class="separator:a3b70fb39abba75f75c961bfa121a5eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d91cb30bf50091e18a1c326aadd447" id="r_a37d91cb30bf50091e18a1c326aadd447"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37d91cb30bf50091e18a1c326aadd447">ProcScheduleFn</a>) (void *self, void *procTable)</td></tr>
+<tr class="memdesc:a37d91cb30bf50091e18a1c326aadd447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para agendar um processo.  <br /></td></tr>
+<tr class="separator:a37d91cb30bf50091e18a1c326aadd447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956103fa8932386383a2e3b83ede37a0" id="r_a956103fa8932386383a2e3b83ede37a0"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a956103fa8932386383a2e3b83ede37a0">InitProcTableFn</a>) (void *self)</td></tr>
+<tr class="memdesc:a956103fa8932386383a2e3b83ede37a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para inicializar a tabela de processos.  <br /></td></tr>
+<tr class="separator:a956103fa8932386383a2e3b83ede37a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3febc31b15e69aa564334898f5c311be" id="r_a3febc31b15e69aa564334898f5c311be"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3febc31b15e69aa564334898f5c311be">HasProcFn</a>) (void *self)</td></tr>
+<tr class="memdesc:a3febc31b15e69aa564334898f5c311be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para verificar se há processos.  <br /></td></tr>
+<tr class="separator:a3febc31b15e69aa564334898f5c311be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eec4e604853852c0cac702c26274dbe" id="r_a8eec4e604853852c0cac702c26274dbe"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eec4e604853852c0cac702c26274dbe">OnProcDetachFn</a>) (void *self, <a class="el" href="struct_cpu_info.html">CpuInfo</a> info)</td></tr>
+<tr class="memdesc:a8eec4e604853852c0cac702c26274dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função a ser chamada quando um processo for desacoplado.  <br /></td></tr>
+<tr class="separator:a8eec4e604853852c0cac702c26274dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462eb45d1bb8d6a2035f79fc16dc6111" id="r_a462eb45d1bb8d6a2035f79fc16dc6111"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a462eb45d1bb8d6a2035f79fc16dc6111">PreemptionFlag</a></td></tr>
+<tr class="memdesc:a462eb45d1bb8d6a2035f79fc16dc6111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipo para as flags de preempção.  <br /></td></tr>
+<tr class="separator:a462eb45d1bb8d6a2035f79fc16dc6111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerações</h2></td></tr>
+<tr class="memitem:a64df12d83098e46fbe31b879ad1fa2f0" id="r_a64df12d83098e46fbe31b879ad1fa2f0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0">ProcManagerType</a> { <br />
+&#160;&#160;<a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383">HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED</a>
+, <a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2">HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST</a>
+, <a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001">HL_PROC_MANAGER_TYPE_ROUND_ROBIN</a>
+, <a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef">HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE</a>
+, <br />
+&#160;&#160;<a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f">HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES</a>
+, <a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847">HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING</a>
+, <a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f">HL_PROC_MANAGER_TYPE_MAX</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a64df12d83098e46fbe31b879ad1fa2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipos de gerenciadores de processos.  <a href="#a64df12d83098e46fbe31b879ad1fa2f0">Mais...</a><br /></td></tr>
+<tr class="separator:a64df12d83098e46fbe31b879ad1fa2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4d453663337e4fa265c003b2d0da77" id="r_a2e4d453663337e4fa265c003b2d0da77"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e4d453663337e4fa265c003b2d0da77">PreemptionType</a> { <a class="el" href="#a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc">PREEMPTION_NONE</a>
+, <a class="el" href="#a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851">PREEMPTION_QUANTUM</a>
+, <a class="el" href="#a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2">PREEMPTION_PRIORITY</a>
+ }</td></tr>
+<tr class="memdesc:a2e4d453663337e4fa265c003b2d0da77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipos de preempção no gerenciador de processos.  <a href="#a2e4d453663337e4fa265c003b2d0da77">Mais...</a><br /></td></tr>
+<tr class="separator:a2e4d453663337e4fa265c003b2d0da77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos tipos</h2>
+<a id="a3b70fb39abba75f75c961bfa121a5eeb" name="a3b70fb39abba75f75c961bfa121a5eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b70fb39abba75f75c961bfa121a5eeb">&#9670;&#160;</a></span>GetProcessFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="struct_process.html">Process</a> *(* GetProcessFn) (void *self, <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a> pid)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para obter um processo pelo seu PID. </p>
+<p>Função responsável por retornar um processo dado seu identificador único (PID).</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">pid</td><td>Identificador do processo a ser obtido.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Process* Ponteiro para a estrutura do processo. </dd></dl>
+
+</div>
+</div>
+<a id="a3febc31b15e69aa564334898f5c311be" name="a3febc31b15e69aa564334898f5c311be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3febc31b15e69aa564334898f5c311be">&#9670;&#160;</a></span>HasProcFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bool(* HasProcFn) (void *self)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para verificar se há processos. </p>
+<p>Função responsável por verificar se existem processos na tabela.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>bool Retorna verdadeiro se houver processos, caso contrário, falso. </dd></dl>
+
+</div>
+</div>
+<a id="a956103fa8932386383a2e3b83ede37a0" name="a956103fa8932386383a2e3b83ede37a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a956103fa8932386383a2e3b83ede37a0">&#9670;&#160;</a></span>InitProcTableFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void *(* InitProcTableFn) (void *self)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para inicializar a tabela de processos. </p>
+<p>Função responsável por inicializar a tabela de processos, estrutura que armazena os processos disponíveis para o escalonamento.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>void* Ponteiro para a tabela de processos inicializada. </dd></dl>
+
+</div>
+</div>
+<a id="a8eec4e604853852c0cac702c26274dbe" name="a8eec4e604853852c0cac702c26274dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eec4e604853852c0cac702c26274dbe">&#9670;&#160;</a></span>OnProcDetachFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* OnProcDetachFn) (void *self, <a class="el" href="struct_cpu_info.html">CpuInfo</a> info)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função a ser chamada quando um processo for desacoplado. </p>
+<p>Função responsável por lidar com a desvinculação de um processo, o que pode envolver operações de limpeza ou atualização do estado do gerenciador.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">info</td><td>Informações sobre o CPU no momento da desvinculação. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a462eb45d1bb8d6a2035f79fc16dc6111" name="a462eb45d1bb8d6a2035f79fc16dc6111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a462eb45d1bb8d6a2035f79fc16dc6111">&#9670;&#160;</a></span>PreemptionFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="#a462eb45d1bb8d6a2035f79fc16dc6111">PreemptionFlag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipo para as flags de preempção. </p>
+
+</div>
+</div>
+<a id="a5b2a6bc5e999daad02bebe2abe749687" name="a5b2a6bc5e999daad02bebe2abe749687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b2a6bc5e999daad02bebe2abe749687">&#9670;&#160;</a></span>ProcCreateFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>(* ProcCreateFn) (void *self, <a class="el" href="struct_process_create_info.html">ProcessCreateInfo</a> info)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para criar um processo. </p>
+<p>Função responsável por criar um processo dado um conjunto de informações de criação.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">info</td><td>Estrutura contendo informações necessárias para criar o processo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a> Identificador do processo criado. </dd></dl>
+
+</div>
+</div>
+<a id="a37d91cb30bf50091e18a1c326aadd447" name="a37d91cb30bf50091e18a1c326aadd447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d91cb30bf50091e18a1c326aadd447">&#9670;&#160;</a></span>ProcScheduleFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385">PID32</a>(* ProcScheduleFn) (void *self, void *procTable)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para agendar um processo. </p>
+<p>Função responsável por agendar a execução de um processo baseado no algoritmo de escalonamento.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Ponteiro para o gerenciador de processos. </td></tr>
+    <tr><td class="paramname">procTable</td><td>Tabela de processos que deve ser considerada para o agendamento.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="system__types_8h.html#aade98a87136cf030add759c3cbf7e385" title="Representa um identificador único para processos no sistema.">PID32</a> Identificador do processo agendado. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos valores da enumeração</h2>
+<a id="a2e4d453663337e4fa265c003b2d0da77" name="a2e4d453663337e4fa265c003b2d0da77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4d453663337e4fa265c003b2d0da77">&#9670;&#160;</a></span>PreemptionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a2e4d453663337e4fa265c003b2d0da77">PreemptionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipos de preempção no gerenciador de processos. </p>
+<p>Enumeração que define os tipos de preempção aplicáveis ao escalonamento de processos. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc" name="a2e4d453663337e4fa265c003b2d0da77a1367447c79440424726a8767458244dc"></a>PREEMPTION_NONE&#160;</td><td class="fielddoc"><p>Sem preempção. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851" name="a2e4d453663337e4fa265c003b2d0da77a6def9a6387a663b58a208aca96127851"></a>PREEMPTION_QUANTUM&#160;</td><td class="fielddoc"><p>Preempção por quantum de tempo. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2" name="a2e4d453663337e4fa265c003b2d0da77a12944035e2b38a4ef3ba5aa21e855ad2"></a>PREEMPTION_PRIORITY&#160;</td><td class="fielddoc"><p>Preempção por prioridade. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a64df12d83098e46fbe31b879ad1fa2f0" name="a64df12d83098e46fbe31b879ad1fa2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64df12d83098e46fbe31b879ad1fa2f0">&#9670;&#160;</a></span>ProcManagerType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a64df12d83098e46fbe31b879ad1fa2f0">ProcManagerType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipos de gerenciadores de processos. </p>
+<p>Enumeração que define os diferentes tipos de algoritmos de escalonamento de processos. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383" name="a64df12d83098e46fbe31b879ad1fa2f0a6b4bde49a71d31a821966e7f05021383"></a>HL_PROC_MANAGER_TYPE_FIRST_COME_FIRST_SERVED&#160;</td><td class="fielddoc"><p>First Come First Served (FCFS) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2" name="a64df12d83098e46fbe31b879ad1fa2f0ab0a3eb503a119e0525fbe9fb3096e3b2"></a>HL_PROC_MANAGER_TYPE_SHORTEST_JOB_FIRST&#160;</td><td class="fielddoc"><p>Shortest Job First (SJF) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001" name="a64df12d83098e46fbe31b879ad1fa2f0a021277b48e4d7c6e98e3618ae4902001"></a>HL_PROC_MANAGER_TYPE_ROUND_ROBIN&#160;</td><td class="fielddoc"><p>Round Robin. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef" name="a64df12d83098e46fbe31b879ad1fa2f0a4c6c7fb325d38fac30a66aec0406ceef"></a>HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_SINGLE_QUEUE&#160;</td><td class="fielddoc"><p>Priority Scheduling (Single Queue) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f" name="a64df12d83098e46fbe31b879ad1fa2f0a076d7820a3b3593e982c7d65c8bbe35f"></a>HL_PROC_MANAGER_TYPE_PRIORITY_SCHEDULING_MULTIPLE_QUEUES&#160;</td><td class="fielddoc"><p>Priority Scheduling (Multiple Queues) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847" name="a64df12d83098e46fbe31b879ad1fa2f0ad1b9065b3fe2c7ae7798cc4a9818f847"></a>HL_PROC_MANAGER_TYPE_LOTTERY_SCHEDULING&#160;</td><td class="fielddoc"><p>Lottery Scheduling. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f" name="a64df12d83098e46fbe31b879ad1fa2f0a86155241064ae917495b7564d8ce843f"></a>HL_PROC_MANAGER_TYPE_MAX&#160;</td><td class="fielddoc"><p>Tipo máximo de gerenciador. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c0cd66d8ddae4fc5bc5dc2f24e29763b.html">process</a></li><li class="navelem"><a class="el" href="process__manager_8h.html">process_manager.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

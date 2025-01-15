@@ -1,0 +1,54 @@
+\doxysection{Referência ao ficheiro src/kernel/kernel.h}
+\hypertarget{kernel_8h}{}\label{kernel_8h}\index{src/kernel/kernel.h@{src/kernel/kernel.h}}
+
+
+Cabeçalhos e definições principais para o sistema virtual Heli\+OS.  
+
+
+{\ttfamily \#include $<$process.\+h$>$}\newline
+{\ttfamily \#include $<$cpu.\+h$>$}\newline
+{\ttfamily \#include $<$process\+\_\+manager.\+h$>$}\newline
+{\ttfamily \#include $<$allocator.\+h$>$}\newline
+{\ttfamily \#include $<$system.\+h$>$}\newline
+{\ttfamily \#include $<$system\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{kernel_8h_a1a130d4ca534e41604dcbb4e246d30c9}{QUANTUM\+\_\+\+NONE}}~0
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Entrada e saída padrão para depuração e logs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{kernel_8h_a64c24bbc19e008e8317a341f4c86c5df}{MAX\+\_\+\+PROCESS\+\_\+\+COUNT}}~32
+\begin{DoxyCompactList}\small\item\em Define o número máximo de processos que o sistema pode gerenciar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Cabeçalhos e definições principais para o sistema virtual Heli\+OS. 
+
+Este arquivo inclui as dependências essenciais e define constantes globais utilizadas no sistema operacional virtual. 
+
+\doxysubsection{Documentação das macros}
+\Hypertarget{kernel_8h_a64c24bbc19e008e8317a341f4c86c5df}\index{kernel.h@{kernel.h}!MAX\_PROCESS\_COUNT@{MAX\_PROCESS\_COUNT}}
+\index{MAX\_PROCESS\_COUNT@{MAX\_PROCESS\_COUNT}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PROCESS\_COUNT}{MAX\_PROCESS\_COUNT}}
+{\footnotesize\ttfamily \label{kernel_8h_a64c24bbc19e008e8317a341f4c86c5df} 
+\#define MAX\+\_\+\+PROCESS\+\_\+\+COUNT~32}
+
+
+
+Define o número máximo de processos que o sistema pode gerenciar. 
+
+Limita a quantidade de processos simultâneos para 32. \Hypertarget{kernel_8h_a1a130d4ca534e41604dcbb4e246d30c9}\index{kernel.h@{kernel.h}!QUANTUM\_NONE@{QUANTUM\_NONE}}
+\index{QUANTUM\_NONE@{QUANTUM\_NONE}!kernel.h@{kernel.h}}
+\doxysubsubsection{\texorpdfstring{QUANTUM\_NONE}{QUANTUM\_NONE}}
+{\footnotesize\ttfamily \label{kernel_8h_a1a130d4ca534e41604dcbb4e246d30c9} 
+\#define QUANTUM\+\_\+\+NONE~0}
+
+
+
+\texorpdfstring{$<$}{<} Entrada e saída padrão para depuração e logs. 
+
+\texorpdfstring{$<$}{<} Manipulação de processos. \texorpdfstring{$<$}{<} Definições e operações relacionadas à CPU. \texorpdfstring{$<$}{<} Gerenciamento de processos. \texorpdfstring{$<$}{<} Gerenciamento de memória. \texorpdfstring{$<$}{<} Estruturas e funções principais do sistema. \texorpdfstring{$<$}{<} Tipos básicos usados pelo sistema.
+
+Define o valor padrão para desativar o quantum do escalonador.
+
+Usado para desativar a contagem de tempo de execução dos processos. 
