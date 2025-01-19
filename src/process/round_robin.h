@@ -13,7 +13,7 @@
 #include <process_manager.h>
 #include <stdint.h>
 
-#define ROUND_ROBIN_QUANTUM 10 ///< Definindo o quantum de tempo para o escalonamento Round Robin.
+#define ROUND_ROBIN_QUANTUM 1 ///< Definindo o quantum de tempo para o escalonamento Round Robin.
 
 /**
  * @brief Estrutura que representa um nó da lista encadeada de processos no escalonamento Round Robin.

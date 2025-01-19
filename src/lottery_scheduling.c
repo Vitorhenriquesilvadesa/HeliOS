@@ -67,7 +67,7 @@ void LSOnProcessDetach(void *self, CpuInfo info)
         process->stack[i] = info.stack[i];
     }
 
-    if (process->pc >= process->program->count)
+    if (process->state == HL_PROC_TERMINATED)
     {
         LotteryProcTable *table = manager->procTable;
         LotteryNode *prev = NULL;
@@ -89,6 +89,7 @@ void LSOnProcessDetach(void *self, CpuInfo info)
                 table->size--;
                 table->totalTickets -= current->tickets;
                 free(current);
+                // removeFromProcessArray(&manager->manager.processes, info.currentProcessId);
                 break;
             }
 
@@ -107,13 +108,6 @@ PID32 LSCreateProcess(void *self, ProcessCreateInfo info)
 
     Process *process = newProcess(info);
 
-    if (!process)
-    {
-        fprintf(stderr, "Erro: Falha ao criar o processo.\n");
-        return ERROR_PID;
-    }
-
-    process->pid = nextPid++;
     if (!process)
     {
         fprintf(stderr, "Erro: Falha ao criar o processo.\n");

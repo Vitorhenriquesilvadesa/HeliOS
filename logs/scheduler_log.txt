@@ -1,0 +1,40 @@
+Lotery scheduling
+Ordem de Execução: Test2 → Test2 → Test1 → Test2 → Test1 → Test2 → Test1 → Test1 → Test1 → Test2 → Test2 → Test1 → Test2 → Test1 → Proc0 → Proc0 → Proc0 → Proc0 → Proc0 → Proc0 → Proc0 → Proc1 → Proc1 → Proc1 → Proc1 → Proc1 → Proc1 → Proc1 → Proc2 → Proc2 → Proc2 → Proc2
+
+Processo	Tempo de Espera		Tempo de Retorno
+Test2		0					2
+Test2		2					4
+Test1		4					6
+Test2		6					8
+Test1		8					10
+Test2		10					12
+Test1		12					14
+Test1		14					16
+Test1		16					18
+Test2		18					20
+Test2		20					22
+Test1		22					26
+Test2		26					28
+Test1		28					29
+Proc0		3					5
+Proc0		5					7
+Proc0		7					9
+Proc0		9					11
+Proc0		11					13
+Proc0		13					17
+Proc0		17					18
+Proc1		1					3
+Proc1		3					5
+Proc1		5					7
+Proc1		7					9
+Proc1		9					11
+Proc1		11					15
+Proc1		15					16
+Proc2		1					3
+Proc2		3					5
+Proc2		5					7
+Proc2		7					9
+
+Tempo Médio de Espera: 9.94
+Tempo Médio de Retorno: 12.03
+-------------------------------------------------------------

@@ -12,6 +12,7 @@
 
 #include <instruction.h>
 #include <program.h>
+#include <process.h>
 #include <system_types.h>
 
 /**

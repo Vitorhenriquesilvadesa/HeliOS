@@ -106,7 +106,9 @@ void runSystemWithLog(const char *logFile)
 
     char executionOrder[500] = "";
 
-    while (manager->hasProcess(manager))
+    static uint32_t count = 0;
+
+    while (manager->hasProcess(manager) && (count++ < MAX_PROCESS_COUNT))
     {
         PID32 pid = manager->schedule(manager, systemInstance.processTable);
         Process *process = manager->getProcess(manager, pid);

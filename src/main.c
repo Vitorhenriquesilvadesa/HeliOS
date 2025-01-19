@@ -128,7 +128,8 @@ int main(int argc, const char **argv)
 
     createSystemInstance(createInfo);
 
-    createProcessWithPriority("Test2", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
+    createProcessWithPriority("Test1", exampleProgram2, HL_PROC_PRIORITY_MEDIUM);
+    createProcessWithPriority("Test2", exampleProgram1, HL_PROC_PRIORITY_MEDIUM);
 
     runSystemWithLog("../logs/scheduler_log.txt");
 

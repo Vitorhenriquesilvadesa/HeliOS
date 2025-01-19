@@ -35,11 +35,22 @@ void appendProcessReferenceArray(ProcessArray *array, Process *process)
 {
     if (array->length >= array->capacity - 1)
     {
-        array->processes = realloc(array->processes, array->capacity * ARRAY_GROW_FACTOR);
+        size_t newCapacity = array->capacity * ARRAY_GROW_FACTOR;
+        Process **newProcesses = realloc(array->processes, newCapacity * sizeof(Process *));
+
+        if (newProcesses == NULL)
+        {
+            fprintf(stderr, "Failed to allocate memory for process array\n");
+            exit(EXIT_FAILURE);
+        }
+
+        array->processes = newProcesses;
+        array->capacity = newCapacity;
     }
 
     array->processes[array->length++] = process;
 }
+
 
 void removeFromProcessArray(ProcessArray *array, PID32 pid)
 {
