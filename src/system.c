@@ -113,6 +113,11 @@ void runSystemWithLog(const char *logFile)
         PID32 pid = manager->schedule(manager, systemInstance.processTable);
         Process *process = manager->getProcess(manager, pid);
 
+        if (process->pid == ERROR_PID)
+        {
+            break;
+        }
+
         if (logCount > 0)
         {
             strcat(executionOrder, " → ");
